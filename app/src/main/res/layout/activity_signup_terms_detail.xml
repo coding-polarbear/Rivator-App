@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sl="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        sl:scale_base_height="560"
+        sl:scale_base_width="360">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:letterSpacing="-0.1"
+            android:text="Rivator이용약관 동의(필수)"
+            android:textColor="#232323"
+            sl:scale_height="48"
+            sl:scale_left="16"
+            sl:scale_textsize="16"
+            sl:scale_top="0"
+            sl:scale_width="344" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:letterSpacing="-0.1"
+            android:lineSpacingExtra="7.7sp"
+            android:text="@string/agree_detail"
+            android:textColor="#a0a0a0"
+            sl:scale_height="512"
+            sl:scale_left="16"
+            sl:scale_textsize="13"
+            sl:scale_top="48"
+            sl:scale_width="319" />
+
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+
+</LinearLayout>

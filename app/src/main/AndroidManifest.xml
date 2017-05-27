@@ -15,6 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".SignupDegreeActivity"/>
+        <activity android:name=".SignupPortfolioActivity"/>
+        <activity android:name=".SignupTermsAgreeActivity"/>
+        <activity android:name=".SignupTermsDetailActivity"/>
     </application>
 
 </manifest>

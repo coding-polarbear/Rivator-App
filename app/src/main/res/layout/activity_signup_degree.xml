@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:sl="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        sl:scale_base_height="560"
+        sl:scale_base_width="360">
+
+        <ImageView
+
+            android:id="@+id/img_degree"
+            android:layout_width="150dp"
+            android:layout_height="123dp"
+            android:background="@color/colorImageBackground"
+            sl:scale_height="200"
+            sl:scale_width="360" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLine"
+            sl:scale_height="0.5"
+            sl:scale_top="256"
+            sl:scale_width="360" />
+
+        <Button
+            android:id="@+id/btn_degree_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorNextBtn"
+            android:text="다음으로"
+            android:textColor="@color/colorWhiteText"
+            sl:scale_height="56"
+            sl:scale_left="180"
+            sl:scale_textsize="16"
+            sl:scale_top="504"
+            sl:scale_width="180" />
+
+        <EditText
+            android:id="@+id/editText_degree_first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:hint="분류"
+            sl:scale_height="56"
+            sl:scale_left="24"
+            sl:scale_textsize="16"
+            sl:scale_top="200"
+            sl:scale_width="336" />
+
+        <EditText
+            android:id="@+id/editText_degree_second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:gravity="top"
+            android:hint="캡션"
+            sl:scale_height="248"
+            sl:scale_left="24"
+            sl:scale_textsize="16"
+            sl:scale_top="272"
+            sl:scale_width="336" />
+
+        <Button
+            android:id="@+id/btn_degree_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackBtn"
+            android:text="이전으로"
+            android:textColor="@color/colorWhiteText"
+            sl:scale_height="56"
+            sl:scale_textsize="16"
+            sl:scale_top="504"
+            sl:scale_width="180" />
+
+
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+
+</LinearLayout>

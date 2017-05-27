@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sl="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        sl:scale_base_height="560"
+        sl:scale_base_width="360">
+
+        <CheckBox
+            android:id="@+id/checkbox_btn_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            sl:scale_height="16"
+            sl:scale_left="24"
+            sl:scale_top="24"
+            sl:scale_width="16" />
+
+
+        <CheckBox
+            android:id="@+id/checkbox_btn_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/CheckBoxColor"
+            sl:scale_height="16"
+            sl:scale_left="24"
+            sl:scale_top="78"
+            sl:scale_width="16" />
+
+        <CheckBox
+            android:id="@+id/checkbox_btn_three"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/CheckBoxColor"
+            sl:scale_height="16"
+            sl:scale_left="24"
+            sl:scale_top="118"
+            sl:scale_width="32" />
+
+        <CheckBox
+            android:id="@+id/checkbox_btn_four"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/CheckBoxColor"
+            sl:scale_height="16"
+            sl:scale_left="24"
+            sl:scale_top="158"
+            sl:scale_width="32" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="-0.1"
+            android:text="@string/agree_one"
+            android:textColor="@color/colorDarkText"
+            sl:scale_height="34"
+            sl:scale_left="56"
+            sl:scale_textsize="14"
+            sl:scale_top="16"
+            sl:scale_width="218" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="-0.1"
+            android:text="@string/agree_two"
+            android:textColor="@color/colorDarkText"
+            sl:scale_height="34"
+            sl:scale_left="56"
+            sl:scale_textsize="13"
+            sl:scale_top="80"
+            sl:scale_width="218" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="-0.1"
+            android:text="@string/agree_three"
+            android:textColor="@color/colorDarkText"
+            sl:scale_height="34"
+            sl:scale_left="56"
+            sl:scale_textsize="13"
+            sl:scale_top="120"
+            sl:scale_width="218" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:letterSpacing="-0.1"
+            android:text="@string/agree_four"
+            android:textColor="@color/colorDarkText"
+            sl:scale_height="34"
+            sl:scale_left="56"
+            sl:scale_textsize="13"
+            sl:scale_top="160"
+            sl:scale_width="218" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLine"
+            sl:scale_height="0.5"
+            sl:scale_top="66"
+            sl:scale_width="360" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLine"
+            sl:scale_height="0.5"
+            sl:scale_top="106"
+            sl:scale_width="360" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLine"
+            sl:scale_height="0.5"
+            sl:scale_top="146"
+            sl:scale_width="360" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorLine"
+            sl:scale_height="0.5"
+            sl:scale_top="186"
+            sl:scale_width="360" />
+
+        <Button
+            android:id="@+id/btn_agree_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorNextBtn"
+            android:letterSpacing="-0.05"
+            android:text="동의하고 진행하기"
+            android:textColor="@color/colorWhiteText"
+            sl:scale_height="56"
+            sl:scale_textsize="16"
+            sl:scale_top="504"
+            sl:scale_width="360" />
+
+
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+</LinearLayout>

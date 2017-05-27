@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sl="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="56dp">
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        sl:scale_base_height="56"
+        sl:scale_base_width="360"
+        >
+
+        <ImageButton
+            android:id="@+id/btn_actionbar"
+            sl:scale_top="19"
+            sl:scale_left="16"
+            sl:scale_width="16"
+            sl:scale_height="15.4"
+            android:background="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:id="@+id/tv_actionbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhiteText"
+            android:gravity="center_horizontal"
+            android:letterSpacing="-0.09"
+            android:text="약관 동의"
+            android:textColor="#121212"
+            sl:scale_height="29"
+            sl:scale_left="145"
+            sl:scale_textsize="20"
+            sl:scale_top="14"
+            sl:scale_width="70" />
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+
+</LinearLayout>

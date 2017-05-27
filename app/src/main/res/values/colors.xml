@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#19000000</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--activity View Color-->
+    <color name="colorImageBackground">#d8d8d8</color>
+    <color name="colorBackBtn">#dfdfdf</color>
+    <color name="colorNextBtn">#14e4a2</color>
+    <color name="colorLine">#cecece</color>
+
+    <!--text color-->
+    <color name="colorWhiteText">#ffffff</color>
+    <color name="colorDarkText">#232323</color>
+
+    <!--Checkbox Display-->
+    <color name="CheckBoxColor">#cecece</color>
 </resources>
