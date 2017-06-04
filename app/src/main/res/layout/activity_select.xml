@@ -29,7 +29,7 @@
             android:id="@+id/student"
             android:layout_marginBottom="10dp"
             android:gravity="center_horizontal"
-            tools:text="학생"
+            android:text="학생"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -62,7 +62,7 @@
             android:id="@+id/teacher"
             android:gravity="center_horizontal"
             android:layout_marginBottom="10dp"
-            tools:text="강사"
+            android:text="강사"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -74,7 +74,7 @@
             android:onClick="goToTeacherSignup"
             android:layout_below="@+id/teacher"
             android:gravity="center_horizontal"
-            tools:text="강사 회원으로 가입하고자 하는 분은\n이 곳을 터치해 진행해주세요."
+            android:text="강사 회원으로 가입하고자 하는 분은\n이 곳을 터치해 진행해주세요."
             android:textAlignment="center"
             />
     </RelativeLayout>

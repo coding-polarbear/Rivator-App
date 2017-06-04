@@ -5,7 +5,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3b3e42"
+    android:background="#000000"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -18,17 +18,14 @@
         android:textSize="32sp"
         android:textColor="@color/colorWhiteText"
         android:lineSpacingExtra="8sp"
-        tools:text="안녕하세요
-Rivator 입니다!!"
+        android:text="안녕하세요\nRivator 입니다!!"
         android:layout_marginRight="115dp"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="32dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="80dp"
-        android:layout_marginBottom="456dp"
-        app:layout_constraintHorizontal_bias="0.358"
-        app:layout_constraintVertical_bias="0.052"
+        android:layout_marginTop="94dp"
+        app:layout_constraintHorizontal_bias="0.447"
         android:id="@+id/textView3" />
     <TextView
         android:layout_width="wrap_content"
@@ -36,18 +33,18 @@ Rivator 입니다!!"
         android:textSize="16sp"
         android:textColor="@color/colorWhiteText"
         android:letterSpacing="-0.05"
-        tools:text="Rivator는 여러분의 실력 증진을
-응원합니다"
+        android:text="Rivator는 여러분의 실력 증진을\n응원합니다"
         android:layout_marginRight="133dp"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="32dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.327"
+        android:layout_marginLeft="0dp"
+        app:layout_constraintLeft_toLeftOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="0.111"
         android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="392dp"
-        app:layout_constraintVertical_bias="0.012" />
+        app:layout_constraintVertical_bias="0.0"
+        android:id="@+id/textView4" />
 
     <Button
         android:layout_width="328dp"
@@ -58,14 +55,14 @@ Rivator 입니다!!"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="19dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="452dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="108dp"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.823"
         android:onClick="goToSignIn"
         android:id="@+id/button"
-        app:layout_constraintHorizontal_bias="0.375" />
+        app:layout_constraintHorizontal_bias="0.431"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
     
     <Button
         android:layout_width="328dp"
