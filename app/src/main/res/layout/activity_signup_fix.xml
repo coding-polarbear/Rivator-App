@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rinc.bong.rivatorproject.com.rinc.bong.rivatorproject.SignupPortfolioActivity"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="81dp">
+
+
+    <LinearLayout
+        android:layout_width="383dp"
+        android:layout_height="202dp"
+        android:background="#d8d8d8"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="4dp"
+            android:background="@drawable/drop_shadow" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="383dp"
+        android:layout_height="56dp"
+        android:layout_marginRight="8dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="200dp"></LinearLayout>
+
+    <LinearLayout
+        android:layout_width="384dp"
+        android:layout_height="0dp"
+        android:background="#d8d8d8"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="256dp">
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="분류"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="217dp" />
+
+    <LinearLayout
+        android:layout_width="360dp"
+        android:layout_height="248dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="514dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="캡션"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="273dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="193dp"
+        android:layout_height="57dp"
+        android:background="@drawable/button_shape"
+        android:letterSpacing="-0.05"
+        android:text="이전으로"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="457dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="191dp"
+        android:layout_height="57dp"
+        android:background="@drawable/button_shape2"
+        android:letterSpacing="-0.05"
+        android:text="회원가입 완료"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="192dp"
+        tools:layout_editor_absoluteY="457dp" />
+
+
+</android.support.constraint.ConstraintLayout>
