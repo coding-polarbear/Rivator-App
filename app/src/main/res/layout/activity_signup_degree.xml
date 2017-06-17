@@ -53,6 +53,18 @@
             sl:scale_top="200"
             sl:scale_width="336" />
 
+        <Button
+            android:id="@+id/btn_degree_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBackBtn"
+            android:text="이전으로"
+            android:textColor="@color/colorWhiteText"
+            sl:scale_height="56"
+            sl:scale_textsize="16"
+            sl:scale_top="504"
+            sl:scale_width="180" />
+
         <EditText
             android:id="@+id/editText_degree_second"
             android:layout_width="wrap_content"
@@ -65,18 +77,6 @@
             sl:scale_textsize="16"
             sl:scale_top="272"
             sl:scale_width="336" />
-
-        <Button
-            android:id="@+id/btn_degree_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorBackBtn"
-            android:text="이전으로"
-            android:textColor="@color/colorWhiteText"
-            sl:scale_height="56"
-            sl:scale_textsize="16"
-            sl:scale_top="504"
-            sl:scale_width="180" />
 
 
     </com.ssomai.android.scalablelayout.ScalableLayout>

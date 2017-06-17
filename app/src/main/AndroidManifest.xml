@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.bong.rivatorproject">
+    package="com.rinc.bong.rivatorproject">
 
     <application
         android:allowBackup="true"
@@ -8,19 +8,19 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="com.rinc.bong.rivatorproject.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignupDegreeActivity" />
-        <activity android:name=".SignupPortfolioActivity" />
-        <activity android:name=".SignupTermsAgreeActivity" />
-        <activity android:name=".SignupTermsDetailActivity" />
-        <activity android:name=".SelectActivity" />
-        <activity android:name=".TeacherSignUpActivity"></activity>
+        <activity android:name="com.rinc.bong.rivatorproject.SignupDegreeActivity" />
+        <activity android:name="com.rinc.bong.rivatorproject.SignupPortfolioActivity" />
+        <activity android:name="com.rinc.bong.rivatorproject.SignupTermsAgreeActivity" />
+        <activity android:name="com.rinc.bong.rivatorproject.SignupTermsDetailActivity" />
+        <activity android:name="com.rinc.bong.rivatorproject.SelectActivity" />
+        <activity android:name="com.rinc.bong.rivatorproject.TeacherSignUpActivity"></activity>
     </application>
 
 </manifest>

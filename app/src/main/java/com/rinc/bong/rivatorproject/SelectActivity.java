@@ -1,4 +1,4 @@
-package com.example.bong.rivatorproject;
+package com.rinc.bong.rivatorproject;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

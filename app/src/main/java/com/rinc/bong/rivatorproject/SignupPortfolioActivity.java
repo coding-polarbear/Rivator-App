@@ -1,4 +1,4 @@
-package com.example.bong.rivatorproject;
+package com.rinc.bong.rivatorproject;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;

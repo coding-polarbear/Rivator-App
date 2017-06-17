@@ -1,4 +1,4 @@
-package com.example.bong.rivatorproject;
+package com.rinc.bong.rivatorproject;
 
 import org.junit.Test;
 
