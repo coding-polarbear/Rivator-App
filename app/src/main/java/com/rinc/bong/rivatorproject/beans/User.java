@@ -9,7 +9,7 @@ public class User {
     private String userPW;
     private String phoneNumber;
     private String localCity;
-    private String localDown;
+    private String localTown;
     private String localArea;
     private String subject;
     private boolean isStudent;
@@ -46,12 +46,12 @@ public class User {
         this.localCity = localCity;
     }
 
-    public String getLocalDown() {
-        return localDown;
+    public String getLocalTown() {
+        return localTown;
     }
 
-    public void setLocalDown(String localDown) {
-        this.localDown = localDown;
+    public void setLocalTown(String localTown) {
+        this.localTown = localTown;
     }
 
     public String getLocalArea() {
@@ -80,12 +80,12 @@ public class User {
 
 
 
-    public User(String userID, String userPW, String phoneNumber, String localCity, String localDown, String localArea, String subject, boolean isStudent) {
+    public User(String userID, String userPW, String phoneNumber, String localCity, String localTown, String localArea, String subject, boolean isStudent) {
         this.userID = userID;
         this.userPW = userPW;
         this.phoneNumber = phoneNumber;
         this.localCity = localCity;
-        this.localDown = localDown;
+        this.localTown = localTown;
         this.localArea = localArea;
         this.subject = subject;
         this.isStudent = isStudent;

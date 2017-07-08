@@ -1,32 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:sl="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-    <com.ssomai.android.scalablelayout.ScalableLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        sl:scale_base_height="560"
-        sl:scale_base_width="360">
+        android:layout_height="match_parent">
 
         <ImageView
-
             android:id="@+id/img_degree"
-            android:layout_width="150dp"
+            android:layout_width="0dp"
             android:layout_height="123dp"
             android:background="@color/colorImageBackground"
-            sl:scale_height="200"
-            sl:scale_width="360" />
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorLine"
-            sl:scale_height="0.5"
-            sl:scale_top="256"
-            sl:scale_width="360" />
+            tools:layout_editor_absoluteY="81dp"
+            tools:layout_editor_absoluteX="8dp" />
 
         <Button
             android:id="@+id/btn_degree_next"
@@ -39,7 +29,9 @@
             sl:scale_left="180"
             sl:scale_textsize="16"
             sl:scale_top="504"
-            sl:scale_width="180" />
+            sl:scale_width="180"
+            tools:layout_editor_absoluteY="81dp"
+            tools:layout_editor_absoluteX="0dp" />
 
         <EditText
             android:id="@+id/editText_degree_first"
@@ -51,7 +43,9 @@
             sl:scale_left="24"
             sl:scale_textsize="16"
             sl:scale_top="200"
-            sl:scale_width="336" />
+            sl:scale_width="336"
+            tools:layout_editor_absoluteY="81dp"
+            tools:layout_editor_absoluteX="0dp" />
 
         <Button
             android:id="@+id/btn_degree_back"
@@ -63,7 +57,9 @@
             sl:scale_height="56"
             sl:scale_textsize="16"
             sl:scale_top="504"
-            sl:scale_width="180" />
+            sl:scale_width="180"
+            tools:layout_editor_absoluteY="81dp"
+            tools:layout_editor_absoluteX="0dp" />
 
         <EditText
             android:id="@+id/editText_degree_second"
@@ -76,9 +72,11 @@
             sl:scale_left="24"
             sl:scale_textsize="16"
             sl:scale_top="272"
-            sl:scale_width="336" />
+            sl:scale_width="336"
+            tools:layout_editor_absoluteY="81dp"
+            tools:layout_editor_absoluteX="0dp" />
 
 
-    </com.ssomai.android.scalablelayout.ScalableLayout>
+    </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>
