@@ -45,10 +45,5 @@ public class SignupTermsDetailActivity extends AppCompatActivity {
 
     }
 
-    public void next(View view) {
-        Intent i = new Intent(getApplicationContext(), SignupTermsAgreeActivity.class);
-        i.putExtra("type",getIntent().getStringExtra("type"));
-        startActivity(i);
-    }
 }
 

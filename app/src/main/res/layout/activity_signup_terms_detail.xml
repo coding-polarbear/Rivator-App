@@ -33,15 +33,4 @@
             android:textColor="#a0a0a0" />
 
     </RelativeLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="56dp">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#14e4a2"
-            android:text="다음"
-            android:id="@+id/nextButton"
-            android:onClick="next"/>
-    </LinearLayout>
 </LinearLayout>

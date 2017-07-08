@@ -56,5 +56,10 @@ public class SignupTermsAgreeActivity extends AppCompatActivity {
         }
         startActivity(i);
     }
+
+    public void gotoDetail(View view) {
+        Intent i = new Intent(getApplicationContext(), SignupTermsDetailActivity.class);
+        startActivity(i);
+    }
 }
 
