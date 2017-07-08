@@ -1,150 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:sl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.ssomai.android.scalablelayout.ScalableLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        sl:scale_base_height="560"
-        sl:scale_base_width="360">
+        android:layout_height="match_parent">
 
         <CheckBox
             android:id="@+id/checkbox_btn_one"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentTop="true"
+         />
 
-            sl:scale_height="16"
-            sl:scale_left="24"
-            sl:scale_top="24"
-            sl:scale_width="16" />
-
+        <TextView
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#cecece"
+            android:layout_below="@id/checkbox_btn_one"
+            android:layout_marginBottom="14dp"
+            android:layout_marginTop="14dp" />
 
         <CheckBox
             android:id="@+id/checkbox_btn_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/CheckBoxColor"
-            sl:scale_height="16"
-            sl:scale_left="24"
-            sl:scale_top="78"
-            sl:scale_width="16" />
+            android:layout_below="@+id/view1"
+            android:layout_alignStart="@+id/checkbox_btn_one" />
+
+        <TextView
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#cecece"
+            android:layout_below="@+id/checkbox_btn_two"
+            android:layout_marginBottom="14dp"
+            android:layout_marginTop="14dp" />
 
         <CheckBox
             android:id="@+id/checkbox_btn_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/CheckBoxColor"
-            sl:scale_height="16"
-            sl:scale_left="24"
-            sl:scale_top="118"
-            sl:scale_width="32" />
+            android:layout_below="@+id/view2"
+            android:layout_alignStart="@+id/checkbox_btn_two" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#cecece"
+            android:layout_below="@+id/checkbox_btn_three"
+            android:id="@+id/view3"
+            android:layout_marginBottom="14dp"
+            android:layout_marginTop="14dp"/>
         <CheckBox
             android:id="@+id/checkbox_btn_four"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/CheckBoxColor"
-            sl:scale_height="16"
-            sl:scale_left="24"
-            sl:scale_top="158"
-            sl:scale_width="32" />
-
+            android:layout_below="@+id/view3"
+            android:layout_alignStart="@+id/checkbox_btn_three" />
         <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_below="@+id/checkbox_btn_four"
+            android:layout_marginTop="14dp"
+            android:background="#cecece"/>
+        <TextView
+            android:id="@+id/text1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:letterSpacing="-0.1"
             android:text="@string/agree_one"
             android:textColor="@color/colorDarkText"
-            sl:scale_height="34"
-            sl:scale_left="56"
-            sl:scale_textsize="14"
-            sl:scale_top="16"
-            sl:scale_width="218" />
+            android:layout_marginStart="18dp"
+            android:layout_alignBottom="@+id/checkbox_btn_one"
+            android:layout_toEndOf="@+id/checkbox_btn_one" />
 
         <TextView
+            android:id="@+id/text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:letterSpacing="-0.1"
             android:text="@string/agree_two"
             android:textColor="@color/colorDarkText"
-            sl:scale_height="34"
-            sl:scale_left="56"
-            sl:scale_textsize="13"
-            sl:scale_top="80"
-            sl:scale_width="218" />
+            android:layout_alignBaseline="@+id/checkbox_btn_two"
+            android:layout_alignBottom="@+id/checkbox_btn_two"
+            android:layout_alignStart="@+id/text1" />
 
         <TextView
+            android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:letterSpacing="-0.1"
             android:text="@string/agree_three"
             android:textColor="@color/colorDarkText"
-            sl:scale_height="34"
-            sl:scale_left="56"
-            sl:scale_textsize="13"
-            sl:scale_top="120"
-            sl:scale_width="218" />
+            android:layout_alignBaseline="@+id/checkbox_btn_three"
+            android:layout_alignBottom="@+id/checkbox_btn_three"
+            android:layout_alignEnd="@+id/text2" />
 
         <TextView
+            android:id="@+id/textView12"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:letterSpacing="-0.1"
             android:text="@string/agree_four"
             android:textColor="@color/colorDarkText"
-            sl:scale_height="34"
-            sl:scale_left="56"
-            sl:scale_textsize="13"
-            sl:scale_top="160"
-            sl:scale_width="218" />
+            android:layout_alignBaseline="@+id/checkbox_btn_four"
+            android:layout_alignBottom="@+id/checkbox_btn_four"
+            android:layout_alignStart="@+id/textView11" />
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorLine"
-            sl:scale_height="0.5"
-            sl:scale_top="66"
-            sl:scale_width="360" />
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorLine"
-            sl:scale_height="0.5"
-            sl:scale_top="106"
-            sl:scale_width="360" />
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorLine"
-            sl:scale_height="0.5"
-            sl:scale_top="146"
-            sl:scale_width="360" />
-
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@color/colorLine"
-            sl:scale_height="0.5"
-            sl:scale_top="186"
-            sl:scale_width="360" />
 
         <Button
             android:id="@+id/btn_agree_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="next"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentStart="true"
             android:background="@color/colorNextBtn"
             android:letterSpacing="-0.05"
             android:text="동의하고 진행하기"
-            android:textColor="@color/colorWhiteText"
-            sl:scale_height="56"
-            sl:scale_textsize="16"
-            sl:scale_top="504"
-            sl:scale_width="360" />
+            android:textColor="@color/colorWhiteText" />
 
 
-    </com.ssomai.android.scalablelayout.ScalableLayout>
+    </RelativeLayout>
 </LinearLayout>

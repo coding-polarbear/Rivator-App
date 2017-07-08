@@ -36,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/student"
             android:layout_centerHorizontal="true"
+            android:onClick="gotoStudentSignUp"
             android:text="강사 회원으로 가입하고자 하는 분은\n이 곳을 터치해 진행해주세요."
             android:textAlignment="center"
             android:textColor="#efefef"/>

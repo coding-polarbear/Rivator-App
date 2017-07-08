@@ -17,7 +17,14 @@ public class SelectActivity extends AppCompatActivity {
     }
 
     public void goToTeacherSignup(View view) {
-        Intent i = new Intent(this, TeacherSignUpActivity.class);
+        Intent i = new Intent(this, SignupTermsDetailActivity.class);
+        i.putExtra("type", "teacher");
+        startActivity(i);
+    }
+
+    public void gotoStudentSignUp(View view) {
+        Intent i = new Intent(this, SignupTermsDetailActivity.class);
+        i.putExtra("type", "student");
         startActivity(i);
     }
 }

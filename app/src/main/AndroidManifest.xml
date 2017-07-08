@@ -21,7 +21,7 @@
         <activity android:name=".SignupTermsDetailActivity"  />
         <activity android:name=".SelectActivity" />
         <activity android:name=".TeacherSignUpActivity" />
-        <activity android:name=".StudentMainActivity"></activity>
+        <activity android:name=".StudentSignUpActivity"></activity>
     </application>
 
 </manifest>

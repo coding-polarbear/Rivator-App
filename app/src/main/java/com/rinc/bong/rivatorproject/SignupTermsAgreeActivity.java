@@ -1,5 +1,6 @@
 package com.rinc.bong.rivatorproject;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -13,11 +14,12 @@ import android.view.View;
  */
 
 public class SignupTermsAgreeActivity extends AppCompatActivity {
-
+    private Intent intent;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_terms_agree);
+        intent = getIntent();
     }
 
 
@@ -42,6 +44,17 @@ public class SignupTermsAgreeActivity extends AppCompatActivity {
         ActionBar.LayoutParams params = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT);
         actionBar.setCustomView(mCustomView, params);
 
+    }
+
+    public void next(View view) {
+        String type = intent.getStringExtra("type");
+        Intent i;
+        if(type.equals("student")) {
+            i = new Intent(getApplicationContext(), StudentSignUpActivity.class);
+        } else {
+            i = new Intent(getApplicationContext(), TeacherSignUpActivity.class);
+        }
+        startActivity(i);
     }
 }
 

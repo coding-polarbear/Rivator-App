@@ -5,41 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.ssomai.android.scalablelayout.ScalableLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        sl:scale_base_height="560"
-        sl:scale_base_width="360">
+        android:layout_margin="4dp"
+        android:layout_weight="8">
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="24dp"
+            android:layout_marginBottom="8dp"
             android:gravity="center_vertical"
             android:letterSpacing="-0.1"
             android:text="Rivator이용약관 동의(필수)"
-            android:textColor="#232323"
-            sl:scale_height="48"
-            sl:scale_left="16"
-            sl:scale_textsize="16"
-            sl:scale_top="0"
-            sl:scale_width="344" />
+            android:textColor="#232323" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
             android:gravity="top"
             android:letterSpacing="-0.1"
             android:lineSpacingExtra="7.7sp"
             android:text="@string/agree_detail"
-            android:textColor="#a0a0a0"
-            sl:scale_height="512"
-            sl:scale_left="16"
-            sl:scale_textsize="13"
-            sl:scale_top="48"
-            sl:scale_width="319" />
+            android:textColor="#a0a0a0" />
 
-    </com.ssomai.android.scalablelayout.ScalableLayout>
-
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#14e4a2"
+            android:text="다음"
+            android:id="@+id/nextButton"
+            android:onClick="next"/>
+    </LinearLayout>
 </LinearLayout>
