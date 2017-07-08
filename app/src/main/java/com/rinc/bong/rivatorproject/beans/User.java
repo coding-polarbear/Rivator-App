@@ -5,14 +5,39 @@ package com.rinc.bong.rivatorproject.beans;
  */
 
 public class User {
+    private int userKey;
     private String userID;
     private String userPW;
+    private String userName;
+    private String profileURL;
     private String phoneNumber;
     private String localCity;
     private String localTown;
+
+    public User(String userID, String userPW, String userName, String profileURL, String phoneNumber, String localCity, String localTown, String localArea, String subject, int userStatus) {
+        this.userID = userID;
+        this.userPW = userPW;
+        this.userName = userName;
+        this.profileURL = profileURL;
+        this.phoneNumber = phoneNumber;
+        this.localCity = localCity;
+        this.localTown = localTown;
+        this.localArea = localArea;
+        this.subject = subject;
+        this.userStatus = userStatus;
+    }
+
     private String localArea;
     private String subject;
-    private boolean isStudent;
+    private int userStatus;
+
+    public int getUserKey() {
+        return userKey;
+    }
+
+    public void setUserKey(int userKey) {
+        this.userKey = userKey;
+    }
 
     public String getUserID() {
         return userID;
@@ -28,6 +53,22 @@ public class User {
 
     public void setUserPW(String userPW) {
         this.userPW = userPW;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getProfileURL() {
+        return profileURL;
+    }
+
+    public void setProfileURL(String profileURL) {
+        this.profileURL = profileURL;
     }
 
     public String getPhoneNumber() {
@@ -70,26 +111,15 @@ public class User {
         this.subject = subject;
     }
 
-    public boolean isStudent() {
-        return isStudent;
+    public int getUserStatus() {
+        return userStatus;
     }
 
-    public void setStudent(boolean student) {
-        isStudent = student;
+    public void setUserStatus(int userStatus) {
+        this.userStatus = userStatus;
     }
 
 
-
-    public User(String userID, String userPW, String phoneNumber, String localCity, String localTown, String localArea, String subject, boolean isStudent) {
-        this.userID = userID;
-        this.userPW = userPW;
-        this.phoneNumber = phoneNumber;
-        this.localCity = localCity;
-        this.localTown = localTown;
-        this.localArea = localArea;
-        this.subject = subject;
-        this.isStudent = isStudent;
-    }
 
 
 }
