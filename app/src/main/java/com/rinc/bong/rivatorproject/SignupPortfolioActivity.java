@@ -1,10 +1,12 @@
 package com.rinc.bong.rivatorproject;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -33,7 +35,7 @@ public class SignupPortfolioActivity extends AppCompatActivity {
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
-
+        actionBar.setTitle("포트폴리오");
         View mCustomView = LayoutInflater.from(this).inflate(R.layout.layout_actionbar_type_cancle, null);
         actionBar.setCustomView(mCustomView);
 
@@ -42,6 +44,16 @@ public class SignupPortfolioActivity extends AppCompatActivity {
         ActionBar.LayoutParams params = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT);
         actionBar.setCustomView(mCustomView, params);
 
+    }
+
+    public void back(View view) {
+        finish();
+    }
+
+    public void finishSignUp(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }
 

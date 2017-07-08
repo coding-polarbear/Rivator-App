@@ -15,10 +15,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignupDegreeActivity" />
-        <activity android:name=".SignupPortfolioActivity" />
-        <activity android:name=".SignupTermsAgreeActivity" />
-        <activity android:name=".SignupTermsDetailActivity" />
+        <activity android:name=".SignupDegreeActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name=".SignupPortfolioActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
+        <activity android:name=".SignupTermsAgreeActivity"  />
+        <activity android:name=".SignupTermsDetailActivity"  />
         <activity android:name=".SelectActivity" />
         <activity android:name=".TeacherSignUpActivity" />
         <activity android:name=".StudentMainActivity"></activity>

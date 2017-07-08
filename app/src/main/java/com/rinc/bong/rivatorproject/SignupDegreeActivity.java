@@ -6,6 +6,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -30,10 +31,12 @@ public class SignupDegreeActivity extends AppCompatActivity{
     private void setCustomActionbar() {
         ActionBar actionBar = getSupportActionBar();
 
-        getSupportActionBar().setElevation(0);
+        //getSupportActionBar().setElevation(0);
+        actionBar.setTitle(Html.fromHtml("<font color='#000000'>"+actionBar.getTitle().toString() +"</font>"));
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setTitle("학위");
 
         View mCustomView = LayoutInflater.from(this).inflate(R.layout.layout_actionbar_type_cancle, null);
         actionBar.setCustomView(mCustomView);
@@ -51,5 +54,6 @@ public class SignupDegreeActivity extends AppCompatActivity{
 
     public void next(View view) {
         Intent i = new Intent(getApplicationContext(), SignupPortfolioActivity.class);
+        startActivity(i);
     }
 }
