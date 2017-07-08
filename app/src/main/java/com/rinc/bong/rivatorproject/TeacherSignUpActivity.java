@@ -18,7 +18,7 @@ public class TeacherSignUpActivity extends AppCompatActivity {
     }
 
     public void next(View view) {
-        Intent i = new Intent(TeacherSignUpActivity.this, SignupDegreeActivity.class);
+        Intent i = new Intent(getApplicationContext(), SignupDegreeActivity.class);
         startActivity(i);
     }
 }

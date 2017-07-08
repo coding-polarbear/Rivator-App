@@ -1,5 +1,6 @@
 package com.rinc.bong.rivatorproject;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -42,5 +43,13 @@ public class SignupDegreeActivity extends AppCompatActivity{
         ActionBar.LayoutParams params = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT);
         actionBar.setCustomView(mCustomView, params);
 
+    }
+
+    public void back(View view) {
+        finish();
+    }
+
+    public void next(View view) {
+        Intent i = new Intent(getApplicationContext(), SignupPortfolioActivity.class);
     }
 }
