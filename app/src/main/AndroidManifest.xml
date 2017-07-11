@@ -19,7 +19,8 @@
         <activity android:name=".SignupPortfolioActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
         <activity android:name=".SignupTermsAgreeActivity"  />
         <activity android:name=".SignupTermsDetailActivity"  />
-        <activity android:name=".SelectActivity" />
+        <activity android:name=".SelectActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent"/>
         <activity android:name=".TeacherSignUpActivity" />
         <activity android:name=".StudentSignUpActivity"></activity>
     </application>

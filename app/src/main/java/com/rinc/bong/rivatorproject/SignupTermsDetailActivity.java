@@ -8,6 +8,8 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 /**
  * Created by Bong on 2017-05-24.
@@ -19,6 +21,7 @@ public class SignupTermsDetailActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_terms_detail);
+        setCustomActionbar();
     }
 
 
@@ -36,6 +39,16 @@ public class SignupTermsDetailActivity extends AppCompatActivity {
         actionBar.setDisplayShowTitleEnabled(false);
 
         View mCustomView = LayoutInflater.from(this).inflate(R.layout.layout_actionbar_type_cancle, null);
+
+        //title 설정
+        TextView textView = (TextView) mCustomView.findViewById(R.id.title);
+        textView.setText("약관 동의");
+
+        //ImageButton 리스너 설정
+        ImageButton imageButton = (ImageButton) mCustomView.findViewById(R.id.btnClose);
+        imageButton.setOnClickListener(v -> {
+            finish();
+        });
         actionBar.setCustomView(mCustomView);
 
         //레이어 색깔

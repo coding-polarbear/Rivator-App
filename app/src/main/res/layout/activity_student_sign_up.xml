@@ -19,6 +19,7 @@
             <ImageView
                 android:layout_width="96dp"
                 android:layout_height="96dp"
+                android:src="@drawable/student"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="40dp"
                 android:layout_marginBottom="35dp"

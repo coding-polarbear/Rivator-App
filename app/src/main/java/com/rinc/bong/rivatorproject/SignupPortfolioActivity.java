@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 /**
  * Created by Bong on 2017-05-24.
@@ -20,6 +22,7 @@ public class SignupPortfolioActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_portfolio);
+        setCustomActionbar();
     }
 
 
@@ -31,12 +34,20 @@ public class SignupPortfolioActivity extends AppCompatActivity {
     private void setCustomActionbar() {
         ActionBar actionBar = getSupportActionBar();
 
-        getSupportActionBar().setElevation(0);
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setTitle("포트폴리오");
         View mCustomView = LayoutInflater.from(this).inflate(R.layout.layout_actionbar_type_cancle, null);
+
+        //title 설정
+        TextView textView = (TextView) mCustomView.findViewById(R.id.title);
+        textView.setText("포트폴리오");
+
+        //ImageButton 리스너 설정
+        ImageButton imageButton = (ImageButton) mCustomView.findViewById(R.id.btnClose);
+        imageButton.setOnClickListener(v -> {
+            finish();
+        });
         actionBar.setCustomView(mCustomView);
 
         //레이어 색깔

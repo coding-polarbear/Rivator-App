@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 /**
  * Created by Bong on 2017-05-24.
@@ -20,6 +22,7 @@ public class SignupDegreeActivity extends AppCompatActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_degree);
+        setCustomActionbar();
     }
 
 
@@ -31,14 +34,20 @@ public class SignupDegreeActivity extends AppCompatActivity{
     private void setCustomActionbar() {
         ActionBar actionBar = getSupportActionBar();
 
-        //getSupportActionBar().setElevation(0);
-        actionBar.setTitle(Html.fromHtml("<font color='#000000'>"+actionBar.getTitle().toString() +"</font>"));
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setTitle("학위");
 
         View mCustomView = LayoutInflater.from(this).inflate(R.layout.layout_actionbar_type_cancle, null);
+        //title 설정
+        TextView textView = (TextView) mCustomView.findViewById(R.id.title);
+        textView.setText("학위");
+
+        //ImageButton 리스너 설정
+        ImageButton imageButton = (ImageButton) mCustomView.findViewById(R.id.btnClose);
+        imageButton.setOnClickListener(v -> {
+            finish();
+        });
         actionBar.setCustomView(mCustomView);
 
        //레이어 색깔

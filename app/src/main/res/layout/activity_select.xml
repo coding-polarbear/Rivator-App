@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/greenBar"
     android:orientation="vertical"
-    tools:context="com.rinc.bong.rivatorproject.com.rinc.bong.rivatorproject.SelectActivity">
+    android:fitsSystemWindows="true"
+    tools:context="com.rinc.bong.rivatorproject.SelectActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -13,21 +15,23 @@
         android:background="#14e4a2"
         android:layout_weight="1">
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/student"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="23dp"
             android:id="@+id/studentImage"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="20sp"
-            android:textColor="#121212"
+            android:textColor="@color/colorWhiteText"
             android:layout_below="@+id/studentImage"
             android:layout_centerHorizontal="true"
             android:letterSpacing="-0.09"
             android:id="@+id/student"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="4dp"
             android:gravity="center_horizontal"
             android:text="학생"
             />
@@ -37,6 +41,7 @@
             android:layout_below="@+id/student"
             android:layout_centerHorizontal="true"
             android:onClick="gotoStudentSignUp"
+            android:layout_marginBottom="36dp"
             android:text="강사 회원으로 가입하고자 하는 분은\n이 곳을 터치해 진행해주세요."
             android:textAlignment="center"
             android:textColor="#efefef"/>
@@ -44,12 +49,15 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/colorWhiteText"
         android:layout_weight="1">
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:src="@drawable/teacher"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="23dp"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
             android:id="@+id/teacherImage"/>
         <TextView
             android:layout_width="wrap_content"
@@ -62,7 +70,7 @@
             android:letterSpacing="-0.09"
             android:id="@+id/teacher"
             android:gravity="center_horizontal"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="4dp"
             android:text="강사"
             />
         <TextView
@@ -74,6 +82,7 @@
             android:layout_centerHorizontal="true"
             android:onClick="goToTeacherSignup"
             android:layout_below="@+id/teacher"
+            android:layout_marginBottom="36dp"
             android:gravity="center_horizontal"
             android:text="강사 회원으로 가입하고자 하는 분은\n이 곳을 터치해 진행해주세요."
             android:textAlignment="center"

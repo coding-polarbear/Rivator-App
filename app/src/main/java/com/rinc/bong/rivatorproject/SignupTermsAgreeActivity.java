@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.TextView;
 
 /**
  * Created by Bong on 2017-05-24.
@@ -20,6 +21,7 @@ public class SignupTermsAgreeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_terms_agree);
         intent = getIntent();
+        setCustomActionbar();
     }
 
 
@@ -31,19 +33,14 @@ public class SignupTermsAgreeActivity extends AppCompatActivity {
     private void setCustomActionbar() {
         ActionBar actionBar = getSupportActionBar();
 
-        getSupportActionBar().setElevation(0);
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
 
         View mCustomView = LayoutInflater.from(this).inflate(R.layout.layout_actionbar_type_cancle, null);
+        TextView textView = (TextView) mCustomView.findViewById(R.id.title);
+        textView.setText("약관 동의");
         actionBar.setCustomView(mCustomView);
-
-        //레이어 색깔
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
-        ActionBar.LayoutParams params = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT);
-        actionBar.setCustomView(mCustomView, params);
-
     }
 
     public void next(View view) {

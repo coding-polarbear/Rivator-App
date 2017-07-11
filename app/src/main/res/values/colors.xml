@@ -16,4 +16,7 @@
 
     <!--Checkbox Display-->
     <color name="CheckBoxColor">#cecece</color>
+
+    <!--Custom Action Bar -->
+    <color name="greenBar">#14e4a2</color>
 </resources>
