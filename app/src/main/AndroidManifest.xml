@@ -15,14 +15,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignupDegreeActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
-        <activity android:name=".SignupPortfolioActivity" android:windowSoftInputMode="adjustResize|stateHidden"/>
-        <activity android:name=".SignupTermsAgreeActivity"  />
-        <activity android:name=".SignupTermsDetailActivity"  />
-        <activity android:name=".SelectActivity"
-            android:theme="@style/AppTheme.ActionBar.Transparent"/>
+        <activity
+            android:name=".SignupDegreeActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name=".SignupPortfolioActivity"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".SignupTermsAgreeActivity" />
+        <activity android:name=".SignupTermsDetailActivity" />
+        <activity
+            android:name=".SelectActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity android:name=".TeacherSignUpActivity" />
-        <activity android:name=".StudentSignUpActivity"></activity>
+        <activity android:name=".StudentSignUpActivity" />
+        <activity android:name=".HomeActivity"></activity>
     </application>
 
 </manifest>

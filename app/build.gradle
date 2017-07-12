@@ -42,6 +42,7 @@ dependencies {
     compile 'com.ssomai:android.scalablelayout:2.1.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:25.0.0'
+    compile 'com.github.ittianyu:BottomNavigationViewEx:1.2.1'
     testCompile 'junit:junit:4.12'
 }
 
