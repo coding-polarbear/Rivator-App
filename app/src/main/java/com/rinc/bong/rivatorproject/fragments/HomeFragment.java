@@ -6,6 +6,7 @@ import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
@@ -13,6 +14,7 @@ import com.rinc.bong.rivatorproject.R;
 
 public class HomeFragment extends Fragment {
     private TextView moreText;
+    private ListView listView;
     public HomeFragment(){
 
     }

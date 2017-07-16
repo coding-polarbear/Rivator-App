@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/teacher"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/teacherName"
+        android:text="강사명"
+        android:layout_marginTop="16dp"
+        android:textAppearance="?textAppearanceLargePopupMenu"
+        android:layout_marginLeft="81dp"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="웹프로그래밍"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/teacherName"
+        android:layout_marginLeft="81dp" />
+</RelativeLayout>
