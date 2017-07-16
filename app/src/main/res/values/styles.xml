@@ -7,9 +7,9 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-    <style name="AppTheme.ActionBar.Transparent" parent="AppTheme">
+    <style name="AppTheme.ActionBar.Transparent" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/greenBar</item>
-        <item name="android:windowTranslucentStatus">true</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
     </style>
 
 </resources>

@@ -53,7 +53,7 @@
                 android:background="?android:attr/listDivider"/>
             <ListView
                 android:layout_width="match_parent"
-                android:layout_height="388dp"
+                android:layout_height="392dp"
                 android:layout_below="@+id/textLayout"
                 android:id="@+id/teacherList"/>
         </RelativeLayout>
