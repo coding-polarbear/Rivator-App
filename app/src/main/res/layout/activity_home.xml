@@ -12,7 +12,7 @@
         android:layout_height="match_parent"
         android:id="@+id/main_container"
         android:layout_above="@+id/bottomNavigation"
-        android:layout_alignParentTop="true"></RelativeLayout>
+        android:layout_alignParentTop="true"/>
     <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
         android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"

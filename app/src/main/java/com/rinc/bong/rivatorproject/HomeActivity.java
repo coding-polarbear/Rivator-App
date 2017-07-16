@@ -24,35 +24,34 @@ import com.rinc.bong.rivatorproject.fragments.TeacherFragment;
 public class HomeActivity extends AppCompatActivity {
     private BottomNavigationViewEx bottomNavigationView;
     private Fragment fragment;
-    private TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         setBottomNavigationView();
-        setCustomActionbar();
         if(savedInstanceState == null) loadFragment(new HomeFragment());
-
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("홈");
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
             switch(id) {
                 case R.id.btnHome:
                     fragment = new HomeFragment();
-                    textView.setText("홈");
+                    actionBar.setTitle("홈");
                     break;
                 case R.id.btnTeacher:
                     fragment = new TeacherFragment();
-                    textView.setText("강사");
+                    actionBar.setTitle("강사");
                     break;
                 case R.id.btnCalendar:
                     break;
                 case R.id.btnCurrentLecture:
                     fragment = new CurrentLectureFragment();
-                    textView.setText("진행중 강좌");
+                    actionBar.setTitle("진행중 강좌");
                     break;
                 case R.id.btnProfile:
                     fragment = new ProfileFragment();
-                    textView.setText("프로필");
+                    actionBar.setTitle("프로필");
                     break;
             }
 
@@ -78,28 +77,5 @@ public class HomeActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu_actionbar,menu);
         return true;
-    }
-
-    public void  setCustomActionbar() {
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayShowHomeEnabled(false);
-
-        //ActionBar의 그림자를 제거합니다
-        actionBar.setElevation(0);
-
-        //layout을 가지고 와서 actionbar에 포팅을 시킵니다.
-        LayoutInflater inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
-        View actionbar = inflater.inflate(R.layout.layout_main_actionbar, null);
-        textView = (TextView) actionbar.findViewById(R.id.title);
-        textView.setText("홈");
-        actionBar.setCustomView(actionbar);
-
-        Toolbar parent = (Toolbar) actionbar.getParent();
-        parent.setContentInsetsAbsolute(0,0);
-
-
     }
 }
