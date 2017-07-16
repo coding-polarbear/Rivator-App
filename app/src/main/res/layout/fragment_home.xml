@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#f0f0f0"
     tools:context="com.rinc.bong.rivatorproject.fragments.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,7 +11,9 @@
         android:layout_height="wrap_content">
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#FFFFFF">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -22,6 +25,7 @@
                     android:id="@+id/teacherListText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/colorDarkText"
                     android:layout_marginBottom="16dp"
                     android:layout_marginLeft="24dp"
                     android:layout_marginTop="16dp"
@@ -33,20 +37,25 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
-                    android:layout_margnRight="16dp"
+                    android:textColor="@color/greenBar"
+                    android:layout_marginBottom="21dp"
+                    android:layout_marginRight="16dp"
                     android:layout_marginTop="16dp"
                     android:id="@+id/moreText"
                     android:textSize="12sp"
-                    android:letterSpacing="-0.1"
-                    android:text="@string/more" />
+                    android:letterSpacing="-0.1" />
 
             </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@+id/textLayout"
+                android:background="?android:attr/listDivider"/>
             <ListView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="388dp"
                 android:layout_below="@+id/textLayout"
-                android:id="@+id/teacherList"></ListView>
+                android:id="@+id/teacherList"/>
         </RelativeLayout>
     </ScrollView>
 
