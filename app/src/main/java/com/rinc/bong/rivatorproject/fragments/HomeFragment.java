@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class HomeFragment extends Fragment {
     private TextView moreText;
     private ListView listView;
-    MyAdapter adapter;
+    private MyAdapter adapter;
     public HomeFragment(){
 
     }
@@ -32,9 +32,13 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container,false);
         moreText = (TextView) view.findViewById(R.id.moreText);
         moreText.setText(Html.fromHtml("<u>더보기<u>"));
-
         listView = (ListView) view.findViewById(R.id.teacherList);
+        setListView();
+        return view;
+    }
 
+
+    public void setListView() {
         ArrayList<MyItem> items = new ArrayList<MyItem> ();
         items.add(new MyItem("강사명","IT 분야"));
         items.add(new MyItem("강사명","IT 분야"));
@@ -45,14 +49,5 @@ public class HomeFragment extends Fragment {
         adapter = new MyAdapter(getActivity(), R.layout.teacher_listview, items);
         listView.setAdapter(adapter);
         ((BaseAdapter)listView.getAdapter()).notifyDataSetChanged();
-
-        return view;
-    }
-
-
-    public void setListView(View view) {
-
-
-
     }
 }

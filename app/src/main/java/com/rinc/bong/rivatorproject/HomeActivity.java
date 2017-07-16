@@ -24,14 +24,31 @@ import com.rinc.bong.rivatorproject.fragments.TeacherFragment;
 public class HomeActivity extends AppCompatActivity {
     private BottomNavigationViewEx bottomNavigationView;
     private Fragment fragment;
+    private ActionBar actionBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         setBottomNavigationView();
         if(savedInstanceState == null) loadFragment(new HomeFragment());
-        ActionBar actionBar = getSupportActionBar();
+        actionBar = getSupportActionBar();
         actionBar.setTitle("홈");
+        actionBar.setElevation(0);
+
+
+    }
+
+    private void loadFragment(Fragment fragment) {
+        final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.main_container,fragment).commit();
+    }
+
+    private void setBottomNavigationView() {
+        bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNavigation);
+        bottomNavigationView.enableAnimation(false);
+        bottomNavigationView.enableShiftingMode(false);
+        bottomNavigationView.enableItemShiftingMode(false);
+
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
             switch(id) {
@@ -55,22 +72,9 @@ public class HomeActivity extends AppCompatActivity {
                     break;
             }
 
-           loadFragment(fragment);
+            loadFragment(fragment);
             return true;
         });
-
-    }
-
-    private void loadFragment(Fragment fragment) {
-        final FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.main_container,fragment).commit();
-    }
-
-    private void setBottomNavigationView() {
-        bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNavigation);
-        bottomNavigationView.enableAnimation(false);
-        bottomNavigationView.enableShiftingMode(false);
-        bottomNavigationView.enableItemShiftingMode(false);
     }
 
     @Override
