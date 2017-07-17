@@ -23,7 +23,7 @@ import com.rinc.bong.rivatorproject.fragments.TeacherFragment;
 
 public class HomeActivity extends AppCompatActivity {
     private BottomNavigationViewEx bottomNavigationView;
-    private Fragment fragment;
+    private Fragment fragment; //액티비티 전체에서 사용되는 프래그먼트 변수
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
