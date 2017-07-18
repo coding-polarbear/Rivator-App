@@ -2,6 +2,8 @@ package com.rinc.bong.rivatorproject.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,28 +16,47 @@ import android.widget.TextView;
 import com.rinc.bong.rivatorproject.MyAdapter;
 import com.rinc.bong.rivatorproject.MyItem;
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.RecyclerAdapter;
+import com.rinc.bong.rivatorproject.beans.Item;
 
 import java.util.ArrayList;
 
 
 public class HomeFragment extends Fragment {
-    private TextView moreText;
+    private TextView moreText1;
+    private TextView moreText2;
+    private TextView moreText3;
     private ListView listView;
     private MyAdapter adapter;
-    public HomeFragment(){
 
+    private RecyclerView recyclerView1;
+    private RecyclerView recyclerView2;
+
+    private LinearLayoutManager mLayoutManager;
+    private ArrayList<String> myDataset;
+
+    public HomeFragment(){
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container,false);
-        moreText = (TextView) view.findViewById(R.id.moreText);
-        moreText.setText(Html.fromHtml("<u>더보기<u>"));
+        moreText1 = (TextView) view.findViewById(R.id.moreText1);
+        moreText2 = (TextView) view.findViewById(R.id.moreText2);
+        moreText3 = (TextView) view.findViewById(R.id.moreText3);
+        moreText1.setText(Html.fromHtml("<u>더보기<u>"));
+        moreText2.setText(Html.fromHtml("<u>더보기<u>"));
+        moreText3.setText(Html.fromHtml("<u>더보기<u>"));
         listView = (ListView) view.findViewById(R.id.teacherList);
+        recyclerView1 = (RecyclerView)view.findViewById(R.id.recycler1);
+        recyclerView2 = (RecyclerView) view.findViewById(R.id.recycler2);
         setListView();
+
+        setRecyclerView(recyclerView1);
+        setRecyclerView(recyclerView2);
         return view;
-    }
+}
 
 
     public void setListView() {
@@ -49,5 +70,20 @@ public class HomeFragment extends Fragment {
         adapter = new MyAdapter(getActivity(), R.layout.teacher_listview, items);
         listView.setAdapter(adapter);
         ((BaseAdapter)listView.getAdapter()).notifyDataSetChanged();
+    }
+
+    public void setRecyclerView(RecyclerView recyclerView) {
+        ArrayList<Item> myDataset = new ArrayList<>();
+        recyclerView.setHasFixedSize(true);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView.setLayoutManager(layoutManager);
+        myDataset.add(new Item("디자이너들은\n" + "이 곳에 모이…"));
+        myDataset.add(new Item("디자이너들은\n" + "이 곳에 모이…"));
+        myDataset.add(new Item("디자이너들은\n" + "이 곳에 모이…"));
+        myDataset.add(new Item("디자이너들은\n" + "이 곳에 모이…"));
+
+        RecyclerAdapter adapter = new RecyclerAdapter(getActivity(),myDataset);
+        recyclerView.setAdapter(adapter);
     }
 }
