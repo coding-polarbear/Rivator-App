@@ -1,9 +1,11 @@
-package com.rinc.bong.rivatorproject;
+package com.rinc.bong.rivatorproject.adapters;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.rinc.bong.rivatorproject.R;
 
 /**
  * Created by baehyeonbin on 2017. 7. 18..

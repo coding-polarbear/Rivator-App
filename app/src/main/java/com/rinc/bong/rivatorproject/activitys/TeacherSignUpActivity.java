@@ -1,8 +1,6 @@
-package com.rinc.bong.rivatorproject;
+package com.rinc.bong.rivatorproject.activitys;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,13 +9,15 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class StudentSignUpActivity extends AppCompatActivity {
+import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.activitys.SignupDegreeActivity;
+
+public class TeacherSignUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_sign_up);
+        setContentView(R.layout.activity_teacher_sign_up);
         setCustomActionbar();
-
     }
 
     public void back(View view) {
@@ -25,9 +25,8 @@ public class StudentSignUpActivity extends AppCompatActivity {
     }
 
     public void next(View view) {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
+        Intent i = new Intent(getApplicationContext(), SignupDegreeActivity.class);
+        startActivity(i);
     }
 
     private void setCustomActionbar() {

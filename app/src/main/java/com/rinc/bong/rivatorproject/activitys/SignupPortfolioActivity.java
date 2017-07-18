@@ -1,4 +1,4 @@
-package com.rinc.bong.rivatorproject;
+package com.rinc.bong.rivatorproject.activitys;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -8,19 +8,22 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.activitys.MainActivity;
 
 /**
  * Created by Bong on 2017-05-24.
  */
 
-public class SignupTermsAgreeActivity extends AppCompatActivity {
-    private Intent intent;
+public class SignupPortfolioActivity extends AppCompatActivity {
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup_terms_agree);
-        intent = getIntent();
+        setContentView(R.layout.activity_signup_portfolio);
         setCustomActionbar();
     }
 
@@ -36,27 +39,34 @@ public class SignupTermsAgreeActivity extends AppCompatActivity {
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
-
         View mCustomView = LayoutInflater.from(this).inflate(R.layout.layout_actionbar_type_cancle, null);
+
+        //title 설정
         TextView textView = (TextView) mCustomView.findViewById(R.id.title);
-        textView.setText("약관 동의");
+        textView.setText("포트폴리오");
+
+        //ImageButton 리스너 설정
+        ImageButton imageButton = (ImageButton) mCustomView.findViewById(R.id.btnClose);
+        imageButton.setOnClickListener(v -> {
+            finish();
+        });
         actionBar.setCustomView(mCustomView);
+
+        //레이어 색깔
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
+        ActionBar.LayoutParams params = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT);
+        actionBar.setCustomView(mCustomView, params);
+
     }
 
-    public void next(View view) {
-        String type = intent.getStringExtra("type");
-        Intent i;
-        if(type.equals("student")) {
-            i = new Intent(getApplicationContext(), StudentSignUpActivity.class);
-        } else {
-            i = new Intent(getApplicationContext(), TeacherSignUpActivity.class);
-        }
-        startActivity(i);
+    public void back(View view) {
+        finish();
     }
 
-    public void gotoDetail(View view) {
-        Intent i = new Intent(getApplicationContext(), SignupTermsDetailActivity.class);
-        startActivity(i);
+    public void finishSignUp(View view) {
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }
 

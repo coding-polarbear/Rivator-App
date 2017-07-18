@@ -1,4 +1,4 @@
-package com.rinc.bong.rivatorproject;
+package com.rinc.bong.rivatorproject.activitys;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.fragments.CurrentLectureFragment;
 import com.rinc.bong.rivatorproject.fragments.HomeFragment;
 import com.rinc.bong.rivatorproject.fragments.ProfileFragment;

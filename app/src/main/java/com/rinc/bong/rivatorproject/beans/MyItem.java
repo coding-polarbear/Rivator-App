@@ -1,4 +1,4 @@
-package com.rinc.bong.rivatorproject;
+package com.rinc.bong.rivatorproject.beans;
 
 /**
  * Created by baehyeonbin on 2017. 7. 16..

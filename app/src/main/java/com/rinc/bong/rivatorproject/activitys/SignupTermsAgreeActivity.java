@@ -1,26 +1,26 @@
-package com.rinc.bong.rivatorproject;
+package com.rinc.bong.rivatorproject.activitys;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.rinc.bong.rivatorproject.R;
 
 /**
  * Created by Bong on 2017-05-24.
  */
 
-public class SignupTermsDetailActivity extends AppCompatActivity {
-
+public class SignupTermsAgreeActivity extends AppCompatActivity {
+    private Intent intent;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signup_terms_detail);
+        setContentView(R.layout.activity_signup_terms_agree);
+        intent = getIntent();
         setCustomActionbar();
     }
 
@@ -33,30 +33,30 @@ public class SignupTermsDetailActivity extends AppCompatActivity {
     private void setCustomActionbar() {
         ActionBar actionBar = getSupportActionBar();
 
-        getSupportActionBar().setElevation(0);
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
 
         View mCustomView = LayoutInflater.from(this).inflate(R.layout.layout_actionbar_type_cancle, null);
-
-        //title 설정
         TextView textView = (TextView) mCustomView.findViewById(R.id.title);
         textView.setText("약관 동의");
-
-        //ImageButton 리스너 설정
-        ImageButton imageButton = (ImageButton) mCustomView.findViewById(R.id.btnClose);
-        imageButton.setOnClickListener(v -> {
-            finish();
-        });
         actionBar.setCustomView(mCustomView);
-
-        //레이어 색깔
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
-        ActionBar.LayoutParams params = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT);
-        actionBar.setCustomView(mCustomView, params);
-
     }
 
+    public void next(View view) {
+        String type = intent.getStringExtra("type");
+        Intent i;
+        if(type.equals("student")) {
+            i = new Intent(getApplicationContext(), StudentSignUpActivity.class);
+        } else {
+            i = new Intent(getApplicationContext(), TeacherSignUpActivity.class);
+        }
+        startActivity(i);
+    }
+
+    public void gotoDetail(View view) {
+        Intent i = new Intent(getApplicationContext(), SignupTermsDetailActivity.class);
+        startActivity(i);
+    }
 }
 

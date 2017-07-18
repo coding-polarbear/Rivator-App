@@ -13,10 +13,10 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.rinc.bong.rivatorproject.MyAdapter;
-import com.rinc.bong.rivatorproject.MyItem;
+import com.rinc.bong.rivatorproject.adapters.MyAdapter;
+import com.rinc.bong.rivatorproject.beans.MyItem;
 import com.rinc.bong.rivatorproject.R;
-import com.rinc.bong.rivatorproject.RecyclerAdapter;
+import com.rinc.bong.rivatorproject.adapters.RecyclerAdapter;
 import com.rinc.bong.rivatorproject.beans.Item;
 
 import java.util.ArrayList;

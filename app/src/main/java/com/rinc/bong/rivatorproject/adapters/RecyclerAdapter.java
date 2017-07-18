@@ -1,4 +1,4 @@
-package com.rinc.bong.rivatorproject;
+package com.rinc.bong.rivatorproject.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.adapters.ViewHolder;
 import com.rinc.bong.rivatorproject.beans.Item;
 
 import java.util.List;

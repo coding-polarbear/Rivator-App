@@ -8,7 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activitys.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -16,19 +16,19 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SignupDegreeActivity"
+            android:name=".activitys.SignupDegreeActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity
-            android:name=".SignupPortfolioActivity"
+            android:name=".activitys.SignupPortfolioActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity android:name=".SignupTermsAgreeActivity" />
-        <activity android:name=".SignupTermsDetailActivity" />
+        <activity android:name=".activitys.SignupTermsAgreeActivity" />
+        <activity android:name=".activitys.SignupTermsDetailActivity" />
         <activity
-            android:name=".SelectActivity"
+            android:name=".activitys.SelectActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent" />
-        <activity android:name=".TeacherSignUpActivity" />
-        <activity android:name=".StudentSignUpActivity" />
-        <activity android:name=".HomeActivity"
+        <activity android:name=".activitys.TeacherSignUpActivity" />
+        <activity android:name=".activitys.StudentSignUpActivity" />
+        <activity android:name=".activitys.HomeActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent"/>
     </application>
 
