@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.rinc.bong.rivatorproject.R;
-import com.rinc.bong.rivatorproject.adapters.ViewHolder;
 import com.rinc.bong.rivatorproject.beans.Item;
 
 import java.util.List;
@@ -16,7 +15,7 @@ import java.util.List;
  * Created by baehyeonbin on 2017. 7. 18..
  */
 
-public class RecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
     Context context;
     List<Item> items;
     public RecyclerAdapter(Context context, List<Item> items) {
@@ -24,13 +23,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<ViewHolder> {
         this.items = items;
     }
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view, null);
-        return new ViewHolder(view);
+        return new RecyclerViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerViewHolder holder, int position) {
         Item item = items.get(position);
         holder.getTitle().setText(item.getTitle());
     }

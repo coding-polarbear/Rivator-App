@@ -11,7 +11,7 @@ import com.rinc.bong.rivatorproject.R;
  * Created by baehyeonbin on 2017. 7. 18..
  */
 
-public class ViewHolder extends RecyclerView.ViewHolder {
+public class RecyclerViewHolder extends RecyclerView.ViewHolder {
     private ImageView imageView;
     private TextView title;
     public ImageView getImageView() {
@@ -31,7 +31,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
     }
 
 
-    public ViewHolder(View itemView) {
+    public RecyclerViewHolder(View itemView) {
         super(itemView);
         imageView = (ImageView) itemView.findViewById(R.id.imageView);
         title = (TextView) itemView.findViewById(R.id.textView);
