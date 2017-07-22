@@ -12,15 +12,20 @@ import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
 
-public class SelectActivity extends AppCompatActivity {
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
-    private Button button;
+public class SelectActivity extends AppCompatActivity {
+    @BindView(R.id.btnBack)
+    Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
         setCustomActionbar();
-        button = (Button) getSupportActionBar().getCustomView().findViewById(R.id.btnBack);
+        View view = getSupportActionBar().getCustomView();
+        ButterKnife.bind(view);
+       // button = (Button) getSupportActionBar().getCustomView().findViewById(R.id.btnBack);
         button.setOnClickListener(v -> {
             finish();
         });

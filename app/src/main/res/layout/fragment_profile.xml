@@ -16,7 +16,7 @@
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="78dp"
+            android:layout_marginTop="60dp"
             android:id="@+id/profile"
             android:src="@drawable/student"/>
         <TextView
@@ -35,6 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
+            android:layout_marginBottom="83dp"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/name"
             android:textColor="@color/colorWhiteText"
@@ -46,59 +47,83 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#f0f0f0"
-        android:paddingBottom="100dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="28dp"
         android:layout_weight="1"
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/buttonGroup1"
             android:layout_weight="1">
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:text="계정설정"
+                android:background="@drawable/profile_button_style"
+                android:layout_gravity="bottom"
                 android:layout_weight="1"/>
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:text="알림"
+                android:layout_gravity="bottom"
+                android:background="@drawable/profile_button_style"
                 android:layout_weight="1"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:text="강좌관리"
+                android:layout_gravity="bottom"
+                android:background="@drawable/profile_button_style"
                 android:layout_weight="1" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:text="숙제관리"
+                android:layout_gravity="bottom"
+                android:background="@drawable/profile_button_style"
                 android:layout_weight="1"/>
         </LinearLayout>
-            <LinearLayout
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <Button
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
+                android:layout_height="match_parent"
+                android:text="콘테스트"
+                android:layout_gravity="bottom"
+                android:background="@drawable/profile_button_style"
+                android:layout_weight="1"/>
 
-                <Button
-                    android:id="@+id/button5"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:text="프로젝트"
+                android:background="@drawable/profile_button_style"
+                android:layout_weight="1" />
 
-                <Button
-                    android:id="@+id/button3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="고객센터"
+                android:layout_gravity="bottom"
+                android:background="@drawable/profile_button_style"
+                android:layout_weight="1" />
 
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="앱 정보"
+                android:layout_gravity="bottom"
+                android:background="@drawable/profile_button_style"
+                android:layout_weight="1"/>
+        </LinearLayout>
     </LinearLayout>
-
-</LinearLayout>
 </LinearLayout>

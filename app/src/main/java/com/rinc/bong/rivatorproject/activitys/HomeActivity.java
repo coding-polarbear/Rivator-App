@@ -32,6 +32,7 @@ public class HomeActivity extends AppCompatActivity {
         setBottomNavigationView();
         if(savedInstanceState == null) loadFragment(new HomeFragment());
         ActionBar actionBar = getSupportActionBar();
+        actionBar.setElevation(0);
         actionBar.setTitle("홈");
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
