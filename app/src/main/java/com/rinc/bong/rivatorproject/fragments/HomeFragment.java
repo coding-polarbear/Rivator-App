@@ -32,6 +32,8 @@ public class HomeFragment extends Fragment {
     private TextView moreText3;
     private ListView listView;
     private MyAdapter adapter;
+    private RecyclerView recyclerView1;
+    private RecyclerView recyclerView2;
 
     private ViewPager homeImagePager = null;
     private ImageSlideAdapter homeImageAdapter = null;
@@ -60,6 +62,11 @@ public class HomeFragment extends Fragment {
         homeImagePager = (ViewPager) view.findViewById(R.id.home_image_slider);
         homePagerIndicator = (CircleIndicator) view.findViewById(R.id.home_is_indicator);
 
+        //RecyclerView 초기화
+        recyclerView1 = (RecyclerView) view.findViewById(R.id.recycler1);
+        recyclerView2 = (RecyclerView) view.findViewById(R.id.recycler2);
+        setRecyclerView(recyclerView1);
+        setRecyclerView(recyclerView2);
 
         setListView();
         initImageSlider();
