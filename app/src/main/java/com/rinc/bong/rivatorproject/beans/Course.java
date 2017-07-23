@@ -6,21 +6,59 @@ package com.rinc.bong.rivatorproject.beans;
 
 public class Course {
     private int courseKey;
-    private int userKey;
+    private String userName;
+    private String image1;
+    private String image2;
+    private String image3;
     private String courseTitle;
     private String couseCategory;
     private int courseUnit;
     private float courseScore;
     private int coursePrice;
 
-    public Course( String courseTitle, String couseCategory, int courseUnit, float courseScore, int coursePrice, String courseCurriculum) {
-
+    public Course(int courseKey, String userName, String image1, String image2, String image3, String courseTitle, String couseCategory, int courseUnit, float courseScore, int coursePrice, String courseCurriculum) {
+        this.courseKey = courseKey;
+        this.userName = userName;
+        this.image1 = image1;
+        this.image2 = image2;
+        this.image3 = image3;
         this.courseTitle = courseTitle;
         this.couseCategory = couseCategory;
         this.courseUnit = courseUnit;
         this.courseScore = courseScore;
         this.coursePrice = coursePrice;
         this.courseCurriculum = courseCurriculum;
+    }
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getImage1() {
+        return image1;
+    }
+
+    public void setImage1(String image1) {
+        this.image1 = image1;
+    }
+
+    public String getImage2() {
+        return image2;
+    }
+
+    public void setImage2(String image2) {
+        this.image2 = image2;
+    }
+
+    public String getImage3() {
+        return image3;
+    }
+
+    public void setImage3(String image3) {
+        this.image3 = image3;
     }
 
     public int getCourseKey() {
@@ -29,14 +67,6 @@ public class Course {
 
     public void setCourseKey(int courseKey) {
         this.courseKey = courseKey;
-    }
-
-    public int getUserKey() {
-        return userKey;
-    }
-
-    public void setUserKey(int userKey) {
-        this.userKey = userKey;
     }
 
     public String getCourseTitle() {

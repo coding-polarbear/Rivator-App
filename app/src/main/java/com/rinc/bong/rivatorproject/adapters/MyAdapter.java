@@ -1,13 +1,15 @@
-package com.rinc.bong.rivatorproject;
+package com.rinc.bong.rivatorproject.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.rinc.bong.rivatorproject.beans.MyItem;
+import com.rinc.bong.rivatorproject.R;
 
 import java.util.ArrayList;
 /**

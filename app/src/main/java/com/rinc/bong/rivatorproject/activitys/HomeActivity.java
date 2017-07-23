@@ -1,4 +1,4 @@
-package com.rinc.bong.rivatorproject;
+package com.rinc.bong.rivatorproject.activitys;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -16,6 +16,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
+import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.fragments.CurrentLectureFragment;
 import com.rinc.bong.rivatorproject.fragments.HomeFragment;
 import com.rinc.bong.rivatorproject.fragments.ProfileFragment;
@@ -31,6 +32,7 @@ public class HomeActivity extends AppCompatActivity {
         setBottomNavigationView();
         if(savedInstanceState == null) loadFragment(new HomeFragment());
         ActionBar actionBar = getSupportActionBar();
+        actionBar.setElevation(0);
         actionBar.setTitle("홈");
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             int id = item.getItemId();

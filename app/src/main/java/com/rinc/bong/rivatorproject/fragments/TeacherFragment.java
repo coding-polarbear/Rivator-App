@@ -11,8 +11,8 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.rinc.bong.rivatorproject.MyAdapter;
-import com.rinc.bong.rivatorproject.MyItem;
+import com.rinc.bong.rivatorproject.adapters.MyAdapter;
+import com.rinc.bong.rivatorproject.beans.MyItem;
 import com.rinc.bong.rivatorproject.R;
 
 import java.util.ArrayList;
