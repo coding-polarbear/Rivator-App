@@ -2,6 +2,9 @@ package com.rinc.bong.rivatorproject.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,9 +14,12 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.rinc.bong.rivatorproject.MyAdapter;
-import com.rinc.bong.rivatorproject.MyItem;
+import com.rinc.bong.rivatorproject.ImageSlideAdapter;
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.adapters.MyAdapter;
+import com.rinc.bong.rivatorproject.adapters.RecyclerAdapter;
+import com.rinc.bong.rivatorproject.beans.Item;
+import com.rinc.bong.rivatorproject.beans.MyItem;
 
 import java.util.ArrayList;
 
@@ -32,14 +38,14 @@ public class HomeFragment extends Fragment {
             , "http://ubuntu.doubtech.com/wp-content/uploads/2014/06/GDG-program-logo.png"
             , "http://ubuntu.doubtech.com/wp-content/uploads/2014/06/GDG-program-logo.png"};
 
-    public HomeFragment(){
+    public HomeFragment() {
 
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home, container,false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
         moreText1 = (TextView) view.findViewById(R.id.moreText1);
         moreText2 = (TextView) view.findViewById(R.id.moreText2);
         moreText3 = (TextView) view.findViewById(R.id.moreText3);
@@ -53,25 +59,25 @@ public class HomeFragment extends Fragment {
         setListView();
         initImageSlider();
         return view;
-}
+    }
 
     private void initImageSlider() {
-        homeImageAdapter = new ImageSlideAdapter(getActivity(),testUri);
+        homeImageAdapter = new ImageSlideAdapter(getActivity(), testUri);
         homeImagePager.setAdapter(homeImageAdapter);
     }
 
 
     public void setListView() {
-        ArrayList<MyItem> items = new ArrayList<MyItem> ();
-        items.add(new MyItem("강사명","IT 분야"));
-        items.add(new MyItem("강사명","IT 분야"));
-        items.add(new MyItem("강사명","IT 분야"));
-        items.add(new MyItem("강사명","IT 분야"));
-        items.add(new MyItem("강사명","IT 분야"));
-        Log.d("Test",items.get(0).getTeacherName());
+        ArrayList<MyItem> items = new ArrayList<MyItem>();
+        items.add(new MyItem("강사명", "IT 분야"));
+        items.add(new MyItem("강사명", "IT 분야"));
+        items.add(new MyItem("강사명", "IT 분야"));
+        items.add(new MyItem("강사명", "IT 분야"));
+        items.add(new MyItem("강사명", "IT 분야"));
+        Log.d("Test", items.get(0).getTeacherName());
         adapter = new MyAdapter(getActivity(), R.layout.teacher_listview, items);
         listView.setAdapter(adapter);
-        ((BaseAdapter)listView.getAdapter()).notifyDataSetChanged();
+        ((BaseAdapter) listView.getAdapter()).notifyDataSetChanged();
     }
 
     public void setRecyclerView(RecyclerView recyclerView) {
@@ -85,7 +91,7 @@ public class HomeFragment extends Fragment {
         myDataset.add(new Item("디자이너들은\n" + "이 곳에 모이…"));
         myDataset.add(new Item("디자이너들은\n" + "이 곳에 모이…"));
 
-        RecyclerAdapter adapter = new RecyclerAdapter(getActivity(),myDataset);
+        RecyclerAdapter adapter = new RecyclerAdapter(getActivity(), myDataset);
         recyclerView.setAdapter(adapter);
     }
 }
