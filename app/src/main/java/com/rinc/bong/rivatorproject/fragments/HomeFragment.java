@@ -23,6 +23,8 @@ import com.rinc.bong.rivatorproject.beans.MyItem;
 
 import java.util.ArrayList;
 
+import me.relex.circleindicator.CircleIndicator;
+
 
 public class HomeFragment extends Fragment {
     private TextView moreText1;
@@ -33,6 +35,7 @@ public class HomeFragment extends Fragment {
 
     private ViewPager homeImagePager = null;
     private ImageSlideAdapter homeImageAdapter = null;
+    private CircleIndicator homePagerIndicator = null;
 
     private String[] testUri = {"http://ubuntu.doubtech.com/wp-content/uploads/2014/06/GDG-program-logo.png"
             , "http://ubuntu.doubtech.com/wp-content/uploads/2014/06/GDG-program-logo.png"
@@ -55,6 +58,8 @@ public class HomeFragment extends Fragment {
         listView = (ListView) view.findViewById(R.id.teacherList);
 
         homeImagePager = (ViewPager) view.findViewById(R.id.home_image_slider);
+        homePagerIndicator = (CircleIndicator) view.findViewById(R.id.home_is_indicator);
+
 
         setListView();
         initImageSlider();
@@ -64,6 +69,7 @@ public class HomeFragment extends Fragment {
     private void initImageSlider() {
         homeImageAdapter = new ImageSlideAdapter(getActivity(), testUri);
         homeImagePager.setAdapter(homeImageAdapter);
+        homePagerIndicator.setViewPager(homeImagePager);
     }
 
 
