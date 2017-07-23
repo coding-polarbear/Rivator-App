@@ -1,27 +1,37 @@
 package com.rinc.bong.rivatorproject.fragments;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.text.Html;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
+        import android.os.Bundle;
+        import android.support.v4.app.Fragment;
+        import android.support.v4.view.ViewPager;
+        import android.text.Html;
+        import android.util.Log;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.BaseAdapter;
+        import android.widget.ListView;
+        import android.widget.TextView;
 
-import com.rinc.bong.rivatorproject.MyAdapter;
-import com.rinc.bong.rivatorproject.MyItem;
-import com.rinc.bong.rivatorproject.R;
+        import com.rinc.bong.rivatorproject.ImageSlideAdapter;
+        import com.rinc.bong.rivatorproject.MyAdapter;
+        import com.rinc.bong.rivatorproject.MyItem;
+        import com.rinc.bong.rivatorproject.R;
 
-import java.util.ArrayList;
+        import java.util.ArrayList;
 
 
 public class HomeFragment extends Fragment {
     private TextView moreText;
     private ListView listView;
     private MyAdapter adapter;
+
+    private ViewPager homeImagePager = null;
+    private ImageSlideAdapter homeImageAdapter = null;
+
+    private String[] testUri = {"http://ubuntu.doubtech.com/wp-content/uploads/2014/06/GDG-program-logo.png"
+            , "http://ubuntu.doubtech.com/wp-content/uploads/2014/06/GDG-program-logo.png"
+            , "http://ubuntu.doubtech.com/wp-content/uploads/2014/06/GDG-program-logo.png"};
+
     public HomeFragment(){
 
     }
@@ -33,8 +43,17 @@ public class HomeFragment extends Fragment {
         moreText = (TextView) view.findViewById(R.id.moreText);
         moreText.setText(Html.fromHtml("<u>더보기<u>"));
         listView = (ListView) view.findViewById(R.id.teacherList);
+
+        homeImagePager = (ViewPager) view.findViewById(R.id.home_image_slider);
+
         setListView();
+        initImageSlider();
         return view;
+    }
+
+    private void initImageSlider() {
+        homeImageAdapter = new ImageSlideAdapter(getActivity(),testUri);
+        homeImagePager.setAdapter(homeImageAdapter);
     }
 
 

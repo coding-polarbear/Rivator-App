@@ -9,6 +9,7 @@
     <color name="colorBackBtn">#dfdfdf</color>
     <color name="colorNextBtn">#14e4a2</color>
     <color name="colorLine">#cecece</color>
+    <color name="colorImageSlider">#91edd0</color>
 
     <!--text color-->
     <color name="colorWhiteText">#ffffff</color>
@@ -19,4 +20,6 @@
 
     <!--Custom Action Bar -->
     <color name="greenBar">#14e4a2</color>
+
+
 </resources>
