@@ -1,7 +1,9 @@
 package com.rinc.bong.rivatorproject.activitys;
 
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -12,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -34,6 +37,7 @@ public class HomeActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setElevation(0);
         actionBar.setTitle("홈");
+
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
             switch(id) {
@@ -73,6 +77,12 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView.enableAnimation(false);
         bottomNavigationView.enableShiftingMode(false);
         bottomNavigationView.enableItemShiftingMode(false);
+
+        //Calendar Button Background setting
+        BottomNavigationItemView calendar = (BottomNavigationItemView) bottomNavigationView.findViewById(R.id.btnCalendar);
+        calendar.setBackgroundColor(Color.parseColor("#14e4a2"));
+        calendar.setIconTintList(getResources().getColorStateList(R.color.calendar_item_state));
+        calendar.setTextColor(getResources().getColorStateList(R.color.calendar_item_state));
     }
 
     @Override
