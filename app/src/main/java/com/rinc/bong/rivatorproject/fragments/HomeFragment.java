@@ -47,7 +47,9 @@ public class HomeFragment extends Fragment {
 
         //ViewPager 설정
         final ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewPager);
-        final PageAdapter pageAdapter = new PageAdapter(getChildFragmentManager(),tabLayout.getTabCount());
+        final PageAdapter pageAdapter = new PageAdapter(getChildFragmentManager(),tabLayout.getTabCount(),tabNames);
+        ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) viewPager.getLayoutParams();
+        lp.topMargin += 100;
         viewPager.setAdapter(pageAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -75,5 +77,6 @@ public class HomeFragment extends Fragment {
         tabNames.add("웹");
         tabNames.add("어플리케이션");
         tabNames.add("게임");
+        tabNames.add("안드로이드");
     }
 }
