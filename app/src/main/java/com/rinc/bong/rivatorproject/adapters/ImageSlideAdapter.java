@@ -1,4 +1,4 @@
-package com.rinc.bong.rivatorproject;
+package com.rinc.bong.rivatorproject.adapters;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
