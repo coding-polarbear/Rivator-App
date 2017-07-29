@@ -38,7 +38,7 @@ public class NoticeNotReadFragment extends Fragment {
 
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        NoticeRecyclerAdapter mNoticeRecyclerAdapter = new NoticeRecyclerAdapter(view.getContext());
+        NoticeRecyclerAdapter mNoticeRecyclerAdapter = new NoticeRecyclerAdapter(view.getContext(),1);
         mRecyclerView.setAdapter(mNoticeRecyclerAdapter);
     }
 

@@ -36,7 +36,7 @@ public class HomeWorkSubmitFragment extends Fragment {
 
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        NoticeRecyclerAdapter mNoticeRecyclerAdapter = new NoticeRecyclerAdapter(view.getContext());
+        NoticeRecyclerAdapter mNoticeRecyclerAdapter = new NoticeRecyclerAdapter(view.getContext(),3);
         mRecyclerView.setAdapter(mNoticeRecyclerAdapter);
     }
 

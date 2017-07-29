@@ -10,33 +10,34 @@ import android.view.ViewGroup;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.adapters.NoticeRecyclerAdapter;
+import com.rinc.bong.rivatorproject.adapters.ProjectRecyclerAdapter;
 
 /**
  * Created by Bong on 2017-07-30.
  */
 
-public class NoticeReadFragment extends Fragment {
+public class ProjectCreateFragment extends Fragment {
 
     private View view = null;
     private RecyclerView mRecyclerView = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_notice_read ,container ,false);
+        view = inflater.inflate(R.layout.fragment_project_create ,container ,false);
         init();
         recyclerInit();
         return view;
     }
 
     private void init() {
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.notice_recycler_read);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.project_recycler_create);
     }
 
     private void recyclerInit() {
 
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        NoticeRecyclerAdapter mNoticeRecyclerAdapter = new NoticeRecyclerAdapter(view.getContext(),1);
+        NoticeRecyclerAdapter mNoticeRecyclerAdapter = new NoticeRecyclerAdapter(view.getContext(),5);
         mRecyclerView.setAdapter(mNoticeRecyclerAdapter);
     }
 

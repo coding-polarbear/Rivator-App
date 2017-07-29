@@ -34,6 +34,7 @@
             android:theme="@style/AppTheme.ActionBar.Transparent"/>
         <activity android:name=".activitys.NoticeActivity"/>
         <activity android:name=".activitys.HomeWorkActivity"/>
+        <activity android:name=".activitys.ProjectActivity"/>
     </application>
 
 </manifest>

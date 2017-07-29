@@ -13,18 +13,27 @@ import com.rinc.bong.rivatorproject.R;
  */
 
 public class NoticeRecyclerAdapter extends RecyclerView.Adapter<NoticeRecyclerAdapter.ViewHolder> {
-
+    private int idx = 0;
     private View view = null;
     private Context context = null;
-    public NoticeRecyclerAdapter(Context context) {
+
+    public NoticeRecyclerAdapter(Context context, int idx) {
         this.context = context;
+        this.idx = idx;
     }
 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_default, null);
-        return new ViewHolder(view);
+        switch (idx) {
+            case 5:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_project, null);
+                return new ViewHolder(view);
+            default:
+                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_default, null);
+                return new ViewHolder(view);
+
+        }
     }
 
     @Override
@@ -33,14 +42,13 @@ public class NoticeRecyclerAdapter extends RecyclerView.Adapter<NoticeRecyclerAd
     }
 
 
-
     @Override
     public int getItemCount() {
         //return super.getItemCount();
         return 15;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         public ViewHolder(View itemView) {
             super(itemView);
         }
