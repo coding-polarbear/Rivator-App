@@ -12,7 +12,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.adapters.MyAdapter;
-import com.rinc.bong.rivatorproject.beans.MyItem;
+import com.rinc.bong.rivatorproject.beans.SimpleTeacher;
 import com.rinc.bong.rivatorproject.R;
 
 import java.util.ArrayList;
@@ -46,12 +46,12 @@ public class TeacherFragment extends Fragment {
     }
 
     public void setListView() {
-        ArrayList<MyItem> items = new ArrayList<MyItem> ();
-        items.add(new MyItem("강사명","IT 분야"));
-        items.add(new MyItem("강사명","IT 분야"));
-        items.add(new MyItem("강사명","IT 분야"));
-        items.add(new MyItem("강사명","IT 분야"));
-        items.add(new MyItem("강사명","IT 분야"));
+        ArrayList<SimpleTeacher> items = new ArrayList<SimpleTeacher> ();
+        items.add(new SimpleTeacher("강사명","IT 분야"));
+        items.add(new SimpleTeacher("강사명","IT 분야"));
+        items.add(new SimpleTeacher("강사명","IT 분야"));
+        items.add(new SimpleTeacher("강사명","IT 분야"));
+        items.add(new SimpleTeacher("강사명","IT 분야"));
         Log.d("Test",items.get(0).getTeacherName());
         myAdapter = new MyAdapter(getActivity(), R.layout.teacher_listview, items);
         listView.setAdapter(myAdapter);

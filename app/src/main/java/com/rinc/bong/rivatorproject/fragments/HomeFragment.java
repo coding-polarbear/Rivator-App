@@ -5,29 +5,15 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.adapters.HomeAdapter;
-import com.rinc.bong.rivatorproject.adapters.ImageSlideAdapter;
 import com.rinc.bong.rivatorproject.R;
-import com.rinc.bong.rivatorproject.adapters.MyAdapter;
 import com.rinc.bong.rivatorproject.adapters.PageAdapter;
-import com.rinc.bong.rivatorproject.adapters.RecyclerAdapter;
-import com.rinc.bong.rivatorproject.beans.Item;
-import com.rinc.bong.rivatorproject.beans.MyItem;
 
 import java.util.ArrayList;
-
-import me.relex.circleindicator.CircleIndicator;
 
 
 public class HomeFragment extends Fragment {

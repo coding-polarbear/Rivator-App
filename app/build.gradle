@@ -59,6 +59,8 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife:8.7.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
     apt 'com.jakewharton:butterknife-compiler:8.7.0'
+
+    provided "org.projectlombok:lombok:1.12.6"
 }
 
 
