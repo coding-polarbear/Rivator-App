@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.adapters.LectureAdapter;
@@ -20,8 +21,12 @@ import butterknife.ButterKnife;
 
 public class CurrentLectureFragment extends Fragment {
     RecyclerView lectureRecyclerView;
+    private String subject;
     public CurrentLectureFragment() {
         // Required empty public constructor
+    }
+    public CurrentLectureFragment(String subject) {
+
     }
 
     @Override

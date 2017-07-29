@@ -22,10 +22,15 @@ public class TeacherFragment extends Fragment {
     private TextView moreText;
     private ListView listView;
     private MyAdapter myAdapter;
+    private TextView subjectText;
+    private String subject;
     public TeacherFragment() {
         // Required empty public constructor
     }
 
+    public TeacherFragment(String subject) {
+        this.subject = subject;
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -34,6 +39,8 @@ public class TeacherFragment extends Fragment {
         moreText = (TextView) view.findViewById(R.id.moreText);
         moreText.setText(Html.fromHtml("<u>더보기<u>"));
         listView = (ListView) view.findViewById(R.id.teacherList);
+        subjectText = (TextView) view.findViewById(R.id.subjectText);
+        subjectText.setText(subject);
         setListView();
         return view;
     }
