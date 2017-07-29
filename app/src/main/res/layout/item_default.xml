@@ -16,7 +16,7 @@
         android:textSize="16sp"
         android:textColor="#000000"
         android:letterSpacing="-0.06"
-        android:text="Rivator에서 여러분의 가입을 환영합니다!!"
+        android:text="Title Message"
         />
     <TextView
         android:layout_marginLeft="@dimen/notice_item_left_margin"
@@ -28,7 +28,7 @@
         android:textSize="12sp"
         android:textColor="@color/colorTextDefault"
         android:letterSpacing="-0.1"
-        android:text="공지 분류"
+        android:text="description text"
         />
     <View
         android:background="@color/colorItemLine"

@@ -7,10 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.rinc.bong.rivatorproject.R;
-import com.rinc.bong.rivatorproject.beans.Item;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Bong on 2017-07-30.
@@ -27,7 +23,7 @@ public class NoticeRecyclerAdapter extends RecyclerView.Adapter<NoticeRecyclerAd
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_notice, null);
+        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_default, null);
         return new ViewHolder(view);
     }
 

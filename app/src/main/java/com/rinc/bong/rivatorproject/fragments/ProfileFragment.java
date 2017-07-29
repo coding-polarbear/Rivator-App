@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.activitys.HomeWorkActivity;
 import com.rinc.bong.rivatorproject.activitys.NoticeActivity;
 
 import butterknife.BindView;
@@ -20,7 +21,11 @@ public class ProfileFragment extends Fragment {
 
     private View view = null;
 
-    private Button notice_btn;
+    private Button notice_btn = null;
+    private Button homework_btn = null;
+    private Button course_btn = null;
+    private Button contest_btn = null;
+    private Button projecet_btn = null;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -38,11 +43,19 @@ public class ProfileFragment extends Fragment {
 
     private void init() {
         notice_btn = (Button)view.findViewById(R.id.profile_notice_btn);
+        homework_btn = (Button)view.findViewById(R.id.profile_homework_btn);
+        course_btn = (Button)view.findViewById(R.id.profile_course_btn);
+        contest_btn = (Button)view.findViewById(R.id.profile_contest_btn);
+        projecet_btn = (Button)view.findViewById(R.id.profile_project_btn);
+
     }
 
     private void setListener() {
         notice_btn.setOnClickListener(view -> {
            startActivity(new Intent(view.getContext(), NoticeActivity.class));
+        });
+        homework_btn.setOnClickListener(view1 -> {
+            startActivity(new Intent(view.getContext(), HomeWorkActivity.class));
         });
     }
 

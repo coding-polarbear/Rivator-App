@@ -73,6 +73,7 @@
                 android:layout_weight="1"/>
 
             <Button
+                android:id="@+id/profile_course_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="강좌관리"
@@ -81,6 +82,7 @@
                 android:layout_weight="1" />
 
             <Button
+                android:id="@+id/profile_homework_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="숙제관리"
@@ -93,6 +95,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
             <Button
+                android:id="@+id/profile_contest_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="콘테스트"
@@ -101,7 +104,7 @@
                 android:layout_weight="1"/>
 
             <Button
-                android:id="@+id/button5"
+                android:id="@+id/profile_project_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="bottom"
