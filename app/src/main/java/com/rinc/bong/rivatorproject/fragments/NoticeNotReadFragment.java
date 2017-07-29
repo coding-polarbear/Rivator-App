@@ -10,9 +10,6 @@ import android.view.ViewGroup;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.adapters.NoticeRecyclerAdapter;
-import com.rinc.bong.rivatorproject.beans.Item;
-
-import java.util.List;
 
 /**
  * Created by Bong on 2017-07-30.

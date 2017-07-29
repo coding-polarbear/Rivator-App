@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.rinc.bong.rivatorproject.R;
-import com.rinc.bong.rivatorproject.beans.LectureItem;
+import com.rinc.bong.rivatorproject.beans.CurrentCourse;
 
 import java.util.ArrayList;
 
@@ -17,8 +17,8 @@ import java.util.ArrayList;
 
 public class LectureAdapter extends RecyclerView.Adapter<LectureViewHolder> {
     private Context context;
-    private ArrayList<LectureItem> items;
-    public LectureAdapter(Context context, ArrayList<LectureItem> items) {
+    private ArrayList<CurrentCourse> items;
+    public LectureAdapter(Context context, ArrayList<CurrentCourse> items) {
         this.context = context;
         this.items = items;
     }
@@ -30,7 +30,7 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureViewHolder> {
 
     @Override
     public void onBindViewHolder(LectureViewHolder holder, int position) {
-        LectureItem item = items.get(position);
+        CurrentCourse item = items.get(position);
         holder.getTitle().setText(item.getTitle());
         holder.getTeacherName().setText(item.getTeacherName());
         holder.getUnit().setText(Integer.toString(item.getUnitTime())+"시간");

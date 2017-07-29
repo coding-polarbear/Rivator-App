@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
+    <courseItem
         android:id="@+id/btnHome"
         android:enabled="true"
         android:icon="@drawable/home"
         android:title="홈"
         app:showAsAction="ifRoom|withText" />
-    <item
+    <courseItem
         android:id="@+id/btnTeacher"
         android:enabled="true"
         android:icon="@drawable/teacher_off"
         android:title="강사"
         app:showAsAction="ifRoom|withText"/>
-    <item
+    <courseItem
         android:id="@+id/btnCalendar"
         android:enabled="true"
         android:icon="@drawable/calender"
         android:title="캘린더"
         app:showAsAction="ifRoom|withText" />
-    <item
+    <courseItem
         android:id="@+id/btnCurrentLecture"
         android:enabled="true"
         android:icon="@drawable/board"
         android:title="진행중 강좌"
         app:showAsAction="ifRoom|withText" />
-    <item
+    <courseItem
         android:id="@+id/btnProfile"
         android:enabled="true"
         android:icon="@drawable/profile"

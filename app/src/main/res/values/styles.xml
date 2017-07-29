@@ -3,13 +3,13 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <courseItem name="colorPrimary">@color/colorPrimary</courseItem>
+        <courseItem name="colorPrimaryDark">@color/colorPrimaryDark</courseItem>
+        <courseItem name="colorAccent">@color/colorAccent</courseItem>
     </style>
     <style name="AppTheme.ActionBar.Transparent" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/greenBar</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <courseItem name="colorPrimary">@color/greenBar</courseItem>
+        <courseItem name="colorPrimaryDark">@color/colorPrimaryDark</courseItem>
+        <courseItem name="colorAccent">@color/colorAccent</courseItem>
     </style>
 </resources>

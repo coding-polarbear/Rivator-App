@@ -15,7 +15,7 @@
     <color name="colorBackground">#f0f0f0</color>
     <color name="colorTextDefault">#787878</color>
 
-    <!--List Item-->
+    <!--List CourseItem-->
     <color name="colorItemLine">#cfcfcf</color>
     <!--text color-->
     <color name="colorWhiteText">#ffffff</color>

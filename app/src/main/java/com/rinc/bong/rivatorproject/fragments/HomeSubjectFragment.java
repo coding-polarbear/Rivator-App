@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.adapters.RecyclerAdapter;
-import com.rinc.bong.rivatorproject.beans.Item;
+import com.rinc.bong.rivatorproject.beans.CourseItem;
 
 import java.util.ArrayList;
 
@@ -61,15 +61,15 @@ public class HomeSubjectFragment extends Fragment {
         return view;
     }
     public void setRecyclerView(RecyclerView recyclerView) {
-        ArrayList<Item> myDataset = new ArrayList<>();
+        ArrayList<CourseItem> myDataset = new ArrayList<>();
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
-        myDataset.add(new Item("디자이너들은\n" + "이 곳에 모이…"));
-        myDataset.add(new Item("디자이너들은\n" + "이 곳에 모이…"));
-        myDataset.add(new Item("디자이너들은\n" + "이 곳에 모이…"));
-        myDataset.add(new Item("디자이너들은\n" + "이 곳에 모이…"));
+        myDataset.add(new CourseItem("디자이너들은\n" + "이 곳에 모이…"));
+        myDataset.add(new CourseItem("디자이너들은\n" + "이 곳에 모이…"));
+        myDataset.add(new CourseItem("디자이너들은\n" + "이 곳에 모이…"));
+        myDataset.add(new CourseItem("디자이너들은\n" + "이 곳에 모이…"));
 
         RecyclerAdapter<RecyclerView.ViewHolder> adapter = new RecyclerAdapter<RecyclerView.ViewHolder>(getActivity(), myDataset);
         recyclerView.setAdapter(adapter);

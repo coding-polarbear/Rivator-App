@@ -2,8 +2,8 @@
 <resources>
 
     <style name="AppTheme.ActionBar.Transparent" parent="AppTheme">
-        <item name="colorPrimary">@color/greenBar</item>
-        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
-        <item name="android:windowTranslucentStatus">true</item>
+        <courseItem name="colorPrimary">@color/greenBar</courseItem>
+        <courseItem name="android:statusBarColor">@color/colorPrimaryDark</courseItem>
+        <courseItem name="android:windowTranslucentStatus">true</courseItem>
     </style>
 </resources>

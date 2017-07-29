@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.rinc.bong.rivatorproject.beans.MyItem;
+import com.rinc.bong.rivatorproject.beans.SimpleTeacher;
 import com.rinc.bong.rivatorproject.R;
 
 import java.util.ArrayList;
@@ -16,12 +16,12 @@ import java.util.ArrayList;
  * Created by baehyeonbin on 2017. 7. 16..
  */
 
-public class MyAdapter extends ArrayAdapter<MyItem> {
-    private ArrayList<MyItem> listViewItem = new ArrayList<MyItem>();
+public class MyAdapter extends ArrayAdapter<SimpleTeacher> {
+    private ArrayList<SimpleTeacher> listViewItem = new ArrayList<SimpleTeacher>();
     private Context context;
     private int srsc;
 
-    public MyAdapter(Context context,int srsc, ArrayList<MyItem> items) {
+    public MyAdapter(Context context,int srsc, ArrayList<SimpleTeacher> items) {
         super(context,srsc,items);
         this.context = context;
         this.srsc = srsc;
@@ -33,7 +33,7 @@ public class MyAdapter extends ArrayAdapter<MyItem> {
     }
 
     @Override
-    public MyItem getItem(int position) {
+    public SimpleTeacher getItem(int position) {
         return listViewItem.get(position);
     }
 
@@ -55,7 +55,7 @@ public class MyAdapter extends ArrayAdapter<MyItem> {
         TextView teacherName = (TextView) view.findViewById(R.id.teacherName);
         TextView subject = (TextView) view.findViewById(R.id.subject);
 
-        MyItem item = listViewItem.get(position);
+        SimpleTeacher item = listViewItem.get(position);
         teacherName.setText(item.getTeacherName());
         subject.setText(item.getSubject());
 
