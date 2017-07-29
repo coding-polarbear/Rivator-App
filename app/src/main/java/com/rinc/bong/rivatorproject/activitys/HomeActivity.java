@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.rinc.bong.rivatorproject.R;
@@ -26,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
 
         //BottomNavigationView 설정
         setBottomNavigationView();
-        if(savedInstanceState == null) loadFragment(new HomeFragment());
+        if(savedInstanceState == null) loadFragment(new HomeFragment(0));
 
         //액션바 설정
         setActionBar();
@@ -56,27 +57,36 @@ public class HomeActivity extends AppCompatActivity {
 
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
+            int position = 0;
             switch(id) {
                 case R.id.btnHome:
-                    fragment = new HomeFragment();
+                    position = 0;
+                    fragment = new HomeFragment(position);
                     actionBar.setTitle("홈");
+                    loadFragment(fragment);
                     break;
                 case R.id.btnTeacher:
-                    fragment = new TeacherFragment();
+                    position = 1;
+                    fragment = new HomeFragment(position);
                     actionBar.setTitle("강사");
+                    loadFragment(fragment);
                     break;
                 case R.id.btnCalendar:
+                    position = 2;
                     break;
                 case R.id.btnCurrentLecture:
-                    fragment = new CurrentLectureFragment();
+                    position = 3;
+                    fragment = new HomeFragment(position);
                     actionBar.setTitle("진행중 강좌");
+                    loadFragment(fragment);
                     break;
                 case R.id.btnProfile:
+                    position = 4;
                     fragment = new ProfileFragment();
                     actionBar.setTitle("프로필");
+                    loadFragment(fragment);
                     break;
             }
-            loadFragment(fragment);
             return true;
         });
     }

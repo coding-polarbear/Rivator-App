@@ -4,33 +4,31 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.rinc.bong.rivatorproject.fragments.CurrentLectureFragment;
-import com.rinc.bong.rivatorproject.fragments.HomeMainFragment;
-import com.rinc.bong.rivatorproject.fragments.HomeSubjectFragment;
+import com.rinc.bong.rivatorproject.factories.FragmentFactory;
 
 import java.util.ArrayList;
 
 /**
- * Created by hynebinbae on 2017. 7. 24..
+ * Created by baehyeonbin on 2017. 7. 30..
  */
 
-public class PageAdapter extends FragmentStatePagerAdapter{
+public class PageAdapter extends FragmentStatePagerAdapter {
+    private FragmentManager manager;
     private ArrayList<String> tabNames;
-    int numberOfTabs;
-
-    public PageAdapter(FragmentManager fm, int numberOfTabs, ArrayList<String> tabNames) {
+    private int numberOfTabs;
+    private Fragment fragment;
+    private int number;
+    public PageAdapter(FragmentManager fm, int numberOfTabs, ArrayList<String> tabNames, int number) {
         super(fm);
-        this.numberOfTabs = numberOfTabs;
+        this.manager = fm;
         this.tabNames = tabNames;
+        this.numberOfTabs = numberOfTabs;
+        this.number = number;
     }
 
     @Override
     public Fragment getItem(int position) {
-        if(position == 0) {
-            return new HomeMainFragment();
-       } else {
-            return new HomeSubjectFragment(tabNames.get(position));
-        }
+        return FragmentFactory.getInstance().getFragment(number);
     }
 
     @Override
