@@ -26,7 +26,6 @@ public class SignupDegreeActivity extends AppCompatActivity{
         setCustomActionbar();
     }
 
-
     /*
     *커스텀 액션바
     *setimageview, setbackground 등등 id를 받아온후 사용자 정의로 사용
@@ -34,7 +33,6 @@ public class SignupDegreeActivity extends AppCompatActivity{
 
     private void setCustomActionbar() {
         ActionBar actionBar = getSupportActionBar();
-
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
@@ -55,7 +53,6 @@ public class SignupDegreeActivity extends AppCompatActivity{
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
         ActionBar.LayoutParams params = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT);
         actionBar.setCustomView(mCustomView, params);
-
     }
 
     public void back(View view) {

@@ -29,6 +29,8 @@ import me.relex.circleindicator.CircleIndicator;
 
 
 public class HomeFragment extends Fragment {
+    private View view;
+    private TabLayout tabLayout;
     private ArrayList<String> tabNames = new ArrayList<>();
     public HomeFragment() {
 
@@ -38,19 +40,33 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         loadTabName();
-        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        view = inflater.inflate(R.layout.fragment_home, container, false);
+        setTabLayout();
+        setViewPager();
+        return view;
+    }
 
-        //Tab Layout 설정
-        TabLayout tabLayout = (TabLayout) view.findViewById(R.id.tab);
+    //TabLayout 설정
+    private void setTabLayout() {
+        tabLayout = (TabLayout) view.findViewById(R.id.tab);
+        //ArrayList에 있는 값들을 이터레이션 시켜서 탭 레이아웃에 새로운 탭 추가
         tabNames.stream().forEach(name -> tabLayout.addTab(tabLayout.newTab().setText(name)));
-        tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
+        tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER); //탭 가로 길이 가변 설정
+    }
+    //탭 이름 로딩
+    private void loadTabName() {
+        tabNames.add("추천");
+        tabNames.add("인기");
+        tabNames.add("Basic");
+        tabNames.add("웹");
+        tabNames.add("어플리케이션");
+        tabNames.add("게임");
+    }
 
-        //ViewPager 설정
+    //ViewPager설정
+    private void setViewPager() {
         final ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewPager);
         final PageAdapter pageAdapter = new PageAdapter(getChildFragmentManager(),tabLayout.getTabCount(),tabNames);
-        /*ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) viewPager.getLayoutParams();
-        lp.topMargin += 100;*/
-
 
         viewPager.setAdapter(pageAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
@@ -70,15 +86,5 @@ public class HomeFragment extends Fragment {
 
             }
         });
-        return view;
-    }
-    private void loadTabName() {
-        tabNames.add("추천");
-        tabNames.add("인기");
-        tabNames.add("Basic");
-        tabNames.add("웹");
-        tabNames.add("어플리케이션");
-        tabNames.add("게임");
-        tabNames.add("안드로이드");
     }
 }

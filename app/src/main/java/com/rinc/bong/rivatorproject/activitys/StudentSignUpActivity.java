@@ -13,6 +13,7 @@ import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.activitys.MainActivity;
 
 public class StudentSignUpActivity extends AppCompatActivity {
+    private ActionBar actionBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,12 +28,12 @@ public class StudentSignUpActivity extends AppCompatActivity {
 
     public void next(View view) {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //기존의 액티비티 모든 스택 제거
         startActivity(intent);
     }
 
     private void setCustomActionbar() {
-        ActionBar actionBar = getSupportActionBar();
+        actionBar = getSupportActionBar();
 
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(false);

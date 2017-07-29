@@ -13,6 +13,7 @@ import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.activitys.SignupDegreeActivity;
 
 public class TeacherSignUpActivity extends AppCompatActivity {
+    private ActionBar actionBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +31,7 @@ public class TeacherSignUpActivity extends AppCompatActivity {
     }
 
     private void setCustomActionbar() {
-        ActionBar actionBar = getSupportActionBar();
-
+        actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);

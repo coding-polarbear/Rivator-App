@@ -16,16 +16,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SelectActivity extends AppCompatActivity {
-    @BindView(R.id.btnBack)
     Button button;
+    private ActionBar actionBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
         setCustomActionbar();
         View view = getSupportActionBar().getCustomView();
-        ButterKnife.bind(view);
-       // button = (Button) getSupportActionBar().getCustomView().findViewById(R.id.btnBack);
+        button = (Button) getSupportActionBar().getCustomView().findViewById(R.id.btnBack);
         button.setOnClickListener(v -> {
             finish();
         });
@@ -49,7 +48,7 @@ public class SelectActivity extends AppCompatActivity {
      */
 
     public void  setCustomActionbar() {
-        ActionBar actionBar = getSupportActionBar();
+        actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
