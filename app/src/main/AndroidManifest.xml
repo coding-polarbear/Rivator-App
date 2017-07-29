@@ -32,6 +32,7 @@
         <activity android:name=".activitys.StudentSignUpActivity" />
         <activity android:name=".activitys.HomeActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent"/>
+        <activity android:name=".activitys.NoticeActivity"/>
     </application>
 
 </manifest>

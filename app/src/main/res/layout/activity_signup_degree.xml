@@ -92,7 +92,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="next"
-            android:background="@color/colorNextBtn"
+            android:background="@color/colorMainGreen"
             android:text="다음으로"
             android:textColor="@color/colorWhiteText" />
     </LinearLayout>

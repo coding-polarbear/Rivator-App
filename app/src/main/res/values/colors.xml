@@ -7,9 +7,13 @@
     <!--activity View Color-->
     <color name="colorImageBackground">#d8d8d8</color>
     <color name="colorBackBtn">#dfdfdf</color>
-    <color name="colorNextBtn">#14e4a2</color>
+    <color name="colorMainGreen">#14e4a2</color>
     <color name="colorLine">#cecece</color>
     <color name="colorImageSlider">#91edd0</color>
+
+    <!--activity Notice-->
+    <color name="colorBackground">#f0f0f0</color>
+    <color name="colorTextDefault">#787878</color>
 
     <!--text color-->
     <color name="colorWhiteText">#ffffff</color>

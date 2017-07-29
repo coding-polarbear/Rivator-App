@@ -27,11 +27,9 @@ public class PageAdapter extends FragmentStatePagerAdapter{
     @Override
     public Fragment getItem(int position) {
         if(position == 0) {
-            HomeMainFragment homeMainFragment = new HomeMainFragment();
-            return homeMainFragment;
+            return new HomeMainFragment();
        } else {
-            HomeSubjectFragment homeSubjectFragment = new HomeSubjectFragment(tabNames.get(position));
-            return homeSubjectFragment;
+            return new HomeSubjectFragment(tabNames.get(position));
         }
     }
 
