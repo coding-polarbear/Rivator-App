@@ -2,12 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorBackground"
     android:orientation="vertical"
     android:weightSum="560">
 
 
     <android.support.design.widget.TabLayout
+        android:background="#ffffff"
+        app:tabTextColor="@color/colorTextDefault"
+        app:tabIndicatorColor="@color/colorMainGreen"
+        app:tabSelectedTextColor="@color/colorMainGreen"
         android:layout_weight="40"
         android:layout_width="match_parent"
         android:layout_height="0dp"

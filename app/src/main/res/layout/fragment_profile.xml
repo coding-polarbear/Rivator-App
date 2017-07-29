@@ -64,6 +64,7 @@
                 android:layout_gravity="bottom"
                 android:layout_weight="1"/>
             <Button
+                android:id="@+id/profile_notice_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="알림"

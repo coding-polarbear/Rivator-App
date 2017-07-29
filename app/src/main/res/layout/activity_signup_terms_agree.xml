@@ -125,7 +125,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentStart="true"
-            android:background="@color/colorNextBtn"
+            android:background="@color/colorMainGreen"
             android:letterSpacing="-0.05"
             android:text="동의하고 진행하기"
             android:textColor="@color/colorWhiteText" />
