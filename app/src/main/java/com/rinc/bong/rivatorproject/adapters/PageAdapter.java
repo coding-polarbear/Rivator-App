@@ -28,7 +28,7 @@ public class PageAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return FragmentFactory.getInstance().getFragment(number);
+        return FragmentFactory.getInstance().getFragment(number,tabNames.get(position));
     }
 
     @Override

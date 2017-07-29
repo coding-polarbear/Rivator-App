@@ -19,9 +19,9 @@ public class FragmentFactory {
     private FragmentFactory() {
     }
 
-    public Fragment getFragment(int position) {
+    public Fragment getFragment(int position,String subject) {
         if(position == 1) {
-            return new TeacherFragment();
+            return new TeacherFragment(subject);
         } else {
             return new CurrentLectureFragment();
         }
