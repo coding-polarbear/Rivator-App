@@ -9,13 +9,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class LectureItem {
+public class CurrentCourse {
     private String imageURL;
     private String title;
     private String teacherName;
     private int unitTime;
 
-    public LectureItem(String title, String teacherName, int unitTime) {
+    public CurrentCourse(String title, String teacherName, int unitTime) {
         this.title = title;
         this.teacherName = teacherName;
         this.unitTime = unitTime;

@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.rinc.bong.rivatorproject.R;
-import com.rinc.bong.rivatorproject.beans.Item;
+import com.rinc.bong.rivatorproject.beans.CourseItem;
 
 import java.util.List;
 
@@ -17,10 +17,10 @@ import java.util.List;
 
 public class RecyclerAdapter<V extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<RecyclerViewHolder> {
     Context context;
-    List<Item> items;
-    public RecyclerAdapter(Context context, List<Item> items) {
+    List<CourseItem> courseItems;
+    public RecyclerAdapter(Context context, List<CourseItem> courseItems) {
         this.context = context;
-        this.items = items;
+        this.courseItems = courseItems;
     }
 
     public RecyclerAdapter() {
@@ -34,12 +34,12 @@ public class RecyclerAdapter<V extends RecyclerView.ViewHolder> extends Recycler
 
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position) {
-        Item item = items.get(position);
-        holder.getTitle().setText(item.getTitle());
+        CourseItem courseItem = courseItems.get(position);
+        holder.getTitle().setText(courseItem.getTitle());
     }
 
     @Override
     public int getItemCount() {
-        return this.items.size();
+        return this.courseItems.size();
     }
 }
