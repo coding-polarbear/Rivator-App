@@ -1,7 +1,5 @@
 package com.rinc.bong.rivatorproject.fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -73,7 +71,7 @@ public class HomeSubjectFragment extends Fragment {
         myDataset.add(new Item("디자이너들은\n" + "이 곳에 모이…"));
         myDataset.add(new Item("디자이너들은\n" + "이 곳에 모이…"));
 
-        RecyclerAdapter adapter = new RecyclerAdapter(getActivity(), myDataset);
+        RecyclerAdapter<RecyclerView.ViewHolder> adapter = new RecyclerAdapter<RecyclerView.ViewHolder>(getActivity(), myDataset);
         recyclerView.setAdapter(adapter);
     }
 }

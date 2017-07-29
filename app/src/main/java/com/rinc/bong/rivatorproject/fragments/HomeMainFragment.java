@@ -110,7 +110,7 @@ public class HomeMainFragment extends Fragment {
         myDataset.add(new Item("디자이너들은\n" + "이 곳에 모이…"));
         myDataset.add(new Item("디자이너들은\n" + "이 곳에 모이…"));
 
-        RecyclerAdapter adapter = new RecyclerAdapter(getActivity(), myDataset);
+        RecyclerAdapter<RecyclerView.ViewHolder> adapter = new RecyclerAdapter<RecyclerView.ViewHolder>(getActivity(), myDataset);
         recyclerView.setAdapter(adapter);
     }
 }

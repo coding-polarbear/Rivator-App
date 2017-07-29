@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="64dp"
+    android:layout_width="match_parent"
+    android:minHeight="64dp"
+    android:background="@color/colorPrimary"
+    >
+    <TextView
+        android:id="@+id/item_notice_title"
+        android:layout_marginTop="@dimen/notice_item_top_margin"
+        android:layout_marginLeft="@dimen/notice_item_left_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:textSize="16sp"
+        android:textColor="#000000"
+        android:letterSpacing="-0.06"
+        android:text="Rivator에서 여러분의 가입을 환영합니다!!"
+        />
+    <TextView
+        android:layout_marginLeft="@dimen/notice_item_left_margin"
+        android:layout_below="@+id/item_notice_title"
+        android:id="@+id/item_notice_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:textSize="12sp"
+        android:textColor="@color/colorTextDefault"
+        android:letterSpacing="-0.1"
+        android:text="공지 분류"
+        />
+    <View
+        android:background="@color/colorItemLine"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        />
+
+</RelativeLayout>
