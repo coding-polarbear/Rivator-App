@@ -26,7 +26,7 @@ public class NoticePagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        switch (position){
+        switch (position) {
             case 0:
                 return NoticeNotReadFragment.newInstance();
             case 1:
@@ -38,6 +38,18 @@ public class NoticePagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 0;
+        return numOfTab;
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        switch (position) {
+            case 0:
+                return tabName.get(position);
+            case 1:
+                return tabName.get(position);
+            default:
+                return null;
+        }
     }
 }

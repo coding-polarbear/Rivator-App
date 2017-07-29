@@ -3,6 +3,9 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <!--Notice Activity Size-->
+    <dimen name="notice_item_top_margin">16dp</dimen>
+    <dimen name="notice_item_left_margin">24dp</dimen>
     <!--Indicator Size-->
     <dimen name="home_indicator_select">16dp</dimen>
     <dimen name="home_indicator_default">8dp</dimen>

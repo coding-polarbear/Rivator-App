@@ -15,13 +15,17 @@ import java.util.List;
  * Created by baehyeonbin on 2017. 7. 18..
  */
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
+public class RecyclerAdapter<V extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<RecyclerViewHolder> {
     Context context;
     List<Item> items;
     public RecyclerAdapter(Context context, List<Item> items) {
         this.context = context;
         this.items = items;
     }
+
+    public RecyclerAdapter() {
+    }
+
     @Override
     public RecyclerViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view, null);
