@@ -48,8 +48,10 @@ public class HomeFragment extends Fragment {
         //ViewPager 설정
         final ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewPager);
         final PageAdapter pageAdapter = new PageAdapter(getChildFragmentManager(),tabLayout.getTabCount(),tabNames);
-        ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) viewPager.getLayoutParams();
-        lp.topMargin += 100;
+        /*ViewGroup.MarginLayoutParams lp = (ViewGroup.MarginLayoutParams) viewPager.getLayoutParams();
+        lp.topMargin += 100;*/
+
+
         viewPager.setAdapter(pageAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
