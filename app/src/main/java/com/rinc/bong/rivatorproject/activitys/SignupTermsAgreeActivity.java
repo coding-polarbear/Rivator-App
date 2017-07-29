@@ -16,6 +16,7 @@ import com.rinc.bong.rivatorproject.R;
 
 public class SignupTermsAgreeActivity extends AppCompatActivity {
     private Intent intent;
+    private ActionBar actionBar;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +32,7 @@ public class SignupTermsAgreeActivity extends AppCompatActivity {
     */
 
     private void setCustomActionbar() {
-        ActionBar actionBar = getSupportActionBar();
-
+        actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
