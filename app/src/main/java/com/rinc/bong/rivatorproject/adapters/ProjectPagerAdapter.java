@@ -10,7 +10,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.rinc.bong.rivatorproject.R;
-import com.rinc.bong.rivatorproject.beans.Project;
 import com.rinc.bong.rivatorproject.fragments.HomeWorkNotSubmitFragment;
 import com.rinc.bong.rivatorproject.fragments.HomeWorkSubmitFragment;
 import com.rinc.bong.rivatorproject.fragments.ProjectCreateFragment;
