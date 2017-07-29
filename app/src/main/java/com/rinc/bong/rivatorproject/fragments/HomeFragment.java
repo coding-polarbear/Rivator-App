@@ -15,7 +15,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.rinc.bong.rivatorproject.ImageSlideAdapter;
+import com.rinc.bong.rivatorproject.adapters.ImageSlideAdapter;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.adapters.MyAdapter;
 import com.rinc.bong.rivatorproject.adapters.PageAdapter;
