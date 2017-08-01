@@ -2,6 +2,7 @@ package com.rinc.bong.rivatorproject.activitys;
 
 import android.graphics.Color;
 import android.support.design.internal.BottomNavigationItemView;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
@@ -24,7 +25,7 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNavigation);
         //BottomNavigationView 설정
         setBottomNavigationView();
         if(savedInstanceState == null) loadFragment(new HomeFragment(0));
@@ -44,7 +45,6 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setBottomNavigationView() {
-        bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNavigation);
         bottomNavigationView.enableAnimation(false);
         bottomNavigationView.enableShiftingMode(false);
         bottomNavigationView.enableItemShiftingMode(false);
