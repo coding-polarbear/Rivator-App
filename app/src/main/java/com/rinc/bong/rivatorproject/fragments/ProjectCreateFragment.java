@@ -23,29 +23,29 @@ public class ProjectCreateFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_project_create ,container ,false);
+        view = inflater.inflate(R.layout.fragment_management_default,container ,false);
         init();
         recyclerInit();
         return view;
     }
 
     private void init() {
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.project_recycler_create);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerview_default);
     }
 
     private void recyclerInit() {
 
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        NoticeRecyclerAdapter mNoticeRecyclerAdapter = new NoticeRecyclerAdapter(view.getContext(),5);
-        mRecyclerView.setAdapter(mNoticeRecyclerAdapter);
+        ProjectRecyclerAdapter mProjectRecyclerAdapter  = new ProjectRecyclerAdapter(view.getContext());
+        mRecyclerView.setAdapter(mProjectRecyclerAdapter);
     }
 
-    public static NoticeReadFragment newInstance() {
+    public static ProjectCreateFragment newInstance() {
 
         Bundle args = new Bundle();
 
-        NoticeReadFragment fragment = new NoticeReadFragment();
+        ProjectCreateFragment fragment = new ProjectCreateFragment();
         fragment.setArguments(args);
         return fragment;
     }

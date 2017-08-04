@@ -9,20 +9,18 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.adapters.LetureManagementRecyclerAdapter;
 import com.rinc.bong.rivatorproject.adapters.NoticeRecyclerAdapter;
 
 /**
- * Created by Bong on 2017-07-30.
+ * Created by bong on 2017-08-05.
  */
 
-public class NoticeNotReadFragment extends Fragment {
+public class LectureDuringFragment extends Fragment {
 
     private View view = null;
     private RecyclerView mRecyclerView = null;
-
-    public NoticeNotReadFragment() {
-    }
-
+    private final int PAGE_NUM = 1;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_management_default,container ,false);
@@ -31,23 +29,23 @@ public class NoticeNotReadFragment extends Fragment {
         return view;
     }
 
-    private void recyclerInit() {
-
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        NoticeRecyclerAdapter mNoticeRecyclerAdapter = new NoticeRecyclerAdapter(view.getContext());
-        mRecyclerView.setAdapter(mNoticeRecyclerAdapter);
-    }
-
     private void init() {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerview_default);
     }
 
-    public static NoticeNotReadFragment newInstance() {
+    private void recyclerInit() {
+
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        LetureManagementRecyclerAdapter mLetureRecyclerAdpater = new LetureManagementRecyclerAdapter(view.getContext(), PAGE_NUM);
+        mRecyclerView.setAdapter(mLetureRecyclerAdpater);
+    }
+
+    public static LectureDuringFragment newInstance() {
 
         Bundle args = new Bundle();
 
-        NoticeNotReadFragment fragment = new NoticeNotReadFragment();
+        LectureDuringFragment fragment = new LectureDuringFragment();
         fragment.setArguments(args);
         return fragment;
     }

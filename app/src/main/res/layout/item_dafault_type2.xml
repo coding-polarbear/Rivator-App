@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:background="@color/colorPrimary"
+    android:minHeight="64dp">
+
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/notice_item_left_margin"
+        android:layout_marginTop="@dimen/notice_item_top_margin"
+
+        android:letterSpacing="-0.06"
+        android:text="Title Message"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/item_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/item_title"
+        android:layout_marginLeft="@dimen/notice_item_left_margin"
+
+        android:letterSpacing="-0.1"
+        android:text="description text"
+        android:textColor="@color/colorTextDefault"
+        android:textSize="12sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorItemLine" />
+    <TextView
+        android:id="@+id/item_contdition"
+        android:layout_marginRight="@dimen/notice_item_right_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textSize="20sp"
+        android:textColor="@color/colorMainGreen"
+        android:letterSpacing="-0.09"
+        android:gravity="center_vertical"
+        android:text="진행중"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

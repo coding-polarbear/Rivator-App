@@ -7,7 +7,7 @@
     android:background="@color/colorPrimary"
     >
     <TextView
-        android:id="@+id/item_notice_title"
+        android:id="@+id/item_title"
         android:layout_marginTop="@dimen/notice_item_top_margin"
         android:layout_marginLeft="@dimen/notice_item_left_margin"
         android:layout_width="match_parent"
@@ -20,8 +20,8 @@
         />
     <TextView
         android:layout_marginLeft="@dimen/notice_item_left_margin"
-        android:layout_below="@+id/item_notice_title"
-        android:id="@+id/item_notice_category"
+        android:layout_below="@+id/item_title"
+        android:id="@+id/item_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 

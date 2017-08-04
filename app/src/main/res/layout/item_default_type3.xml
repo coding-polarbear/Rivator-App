@@ -37,11 +37,11 @@
         android:layout_marginRight="@dimen/notice_item_right_margin"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:textSize="20sp"
+        android:textSize="16sp"
         android:textColor="@color/colorMainGreen"
         android:letterSpacing="-0.09"
         android:gravity="center_vertical"
-        android:text="진행중"
+        android:text="@string/lecture_underline_text"
         android:layout_centerVertical="true"
         android:layout_alignParentEnd="true" />
 

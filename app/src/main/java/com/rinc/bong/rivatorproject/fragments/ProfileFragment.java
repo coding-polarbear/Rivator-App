@@ -10,7 +10,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.activitys.ContestManagementActivity;
 import com.rinc.bong.rivatorproject.activitys.HomeWorkActivity;
+import com.rinc.bong.rivatorproject.activitys.LectureManagementActivity;
 import com.rinc.bong.rivatorproject.activitys.NoticeActivity;
 import com.rinc.bong.rivatorproject.activitys.ProjectActivity;
 
@@ -60,6 +62,12 @@ public class ProfileFragment extends Fragment {
         });
         project_btn.setOnClickListener(view -> {
             startActivity(new Intent(view.getContext(), ProjectActivity.class));
+        });
+        course_btn.setOnClickListener(v -> {
+            startActivity(new Intent(view.getContext(), LectureManagementActivity.class));
+        });
+        contest_btn.setOnClickListener(v -> {
+            startActivity(new Intent(view.getContext(), ContestManagementActivity.class));
         });
     }
 

@@ -22,21 +22,21 @@ public class NoticeReadFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_notice_read ,container ,false);
+        view = inflater.inflate(R.layout.fragment_management_default,container ,false);
         init();
         recyclerInit();
         return view;
     }
 
     private void init() {
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.notice_recycler_read);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerview_default);
     }
 
     private void recyclerInit() {
 
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        NoticeRecyclerAdapter mNoticeRecyclerAdapter = new NoticeRecyclerAdapter(view.getContext(),1);
+        NoticeRecyclerAdapter mNoticeRecyclerAdapter = new NoticeRecyclerAdapter(view.getContext());
         mRecyclerView.setAdapter(mNoticeRecyclerAdapter);
     }
 

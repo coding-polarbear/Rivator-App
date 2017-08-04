@@ -9,29 +9,29 @@ import android.view.ViewGroup;
 import com.rinc.bong.rivatorproject.R;
 
 /**
- * Created by Bong on 2017-07-30.
+ * Created by bong on 2017-08-05.
  */
 
-public class ProjectRecyclerAdapter extends RecyclerView.Adapter<ProjectRecyclerAdapter.ViewHolder> {
+public class ContestRecyclerAdapter extends RecyclerView.Adapter<ContestRecyclerAdapter.ViewHolder> {
 
     private View view = null;
     private Context context = null;
-    public ProjectRecyclerAdapter(Context context) {
+
+    public ContestRecyclerAdapter(Context context) {
         this.context = context;
     }
 
 
     @Override
-    public ProjectRecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ContestRecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         view = LayoutInflater.from(context.getApplicationContext()).inflate(R.layout.item_dafault_type2, null);
-        return new ProjectRecyclerAdapter.ViewHolder(view);
+        return new ContestRecyclerAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(ProjectRecyclerAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(ContestRecyclerAdapter.ViewHolder holder, int position) {
 
     }
-
 
 
     @Override
@@ -40,7 +40,7 @@ public class ProjectRecyclerAdapter extends RecyclerView.Adapter<ProjectRecycler
         return 15;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         public ViewHolder(View itemView) {
             super(itemView);
         }

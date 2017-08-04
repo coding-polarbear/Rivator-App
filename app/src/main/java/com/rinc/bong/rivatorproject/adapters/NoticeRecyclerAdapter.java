@@ -2,6 +2,7 @@ package com.rinc.bong.rivatorproject.adapters;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,27 +14,21 @@ import com.rinc.bong.rivatorproject.R;
  */
 
 public class NoticeRecyclerAdapter extends RecyclerView.Adapter<NoticeRecyclerAdapter.ViewHolder> {
-    private int idx = 0;
+
     private View view = null;
     private Context context = null;
 
-    public NoticeRecyclerAdapter(Context context, int idx) {
+    public NoticeRecyclerAdapter(Context context) {
         this.context = context;
-        this.idx = idx;
     }
 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        switch (idx) {
-            case 5:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_project, null);
-                return new ViewHolder(view);
-            default:
-                view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_default, null);
-                return new ViewHolder(view);
 
-        }
+        view = LayoutInflater.from(context.getApplicationContext()).inflate(R.layout.item_default, null);
+        return new ViewHolder(view);
+
     }
 
     @Override

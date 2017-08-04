@@ -9,19 +9,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.rinc.bong.rivatorproject.R;
-import com.rinc.bong.rivatorproject.adapters.NoticeRecyclerAdapter;
+import com.rinc.bong.rivatorproject.adapters.ProjectRecyclerAdapter;
 
 /**
- * Created by Bong on 2017-07-30.
+ * Created by bong on 2017-08-05.
  */
 
-public class NoticeNotReadFragment extends Fragment {
+public class ContestJoinFragment extends Fragment {
 
     private View view = null;
     private RecyclerView mRecyclerView = null;
-
-    public NoticeNotReadFragment() {
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -31,23 +28,23 @@ public class NoticeNotReadFragment extends Fragment {
         return view;
     }
 
-    private void recyclerInit() {
-
-        mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        NoticeRecyclerAdapter mNoticeRecyclerAdapter = new NoticeRecyclerAdapter(view.getContext());
-        mRecyclerView.setAdapter(mNoticeRecyclerAdapter);
-    }
-
     private void init() {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerview_default);
     }
 
-    public static NoticeNotReadFragment newInstance() {
+    private void recyclerInit() {
+
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
+        ProjectRecyclerAdapter mProjectRecyclerAdapter  = new ProjectRecyclerAdapter(view.getContext());
+        mRecyclerView.setAdapter(mProjectRecyclerAdapter);
+    }
+
+    public static ContestJoinFragment newInstance() {
 
         Bundle args = new Bundle();
 
-        NoticeNotReadFragment fragment = new NoticeNotReadFragment();
+        ContestJoinFragment fragment = new ContestJoinFragment();
         fragment.setArguments(args);
         return fragment;
     }
