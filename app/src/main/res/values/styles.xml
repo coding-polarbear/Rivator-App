@@ -10,6 +10,16 @@
     <style name="AppTheme.ActionBar.Transparent" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/greenBar</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/greenBar</item>
+    </style>
+    <style name="CalenderViewCustom" parent="AppTheme">
+        <item name="colorAccent">@color/greenBar</item>
+    </style>
+    <style name="CalenderViewDateCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/colorDarkText</item>
+    </style>
+
+    <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/colorDarkText</item>
     </style>
 </resources>

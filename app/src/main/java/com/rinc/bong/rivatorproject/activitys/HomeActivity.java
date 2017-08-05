@@ -1,5 +1,6 @@
 package com.rinc.bong.rivatorproject.activitys;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.design.widget.BottomNavigationView;
@@ -73,6 +74,8 @@ public class HomeActivity extends AppCompatActivity {
                     break;
                 case R.id.btnCalendar:
                     position = 2;
+                    Intent i = new Intent(getApplicationContext(),CalendarActivity.class);
+                    startActivity(i);
                     break;
                 case R.id.btnCurrentLecture:
                     position = 3;

@@ -1,48 +1,25 @@
 package com.rinc.bong.rivatorproject.activitys;
 
-import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
-
-public class SelectActivity extends AppCompatActivity {
-    Button button;
+public class CalendarActivity extends AppCompatActivity {
     private ActionBar actionBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select);
+        setContentView(R.layout.activity_calendar);
         setCustomActionbar();
-        button = (Button) getSupportActionBar().getCustomView().findViewById(R.id.btnBack);
-        button.setOnClickListener(v -> {
-            finish();
-        });
-
     }
 
-    public void goToTeacherSignup(View view) {
-        Intent i = new Intent(this, SignupTermsAgreeActivity.class);
-        i.putExtra("type", "teacher");
-        startActivity(i);
-    }
-
-    public void gotoStudentSignUp(View view) {
-        Intent i = new Intent(this, SignupTermsAgreeActivity.class);
-        i.putExtra("type", "student");
-        startActivity(i);
-    }
-
-    /* custom ActionBar
+      /* custom ActionBar
        백그라운드 설정 및 뒤로가기 버튼 달린 커스텀 액션바
      */
 
@@ -60,12 +37,10 @@ public class SelectActivity extends AppCompatActivity {
         LayoutInflater inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
         View actionbar = inflater.inflate(R.layout.custom_action_bar, null);
         TextView textView = (TextView) actionbar.findViewById(R.id.title);
-        textView.setText("유형 선택");
+        textView.setText("캘린더");
         actionBar.setCustomView(actionbar);
 
         Toolbar parent = (Toolbar) actionbar.getParent();
         parent.setContentInsetsAbsolute(0,0);
-
-
     }
 }
