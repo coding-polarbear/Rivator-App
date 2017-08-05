@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
-import com.rinc.bong.rivatorproject.adapters.RecyclerAdapter;
+import com.rinc.bong.rivatorproject.adapters.RecyclerItemAdapter;
 import com.rinc.bong.rivatorproject.beans.CourseItem;
 
 import java.util.ArrayList;
@@ -71,7 +71,7 @@ public class HomeSubjectFragment extends Fragment {
         myDataset.add(new CourseItem("디자이너들은\n" + "이 곳에 모이…"));
         myDataset.add(new CourseItem("디자이너들은\n" + "이 곳에 모이…"));
 
-        RecyclerAdapter<RecyclerView.ViewHolder> adapter = new RecyclerAdapter<RecyclerView.ViewHolder>(getActivity(), myDataset);
+        RecyclerItemAdapter<RecyclerView.ViewHolder> adapter = new RecyclerItemAdapter<RecyclerView.ViewHolder>(getActivity(), myDataset);
         recyclerView.setAdapter(adapter);
     }
 }

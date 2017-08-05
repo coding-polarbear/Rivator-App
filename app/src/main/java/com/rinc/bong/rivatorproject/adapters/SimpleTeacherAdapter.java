@@ -16,12 +16,12 @@ import java.util.ArrayList;
  * Created by baehyeonbin on 2017. 7. 16..
  */
 
-public class MyAdapter extends ArrayAdapter<SimpleTeacher> {
+public class SimpleTeacherAdapter extends ArrayAdapter<SimpleTeacher> {
     private ArrayList<SimpleTeacher> listViewItem = new ArrayList<SimpleTeacher>();
     private Context context;
     private int srsc;
 
-    public MyAdapter(Context context,int srsc, ArrayList<SimpleTeacher> items) {
+    public SimpleTeacherAdapter(Context context, int srsc, ArrayList<SimpleTeacher> items) {
         super(context,srsc,items);
         this.context = context;
         this.srsc = srsc;

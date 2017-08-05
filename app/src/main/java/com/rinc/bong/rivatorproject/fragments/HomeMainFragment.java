@@ -15,8 +15,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import com.rinc.bong.rivatorproject.adapters.ImageSlideAdapter;
 import com.rinc.bong.rivatorproject.R;
-import com.rinc.bong.rivatorproject.adapters.MyAdapter;
-import com.rinc.bong.rivatorproject.adapters.RecyclerAdapter;
+import com.rinc.bong.rivatorproject.adapters.SimpleTeacherAdapter;
+import com.rinc.bong.rivatorproject.adapters.RecyclerItemAdapter;
 import com.rinc.bong.rivatorproject.beans.CourseItem;
 import com.rinc.bong.rivatorproject.beans.SimpleTeacher;
 
@@ -35,7 +35,7 @@ public class HomeMainFragment extends Fragment {
     private TextView moreText2;
     private TextView moreText3;
     private ListView listView;
-    private MyAdapter adapter;
+    private SimpleTeacherAdapter adapter;
     private RecyclerView recyclerView1;
     private RecyclerView recyclerView2;
 
@@ -97,7 +97,7 @@ public class HomeMainFragment extends Fragment {
         simpleTeachers.add(new SimpleTeacher("강사명", "IT 분야"));
         simpleTeachers.add(new SimpleTeacher("강사명", "IT 분야"));
         Log.d("Test", simpleTeachers.get(0).getTeacherName());
-        adapter = new MyAdapter(getActivity(), R.layout.teacher_listview, simpleTeachers);
+        adapter = new SimpleTeacherAdapter(getActivity(), R.layout.teacher_listview, simpleTeachers);
         listView.setAdapter(adapter);
         ((BaseAdapter) listView.getAdapter()).notifyDataSetChanged();
     }
@@ -113,7 +113,7 @@ public class HomeMainFragment extends Fragment {
         myDataset.add(new CourseItem("디자이너들은\n" + "이 곳에 모이…"));
         myDataset.add(new CourseItem("디자이너들은\n" + "이 곳에 모이…"));
 
-        RecyclerAdapter adapter = new RecyclerAdapter(getActivity(), myDataset);
+        RecyclerItemAdapter adapter = new RecyclerItemAdapter(getActivity(), myDataset);
         recyclerView.setAdapter(adapter);
     }
 }

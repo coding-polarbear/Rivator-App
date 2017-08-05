@@ -15,15 +15,15 @@ import java.util.List;
  * Created by baehyeonbin on 2017. 7. 18..
  */
 
-public class RecyclerAdapter<V extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<RecyclerViewHolder> {
+public class RecyclerItemAdapter<V extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<RecyclerViewHolder> {
     Context context;
     List<CourseItem> courseItems;
-    public RecyclerAdapter(Context context, List<CourseItem> courseItems) {
+    public RecyclerItemAdapter(Context context, List<CourseItem> courseItems) {
         this.context = context;
         this.courseItems = courseItems;
     }
 
-    public RecyclerAdapter() {
+    public RecyclerItemAdapter() {
     }
 
     @Override
