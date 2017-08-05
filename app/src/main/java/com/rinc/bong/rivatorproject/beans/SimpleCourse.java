@@ -1,5 +1,6 @@
 package com.rinc.bong.rivatorproject.beans;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,14 +9,10 @@ import lombok.Setter;
  */
 @Getter
 @Setter
+@AllArgsConstructor
 public class SimpleCourse {
     private String title;
     private String teacherName;
-    private String unitTime;
-
-    public SimpleCourse(String title, String teacherName, String unitTime) {
-        this.title = title;
-        this.teacherName = teacherName;
-        this.unitTime = unitTime;
-    }
+    private String category;
+    private int unitTime;
 }

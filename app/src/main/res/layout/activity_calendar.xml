@@ -16,9 +16,29 @@
             android:layout_height="match_parent"
             android:theme="@style/CalenderViewCustom"
             android:id="@+id/calendar"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:background="#f0f0f0"
+            android:layout_below="@+id/calendar"
+            android:id="@+id/line"
+            />
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorWhiteText"
+            app:tabGravity="center"
+            android:layout_below="@+id/line"
+            app:tabMode="scrollable"
+            app:tabIndicatorColor="@color/colorDarkText"
+            app:tabSelectedTextColor="@color/colorDarkText"
+            app:tabTextColor="#787878" >
+        </android.support.design.widget.TabLayout>
         <ListView
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_below="@+id/calendar"/>
+            android:layout_height="match_parent"
+            android:id="@+id/listView"
+            android:layout_below="@+id/tab"/>
     </RelativeLayout>
 </ScrollView>

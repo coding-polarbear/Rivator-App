@@ -1,27 +1,83 @@
 package com.rinc.bong.rivatorproject.activitys;
 
+import android.support.design.widget.TabLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.adapters.SimpleCourseAdapter;
+import com.rinc.bong.rivatorproject.beans.SimpleCourse;
+
+import java.util.ArrayList;
 
 public class CalendarActivity extends AppCompatActivity {
     private ActionBar actionBar;
+    private ListView listView;
+    private ArrayList<SimpleCourse> itemList;
+    private TabLayout tabLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
+        itemList = new ArrayList<>();
         setCustomActionbar();
+        setTabLayout();
+        setListView();
     }
 
-      /* custom ActionBar
-       백그라운드 설정 및 뒤로가기 버튼 달린 커스텀 액션바
-     */
+    private void setTabLayout() {
+        tabLayout = (TabLayout) findViewById(R.id.tab);
+        tabLayout.addTab(tabLayout.newTab().setText("과외목록"));
+        tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER); //탭 가로 길이 가변 설정
+    }
+
+    public void setListView() {
+        listView = (ListView) findViewById(R.id.listView);
+        itemList.add(new SimpleCourse("웹프로그래밍","김철수","IT",123));
+        itemList.add(new SimpleCourse("웹프로그래밍","김철수","IT",123));
+        itemList.add(new SimpleCourse("웹프로그래밍","김철수","IT",123));
+        itemList.add(new SimpleCourse("웹프로그래밍","김철수","IT",123));
+        itemList.add(new SimpleCourse("웹프로그래밍","김철수","IT",123));
+        SimpleCourseAdapter simpleCourseAdapter = new SimpleCourseAdapter(getApplicationContext(), R.layout.item_default_type_course, itemList);
+        listView.setAdapter(simpleCourseAdapter);
+        setListViewHeightBasedOnItems(listView);
+    }
+
+    //ListView 동적 높이 지정
+    public void setListViewHeightBasedOnItems(ListView listView) {
+
+        // Get list adpter of listview;
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null)  return;
+
+        int numberOfItems = listAdapter.getCount();
+
+        // Get total height of all items.
+        int totalItemsHeight = 0;
+        for (int itemPos = 0; itemPos < numberOfItems; itemPos++) {
+            View item = listAdapter.getView(itemPos, null, listView);
+            item.measure(0, 0);
+            totalItemsHeight += item.getMeasuredHeight();
+        }
+
+        // Get total height of all item dividers.
+        int totalDividersHeight = listView.getDividerHeight() *  (numberOfItems - 1);
+
+        // Set list height.
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalItemsHeight + totalDividersHeight;
+        listView.setLayoutParams(params);
+        listView.requestLayout();
+    }
+
 
     public void  setCustomActionbar() {
         actionBar = getSupportActionBar();
