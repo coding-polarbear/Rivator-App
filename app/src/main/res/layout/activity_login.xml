@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rinc.bong.rivatorproject.activitys.LoginActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아이디"
+        android:id="@+id/idTextView"
+        android:textSize="14sp"
+        android:textColor="#232323"
+        android:letterSpacing="-0.05"
+        android:gravity="center_horizontal"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="304dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="11dp"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/id"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_below="@+id/idTextView"
+        android:hint=" 아이디"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호"
+        android:layout_below="@+id/id"
+        android:id="@+id/passwordTextView"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="304dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginTop="15dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/passwordTextView"
+        android:id="@+id/password"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="19dp"
+        android:hint=" 패스워드"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorMainGreen"
+        android:text="로그인"
+        android:onClick="goToHome"
+        android:textColor="@color/colorWhiteText"
+        android:layout_marginLeft="19dp"
+        android:layout_marginRight="19dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="37dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="계정을 잃어버리셨나요"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp" />
+
+</RelativeLayout>

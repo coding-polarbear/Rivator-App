@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -60,7 +62,7 @@ public class CalendarActivity extends AppCompatActivity {
 
         int numberOfItems = listAdapter.getCount();
 
-        // Get total height of all items.
+        // 아이템의 높이 구하기
         int totalItemsHeight = 0;
         for (int itemPos = 0; itemPos < numberOfItems; itemPos++) {
             View item = listAdapter.getView(itemPos, null, listView);
@@ -68,10 +70,10 @@ public class CalendarActivity extends AppCompatActivity {
             totalItemsHeight += item.getMeasuredHeight();
         }
 
-        // Get total height of all item dividers.
+        // item divider에 따른 높이 설정
         int totalDividersHeight = listView.getDividerHeight() *  (numberOfItems - 1);
 
-        // Set list height.
+        //레이아웃 높이 서렂ㅇ
         ViewGroup.LayoutParams params = listView.getLayoutParams();
         params.height = totalItemsHeight + totalDividersHeight;
         listView.setLayoutParams(params);
@@ -91,12 +93,18 @@ public class CalendarActivity extends AppCompatActivity {
 
         //layout을 가지고 와서 actionbar에 포팅을 시킵니다.
         LayoutInflater inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
-        View actionbar = inflater.inflate(R.layout.custom_action_bar, null);
-        TextView textView = (TextView) actionbar.findViewById(R.id.title);
+        View customView = inflater.inflate(R.layout.custom_action_bar, null);
+        TextView textView = (TextView) customView.findViewById(R.id.title);
         textView.setText("캘린더");
-        actionBar.setCustomView(actionbar);
 
-        Toolbar parent = (Toolbar) actionbar.getParent();
+        //ImageButton 리스너 설정
+        Button imageButton = (Button) customView.findViewById(R.id.btnBack);
+        imageButton.setOnClickListener(v -> {
+            finish();
+        });
+        actionBar.setCustomView(customView);
+
+        Toolbar parent = (Toolbar) customView.getParent();
         parent.setContentInsetsAbsolute(0,0);
     }
 }

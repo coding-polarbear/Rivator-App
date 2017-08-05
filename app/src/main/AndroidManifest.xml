@@ -38,8 +38,10 @@
         <activity android:name=".activitys.ProjectActivity" />
         <activity android:name=".activitys.LectureManagementActivity" />
         <activity android:name=".activitys.ContestManagementActivity" />
-        <activity android:name=".activitys.CalendarActivity"
-            android:theme="@style/AppTheme.ActionBar.Transparent"></activity>
+        <activity
+            android:name=".activitys.CalendarActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
+        <activity android:name=".activitys.LoginActivity"></activity>
     </application>
 
 </manifest>
