@@ -34,7 +34,7 @@
         android:layout_height="0.5dp"
         android:background="@color/colorItemLine" />
     <Button
-        android:background="@drawable/back"
+        android:background="@drawable/background"
         android:id="@+id/item_button"
         android:layout_marginRight="@dimen/notice_item_right_margin"
         android:layout_width="24dp"
