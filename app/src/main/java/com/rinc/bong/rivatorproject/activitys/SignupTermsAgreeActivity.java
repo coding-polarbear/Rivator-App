@@ -6,6 +6,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
@@ -38,8 +39,14 @@ public class SignupTermsAgreeActivity extends AppCompatActivity {
         actionBar.setDisplayShowTitleEnabled(false);
 
         View mCustomView = LayoutInflater.from(this).inflate(R.layout.layout_actionbar_type_cancle, null);
+
         TextView textView = (TextView) mCustomView.findViewById(R.id.title);
         textView.setText("약관 동의");
+
+        ImageButton imageButton = (ImageButton) mCustomView.findViewById(R.id.btnClose);
+        imageButton.setOnClickListener(v -> {
+            finish();
+        });
         actionBar.setCustomView(mCustomView);
     }
 

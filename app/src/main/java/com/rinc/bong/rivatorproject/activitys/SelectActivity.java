@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
@@ -16,15 +17,15 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SelectActivity extends AppCompatActivity {
-    Button button;
+    ImageButton imageButton;
     private ActionBar actionBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
         setCustomActionbar();
-        button = (Button) getSupportActionBar().getCustomView().findViewById(R.id.btnBack);
-        button.setOnClickListener(v -> {
+        imageButton = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.btnBack);
+        imageButton.setOnClickListener(v -> {
             finish();
         });
 

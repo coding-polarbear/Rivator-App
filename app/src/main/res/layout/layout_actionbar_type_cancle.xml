@@ -3,17 +3,16 @@
     android:gravity="center_vertical"
     style="?android:attr/borderlessButtonStyle"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="56dp"
+    android:padding="0dp">
 
     <ImageButton
         android:id="@+id/btnClose"
-        android:layout_width="19dp"
-        android:layout_height="19dp"
+        android:layout_width="56dp"
+        android:layout_height="match_parent"
         android:src="@drawable/close"
-        android:layout_marginLeft="14.5dp"
-        android:layout_centerVertical="true"
-        style="?android:attr/borderlessButtonStyle"
-        android:layout_alignParentStart="true" />
+        android:layout_marginStart="0dp"
+        style="?android:attr/borderlessButtonStyle" />
 
     <TextView
         android:id="@+id/title"
@@ -22,10 +21,7 @@
         android:gravity="center_vertical"
         android:textAlignment="center"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_alignBaseline="@+id/btnBack"
-        android:layout_alignBottom="@+id/btnBack"
-        android:layout_alignParentStart="true" />
+        android:layout_height="match_parent" />
 
 </RelativeLayout>
 

@@ -9,7 +9,7 @@
         android:id="@+id/btnBack"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/back"
+        android:src="@drawable/backblack"
         android:layout_centerVertical="true"
         style="?android:attr/borderlessButtonStyle" />
 
