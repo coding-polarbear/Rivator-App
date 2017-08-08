@@ -46,7 +46,6 @@ public class SelectActivity extends AppCompatActivity {
     /* custom ActionBar
        백그라운드 설정 및 뒤로가기 버튼 달린 커스텀 액션바
      */
-
     public void  setCustomActionbar() {
         actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
@@ -66,7 +65,5 @@ public class SelectActivity extends AppCompatActivity {
 
         Toolbar parent = (Toolbar) actionbar.getParent();
         parent.setContentInsetsAbsolute(0,0);
-
-
     }
 }

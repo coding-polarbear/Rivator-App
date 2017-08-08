@@ -42,7 +42,8 @@
             android:name=".activitys.CalendarActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity android:name=".activitys.LoginActivity" />
-        <activity android:name=".activitys.ProjectInformationActivity"></activity>
+        <activity android:name=".activitys.ProjectInformationActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent"/>
     </application>
 
 </manifest>
