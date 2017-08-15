@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
@@ -25,10 +26,18 @@ public class CalendarActivity extends AppCompatActivity {
     private ListView listView;
     private ArrayList<SimpleCourse> itemList;
     private TabLayout tabLayout;
+    private ScrollView scrollView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calendar);
+
+        //스크롤뷰 자동 스크롤 설정
+        scrollView = (ScrollView) findViewById(R.id.scrollView);
+        scrollView.post(() -> {
+            scrollView.fullScroll(ScrollView.FOCUS_UP);
+        });
+
         itemList = new ArrayList<>();
         setCustomActionbar();
         setTabLayout();
@@ -98,7 +107,7 @@ public class CalendarActivity extends AppCompatActivity {
         textView.setText("캘린더");
 
         //ImageButton 리스너 설정
-        Button imageButton = (Button) customView.findViewById(R.id.btnBack);
+        ImageButton imageButton = (ImageButton) customView.findViewById(R.id.btnBack);
         imageButton.setOnClickListener(v -> {
             finish();
         });
