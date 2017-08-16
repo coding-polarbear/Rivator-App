@@ -14,6 +14,7 @@ import com.rinc.bong.rivatorproject.activitys.ContestManagementActivity;
 import com.rinc.bong.rivatorproject.activitys.HomeWorkActivity;
 import com.rinc.bong.rivatorproject.activitys.LectureManagementActivity;
 import com.rinc.bong.rivatorproject.activitys.NoticeActivity;
+import com.rinc.bong.rivatorproject.activitys.ProfileModifyActivity;
 import com.rinc.bong.rivatorproject.activitys.ProjectActivity;
 
 import butterknife.BindView;
@@ -29,6 +30,7 @@ public class ProfileFragment extends Fragment {
     private Button course_btn = null;
     private Button contest_btn = null;
     private Button project_btn = null;
+    private Button profile_modify_btn = null;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -50,7 +52,7 @@ public class ProfileFragment extends Fragment {
         course_btn = (Button)view.findViewById(R.id.profile_course_btn);
         contest_btn = (Button)view.findViewById(R.id.profile_contest_btn);
         project_btn = (Button)view.findViewById(R.id.profile_project_btn);
-
+        profile_modify_btn = (Button) view.findViewById(R.id.profile_modify_btn);
     }
 
     private void setListener() {
@@ -68,6 +70,9 @@ public class ProfileFragment extends Fragment {
         });
         contest_btn.setOnClickListener(v -> {
             startActivity(new Intent(view.getContext(), ContestManagementActivity.class));
+        });
+        profile_modify_btn.setOnClickListener(v -> {
+            startActivity(new Intent(view.getContext(), ProfileModifyActivity.class));
         });
     }
 

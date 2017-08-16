@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context="com.rinc.bong.rivatorproject.activitys.ProfileModifyActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorWhiteText"
+        android:text="비밀번호 재설정"
+        android:textColor="@color/textColor"
+        android:id="@+id/modifyPassword"
+        android:gravity="center|left"
+        android:padding="16dp"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_below="@+id/modifyPassword"
+        android:background="@color/colorBackground"
+        android:id="@+id/line1"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorWhiteText"
+        android:text="계정정보 수정"
+        android:textColor="@color/textColor"
+        android:gravity="center|left"
+        android:id="@+id/modifyUser"
+        android:padding="16dp"
+        android:layout_below="@+id/line1" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_below="@+id/modifyUser"
+        android:background="@color/colorBackground"
+        android:id="@+id/line2"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorWhiteText"
+        android:text="계정 승격 요청"
+        android:textColor="@color/textColor"
+        android:id="@+id/requestUserPromotion"
+        android:gravity="center|left"
+        android:padding="16dp"
+        android:layout_below="@+id/line2"
+        android:layout_alignParentStart="true" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_below="@+id/requestUserPromotion"
+        android:background="@color/colorBackground"
+        android:id="@+id/line3"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorWhiteText"
+        android:text="로그아웃"
+        android:textColor="@color/textColor"
+        android:id="@+id/logout"
+        android:gravity="center|left"
+        android:padding="16dp"
+        android:layout_below="@+id/line3" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:layout_below="@+id/logout"
+        android:background="@color/colorBackground"
+        android:id="@+id/line4"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/colorWhiteText"
+        android:text="계정 탈퇴"
+        android:textColor="@color/textColor"
+        android:id="@+id/rsecession"
+        android:gravity="center|left"
+        android:padding="16dp"
+        android:layout_below="@+id/line4" />
+</RelativeLayout>

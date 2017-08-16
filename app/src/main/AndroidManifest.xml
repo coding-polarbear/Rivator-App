@@ -37,13 +37,17 @@
         <activity android:name=".activitys.HomeWorkActivity" />
         <activity android:name=".activitys.ProjectActivity" />
         <activity android:name=".activitys.LectureManagementActivity" />
-        <activity android:name=".activitys.ContestManagementActivity" />
+        <activity android:name=".activitys.ContestManagementActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent"/>
         <activity
             android:name=".activitys.CalendarActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity android:name=".activitys.LoginActivity" />
-        <activity android:name=".activitys.ProjectInformationActivity"
-            android:theme="@style/AppTheme.ActionBar.Transparent"/>
+        <activity
+            android:name=".activitys.ProjectInformationActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
+        <activity android:name=".activitys.PasswordModifyActivity" />
+        <activity android:name=".activitys.ProfileModifyActivity"></activity>
     </application>
 
 </manifest>

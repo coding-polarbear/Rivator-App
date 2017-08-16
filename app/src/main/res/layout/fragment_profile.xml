@@ -60,6 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="계정설정"
+                android:id="@+id/profile_modify_btn"
                 android:background="@drawable/profile_button_style"
                 android:layout_gravity="bottom"
                 android:layout_weight="1"/>

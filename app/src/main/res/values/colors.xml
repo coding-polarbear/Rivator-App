@@ -26,8 +26,9 @@
 
     <!--Custom Action Bar -->
     <color name="greenBar">#14e4a2</color>
-
     <color name="blueText">#0079ed</color>
 
+    <!-- Text Color -->
+    <color name="textColor">#a0a0a0</color>
 
 </resources>

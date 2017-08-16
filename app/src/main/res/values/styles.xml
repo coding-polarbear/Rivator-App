@@ -22,4 +22,5 @@
     <style name="CalenderViewWeekCustomText" parent="android:TextAppearance.DeviceDefault.Small">
         <item name="android:textColor">@color/colorDarkText</item>
     </style>
+
 </resources>
