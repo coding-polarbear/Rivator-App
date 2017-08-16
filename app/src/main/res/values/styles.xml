@@ -6,12 +6,16 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:spinnerStyle">@style/SpinnerTheme</item>
     </style>
     <style name="AppTheme.ActionBar.Transparent" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimary">@color/greenBar</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/greenBar</item>
+        <item name="android:spinnerStyle">@style/SpinnerTheme</item>
     </style>
+
+    <!-- Calendar Style -->
     <style name="CalenderViewCustom" parent="AppTheme">
         <item name="colorAccent">@color/greenBar</item>
     </style>
@@ -23,4 +27,8 @@
         <item name="android:textColor">@color/colorDarkText</item>
     </style>
 
+    <!-- spinner style -->
+    <style name="SpinnerTheme" parent="android:Widget.Spinner">
+        <item name="android:background">@drawable/selector_spinner</item>
+    </style>
 </resources>

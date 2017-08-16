@@ -108,7 +108,6 @@
                     android:layout_height="48dp"
                     android:layout_below="@+id/editPhoneNumber"
                     android:layout_toRightOf="@+id/textView5"
-                    android:background="@color/colorWhiteText"
                     android:layout_marginLeft="2dp" />
                 <Spinner
                     android:id="@+id/districSpinner"
@@ -116,7 +115,6 @@
                     android:layout_height="48dp"
                     android:layout_toRightOf="@+id/citySpinner"
                     android:layout_below="@+id/editPhoneNumber"
-                    android:background="@color/colorWhiteText"
                     android:layout_marginLeft="2dp" />
 
                 <Spinner
@@ -125,7 +123,6 @@
                     android:layout_height="48dp"
                     android:layout_toRightOf="@+id/districSpinner"
                     android:layout_below="@+id/editPhoneNumber"
-                    android:background="@color/colorWhiteText"
                     android:layout_marginLeft="2dp" />
                 <TextView
                     android:layout_width="72dp"
@@ -144,7 +141,6 @@
                     android:layout_height="48dp"
                     android:layout_marginLeft="2dp"
                     android:layout_marginTop="2dp"
-                    android:background="@color/colorWhiteText"
                     android:layout_below="@+id/citySpinner"
                     android:layout_toRightOf="@+id/textView6"/>
 
