@@ -40,7 +40,7 @@ public class SpinnerAdapter extends ArrayAdapter {
         View view = super.getDropDownView(position, convertView, parent);
         TextView textView = (TextView) view;
         if(position == 0)
-            textView.setTextColor(Color.GRAY);
+            textView.setTextColor(Color.BLACK);
         else
             textView.setTextColor(Color.parseColor("#a0a0a0"));
 

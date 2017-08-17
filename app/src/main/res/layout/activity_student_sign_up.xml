@@ -29,8 +29,10 @@
 
             <EditText
                 android:id="@+id/editId"
-                android:layout_width="312dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
                 android:layout_below="@+id/imageView"
                 android:layout_marginBottom="2dp"
                 android:layout_centerHorizontal="true"
@@ -42,8 +44,10 @@
 
             <EditText
                 android:id="@+id/editPassword"
-                android:layout_width="312dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
                 android:layout_marginBottom="2dp"
                 android:layout_centerHorizontal="true"
                 android:layout_below="@+id/editId"
@@ -54,7 +58,9 @@
                 android:hint="비밀번호" />
 
             <EditText
-                android:layout_width="312dp"
+                android:layout_width="match_parent"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
                 android:layout_height="48dp"
                 android:background="@color/colorWhiteText"
                 android:hint="비밀번호 재확인"
@@ -66,8 +72,10 @@
 
             <EditText
                 android:id="@+id/editName"
-                android:layout_width="312dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
                 android:layout_below="@+id/editPassword2"
                 android:layout_centerHorizontal="true"
                 android:background="@color/colorWhiteText"
@@ -79,8 +87,10 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp" />
             <EditText
-                android:layout_width="312dp"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
                 android:background="@color/colorWhiteText"
                 android:layout_below="@+id/editName"
                 android:layout_centerHorizontal="true"
@@ -101,29 +111,41 @@
                 android:gravity="center"
                 android:id="@+id/textView5"
                 android:layout_alignStart="@+id/editPassword" />
-
-            <Spinner
-                android:id="@+id/citySpinner"
-                android:layout_width="86dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
+                android:layout_marginRight="24dp"
+                android:id="@+id/spinners"
                 android:layout_below="@+id/editPhoneNumber"
                 android:layout_toRightOf="@+id/textView5"
-                android:layout_marginLeft="2dp" />
-            <Spinner
-                android:id="@+id/districSpinner"
-                android:layout_width="88dp"
-                android:layout_height="48dp"
-                android:layout_toRightOf="@+id/citySpinner"
-                android:layout_below="@+id/editPhoneNumber"
-                android:layout_marginLeft="2dp" />
+                android:orientation="horizontal">
+                <Spinner
+                    android:id="@+id/citySpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.1"
+                    android:layout_below="@+id/editPhoneNumber"
+                    android:layout_toRightOf="@+id/textView5"
+                    android:layout_marginLeft="2dp" />
+                <Spinner
+                    android:id="@+id/districSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_toRightOf="@+id/citySpinner"
+                    android:layout_below="@+id/editPhoneNumber"
+                    android:layout_marginLeft="2dp" />
 
-            <Spinner
-                android:id="@+id/townSpinner"
-                android:layout_width="86dp"
-                android:layout_height="48dp"
-                android:layout_toRightOf="@+id/districSpinner"
-                android:layout_below="@+id/editPhoneNumber"
-                android:layout_marginLeft="2dp" />
+                <Spinner
+                    android:id="@+id/townSpinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_toRightOf="@+id/districSpinner"
+                    android:layout_below="@+id/editPhoneNumber"
+                    android:layout_marginLeft="2dp" />
+            </LinearLayout>
+
             <TextView
                 android:layout_width="72dp"
                 android:layout_height="48dp"
@@ -136,12 +158,13 @@
                 android:id="@+id/textView6" />
 
             <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="242dp"
+                android:id="@+id/subjectSpinner"
+                android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginLeft="2dp"
+                android:layout_marginRight="24dp"
                 android:layout_marginTop="2dp"
-                android:layout_below="@+id/citySpinner"
+                android:layout_below="@+id/spinners"
                 android:layout_toRightOf="@+id/textView6"/>
 
             <CheckBox

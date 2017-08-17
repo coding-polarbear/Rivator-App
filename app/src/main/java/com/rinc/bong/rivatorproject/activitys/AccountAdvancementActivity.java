@@ -53,7 +53,7 @@ public class AccountAdvancementActivity extends AppCompatActivity {
         unitTimeList.add("테스트2");
 
         SpinnerAdapter categoryAdapter = new SpinnerAdapter(getApplicationContext(),R.layout.spinner_item,categoryList);
-        categoryAdapter.setDropDownViewResource(R.layout.spinner_item);
+        categoryAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         category.setAdapter(categoryAdapter);
 
         SpinnerAdapter unitTimeAdapter = new SpinnerAdapter(getApplicationContext(),R.layout.spinner_item,unitTimeList);
