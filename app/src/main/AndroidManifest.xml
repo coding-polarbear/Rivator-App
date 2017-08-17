@@ -33,10 +33,14 @@
         <activity
             android:name=".activitys.HomeActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent" />
-        <activity android:name=".activitys.NoticeActivity" />
-        <activity android:name=".activitys.HomeWorkActivity" />
-        <activity android:name=".activitys.ProjectActivity" />
-        <activity android:name=".activitys.LectureManagementActivity" />
+        <activity android:name=".activitys.NoticeActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent"/>
+        <activity android:name=".activitys.HomeWorkActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent"/>
+        <activity android:name=".activitys.ProjectActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent"/>
+        <activity android:name=".activitys.LectureManagementActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent"/>
         <activity android:name=".activitys.ContestManagementActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent"/>
         <activity

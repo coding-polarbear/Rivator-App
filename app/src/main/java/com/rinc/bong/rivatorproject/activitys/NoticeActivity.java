@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
@@ -65,12 +66,18 @@ public class NoticeActivity extends AppCompatActivity {
 
         //layout을 가지고 와서 actionbar에 포팅을 시킵니다.
         LayoutInflater inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
-        View actionbar = inflater.inflate(R.layout.custom_action_bar, null);
-        TextView textView = (TextView) actionbar.findViewById(R.id.title);
+        View view = inflater.inflate(R.layout.custom_action_bar, null);
+        TextView textView = (TextView) view.findViewById(R.id.title);
         textView.setText("알림");
-        actionBar.setCustomView(actionbar);
 
-        Toolbar parent = (Toolbar) actionbar.getParent();
+
+        ImageButton backButton = (ImageButton) view.findViewById(R.id.btnBack);
+        backButton.setOnClickListener(v -> {
+            finish();
+        });
+
+        actionBar.setCustomView(view);
+        Toolbar parent = (Toolbar) view.getParent();
         parent.setContentInsetsAbsolute(0,0);
 
 

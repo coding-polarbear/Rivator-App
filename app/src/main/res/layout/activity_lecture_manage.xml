@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorMainGreen"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
         android:background="#ffffff"
         app:tabTextColor="@color/colorTextDefault"
         app:tabIndicatorColor="@color/colorMainGreen"
         app:tabSelectedTextColor="@color/colorMainGreen"
-        android:layout_weight="40"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_marginTop="76dp"
         android:id="@+id/lecture_manage_tablayout"/>
+        <!--android:layout_weight="40"-->
+
     <android.support.v4.view.ViewPager
         android:layout_weight="520"
         android:layout_width="match_parent"
