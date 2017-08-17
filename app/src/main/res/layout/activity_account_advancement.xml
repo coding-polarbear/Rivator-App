@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/colorBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.rinc.bong.rivatorproject.activitys.AccountAdvancementActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="10">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:padding="15dp"
+            android:background="@color/colorWhiteText"
+            android:hint="강좌명"
+            android:id="@+id/subjectName"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="left"
+            android:layout_below="@+id/subjectName"
+            android:id="@+id/category"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:id="@+id/unitTime"
+            android:layout_below="@+id/category"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/unitTime"
+            android:background="@color/colorWhiteText"
+            android:padding="15dp"
+            android:hint="세부요청"
+            android:id="@+id/request"
+            android:gravity="top"/>
+    </RelativeLayout>
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="강사 신청하기"
+        android:onClick="apply"
+        android:textColor="@color/colorWhiteText"
+        android:layout_below="@+id/request"
+        android:background="@color/colorMainGreen"/>
+</LinearLayout>
