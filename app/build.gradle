@@ -63,6 +63,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
     apt 'com.jakewharton:butterknife-compiler:8.7.0'
     provided 'org.projectlombok:lombok:1.12.6'
+    compile 'com.google.firebase:firebase-messaging:10.2.6'
     apply plugin: 'com.google.gms.google-services'
 }
 

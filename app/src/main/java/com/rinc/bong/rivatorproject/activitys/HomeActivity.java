@@ -11,6 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.fragments.CurrentLectureFragment;
@@ -33,6 +36,10 @@ public class HomeActivity extends AppCompatActivity {
 
         //액션바 설정
         setActionBar();
+
+        //FCM에서 토픽 구독
+        FirebaseMessaging.getInstance().subscribeToTopic("news");
+        FirebaseInstanceId.getInstance().getToken();
     }
 
     private void setActionBar() {
