@@ -45,6 +45,9 @@ public class ProfileModifyActivity extends AppCompatActivity {
         requestUserPromotion.setOnClickListener(v -> {
             startActivity(new Intent(ProfileModifyActivity.this, AccountAdvancementActivity.class));
         });
+        modifyUser.setOnClickListener(v -> {
+            startActivity(new Intent(ProfileModifyActivity.this, UserModifyActivity.class));
+        });
     }
     public void  setCustomActionbar() {
         actionBar = getSupportActionBar();

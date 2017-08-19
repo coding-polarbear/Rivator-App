@@ -57,7 +57,8 @@
             android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity android:name=".activitys.PasswordModifyActivity" />
         <activity android:name=".activitys.ProfileModifyActivity" />
-        <activity android:name=".activitys.AccountAdvancementActivity"></activity>
+        <activity android:name=".activitys.AccountAdvancementActivity" />
+        <activity android:name=".activitys.UserModifyActivity"></activity>
     </application>
 
 </manifest>
