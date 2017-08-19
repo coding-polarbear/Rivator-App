@@ -1,6 +1,8 @@
 package com.rinc.bong.rivatorproject.adapters;
 
 import android.content.Context;
+import android.support.annotation.LayoutRes;
+import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,20 +10,22 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.rinc.bong.rivatorproject.beans.SimpleTeacher;
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.beans.SimpleStudent;
+import com.rinc.bong.rivatorproject.beans.SimpleTeacher;
 
 import java.util.ArrayList;
+
 /**
- * Created by baehyeonbin on 2017. 7. 16..
+ * Created by baehyeonbin on 2017. 8. 19..
  */
 
-public class SimpleTeacherAdapter extends ArrayAdapter<SimpleTeacher> {
-    private ArrayList<SimpleTeacher> listViewItem = new ArrayList<SimpleTeacher>();
+public class SimpleStudentAdapter extends ArrayAdapter {
+    private ArrayList<SimpleStudent> listViewItem = new ArrayList<SimpleStudent>();
     private Context context;
     private int srsc;
 
-    public SimpleTeacherAdapter(Context context, int srsc, ArrayList<SimpleTeacher> items) {
+    public SimpleStudentAdapter(Context context, int srsc, ArrayList<SimpleStudent> items) {
         super(context,srsc,items);
         this.context = context;
         this.srsc = srsc;
@@ -33,7 +37,7 @@ public class SimpleTeacherAdapter extends ArrayAdapter<SimpleTeacher> {
     }
 
     @Override
-    public SimpleTeacher getItem(int position) {
+    public SimpleStudent getItem(int position) {
         return listViewItem.get(position);
     }
 
@@ -55,9 +59,10 @@ public class SimpleTeacherAdapter extends ArrayAdapter<SimpleTeacher> {
         TextView teacherName = (TextView) view.findViewById(R.id.name);
         TextView subject = (TextView) view.findViewById(R.id.category);
 
-        SimpleTeacher item = listViewItem.get(position);
-        teacherName.setText(item.getTeacherName());
-        subject.setText(item.getSubject());
+        imageView.setImageResource(R.drawable.student);
+        SimpleStudent item = listViewItem.get(position);
+        teacherName.setText(item.getName());
+        subject.setText(item.getCategory());
 
         return view;
     }

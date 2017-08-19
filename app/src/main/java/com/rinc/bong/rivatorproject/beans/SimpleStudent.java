@@ -1,6 +1,8 @@
 package com.rinc.bong.rivatorproject.beans;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 /**
@@ -9,13 +11,14 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class SimpleStudent {
     private String profileURL;
     private String name;
     private String category;
 
-    public SimpleStudent(String profileURL, String name, String category) {
-        this.profileURL = profileURL;
+    public SimpleStudent(String name, String category) {
         this.name = name;
         this.category = category;
     }

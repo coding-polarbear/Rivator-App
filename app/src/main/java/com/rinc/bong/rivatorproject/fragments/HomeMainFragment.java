@@ -97,7 +97,7 @@ public class HomeMainFragment extends Fragment {
         simpleTeachers.add(new SimpleTeacher("강사명", "IT 분야"));
         simpleTeachers.add(new SimpleTeacher("강사명", "IT 분야"));
         Log.d("Test", simpleTeachers.get(0).getTeacherName());
-        adapter = new SimpleTeacherAdapter(getActivity(), R.layout.teacher_listview, simpleTeachers);
+        adapter = new SimpleTeacherAdapter(getActivity(), R.layout.item_default_person_list, simpleTeachers);
         listView.setAdapter(adapter);
         ((BaseAdapter) listView.getAdapter()).notifyDataSetChanged();
     }
