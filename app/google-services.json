@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "577717241249",
+    "firebase_url": "https://rivator-e8073.firebaseio.com",
+    "project_id": "rivator-e8073",
+    "storage_bucket": "rivator-e8073.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577717241249:android:3f1d1644acd8e9dd",
+        "android_client_info": {
+          "package_name": "com.rinc.bong.rivatorproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "577717241249-4impv48rqr1rgg7vcblg0hbpr354qijs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rinc.bong.rivatorproject",
+            "certificate_hash": "a8c45fb160e472b8da9d990806ffde7bc7df982c"
+          }
+        },
+        {
+          "client_id": "577717241249-0ovstcta0h8dof0lo9rcur42k84bqudi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBAjXcgRFv7wOE3pvCKvSTMbwMJJ5nArU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "577717241249-0ovstcta0h8dof0lo9rcur42k84bqudi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -6,7 +6,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion '25.0.0'
     defaultConfig {
-        applicationId "com.example.bong.rivatorproject"
+        applicationId "com.rinc.bong.rivatorproject"
         minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
@@ -63,6 +63,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC1'
     apt 'com.jakewharton:butterknife-compiler:8.7.0'
     provided 'org.projectlombok:lombok:1.12.6'
+    apply plugin: 'com.google.gms.google-services'
 }
 
 
