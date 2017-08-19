@@ -69,8 +69,6 @@ public class NoticeActivity extends AppCompatActivity {
         View view = inflater.inflate(R.layout.custom_action_bar, null);
         TextView textView = (TextView) view.findViewById(R.id.title);
         textView.setText("알림");
-
-
         ImageButton backButton = (ImageButton) view.findViewById(R.id.btnBack);
         backButton.setOnClickListener(v -> {
             finish();

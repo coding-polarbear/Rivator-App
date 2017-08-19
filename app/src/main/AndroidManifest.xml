@@ -43,7 +43,7 @@
             android:name=".activitys.ProjectActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity
-            android:name=".activitys.LectureManagementActivity"
+            android:name=".activitys.CourseManagementActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity
             android:name=".activitys.ContestManagementActivity"
