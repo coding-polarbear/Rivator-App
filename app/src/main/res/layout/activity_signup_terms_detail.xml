@@ -4,33 +4,37 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="4dp"
-        android:layout_weight="8">
-
-        <TextView
-            android:id="@+id/textView"
+        android:layout_height="match_parent">
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="24dp"
-            android:layout_marginBottom="8dp"
-            android:gravity="center_vertical"
-            android:letterSpacing="-0.1"
-            android:text="Rivator이용약관 동의(필수)"
-            android:textColor="#232323" />
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:layout_weight="8"
+            android:padding="15dp">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/textView"
-            android:gravity="top"
-            android:letterSpacing="-0.1"
-            android:lineSpacingExtra="7.7sp"
-            android:text="@string/agree_detail"
-            android:textColor="#a0a0a0" />
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginBottom="8dp"
+                android:gravity="center_vertical"
+                android:letterSpacing="-0.1"
+                android:text="Rivator이용약관 동의(필수)"
+                android:textColor="#232323" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView"
+                android:gravity="top"
+                android:letterSpacing="-0.1"
+                android:lineSpacingExtra="7.7sp"
+                android:text="@string/agree_detail"
+                android:textColor="#a0a0a0" />
+        </RelativeLayout>
+    </ScrollView>
+
 </LinearLayout>
