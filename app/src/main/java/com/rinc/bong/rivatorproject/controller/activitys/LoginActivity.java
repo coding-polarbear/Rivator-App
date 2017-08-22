@@ -1,6 +1,7 @@
 package com.rinc.bong.rivatorproject.controller.activitys;
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
 
 public class LoginActivity extends AppCompatActivity {
     private ActionBar actionBar;
@@ -23,11 +25,6 @@ public class LoginActivity extends AppCompatActivity {
         setCustomActionbar();
         forgot = (TextView) findViewById(R.id.forgot);
         forgot.setText(Html.fromHtml("<u>계정을 잃어버리셨나요?</u>"));
-    }
-
-    public void goToHome(View view) {
-        Intent i = new Intent(getApplicationContext(),HomeActivity.class);
-        startActivity(i);
     }
 
     public void  setCustomActionbar() {
@@ -52,5 +49,20 @@ public class LoginActivity extends AppCompatActivity {
 
         Toolbar parent = (Toolbar) customView.getParent();
         parent.setContentInsetsAbsolute(0,0);
+    }
+
+    public void login(View view) {
+        SnackBarUtill.makeSnackBar(view, "로그인이 완료되었습니다", Snackbar.LENGTH_LONG);
+        Thread t = new Thread(() -> {
+            try {
+                Thread.sleep(3000);
+                Intent i = new Intent(getApplicationContext(),HomeActivity.class);
+                startActivity(i);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+        t.start();
+
     }
 }

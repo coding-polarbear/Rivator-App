@@ -51,7 +51,7 @@
         android:layout_height="48dp"
         android:background="@color/colorMainGreen"
         android:text="로그인"
-        android:onClick="goToHome"
+        android:onClick="login"
         style="?android:attr/borderlessButtonStyle"
         android:textColor="@color/colorWhiteText"
         android:layout_marginLeft="19dp"

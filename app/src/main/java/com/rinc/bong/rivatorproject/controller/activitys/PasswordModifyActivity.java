@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
 
 public class PasswordModifyActivity extends AppCompatActivity {
     private ActionBar actionBar;
@@ -48,8 +49,7 @@ public class PasswordModifyActivity extends AppCompatActivity {
     }
 
     public void modifyPassword(View view) {
-        Snackbar.make(view, "패스워드 변경이 완료되었습니다!", Snackbar.LENGTH_LONG).show();
-
+        SnackBarUtill.makeSnackBar(view, "비밀번호가 변경되었습니다",Snackbar.LENGTH_LONG);
         //스낵바가 다 보여지고 나면 액티비티 종료
        Thread t = new Thread(() -> {
             try {
