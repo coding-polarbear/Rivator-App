@@ -7,7 +7,7 @@
     android:background="@color/greenBar"
     android:orientation="vertical"
     android:fitsSystemWindows="true"
-    tools:context="com.rinc.bong.rivatorproject.activitys.SelectActivity">
+    tools:context="com.rinc.bong.rivatorproject.controller.activitys.SelectActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

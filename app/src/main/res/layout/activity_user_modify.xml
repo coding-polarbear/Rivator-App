@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
-    tools:context="com.rinc.bong.rivatorproject.activitys.UserModifyActivity">
+    tools:context="com.rinc.bong.rivatorproject.controller.activitys.UserModifyActivity">
     <ImageView
         android:layout_width="96dp"
         android:layout_height="96dp"

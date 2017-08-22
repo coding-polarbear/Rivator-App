@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/greenBar"
     android:orientation="vertical"
-    tools:context="com.rinc.bong.rivatorproject.fragments.ProfileFragment">
+    tools:context="com.rinc.bong.rivatorproject.controller.fragments.ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout

@@ -7,7 +7,7 @@
     android:id="@+id/scrollView"
     android:fitsSystemWindows="true"
     android:background="@color/greenBar"
-    tools:context="com.rinc.bong.rivatorproject.activitys.CalendarActivity">
+    tools:context="com.rinc.bong.rivatorproject.controller.activitys.CalendarActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

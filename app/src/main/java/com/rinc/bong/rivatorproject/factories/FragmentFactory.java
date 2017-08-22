@@ -2,8 +2,8 @@ package com.rinc.bong.rivatorproject.factories;
 
 import android.support.v4.app.Fragment;
 
-import com.rinc.bong.rivatorproject.fragments.CurrentLectureFragment;
-import com.rinc.bong.rivatorproject.fragments.TeacherFragment;
+import com.rinc.bong.rivatorproject.controller.fragments.CurrentLectureFragment;
+import com.rinc.bong.rivatorproject.controller.fragments.TeacherFragment;
 
 /**
  * Created by baehyeonbin on 2017. 7. 30..
