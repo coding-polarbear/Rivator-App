@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.controller.adapters.ContestPagerAdapter;
+import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 
 /**
  * Created by bong on 2017-08-05.
@@ -20,7 +21,7 @@ import com.rinc.bong.rivatorproject.controller.adapters.ContestPagerAdapter;
 
 public class ContestManagementActivity extends AppCompatActivity {
 
-    private ActionBar actionBar = null;
+
 
     private ViewPager mViewPager = null;
 
@@ -50,28 +51,16 @@ public class ContestManagementActivity extends AppCompatActivity {
     }
 
     private void  setCustomActionbar() {
-        actionBar = getSupportActionBar();
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayShowHomeEnabled(false);
 
-        //ActionBar의 그림자를 제거합니다
-        actionBar.setElevation(0);
+        ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.custom_action_bar, view -> {
 
-        //layout을 가지고 와서 actionbar에 포팅을 시킵니다.
-        LayoutInflater inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
-        View view = inflater.inflate(R.layout.custom_action_bar, null);
-        TextView textView = (TextView) view.findViewById(R.id.title);
-        textView.setText("콘테스트");
-        ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
-        imageButton.setOnClickListener(v -> {
-            finish();
+            TextView textView = (TextView) view.findViewById(R.id.title);
+            textView.setText("콘테스트");
+
+            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
+            imageButton.setOnClickListener(v -> finish());
+
         });
-        actionBar.setCustomView(view);
-        Toolbar parent = (Toolbar) view.getParent();
-        parent.setContentInsetsAbsolute(0,0);
-
 
     }
 

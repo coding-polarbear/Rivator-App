@@ -10,9 +10,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 
 public class TeacherSignUpActivity extends AppCompatActivity {
-    private ActionBar actionBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,19 +31,16 @@ public class TeacherSignUpActivity extends AppCompatActivity {
     }
 
     private void setCustomActionbar() {
-        actionBar = getSupportActionBar();
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
 
-        View mCustomView = LayoutInflater.from(this).inflate(R.layout.layout_actionbar_type_cancle, null);
-        TextView textView = (TextView) mCustomView.findViewById(R.id.title);
-        textView.setText("프로필 작성");
+            ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_cancle, view -> {
 
-        ImageButton imageButton = (ImageButton) mCustomView.findViewById(R.id.btnClose);
-        imageButton.setOnClickListener( v-> {
-            finish();
-        });
-        actionBar.setCustomView(mCustomView);
+                TextView textView = (TextView) view.findViewById(R.id.title);
+                textView.setText("프로필 작성");
+
+                ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnClose);
+                imageButton.setOnClickListener( v-> finish());
+
+            });
+
     }
 }

@@ -13,13 +13,14 @@ import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.controller.adapters.SpinnerAdapter;
+import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserModifyActivity extends AppCompatActivity {
-    private ActionBar actionBar;
+
     private Spinner citySpinner = null;
     private Spinner districtSpinner = null;
     private Spinner townSpinner = null;
@@ -28,6 +29,7 @@ public class UserModifyActivity extends AppCompatActivity {
     private List<String> districtList;
     private List<String> townList;
     private List<String> subjectList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,11 +77,12 @@ public class UserModifyActivity extends AppCompatActivity {
         subjectList.add("안드로이드 앱개발");
         subjectList.add("웹 프로그래밍");
     }
+
     private void setSpinner() {
-        SpinnerAdapter cityAdapter = new SpinnerAdapter(getApplicationContext(),R.layout.sign_up_spinner_item,cityList);
-        SpinnerAdapter districtAdapter = new SpinnerAdapter(getApplicationContext(),R.layout.sign_up_spinner_item,districtList);
-        SpinnerAdapter townAdapter = new SpinnerAdapter(getApplicationContext(),R.layout.sign_up_spinner_item,townList);
-        SpinnerAdapter subjectAdapter = new SpinnerAdapter(getApplicationContext(),R.layout.sign_up_spinner_item,subjectList);
+        SpinnerAdapter cityAdapter = new SpinnerAdapter(getApplicationContext(), R.layout.sign_up_spinner_item, cityList);
+        SpinnerAdapter districtAdapter = new SpinnerAdapter(getApplicationContext(), R.layout.sign_up_spinner_item, districtList);
+        SpinnerAdapter townAdapter = new SpinnerAdapter(getApplicationContext(), R.layout.sign_up_spinner_item, townList);
+        SpinnerAdapter subjectAdapter = new SpinnerAdapter(getApplicationContext(), R.layout.sign_up_spinner_item, subjectList);
 
         cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         districtAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -93,7 +96,7 @@ public class UserModifyActivity extends AppCompatActivity {
     }
 
     public void modifyUser(View view) {
-        SnackBarUtill.makeSnackBar(view,"계정 정보 변경이 완료되었습니다.",Snackbar.LENGTH_LONG);
+        SnackBarUtill.makeSnackBar(view, "계정 정보 변경이 완료되었습니다.", Snackbar.LENGTH_LONG);
         //스낵바가 다 보여지고 나면 액티비티 종료
         Thread t = new Thread(() -> {
             try {
@@ -106,29 +109,19 @@ public class UserModifyActivity extends AppCompatActivity {
         t.start();
     }
 
-    public void  setCustomActionbar() {
-        actionBar = getSupportActionBar();
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayShowHomeEnabled(false);
+    public void setCustomActionbar() {
 
-        //layout을 가지고 와서 actionbar에 포팅을 시킵니다.
-        LayoutInflater inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
-        View customView = inflater.inflate(R.layout.layout_actionbar_type_back, null);
-        customView.setClickable(false);
-        TextView textView = (TextView) customView.findViewById(R.id.title);
-        textView.setText("계정정보 수정");
-        textView.setClickable(false);
+        ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_back, view -> {
 
-        //ImageButton 리스너 설정
-        ImageButton imageButton = (ImageButton) customView.findViewById(R.id.btnBack);
-        imageButton.setOnClickListener(v -> {
-            finish();
+            TextView textView = (TextView) view.findViewById(R.id.title);
+            textView.setText("계정정보 수정");
+            textView.setClickable(false);
+
+            //ImageButton 리스너 설정
+            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
+            imageButton.setOnClickListener(v -> finish());
+
         });
-        actionBar.setCustomView(customView);
 
-        Toolbar parent = (Toolbar) customView.getParent();
-        parent.setContentInsetsAbsolute(0,0);
     }
 }

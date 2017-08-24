@@ -21,7 +21,7 @@ import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 
 public class ProjectActivity extends AppCompatActivity {
 
-    private ActionBar actionBar = null;
+
 
     private ViewPager mViewPager = null;
 
@@ -49,13 +49,15 @@ public class ProjectActivity extends AppCompatActivity {
     }
 
     private void setCustomActionbar() {
+
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.custom_action_bar, view -> {
+
             TextView textView = (TextView) view.findViewById(R.id.title);
             textView.setText("알림");
+
             ImageButton backButton = (ImageButton) view.findViewById(R.id.btnBack);
-            backButton.setOnClickListener(v -> {
-                finish();
-            });
+            backButton.setOnClickListener(v -> finish());
+
         });
 
     }

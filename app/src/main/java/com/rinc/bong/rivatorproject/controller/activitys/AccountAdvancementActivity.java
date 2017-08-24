@@ -76,6 +76,7 @@ public class AccountAdvancementActivity extends AppCompatActivity {
     }
 
     public void  setCustomActionbar() {
+
         actionBar = getSupportActionBar();
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(false);

@@ -19,13 +19,14 @@ import static android.content.Context.LAYOUT_INFLATER_SERVICE;
  */
 
 public class ActionbarCustomUtil {
+
     private ActionBar actionBar = null;
     private Context context = null;
     private int layout = 0;
-    private String actionbarName = null;
 
     private OnActionItemClick mCustom = null;
 
+    //Actionbar childView setting
     public interface OnActionItemClick{
         void setActionbar(View view);
     }
@@ -58,12 +59,6 @@ public class ActionbarCustomUtil {
         if (mCustom != null){
             mCustom.setActionbar(view);
         }
-      /*  TextView textView = (TextView) view.findViewById(R.id.title);
-        textView.setText("알림");
-        ImageButton backButton = (ImageButton) view.findViewById(R.id.btnBack);
-        backButton.setOnClickListener(v -> {
-            finish();
-        });*/
 
         actionBar.setCustomView(view);
         Toolbar parent = (Toolbar) view.getParent();

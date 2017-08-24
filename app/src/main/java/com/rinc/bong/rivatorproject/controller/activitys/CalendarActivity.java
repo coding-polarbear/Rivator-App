@@ -17,11 +17,12 @@ import android.widget.TextView;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.controller.adapters.SimpleCourseAdapter;
 import com.rinc.bong.rivatorproject.beans.SimpleCourse;
+import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 
 import java.util.ArrayList;
 
 public class CalendarActivity extends AppCompatActivity {
-    private ActionBar actionBar;
+
     private ListView listView;
     private ArrayList<SimpleCourse> itemList;
     private TabLayout tabLayout;
@@ -90,29 +91,17 @@ public class CalendarActivity extends AppCompatActivity {
 
 
     public void  setCustomActionbar() {
-        actionBar = getSupportActionBar();
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayShowHomeEnabled(false);
 
-        //ActionBar의 그림자를 제거합니다
-        actionBar.setElevation(0);
+        ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.custom_action_bar, view -> {
 
-        //layout을 가지고 와서 actionbar에 포팅을 시킵니다.
-        LayoutInflater inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
-        View customView = inflater.inflate(R.layout.custom_action_bar, null);
-        TextView textView = (TextView) customView.findViewById(R.id.title);
-        textView.setText("캘린더");
+            TextView textView = (TextView) view.findViewById(R.id.title);
+            textView.setText("캘린더");
 
-        //ImageButton 리스너 설정
-        ImageButton imageButton = (ImageButton) customView.findViewById(R.id.btnBack);
-        imageButton.setOnClickListener(v -> {
-            finish();
+            //ImageButton 리스너 설정
+            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
+            imageButton.setOnClickListener(v -> finish());
+
         });
-        actionBar.setCustomView(customView);
 
-        Toolbar parent = (Toolbar) customView.getParent();
-        parent.setContentInsetsAbsolute(0,0);
     }
 }

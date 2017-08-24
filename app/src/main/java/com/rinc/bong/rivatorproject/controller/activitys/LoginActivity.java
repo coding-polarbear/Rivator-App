@@ -13,10 +13,11 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
 
 public class LoginActivity extends AppCompatActivity {
-    private ActionBar actionBar;
+
     private TextView forgot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,27 +29,18 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void  setCustomActionbar() {
-        actionBar = getSupportActionBar();
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        actionBar.setDisplayShowHomeEnabled(false);
 
-        //layout을 가지고 와서 actionbar에 포팅을 시킵니다.
-        LayoutInflater inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
-        View customView = inflater.inflate(R.layout.layout_actionbar_type_back, null);
-        TextView textView = (TextView) customView.findViewById(R.id.title);
-        textView.setText("로그인");
+        ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_back, view -> {
 
-        //ImageButton 리스너 설정
-        ImageButton imageButton = (ImageButton) customView.findViewById(R.id.btnBack);
-        imageButton.setOnClickListener(v -> {
-            finish();
+            TextView textView = (TextView) view.findViewById(R.id.title);
+            textView.setText("로그인");
+
+            //ImageButton 리스너 설정
+            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
+            imageButton.setOnClickListener(v -> finish());
+
         });
-        actionBar.setCustomView(customView);
 
-        Toolbar parent = (Toolbar) customView.getParent();
-        parent.setContentInsetsAbsolute(0,0);
     }
 
     public void login(View view) {

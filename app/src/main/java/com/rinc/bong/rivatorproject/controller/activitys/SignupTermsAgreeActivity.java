@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 
 /**
  * Created by Bong on 2017-05-24.
@@ -17,7 +18,7 @@ import com.rinc.bong.rivatorproject.R;
 
 public class SignupTermsAgreeActivity extends AppCompatActivity {
     private Intent intent;
-    private ActionBar actionBar;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,27 +34,23 @@ public class SignupTermsAgreeActivity extends AppCompatActivity {
     */
 
     private void setCustomActionbar() {
-        actionBar = getSupportActionBar();
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
 
-        View mCustomView = LayoutInflater.from(this).inflate(R.layout.layout_actionbar_type_cancle, null);
+        ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_cancle, view -> {
 
-        TextView textView = (TextView) mCustomView.findViewById(R.id.title);
-        textView.setText("약관 동의");
+            TextView textView = (TextView) view.findViewById(R.id.title);
+            textView.setText("약관 동의");
 
-        ImageButton imageButton = (ImageButton) mCustomView.findViewById(R.id.btnClose);
-        imageButton.setOnClickListener(v -> {
-            finish();
+            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnClose);
+            imageButton.setOnClickListener(v -> finish());
+
         });
-        actionBar.setCustomView(mCustomView);
+
     }
 
     public void next(View view) {
         String type = intent.getStringExtra("type");
         Intent i;
-        if(type.equals("student")) {
+        if (type.equals("student")) {
             i = new Intent(getApplicationContext(), StudentSignUpActivity.class);
         } else {
             i = new Intent(getApplicationContext(), TeacherSignUpActivity.class);

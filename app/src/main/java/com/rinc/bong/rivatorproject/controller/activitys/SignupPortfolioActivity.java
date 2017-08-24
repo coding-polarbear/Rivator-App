@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 
 /**
  * Created by Bong on 2017-05-24.
@@ -33,29 +34,17 @@ public class SignupPortfolioActivity extends AppCompatActivity {
     */
 
     private void setCustomActionbar() {
-        ActionBar actionBar = getSupportActionBar();
 
-        actionBar.setDisplayShowCustomEnabled(true);
-        actionBar.setDisplayHomeAsUpEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-        View mCustomView = LayoutInflater.from(this).inflate(R.layout.layout_actionbar_type_cancle, null);
+        ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_cancle, view -> {
 
-        //title 설정
-        TextView textView = (TextView) mCustomView.findViewById(R.id.title);
-        textView.setText("포트폴리오");
+            TextView textView = (TextView) view.findViewById(R.id.title);
+            textView.setText("포트폴리오");
 
-        //ImageButton 리스너 설정
-        ImageButton imageButton = (ImageButton) mCustomView.findViewById(R.id.btnClose);
-        imageButton.setOnClickListener(v -> {
-            finish();
+            //ImageButton 리스너 설정
+            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnClose);
+            imageButton.setOnClickListener(v -> finish());
+
         });
-        actionBar.setCustomView(mCustomView);
-
-        //레이어 색깔
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
-        ActionBar.LayoutParams params = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT);
-        actionBar.setCustomView(mCustomView, params);
-
     }
 
     public void back(View view) {
