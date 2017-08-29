@@ -1,4 +1,4 @@
-package com.rinc.bong.rivatorproject.FCMServices;
+package com.rinc.bong.rivatorproject.fcmServices;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;

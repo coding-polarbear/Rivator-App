@@ -1,4 +1,4 @@
-package com.rinc.bong.rivatorproject.FCMServices;
+package com.rinc.bong.rivatorproject.fcmServices;
 
 import android.util.Log;
 
