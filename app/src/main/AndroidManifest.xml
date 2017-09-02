@@ -19,9 +19,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".controller.activitys.SignupDegreeActivity"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-        <activity
             android:name=".controller.activitys.SignupPortfolioActivity"
             android:windowSoftInputMode="adjustResize|stateHidden" />
         <activity android:name=".controller.activitys.SignupTermsAgreeActivity" />
