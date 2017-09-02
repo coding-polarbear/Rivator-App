@@ -17,5 +17,5 @@ import lombok.ToString;
 @ToString
 public class Result {
     private String message;
-    private boolean success;
+    private String success;
 }
