@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
+import com.rinc.bong.rivatorproject.utils.DialogUtill;
 import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
 
 /**
@@ -66,17 +67,7 @@ public class SignupTermsAgreeActivity extends AppCompatActivity {
             }
             startActivity(i);
         } else {
-            AlertDialog.Builder builder = new AlertDialog.Builder(SignupTermsAgreeActivity.this);
-            builder.setTitle("알림");
-            builder.setMessage("이용 약관에 동의해주세요!");
-            builder.setPositiveButton("확인", (dialog, which) -> {});
-
-            AlertDialog dialog = builder.create();
-            dialog.show();
-            dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(v -> {
-                dialog.dismiss();
-            });
-
+            DialogUtill.makeDialogWithPositiveButton("알림","이용 약관에 동의해주세요!", "확인", SignupTermsAgreeActivity.this);
         }
 
     }

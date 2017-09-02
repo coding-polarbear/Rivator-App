@@ -1,11 +1,15 @@
 package com.rinc.bong.rivatorproject.controller.activitys;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -13,11 +17,19 @@ import android.widget.TextView;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.controller.adapters.SpinnerAdapter;
 import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
+import com.rinc.bong.rivatorproject.utils.DialogUtill;
+import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class StudentSignUpActivity extends AppCompatActivity {
+    private EditText editId;
+    private EditText editPassword1;
+    private EditText editPassword2;
+    private EditText editName;
+    private EditText editPhoneNumber;
+    private CheckBox checkBox;
 
     private Spinner citySpinner;
     private Spinner districtSpinner;
@@ -28,6 +40,7 @@ public class StudentSignUpActivity extends AppCompatActivity {
     private List<String> districtList;
     private List<String> townList;
     private List<String> subjectList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +56,11 @@ public class StudentSignUpActivity extends AppCompatActivity {
         districtSpinner = (Spinner) findViewById(R.id.districSpinner);
         townSpinner = (Spinner) findViewById(R.id.townSpinner);
         subjectSpinner = (Spinner) findViewById(R.id.subjectSpinner);
+        editId = (EditText) findViewById(R.id.editId);
+        editName = (EditText) findViewById(R.id.editName);
+        editPassword1 = (EditText) findViewById(R.id.editPassword1);
+        editPassword2 = (EditText) findViewById(R.id.editPassword2);
+        checkBox = (CheckBox) findViewById(R.id.checkBox);
     }
 
     private void setDummyData() {
@@ -75,6 +93,7 @@ public class StudentSignUpActivity extends AppCompatActivity {
         subjectList.add("안드로이드 앱개발");
         subjectList.add("웹 프로그래밍");
     }
+
     private void setSpinner() {
         SpinnerAdapter cityAdapter = new SpinnerAdapter(getApplicationContext(),R.layout.sign_up_spinner_item,cityList);
         SpinnerAdapter districtAdapter = new SpinnerAdapter(getApplicationContext(),R.layout.sign_up_spinner_item,districtList);
@@ -97,22 +116,22 @@ public class StudentSignUpActivity extends AppCompatActivity {
     }
 
     public void next(View view) {
-        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //기존의 액티비티 모든 스택 제거
-        startActivity(intent);
+        if(checkBox.isChecked()) {
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //기존의 액티비티 모든 스택 제거
+            startActivity(intent);
+        } else {
+            DialogUtill.makeDialogWithPositiveButton("알림","이용약관에 동의해주세요!","확인",StudentSignUpActivity.this);
+        }
     }
 
     private void setCustomActionbar() {
-
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_cancle, view -> {
-
             TextView textView = (TextView) view.findViewById(R.id.title);
             textView.setText("프로필 작성");
-
             ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnClose);
             imageButton.setOnClickListener( v-> finish());
-
         });
-
     }
+
 }
