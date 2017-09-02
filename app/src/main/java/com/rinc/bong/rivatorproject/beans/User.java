@@ -1,10 +1,13 @@
 package com.rinc.bong.rivatorproject.beans;
 
+import com.orm.SugarRecord;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import okhttp3.MultipartBody;
 
 /**
  * Created by baehyeonbin on 2017. 6. 17..
@@ -14,15 +17,15 @@ import lombok.ToString;
 @AllArgsConstructor
 @Getter
 @Setter
-public class User {
-    private String userID;
-    private String userPW;
+public class User extends SugarRecord{
+    private String userId;
+    private String userPw;
     private String userName;
     private String profileURL;
-    private String phoneNumber;
+    private String phone;
     private String localCity;
     private String localTown;
-    private String localArea;
+    private String localDistric;
     private String subject;
-    private int userStatus;
+    private int userType;
 }
