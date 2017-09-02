@@ -1,11 +1,17 @@
 package com.rinc.bong.rivatorproject.beans;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 /**
  * Created by baehyeonbin on 2017. 6. 17..
  */
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 public class User {
@@ -19,20 +25,4 @@ public class User {
     private String localArea;
     private String subject;
     private int userStatus;
-
-    public User(String userID, String userPW, String userName, String profileURL, String phoneNumber, String localCity, String localTown, String localArea, String subject, int userStatus) {
-        this.userID = userID;
-        this.userPW = userPW;
-        this.userName = userName;
-        this.profileURL = profileURL;
-        this.phoneNumber = phoneNumber;
-        this.localCity = localCity;
-        this.localTown = localTown;
-        this.localArea = localArea;
-        this.subject = subject;
-        this.userStatus = userStatus;
-    }
-
-
-
 }

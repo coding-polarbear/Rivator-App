@@ -11,7 +11,7 @@
         android:layout_height="match_parent">
 
         <CheckBox
-            android:id="@+id/checkbox_btn_one"
+            android:id="@+id/check1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="24dp"
@@ -24,51 +24,51 @@
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#cecece"
-            android:layout_below="@id/checkbox_btn_one"
+            android:layout_below="@id/check1"
             android:layout_marginBottom="14dp"
             android:layout_marginTop="14dp" />
 
         <CheckBox
-            android:id="@+id/checkbox_btn_two"
+            android:id="@+id/check2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/view1"
-            android:layout_alignStart="@+id/checkbox_btn_one" />
+            android:layout_alignStart="@+id/check1" />
 
         <TextView
             android:id="@+id/view2"
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#cecece"
-            android:layout_below="@+id/checkbox_btn_two"
+            android:layout_below="@+id/check2"
             android:layout_marginBottom="14dp"
             android:layout_marginTop="14dp" />
 
         <CheckBox
-            android:id="@+id/checkbox_btn_three"
+            android:id="@+id/check3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/view2"
-            android:layout_alignStart="@+id/checkbox_btn_two" />
+            android:layout_alignStart="@+id/check2" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#cecece"
-            android:layout_below="@+id/checkbox_btn_three"
+            android:layout_below="@+id/check3"
             android:id="@+id/view3"
             android:layout_marginBottom="14dp"
             android:layout_marginTop="14dp"/>
         <CheckBox
-            android:id="@+id/checkbox_btn_four"
+            android:id="@+id/check4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/view3"
-            android:layout_alignStart="@+id/checkbox_btn_three" />
+            android:layout_alignStart="@+id/check3" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_below="@+id/checkbox_btn_four"
+            android:layout_below="@+id/check4"
             android:layout_marginTop="14dp"
             android:background="#cecece"/>
         <TextView
@@ -80,8 +80,8 @@
             android:text="@string/agree_one"
             android:textColor="@color/colorDarkText"
             android:layout_marginStart="18dp"
-            android:layout_alignBottom="@+id/checkbox_btn_one"
-            android:layout_toEndOf="@+id/checkbox_btn_one" />
+            android:layout_alignBottom="@+id/check1"
+            android:layout_toEndOf="@+id/check1" />
 
         <TextView
             android:id="@+id/text2"
@@ -90,8 +90,8 @@
             android:letterSpacing="-0.1"
             android:text="@string/agree_two"
             android:textColor="@color/colorDarkText"
-            android:layout_alignBaseline="@+id/checkbox_btn_two"
-            android:layout_alignBottom="@+id/checkbox_btn_two"
+            android:layout_alignBaseline="@+id/check2"
+            android:layout_alignBottom="@+id/check2"
             android:layout_alignStart="@+id/text1" />
 
         <TextView
@@ -101,8 +101,8 @@
             android:letterSpacing="-0.1"
             android:text="@string/agree_three"
             android:textColor="@color/colorDarkText"
-            android:layout_alignBaseline="@+id/checkbox_btn_three"
-            android:layout_alignBottom="@+id/checkbox_btn_three"
+            android:layout_alignBaseline="@+id/check3"
+            android:layout_alignBottom="@+id/check3"
             android:layout_alignEnd="@+id/text2" />
 
         <TextView
@@ -112,8 +112,8 @@
             android:letterSpacing="-0.1"
             android:text="@string/agree_four"
             android:textColor="@color/colorDarkText"
-            android:layout_alignBaseline="@+id/checkbox_btn_four"
-            android:layout_alignBottom="@+id/checkbox_btn_four"
+            android:layout_alignBaseline="@+id/check4"
+            android:layout_alignBottom="@+id/check4"
             android:layout_alignStart="@+id/textView11" />
 
 
