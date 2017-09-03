@@ -33,6 +33,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import pub.devrel.easypermissions.EasyPermissions;
 import pub.devrel.easypermissions.EasyPermissions.PermissionCallbacks;
@@ -246,15 +247,11 @@ public class StudentSignUpActivity extends AppCompatActivity implements Permissi
         map.put("subject",RetrofitUtil.createRequestBody(subject));
         map.put("userType", RetrofitUtil.createRequestBody(Integer.toString(2)));
         map.put("userId",RetrofitUtil.createRequestBody(userId));
+        MultipartBody.Part image = RetrofitUtil.createRequestBody(file);
 
-        if(file == null) {
-            map.put("profileImage", RetrofitUtil.createRequestBody(new File("")));
-        } else {
-            map.put("profileImage", RetrofitUtil.createRequestBody(file));
-        }
 
         UserService userService = RetrofitUtil.retrofit.create(UserService.class);
-        Call<UserRegister> register = userService.register(map);
+        Call<UserRegister> register = userService.register(map,image);
         view = getWindow().getDecorView().getRootView();
         register.enqueue(new Callback<UserRegister>() {
             @Override

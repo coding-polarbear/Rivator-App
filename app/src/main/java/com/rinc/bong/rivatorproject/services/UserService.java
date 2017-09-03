@@ -6,6 +6,7 @@ import com.rinc.bong.rivatorproject.beans.UserRegister;
 
 import java.util.Map;
 
+import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -22,7 +23,7 @@ import retrofit2.http.PartMap;
 public interface UserService {
     @Multipart
     @POST("/users/register")
-    Call<UserRegister> register(@PartMap Map<String, RequestBody> params);
+    Call<UserRegister> register(@PartMap Map<String, RequestBody> params, @Part MultipartBody.Part profileImage);
 
     @FormUrlEncoded
     @POST("/users/login")
