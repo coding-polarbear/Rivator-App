@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Result;
+import com.rinc.bong.rivatorproject.beans.User;
 import com.rinc.bong.rivatorproject.beans.UserRegister;
 import com.rinc.bong.rivatorproject.controller.adapters.SpinnerAdapter;
 import com.rinc.bong.rivatorproject.services.UserService;
@@ -232,26 +233,12 @@ public class StudentSignUpActivity extends AppCompatActivity implements Permissi
     }
 
     private void register() {
-        String name = editName.getText().toString();
-        String userId = editId.getText().toString();
-        String userPw = editPassword1.getText().toString();
-        String phone = editPhoneNumber.getText().toString();
-
-        Map<String, RequestBody> map = new HashMap<>();
-        map.put("userName", RetrofitUtil.createRequestBody(name));
-        map.put("userPw",RetrofitUtil.createRequestBody(userPw));
-        map.put("phone",RetrofitUtil.createRequestBody(phone));
-        map.put("localCity",RetrofitUtil.createRequestBody(localCity));
-        map.put("localDistrict",RetrofitUtil.createRequestBody(localDistrict));
-        map.put("localTown", RetrofitUtil.createRequestBody(localTown));
-        map.put("subject",RetrofitUtil.createRequestBody(subject));
-        map.put("userType", RetrofitUtil.createRequestBody(Integer.toString(2)));
-        map.put("userId",RetrofitUtil.createRequestBody(userId));
+        User user = new User(editName.getText().toString(), editId.getText().toString(),
+                editPassword1.getText().toString(), editPhoneNumber.getText().toString(),
+                2, localCity, localTown, localDistrict,subject);
         MultipartBody.Part image = RetrofitUtil.createRequestBody(file);
-
-
         UserService userService = RetrofitUtil.retrofit.create(UserService.class);
-        Call<UserRegister> register = userService.register(map,image);
+        Call<UserRegister> register = userService.register(user,image);
         view = getWindow().getDecorView().getRootView();
         register.enqueue(new Callback<UserRegister>() {
             @Override
@@ -261,19 +248,17 @@ public class StudentSignUpActivity extends AppCompatActivity implements Permissi
                 if(result.getSuccess().equals("true")) {
                     SnackBarUtill.makeSnackBar(view, result.getMessage(), Snackbar.LENGTH_LONG);
                     try {
-                        Thread.sleep(5000);
+                        Thread.sleep(3000);
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //기존의 액티비티 모든 스택 제거
                         startActivity(intent);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-
                 } else {
                     SnackBarUtill.makeSnackBar(view,result.getMessage(), Snackbar.LENGTH_LONG);
                 }
             }
-
             @Override
             public void onFailure(Call<UserRegister> call, Throwable t) {
                 SnackBarUtill.makeSnackBar(view,"회원가입에 실패하였습니다.", Snackbar.LENGTH_LONG);

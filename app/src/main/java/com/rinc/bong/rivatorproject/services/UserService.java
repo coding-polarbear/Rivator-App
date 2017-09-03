@@ -1,6 +1,7 @@
 package com.rinc.bong.rivatorproject.services;
 
 import com.rinc.bong.rivatorproject.beans.Result;
+import com.rinc.bong.rivatorproject.beans.User;
 import com.rinc.bong.rivatorproject.beans.UserLogin;
 import com.rinc.bong.rivatorproject.beans.UserRegister;
 
@@ -23,7 +24,7 @@ import retrofit2.http.PartMap;
 public interface UserService {
     @Multipart
     @POST("/users/register")
-    Call<UserRegister> register(@PartMap Map<String, RequestBody> params, @Part MultipartBody.Part profileImage);
+    Call<UserRegister> register(@Part("data") User user, @Part MultipartBody.Part profileImage);
 
     @FormUrlEncoded
     @POST("/users/login")
