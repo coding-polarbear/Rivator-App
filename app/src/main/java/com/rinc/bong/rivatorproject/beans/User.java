@@ -46,9 +46,9 @@ public class User extends SugarRecord{
     private String subject;
 
     @SerializedName("userType")
-    private int userType;
+    private String userType;
 
-    public User(String userName, String userId, String userPw, String phone, int userType, String localCity, String localTown, String localDistrict, String subject) {
+    public User(String userName, String userId, String userPw, String phone, String userType, String localCity, String localTown, String localDistrict, String subject) {
         this.userName = userName;
         this.userId = userId;
         this.userPw = userPw;

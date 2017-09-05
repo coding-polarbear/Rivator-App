@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Result;
+import com.rinc.bong.rivatorproject.beans.User;
 import com.rinc.bong.rivatorproject.beans.UserLogin;
 import com.rinc.bong.rivatorproject.services.UserService;
 import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
@@ -73,6 +74,10 @@ public class LoginActivity extends AppCompatActivity {
                 View view = getWindow().getDecorView().getRootView();
                 if(result.getSuccess().equals("200")) {
                     ToastUtill.makeToast(getApplicationContext(),result.getMessage(),Toast.LENGTH_LONG);
+
+                    //유저 객체를 sqlite에 저장
+                    User user = response.body().getUser();
+                    user.save();
                     Intent i = new Intent(LoginActivity.this,HomeActivity.class);
                     startActivity(i);
                 } else {

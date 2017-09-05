@@ -228,7 +228,7 @@ public class StudentSignUpActivity extends AppCompatActivity implements Permissi
     }
 
     public void next(View view) {
-        if(checkBox.isChecked() && editPassword1.getText().toString().equals(editPassword2.getText().toString())) {
+        if(checkBox.isChecked()) {
             register();
 
         } else {
@@ -239,7 +239,7 @@ public class StudentSignUpActivity extends AppCompatActivity implements Permissi
     private void register() {
         User user = new User(editName.getText().toString(), editId.getText().toString(),
                 editPassword1.getText().toString(), editPhoneNumber.getText().toString(),
-                2, localCity, localTown, localDistrict,subject);
+                "student", localCity, localTown, localDistrict,subject);
         MultipartBody.Part image;
         if(file != null) {
             image = RetrofitUtil.createRequestBody(file);

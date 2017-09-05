@@ -23,6 +23,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="40dp"
                     android:layout_marginBottom="35dp"
+                    android:onClick="select"
                     android:id="@+id/imageView"
                     android:layout_marginStart="8dp"
                     android:layout_marginEnd="7dp" />
@@ -49,7 +50,7 @@
                     android:layout_below="@+id/editId"
                     android:ems="10"
                     android:background="@color/colorWhiteText"
-                    android:inputType="textPersonName"
+                    android:inputType="textPassword"
                     android:paddingLeft="10dp"
                     android:hint="비밀번호" />
 
@@ -58,6 +59,7 @@
                     android:layout_height="48dp"
                     android:background="@color/colorWhiteText"
                     android:hint="비밀번호 재확인"
+                    android:inputType="textPassword"
                     android:paddingLeft="10dp"
                     android:layout_marginBottom="16dp"
                     android:layout_below="@+id/editPassword"
@@ -136,7 +138,7 @@
                     android:id="@+id/textView6" />
 
                 <Spinner
-                    android:id="@+id/spinner"
+                    android:id="@+id/subjectSpinner"
                     android:layout_width="242dp"
                     android:layout_height="48dp"
                     android:layout_marginLeft="2dp"
