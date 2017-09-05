@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Result;
@@ -20,6 +21,7 @@ import com.rinc.bong.rivatorproject.services.UserService;
 import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
 import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
+import com.rinc.bong.rivatorproject.utils.ToastUtill;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -70,17 +72,9 @@ public class LoginActivity extends AppCompatActivity {
                 Result result = response.body().getResult();
                 View view = getWindow().getDecorView().getRootView();
                 if(result.getSuccess().equals("200")) {
-
-                    try {
-                        Thread.sleep(5000);
-                        SnackBarUtill.makeSnackBar(view,result.getMessage(),Snackbar.LENGTH_LONG);
-                        Intent i = new Intent(LoginActivity.this,HomeActivity.class);
-                        startActivity(i);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
-
+                    ToastUtill.makeToast(getApplicationContext(),result.getMessage(),Toast.LENGTH_LONG);
+                    Intent i = new Intent(LoginActivity.this,HomeActivity.class);
+                    startActivity(i);
                 } else {
                     SnackBarUtill.makeSnackBar(view, result.getMessage(), Snackbar.LENGTH_LONG);
                 }

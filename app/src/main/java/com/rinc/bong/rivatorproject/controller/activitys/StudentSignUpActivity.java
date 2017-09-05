@@ -16,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Result;
@@ -28,6 +29,7 @@ import com.rinc.bong.rivatorproject.utils.DialogUtill;
 import com.rinc.bong.rivatorproject.utils.DrawableFileUtill;
 import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
 import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
+import com.rinc.bong.rivatorproject.utils.ToastUtill;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -253,15 +255,10 @@ public class StudentSignUpActivity extends AppCompatActivity implements Permissi
                 Result result = response.body().getResult();
                 Log.d("test",response.body().toString());
                 if(result.getSuccess().equals("200")) {
-                    SnackBarUtill.makeSnackBar(view, result.getMessage(), Snackbar.LENGTH_LONG);
-                    try {
-                        Thread.sleep(3000);
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //기존의 액티비티 모든 스택 제거
-                        startActivity(intent);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    ToastUtill.makeToast(getApplicationContext(),result.getMessage(), Toast.LENGTH_SHORT);
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //기존의 액티비티 모든 스택 제거
+                    startActivity(intent);
                 } else {
                     SnackBarUtill.makeSnackBar(view,result.getMessage(), Snackbar.LENGTH_LONG);
                 }
