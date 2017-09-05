@@ -23,10 +23,12 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:id="@+id/id"
+        android:inputType="text"
         android:layout_marginLeft="19dp"
         android:layout_marginRight="19dp"
         android:layout_below="@+id/idTextView"
         android:hint=" 아이디"
+        android:paddingLeft="10dp"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -35,7 +37,6 @@
         android:layout_below="@+id/id"
         android:id="@+id/passwordTextView"
         android:layout_marginLeft="19dp"
-        android:layout_marginRight="304dp"
         android:layout_marginBottom="11dp"
         android:layout_marginTop="15dp"/>
     <EditText
@@ -45,7 +46,9 @@
         android:id="@+id/password"
         android:layout_marginLeft="19dp"
         android:layout_marginRight="19dp"
-        android:hint=" 패스워드"/>
+        android:paddingLeft="10dp"
+        android:inputType="textPassword"
+        android:hint="패스워드"/>
     <Button
         android:layout_width="match_parent"
         android:layout_height="48dp"

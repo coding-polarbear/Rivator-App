@@ -69,18 +69,18 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<UserLogin> call, Response<UserLogin> response) {
                 Result result = response.body().getResult();
                 View view = getWindow().getDecorView().getRootView();
-                if(result.getSuccess().equals("true")) {
-                    SnackBarUtill.makeSnackBar(view,result.getMessage(),Snackbar.LENGTH_LONG);
-                    Thread t = new Thread(() -> {
-                        try {
-                            Thread.sleep(3000);
-                            Intent i = new Intent(getApplicationContext(),HomeActivity.class);
-                            startActivity(i);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    });
-                    t.start();
+                if(result.getSuccess().equals("200")) {
+
+                    try {
+                        Thread.sleep(5000);
+                        SnackBarUtill.makeSnackBar(view,result.getMessage(),Snackbar.LENGTH_LONG);
+                        Intent i = new Intent(LoginActivity.this,HomeActivity.class);
+                        startActivity(i);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
+
                 } else {
                     SnackBarUtill.makeSnackBar(view, result.getMessage(), Snackbar.LENGTH_LONG);
                 }

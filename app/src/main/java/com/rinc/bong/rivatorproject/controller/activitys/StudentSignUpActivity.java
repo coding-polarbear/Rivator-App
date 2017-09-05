@@ -25,6 +25,7 @@ import com.rinc.bong.rivatorproject.controller.adapters.SpinnerAdapter;
 import com.rinc.bong.rivatorproject.services.UserService;
 import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 import com.rinc.bong.rivatorproject.utils.DialogUtill;
+import com.rinc.bong.rivatorproject.utils.DrawableFileUtill;
 import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
 import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
 
@@ -41,6 +42,7 @@ import pub.devrel.easypermissions.EasyPermissions.PermissionCallbacks;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class StudentSignUpActivity extends AppCompatActivity implements PermissionCallbacks {
 
@@ -236,7 +238,12 @@ public class StudentSignUpActivity extends AppCompatActivity implements Permissi
         User user = new User(editName.getText().toString(), editId.getText().toString(),
                 editPassword1.getText().toString(), editPhoneNumber.getText().toString(),
                 2, localCity, localTown, localDistrict,subject);
-        MultipartBody.Part image = RetrofitUtil.createRequestBody(file);
+        MultipartBody.Part image;
+        if(file != null) {
+            image = RetrofitUtil.createRequestBody(file);
+        } else {
+            image = RetrofitUtil.createRequestBody(DrawableFileUtill.getDrawableResource(R.drawable.student,"student_profile",getApplicationContext()));
+        }
         UserService userService = RetrofitUtil.retrofit.create(UserService.class);
         Call<UserRegister> register = userService.register(user,image);
         view = getWindow().getDecorView().getRootView();
@@ -245,7 +252,7 @@ public class StudentSignUpActivity extends AppCompatActivity implements Permissi
             public void onResponse(Call<UserRegister> call, Response<UserRegister> response) {
                 Result result = response.body().getResult();
                 Log.d("test",response.body().toString());
-                if(result.getSuccess().equals("true")) {
+                if(result.getSuccess().equals("200")) {
                     SnackBarUtill.makeSnackBar(view, result.getMessage(), Snackbar.LENGTH_LONG);
                     try {
                         Thread.sleep(3000);

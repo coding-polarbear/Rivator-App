@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitUtil {
     public static Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://n0rr.iptime.org:4000")
+            .baseUrl("http://n0rr.iptime.org:7001")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
