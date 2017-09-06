@@ -23,6 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:id="@+id/id"
+        android:inputType="text"
         android:layout_marginLeft="19dp"
         android:layout_marginRight="19dp"
         android:layout_below="@+id/idTextView"
@@ -43,6 +44,7 @@
         android:layout_height="40dp"
         android:layout_below="@+id/passwordTextView"
         android:id="@+id/password"
+        android:inputType="textPassword"
         android:layout_marginLeft="19dp"
         android:layout_marginRight="19dp"
         android:hint=" 패스워드"/>
