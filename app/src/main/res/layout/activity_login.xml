@@ -48,7 +48,6 @@
         android:layout_marginLeft="19dp"
         android:layout_marginRight="19dp"
         android:paddingLeft="10dp"
-        android:inputType="textPassword"
         android:hint="패스워드"/>
     <Button
         android:layout_width="match_parent"
