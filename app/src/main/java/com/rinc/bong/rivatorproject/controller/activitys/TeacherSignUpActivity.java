@@ -1,28 +1,87 @@
 package com.rinc.bong.rivatorproject.controller.activitys;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.net.Uri;
+import android.provider.MediaStore;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.beans.Result;
+import com.rinc.bong.rivatorproject.beans.User;
+import com.rinc.bong.rivatorproject.beans.UserRegister;
+import com.rinc.bong.rivatorproject.controller.adapters.SpinnerAdapter;
+import com.rinc.bong.rivatorproject.services.UserService;
 import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 import com.rinc.bong.rivatorproject.utils.DialogUtill;
+import com.rinc.bong.rivatorproject.utils.DrawableFileUtill;
+import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
+import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
+import com.rinc.bong.rivatorproject.utils.ToastUtill;
 
-public class TeacherSignUpActivity extends AppCompatActivity {
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import okhttp3.MultipartBody;
+import pub.devrel.easypermissions.EasyPermissions;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class TeacherSignUpActivity extends AppCompatActivity implements EasyPermissions.PermissionCallbacks {
+
+    private static final String TAG = StudentSignUpActivity.class.getSimpleName();
+    private static final int REQUEST_GALLERY_CODE = 200;
+    private static final int READ_REQUEST_CODE = 300;
+    private Uri uri;
+    private File file = null;
+    private View view;
+
     private CheckBox checkBox;
+    private EditText editId;
+    private EditText editPassword;
+    private EditText editPassword2;
+    private EditText editName;
+    private EditText editPhoneNumber;
+
+    private Spinner citySpinner;
+    private Spinner districtSpinner;
+    private Spinner townSpinner;
+    private Spinner subjectSpinner;
+
+    private List<String> cityList;
+    private List<String> districtList;
+    private List<String> townList;
+    private List<String> subjectList;
+
+    private String localCity;
+    private String localTown;
+    private String localDistrict;
+    private String subject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_sign_up);
-        init();
         setCustomActionbar();
+        init();
+        setDummyData();
+        setSpinner();
     }
 
     public void back(View view) {
@@ -30,25 +89,211 @@ public class TeacherSignUpActivity extends AppCompatActivity {
     }
 
     public void next(View view) {
-        if(checkBox.isChecked()) {
+        if (checkBox.isChecked()) {
+            register();
+            ToastUtill.makeToast(getApplicationContext(),"회원가입에 성공하였습니다!", Toast.LENGTH_SHORT);
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //기존의 액티비티 모든 스택 제거
             startActivity(intent);
         } else {
-            DialogUtill.makeDialogWithPositiveButton("알림","이용약관에 동의해주세요!","확인",TeacherSignUpActivity.this);
+            DialogUtill.makeDialogWithPositiveButton("알림", "이용약관에 동의해주세요!", "확인", TeacherSignUpActivity.this);
         }
     }
 
     private void init() {
         checkBox = (CheckBox) findViewById(R.id.checkBox);
+        editId = (EditText) findViewById(R.id.editId);
+        editName = (EditText) findViewById(R.id.editName);
+        editPassword = (EditText) findViewById(R.id.editPassword);
+        editPassword2 = (EditText) findViewById(R.id.editPassword2);
+        editPhoneNumber = (EditText) findViewById(R.id.editPhoneNumber);
+        citySpinner = (Spinner) findViewById(R.id.citySpinner);
+        townSpinner = (Spinner) findViewById(R.id.townSpinner);
+        districtSpinner = (Spinner) findViewById(R.id.districSpinner);
+        subjectSpinner = (Spinner) findViewById(R.id.subjectSpinner);
+    }
+
+    public void select(View view) {
+        Intent openGalleryIntent = new Intent(Intent.ACTION_PICK);
+        openGalleryIntent.setType("image/*");
+        startActivityForResult(openGalleryIntent, REQUEST_GALLERY_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == REQUEST_GALLERY_CODE && resultCode == Activity.RESULT_OK) {
+            uri = data.getData();
+            if (EasyPermissions.hasPermissions(this, android.Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                String filePath = getRealPathFromURIPath(uri, TeacherSignUpActivity.this);
+                file = new File(filePath);
+            } else {
+                EasyPermissions.requestPermissions(this, "파일을 읽으려면 권한이 필요합니다", READ_REQUEST_CODE, android.Manifest.permission.READ_EXTERNAL_STORAGE);
+            }
+        }
+    }
+
+    private String getRealPathFromURIPath(Uri contentURI, Activity activity) {
+        Cursor cursor = activity.getContentResolver().query(contentURI, null, null, null, null);
+        if (cursor == null) {
+            return contentURI.getPath();
+        } else {
+            cursor.moveToFirst();
+            int idx = cursor.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+            return cursor.getString(idx);
+        }
+    }
+
+    private void setDummyData() {
+        cityList = new ArrayList<>();
+        cityList.add("시");
+        cityList.add("서울시");
+        cityList.add("인천시");
+        cityList.add("시흥시");
+        cityList.add("하남시");
+
+        districtList = new ArrayList<>();
+        districtList.add("구/군");
+        districtList.add("마포구");
+        districtList.add("서대문구");
+        districtList.add("은평구");
+        districtList.add("중구");
+
+        townList = new ArrayList<>();
+        townList.add("동/읍/면");
+        townList.add("홍제동");
+        townList.add("홍은동");
+        townList.add("북가좌동");
+        townList.add("남가좌동");
+
+        subjectList = new ArrayList<>();
+        subjectList.add("선택해주십시오");
+        subjectList.add("C언어");
+        subjectList.add("JAVA");
+        subjectList.add("유니티");
+        subjectList.add("안드로이드 앱개발");
+        subjectList.add("웹 프로그래밍");
+    }
+
+    private void setSpinner() {
+        SpinnerAdapter cityAdapter = new SpinnerAdapter(getApplicationContext(), R.layout.sign_up_spinner_item, cityList);
+        SpinnerAdapter districtAdapter = new SpinnerAdapter(getApplicationContext(), R.layout.sign_up_spinner_item, districtList);
+        SpinnerAdapter townAdapter = new SpinnerAdapter(getApplicationContext(), R.layout.sign_up_spinner_item, townList);
+        SpinnerAdapter subjectAdapter = new SpinnerAdapter(getApplicationContext(), R.layout.sign_up_spinner_item, subjectList);
+
+        cityAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        districtAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        townAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        subjectAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        citySpinner.setAdapter(cityAdapter);
+        districtSpinner.setAdapter(districtAdapter);
+        townSpinner.setAdapter(townAdapter);
+        subjectSpinner.setAdapter(subjectAdapter);
+
+        citySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                localCity = citySpinner.getSelectedItem().toString();
+                Log.d(TAG, localCity);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        districtSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                localDistrict = districtSpinner.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        townSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                localTown = townSpinner.getSelectedItem().toString();
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        subjectSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                subject = subjectSpinner.getSelectedItem().toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+    }
+
+    private void register() {
+        User user = new User(editName.getText().toString(), editId.getText().toString(),
+                editPassword.getText().toString(), editPhoneNumber.getText().toString(),
+                "teacher", localCity, localTown, localDistrict, subject);
+        MultipartBody.Part image;
+        if (file != null) {
+            image = RetrofitUtil.createRequestBody(file);
+        } else {
+            image = RetrofitUtil.createRequestBody(DrawableFileUtill.getDrawableResource(R.drawable.student, "student_profile", getApplicationContext()));
+        }
+        UserService userService = RetrofitUtil.retrofit.create(UserService.class);
+        Call<UserRegister> register = userService.register(user, image);
+        view = getWindow().getDecorView().getRootView();
+        register.enqueue(new Callback<UserRegister>() {
+            @Override
+            public void onResponse(Call<UserRegister> call, Response<UserRegister> response) {
+                Result result = response.body().getResult();
+                Log.d("test", response.body().toString());
+                if (result.getSuccess().equals("200")) {
+                    ToastUtill.makeToast(getApplicationContext(), result.getMessage(), Toast.LENGTH_SHORT);
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //기존의 액티비티 모든 스택 제거
+                    startActivity(intent);
+                } else {
+                    SnackBarUtill.makeSnackBar(view, result.getMessage(), Snackbar.LENGTH_LONG);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<UserRegister> call, Throwable t) {
+                SnackBarUtill.makeSnackBar(view, "회원가입에 실패하였습니다.", Snackbar.LENGTH_LONG);
+                Log.d("fail : ", t.getMessage());
+            }
+        });
     }
 
     private void setCustomActionbar() {
-            ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_cancle, view -> {
-                TextView textView = (TextView) view.findViewById(R.id.title);
-                textView.setText("프로필 작성");
-                ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnClose);
-                imageButton.setOnClickListener( v-> finish());
-            });
+        ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_cancle, view -> {
+            TextView textView = (TextView) view.findViewById(R.id.title);
+            textView.setText("프로필 작성");
+            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnClose);
+            imageButton.setOnClickListener(v -> finish());
+        });
+    }
+
+    @Override
+    public void onPermissionsGranted(int requestCode, List<String> perms) {
+        if (uri != null) {
+            register();
+        }
+    }
+
+    @Override
+    public void onPermissionsDenied(int requestCode, List<String> perms) {
+        SnackBarUtill.makeSnackBar(view, "권한이 없습니다", Snackbar.LENGTH_SHORT);
     }
 }

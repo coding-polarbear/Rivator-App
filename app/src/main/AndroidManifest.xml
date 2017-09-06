@@ -13,6 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name="com.orm.SugarApp">
+        <meta-data android:name="DATABASE" android:value="rivator.db" />
+        <meta-data android:name="VERSION" android:value="1" />
+        <meta-data android:name="QUERY_LOG" android:value="true" />
+        <meta-data android:name="DOMAIN_PACKAGE_NAME" android:value="com.rinc.bong.rivatorproject" />
+
         <activity android:name=".controller.activitys.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

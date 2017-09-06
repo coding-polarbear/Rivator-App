@@ -16,16 +16,20 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Result;
+import com.rinc.bong.rivatorproject.beans.User;
 import com.rinc.bong.rivatorproject.beans.UserRegister;
 import com.rinc.bong.rivatorproject.controller.adapters.SpinnerAdapter;
 import com.rinc.bong.rivatorproject.services.UserService;
 import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 import com.rinc.bong.rivatorproject.utils.DialogUtill;
+import com.rinc.bong.rivatorproject.utils.DrawableFileUtill;
 import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
 import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
+import com.rinc.bong.rivatorproject.utils.ToastUtill;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -33,12 +37,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 import pub.devrel.easypermissions.EasyPermissions;
 import pub.devrel.easypermissions.EasyPermissions.PermissionCallbacks;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class StudentSignUpActivity extends AppCompatActivity implements PermissionCallbacks {
 
@@ -222,7 +228,7 @@ public class StudentSignUpActivity extends AppCompatActivity implements Permissi
     }
 
     public void next(View view) {
-        if(checkBox.isChecked() && editPassword1.getText().toString().equals(editPassword2.getText().toString())) {
+        if(checkBox.isChecked()) {
             register();
 
         } else {
@@ -231,52 +237,32 @@ public class StudentSignUpActivity extends AppCompatActivity implements Permissi
     }
 
     private void register() {
-        String name = editName.getText().toString();
-        String userId = editId.getText().toString();
-        String userPw = editPassword1.getText().toString();
-        String phone = editPhoneNumber.getText().toString();
-
-        Map<String, RequestBody> map = new HashMap<>();
-        map.put("userName", RetrofitUtil.createRequestBody(name));
-        map.put("userPw",RetrofitUtil.createRequestBody(userPw));
-        map.put("phone",RetrofitUtil.createRequestBody(phone));
-        map.put("localCity",RetrofitUtil.createRequestBody(localCity));
-        map.put("localDistrict",RetrofitUtil.createRequestBody(localDistrict));
-        map.put("localTown", RetrofitUtil.createRequestBody(localTown));
-        map.put("subject",RetrofitUtil.createRequestBody(subject));
-        map.put("userType", RetrofitUtil.createRequestBody(Integer.toString(2)));
-        map.put("userId",RetrofitUtil.createRequestBody(userId));
-
-        if(file == null) {
-            map.put("profileImage", RetrofitUtil.createRequestBody(new File("")));
+        User user = new User(editName.getText().toString(), editId.getText().toString(),
+                editPassword1.getText().toString(), editPhoneNumber.getText().toString(),
+                "student", localCity, localTown, localDistrict,subject);
+        MultipartBody.Part image;
+        if(file != null) {
+            image = RetrofitUtil.createRequestBody(file);
         } else {
-            map.put("profileImage", RetrofitUtil.createRequestBody(file));
+            image = RetrofitUtil.createRequestBody(DrawableFileUtill.getDrawableResource(R.drawable.student,"student_profile",getApplicationContext()));
         }
-
         UserService userService = RetrofitUtil.retrofit.create(UserService.class);
-        Call<UserRegister> register = userService.register(map);
+        Call<UserRegister> register = userService.register(user,image);
         view = getWindow().getDecorView().getRootView();
         register.enqueue(new Callback<UserRegister>() {
             @Override
             public void onResponse(Call<UserRegister> call, Response<UserRegister> response) {
                 Result result = response.body().getResult();
                 Log.d("test",response.body().toString());
-                if(result.getSuccess().equals("true")) {
-                    SnackBarUtill.makeSnackBar(view, result.getMessage(), Snackbar.LENGTH_LONG);
-                    try {
-                        Thread.sleep(5000);
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //기존의 액티비티 모든 스택 제거
-                        startActivity(intent);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-
+                if(result.getSuccess().equals("200")) {
+                    ToastUtill.makeToast(getApplicationContext(),result.getMessage(), Toast.LENGTH_SHORT);
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //기존의 액티비티 모든 스택 제거
+                    startActivity(intent);
                 } else {
                     SnackBarUtill.makeSnackBar(view,result.getMessage(), Snackbar.LENGTH_LONG);
                 }
             }
-
             @Override
             public void onFailure(Call<UserRegister> call, Throwable t) {
                 SnackBarUtill.makeSnackBar(view,"회원가입에 실패하였습니다.", Snackbar.LENGTH_LONG);

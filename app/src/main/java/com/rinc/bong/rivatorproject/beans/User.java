@@ -1,5 +1,6 @@
 package com.rinc.bong.rivatorproject.beans;
 
+import com.google.gson.annotations.SerializedName;
 import com.orm.SugarRecord;
 
 import lombok.AllArgsConstructor;
@@ -18,14 +19,44 @@ import okhttp3.MultipartBody;
 @Getter
 @Setter
 public class User extends SugarRecord{
+    @SerializedName("userId")
     private String userId;
+
+    @SerializedName("userPw")
     private String userPw;
+
+    @SerializedName("userName")
     private String userName;
+
     private String profileURL;
+
+    @SerializedName("phone")
     private String phone;
+
+    @SerializedName("localCity")
     private String localCity;
+
+    @SerializedName("localTown")
     private String localTown;
-    private String localDistric;
+
+    @SerializedName("localDistrict")
+    private String localDistrict;
+
+    @SerializedName("subject")
     private String subject;
-    private int userType;
+
+    @SerializedName("userType")
+    private String userType;
+
+    public User(String userName, String userId, String userPw, String phone, String userType, String localCity, String localTown, String localDistrict, String subject) {
+        this.userName = userName;
+        this.userId = userId;
+        this.userPw = userPw;
+        this.phone = phone;
+        this.userType = userType;
+        this.localCity = localCity;
+        this.localTown = localTown;
+        this.localDistrict = localDistrict;
+        this.subject = subject;
+    }
 }
