@@ -2,6 +2,7 @@ package com.rinc.bong.rivatorproject.controller.activitys;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
@@ -54,6 +55,9 @@ public class SignupTermsAgreeActivity extends AppCompatActivity {
             imageButton.setOnClickListener(v -> finish());
         });
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            mActionbar.setActionBarElevation(15);
+        }
     }
 
     public void next(View view) {

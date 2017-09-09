@@ -1,6 +1,8 @@
 package com.rinc.bong.rivatorproject.controller.activitys;
 
 import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -89,6 +91,7 @@ public class ProfileModifyActivity extends AppCompatActivity {
             });
         });
     }
+
     public void  setCustomActionbar() {
 
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_back, view -> {
@@ -96,13 +99,17 @@ public class ProfileModifyActivity extends AppCompatActivity {
             view.setClickable(false);
 
             TextView textView = (TextView) view.findViewById(R.id.title);
-            textView.setText("계정설정");
+            textView.setText("프로필 수정");
             textView.setClickable(false);
 
             //ImageButton 리스너 설정
             ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
             imageButton.setOnClickListener(v -> finish());
         });
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            mActionbar.setActionBarElevation(15);
+        }
 
     }
 }

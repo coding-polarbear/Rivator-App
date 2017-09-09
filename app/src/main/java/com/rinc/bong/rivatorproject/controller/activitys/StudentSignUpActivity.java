@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.provider.MediaStore;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -284,6 +285,10 @@ public class StudentSignUpActivity extends AppCompatActivity implements Permissi
             ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnClose);
             imageButton.setOnClickListener( v-> finish());
         });
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            mActionbar.setActionBarElevation(15);
+        }
     }
 
     @Override
