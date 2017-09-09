@@ -14,10 +14,13 @@ import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.ImageViewTarget;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.User;
@@ -55,6 +58,7 @@ public class StudentSignUpActivity extends AppCompatActivity implements Permissi
     private File file = null;
     private View view;
 
+    private de.hdodenhof.circleimageview.CircleImageView imageView;
     private EditText editId;
     private EditText editPassword1;
     private EditText editPassword2;
@@ -88,6 +92,7 @@ public class StudentSignUpActivity extends AppCompatActivity implements Permissi
     }
 
     private void init() {
+        imageView = (de.hdodenhof.circleimageview.CircleImageView) findViewById(R.id.imageView);
         citySpinner = (Spinner) findViewById(R.id.citySpinner);
         districtSpinner = (Spinner) findViewById(R.id.districSpinner);
         townSpinner = (Spinner) findViewById(R.id.townSpinner);
@@ -111,6 +116,7 @@ public class StudentSignUpActivity extends AppCompatActivity implements Permissi
         if(requestCode == REQUEST_GALLERY_CODE && resultCode == Activity.RESULT_OK) {
             uri = data.getData();
             if(EasyPermissions.hasPermissions(this, android.Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                Glide.with(this).load(uri).into(imageView);
                 String filePath = getRealPathFromURIPath(uri, StudentSignUpActivity.this);
                 file = new File(filePath);
             } else {
