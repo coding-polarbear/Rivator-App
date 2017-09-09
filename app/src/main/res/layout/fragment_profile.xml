@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:layout_centerHorizontal="true"
@@ -38,6 +38,7 @@
             android:layout_marginBottom="83dp"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/name"
+            android:id="@+id/subject"
             android:textColor="@color/colorWhiteText"
             android:letterSpacing="-0.09"
             android:textSize="14sp"
