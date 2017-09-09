@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -77,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     //유저 객체를 sqlite에 저장
                     User user = response.body().getUser();
+                    Log.d("user",user.toString());
                     user.save();
                     Intent i = new Intent(LoginActivity.this,HomeActivity.class);
                     startActivity(i);

@@ -4,6 +4,7 @@ package com.rinc.bong.rivatorproject.controller.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,7 +62,9 @@ public class ProfileFragment extends Fragment {
         contest_btn = (Button)view.findViewById(R.id.profile_contest_btn);
         project_btn = (Button)view.findViewById(R.id.profile_project_btn);
         profile_modify_btn = (Button) view.findViewById(R.id.profile_modify_btn);
-        user = User.findById(User.class, 1);
+        user = User.last(User.class);
+        Log.d("test2",Long.toString(User.count(User.class)));
+        Log.d("test2",user.toString());
     }
 
     private void loadInfo() {
