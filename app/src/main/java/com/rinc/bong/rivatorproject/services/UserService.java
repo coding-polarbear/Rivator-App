@@ -23,10 +23,10 @@ import retrofit2.http.PartMap;
 
 public interface UserService {
     @Multipart
-    @POST("/users/register")
+    @POST("/users")
     Call<UserRegister> register(@Part("data") User user, @Part MultipartBody.Part profileImage);
 
     @FormUrlEncoded
-    @POST("/users/login")
+    @POST("/sign/login")
     Call<UserLogin> login(@Field("userId") String userId, @Field("userPw") String userPw);
 }
