@@ -16,10 +16,12 @@ import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.User;
@@ -52,6 +54,7 @@ public class TeacherSignUpActivity extends AppCompatActivity implements EasyPerm
     private File file = null;
     private View view;
 
+    private de.hdodenhof.circleimageview.CircleImageView imageView;
     private CheckBox checkBox;
     private EditText editId;
     private EditText editPassword;
@@ -101,6 +104,7 @@ public class TeacherSignUpActivity extends AppCompatActivity implements EasyPerm
     }
 
     private void init() {
+        imageView = (de.hdodenhof.circleimageview.CircleImageView) findViewById(R.id.imageView);
         checkBox = (CheckBox) findViewById(R.id.checkBox);
         editId = (EditText) findViewById(R.id.editId);
         editName = (EditText) findViewById(R.id.editName);
@@ -124,6 +128,7 @@ public class TeacherSignUpActivity extends AppCompatActivity implements EasyPerm
         if (requestCode == REQUEST_GALLERY_CODE && resultCode == Activity.RESULT_OK) {
             uri = data.getData();
             if (EasyPermissions.hasPermissions(this, android.Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                Glide.with(this).load(uri).into(imageView);
                 String filePath = getRealPathFromURIPath(uri, TeacherSignUpActivity.this);
                 file = new File(filePath);
             } else {
