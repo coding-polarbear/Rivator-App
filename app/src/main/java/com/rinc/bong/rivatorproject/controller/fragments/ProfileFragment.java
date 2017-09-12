@@ -68,7 +68,7 @@ public class ProfileFragment extends Fragment {
     }
 
     private void loadInfo() {
-        Glide.with(getActivity()).load(IMAGE_URL+user.getUserId()+"/profile-image.jpg").into(profile);
+        Glide.with(getActivity()).load(IMAGE_URL+user.getUserId()+"/profile-image.jpg").override(100,100).into(profile);
         name.setText(user.getUserName());
         subject.setText(user.getSubject());
     }

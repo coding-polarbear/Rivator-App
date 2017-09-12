@@ -20,15 +20,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-        try {
-            User user = User.last(User.class);
-            if (user != null)
-                goToMain();
-            else
-                SnackBarUtill.makeSnackBar(getWindow().getDecorView().getRootView(),"로그인 또는 회원가입을 진행해주세요!", Snackbar.LENGTH_LONG);
-        } catch(SQLiteException e) {
-             SnackBarUtill.makeSnackBar(getWindow().getDecorView().getRootView(),"로그인 또는 회원가입을 진행해주세요!", Snackbar.LENGTH_LONG);
-        }
+        User user = User.last(User.class);
+        if (user != null)
+            goToMain();
     }
 
     public void goToSignIn(View view) {

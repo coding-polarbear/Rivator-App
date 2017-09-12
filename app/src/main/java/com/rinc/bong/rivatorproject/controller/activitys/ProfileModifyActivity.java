@@ -77,23 +77,17 @@ public class ProfileModifyActivity extends AppCompatActivity {
     }
 
     public void  setCustomActionbar() {
-
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_back, view -> {
-
             view.setClickable(false);
-
             TextView textView = (TextView) view.findViewById(R.id.title);
             textView.setText("프로필 수정");
             textView.setClickable(false);
-
             //ImageButton 리스너 설정
             ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
             imageButton.setOnClickListener(v -> finish());
         });
-
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             mActionbar.setActionBarElevation(15);
         }
-
     }
 }
