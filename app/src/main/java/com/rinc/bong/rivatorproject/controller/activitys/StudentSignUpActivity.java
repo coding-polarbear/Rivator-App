@@ -15,17 +15,15 @@ import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.ImageViewTarget;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.User;
-import com.rinc.bong.rivatorproject.beans.UserRegister;
+import com.rinc.bong.rivatorproject.retrofitBean.UserRegister;
 import com.rinc.bong.rivatorproject.controller.adapters.SpinnerAdapter;
 import com.rinc.bong.rivatorproject.services.UserService;
 import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
@@ -37,18 +35,14 @@ import com.rinc.bong.rivatorproject.utils.ToastUtill;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import okhttp3.MultipartBody;
-import okhttp3.RequestBody;
 import pub.devrel.easypermissions.EasyPermissions;
 import pub.devrel.easypermissions.EasyPermissions.PermissionCallbacks;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 public class StudentSignUpActivity extends AppCompatActivity implements PermissionCallbacks {
 

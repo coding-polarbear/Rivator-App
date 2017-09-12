@@ -1,8 +1,11 @@
-package com.rinc.bong.rivatorproject.beans;
+package com.rinc.bong.rivatorproject.retrofitBean;
 
 import android.support.annotation.NonNull;
 
 import com.google.gson.annotations.SerializedName;
+import com.rinc.bong.rivatorproject.beans.Result;
+import com.rinc.bong.rivatorproject.beans.Token;
+import com.rinc.bong.rivatorproject.beans.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

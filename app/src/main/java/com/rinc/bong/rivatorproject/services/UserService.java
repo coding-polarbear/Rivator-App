@@ -1,10 +1,10 @@
 package com.rinc.bong.rivatorproject.services;
 
-import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.Status;
 import com.rinc.bong.rivatorproject.beans.User;
-import com.rinc.bong.rivatorproject.beans.UserLogin;
-import com.rinc.bong.rivatorproject.beans.UserRegister;
+import com.rinc.bong.rivatorproject.retrofitBean.UpdatePw;
+import com.rinc.bong.rivatorproject.retrofitBean.UserLogin;
+import com.rinc.bong.rivatorproject.retrofitBean.UserRegister;
 
 
 import okhttp3.MultipartBody;
@@ -14,6 +14,7 @@ import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
 import retrofit2.http.Part;
 
 /**
@@ -33,4 +34,7 @@ public interface UserService {
     @GET("/sign/logout")
     Call<Status> logout();
 
+    @Multipart
+    @PUT("/users")
+    Call<Status> updatePassword(@Part("data")UpdatePw updatePw);
 }

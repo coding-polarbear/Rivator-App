@@ -1,6 +1,7 @@
-package com.rinc.bong.rivatorproject.beans;
+package com.rinc.bong.rivatorproject.retrofitBean;
 
 import com.google.gson.annotations.SerializedName;
+import com.rinc.bong.rivatorproject.beans.Result;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -67,30 +67,12 @@ public class ProfileModifyActivity extends AppCompatActivity {
             startActivity(new Intent(ProfileModifyActivity.this, UserModifyActivity.class));
         });
         logout.setOnClickListener(v -> {
-            UserService userService = RetrofitUtil.retrofit.create(UserService.class);
-            Call<Status> resultCall = userService.logout();
-            resultCall.enqueue(new Callback<Status>() {
-                @Override
-                public void onResponse(Call<Status> call, Response<Status> response) {
-                    Result result = response.body().getResult();
-                    Log.d("test", result.toString());
-                    if(result.getSuccess().equals("200")) {
-                        ToastUtill.makeToast(ProfileModifyActivity.this, result.getMessage(), Toast.LENGTH_LONG);
-                        User.deleteAll(User.class);  //Sqlite에 저장한 모든 User 객체 삭제
-                        Token.deleteAll(Token.class); //Sqlite에 저장한 모든 Token 객체 삭제
-                        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //기존의 액티비티 모든 스택 제거
-                        startActivity(intent);
-                    } else {
-                        SnackBarUtill.makeSnackBar(v, result.getMessage(), Snackbar.LENGTH_LONG);
-                    }
-                }
-
-                @Override
-                public void onFailure(Call<Status> call, Throwable t) {
-                    SnackBarUtill.makeSnackBar(v, "알 수 없는 오류가 발생하였습니다",Snackbar.LENGTH_LONG);
-                }
-            });
+            User.deleteAll(User.class);  //Sqlite에 저장한 모든 User 객체 삭제
+            Token.deleteAll(Token.class); //Sqlite에 저장한 모든 Token 객체 삭제
+            ToastUtill.makeToast(getApplicationContext(), "로그아웃이 완료되었습니다!", Toast.LENGTH_SHORT);
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //기존의 액티비티 모든 스택 제거
+            startActivity(intent);
         });
     }
 
