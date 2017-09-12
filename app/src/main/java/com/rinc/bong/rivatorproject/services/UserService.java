@@ -4,6 +4,7 @@ import com.rinc.bong.rivatorproject.beans.Status;
 import com.rinc.bong.rivatorproject.beans.User;
 import com.rinc.bong.rivatorproject.retrofitBean.UpdatePw;
 import com.rinc.bong.rivatorproject.retrofitBean.UserLogin;
+import com.rinc.bong.rivatorproject.retrofitBean.UserModify;
 import com.rinc.bong.rivatorproject.retrofitBean.UserRegister;
 
 
@@ -37,4 +38,8 @@ public interface UserService {
     @Multipart
     @PUT("/users")
     Call<Status> updatePassword(@Part("data")UpdatePw updatePw);
+
+    @Multipart
+    @PUT("/users")
+    Call<Status> userModify(@Part("data") UserModify userModify);
 }

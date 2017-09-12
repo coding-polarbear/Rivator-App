@@ -97,6 +97,7 @@ public class UserModifyActivity extends AppCompatActivity {
     }
 
     public void modifyUser(View view) {
+
         SnackBarUtill.makeSnackBar(view, "계정 정보 변경이 완료되었습니다.", Snackbar.LENGTH_LONG);
         //스낵바가 다 보여지고 나면 액티비티 종료
         Thread t = new Thread(() -> {
