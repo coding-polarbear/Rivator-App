@@ -24,4 +24,6 @@ public class UserLogin {
     private Result result;
     @SerializedName("user")
     private User user;
+    @SerializedName("auth")
+    private Token token;
 }

@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Result;
+import com.rinc.bong.rivatorproject.beans.Token;
 import com.rinc.bong.rivatorproject.beans.User;
 import com.rinc.bong.rivatorproject.beans.UserLogin;
 import com.rinc.bong.rivatorproject.services.UserService;
@@ -85,6 +86,11 @@ public class LoginActivity extends AppCompatActivity {
                     User user = response.body().getUser();
                     Log.d("user",user.toString());
                     user.save();
+
+                    //토큰을 sqlite에 저장
+                    Token token = response.body().getToken();
+                    Log.d("Token : ", token.toString());
+                    token.save();
                     Intent i = new Intent(LoginActivity.this,HomeActivity.class);
                     startActivity(i);
                 } else {

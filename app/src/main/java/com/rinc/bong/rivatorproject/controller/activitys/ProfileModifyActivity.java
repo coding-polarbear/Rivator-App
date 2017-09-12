@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.Status;
+import com.rinc.bong.rivatorproject.beans.Token;
 import com.rinc.bong.rivatorproject.beans.User;
 import com.rinc.bong.rivatorproject.services.UserService;
 import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
@@ -75,7 +76,8 @@ public class ProfileModifyActivity extends AppCompatActivity {
                     Log.d("test", result.toString());
                     if(result.getSuccess().equals("200")) {
                         ToastUtill.makeToast(ProfileModifyActivity.this, result.getMessage(), Toast.LENGTH_LONG);
-                        User.deleteAll(User.class);
+                        User.deleteAll(User.class);  //Sqlite에 저장한 모든 User 객체 삭제
+                        Token.deleteAll(Token.class); //Sqlite에 저장한 모든 Token 객체 삭제
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //기존의 액티비티 모든 스택 제거
                         startActivity(intent);
