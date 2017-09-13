@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     tools:context="com.rinc.bong.rivatorproject.controller.activitys.UserModifyActivity">
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:src="@drawable/student"
@@ -14,6 +14,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginBottom="35dp"
         android:id="@+id/imageView"
+        android:onClick="select"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="7dp" />
     <EditText

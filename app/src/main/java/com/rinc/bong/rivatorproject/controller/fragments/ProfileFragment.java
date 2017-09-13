@@ -62,12 +62,10 @@ public class ProfileFragment extends Fragment {
         contest_btn = (Button)view.findViewById(R.id.profile_contest_btn);
         project_btn = (Button)view.findViewById(R.id.profile_project_btn);
         profile_modify_btn = (Button) view.findViewById(R.id.profile_modify_btn);
-        user = User.last(User.class);
-        Log.d("test2",Long.toString(User.count(User.class)));
-        Log.d("test2",user.toString());
     }
 
     private void loadInfo() {
+        user = User.last(User.class);
         Glide.with(getActivity()).load(IMAGE_URL+user.getUserId()+"/profile-image.jpg").override(100,100).into(profile);
         name.setText(user.getUserName());
         subject.setText(user.getSubject());
@@ -94,5 +92,9 @@ public class ProfileFragment extends Fragment {
         });
     }
 
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        loadInfo();
+    }
 }

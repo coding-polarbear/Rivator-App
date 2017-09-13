@@ -77,8 +77,17 @@ public class PasswordModifyActivity extends AppCompatActivity {
                 public void onResponse(Call<Status> call, Response<Status> response) {
                     Result result = response.body().getResult();
                     if(result.getSuccess().equals("200")) {
-                        ToastUtill.makeToast(PasswordModifyActivity.this, result.getMessage(), Toast.LENGTH_LONG);
-                        finish();
+                        SnackBarUtill.makeSnackBar(view, result.getMessage(),Snackbar.LENGTH_LONG);
+                        //스낵바가 다 보여지고 나면 액티비티 종료
+                        Thread t = new Thread(() -> {
+                            try {
+                                Thread.sleep(3000);
+                                finish();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        });
+                        t.start();
                     } else {
                         SnackBarUtill.makeSnackBar(view, result.getMessage(), Snackbar.LENGTH_LONG);
                     }
@@ -92,16 +101,6 @@ public class PasswordModifyActivity extends AppCompatActivity {
         } else {
             DialogUtill.makeDialogWithPositiveButton("알림","비밀번호가 일치하지 않습니다", "확인", PasswordModifyActivity.this);
         }
-        SnackBarUtill.makeSnackBar(view, "비밀번호가 변경되었습니다",Snackbar.LENGTH_LONG);
-        //스낵바가 다 보여지고 나면 액티비티 종료
-       Thread t = new Thread(() -> {
-            try {
-                Thread.sleep(3000);
-                finish();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        });
-        t.start();
+
     }
 }

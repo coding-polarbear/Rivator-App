@@ -51,7 +51,6 @@ public class RetrofitUtil {
         return retrofit;
     }
     public static MultipartBody.Part  createRequestBody(@NonNull File file) {
-
         RequestBody mFile = RequestBody.create(MediaType.parse("images/*"),file);
         MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("profileImage",file.getName(),mFile);
         return fileToUpload;

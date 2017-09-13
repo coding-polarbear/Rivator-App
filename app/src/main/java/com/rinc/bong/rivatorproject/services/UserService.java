@@ -37,9 +37,13 @@ public interface UserService {
 
     @Multipart
     @PUT("/users")
-    Call<Status> updatePassword(@Part("data")UpdatePw updatePw);
+    Call<Status> updatePassword(@Part("data") UpdatePw updatePw);
 
     @Multipart
     @PUT("/users")
-    Call<Status> userModify(@Part("data") UserModify userModify);
+    Call<UserLogin> userModifyWithNoProfile(@Part("data") UserModify userModify);
+
+    @Multipart
+    @PUT("/users")
+    Call<UserLogin> userModifyWithProfile(@Part("data") UserModify userModify, @Part MultipartBody.Part profileImage);
 }
