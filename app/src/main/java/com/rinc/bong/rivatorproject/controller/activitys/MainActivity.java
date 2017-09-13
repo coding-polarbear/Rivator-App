@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void goToMain() {
-        ToastUtill.makeToast(getApplicationContext(), "로그인에 성공하였습니다!", Toast.LENGTH_SHORT);
         Intent i = new Intent(getApplicationContext(),HomeActivity.class);
         startActivity(i);
     }

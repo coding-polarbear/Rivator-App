@@ -174,8 +174,7 @@ public class UserModifyActivity extends AppCompatActivity implements EasyPermiss
                     User.delete(user);
                     User tempUser = response.body().getUser();
                     tempUser.save();
-                    ToastUtill.makeToast(getApplicationContext(), result.getMessage(), Toast.LENGTH_LONG);
-                    finish();
+                    SnackBarUtill.makeSnackbarWithFinish(view, result.getMessage(), Toast.LENGTH_LONG,UserModifyActivity.this);
                 }
             }
 

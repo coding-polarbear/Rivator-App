@@ -77,17 +77,7 @@ public class PasswordModifyActivity extends AppCompatActivity {
                 public void onResponse(Call<Status> call, Response<Status> response) {
                     Result result = response.body().getResult();
                     if(result.getSuccess().equals("200")) {
-                        SnackBarUtill.makeSnackBar(view, result.getMessage(),Snackbar.LENGTH_LONG);
-                        //스낵바가 다 보여지고 나면 액티비티 종료
-                        Thread t = new Thread(() -> {
-                            try {
-                                Thread.sleep(3000);
-                                finish();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                        });
-                        t.start();
+                        SnackBarUtill.makeSnackbarWithFinish(view, result.getMessage(),Snackbar.LENGTH_LONG,PasswordModifyActivity.this);
                     } else {
                         SnackBarUtill.makeSnackBar(view, result.getMessage(), Snackbar.LENGTH_LONG);
                     }
