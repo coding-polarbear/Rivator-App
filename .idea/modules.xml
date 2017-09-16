@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Rivator.iml" filepath="$PROJECT_DIR$/Rivator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RivatorApp.iml" filepath="$PROJECT_DIR$/RivatorApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
