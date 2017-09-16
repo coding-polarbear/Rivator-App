@@ -95,6 +95,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        Log.d("test","test");
         loadInfo();
     }
 }

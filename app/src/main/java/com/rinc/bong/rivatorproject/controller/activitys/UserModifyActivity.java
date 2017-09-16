@@ -11,6 +11,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -171,7 +172,7 @@ public class UserModifyActivity extends AppCompatActivity implements EasyPermiss
             public void onResponse(Call<UserLogin> call, Response<UserLogin> response) {
                 Result result = response.body().getResult();
                 if(result.getSuccess().equals("200")) {
-                    User.delete(user);
+                    User.deleteAll(User.class);
                     User tempUser = response.body().getUser();
                     tempUser.save();
                     SnackBarUtill.makeSnackbarWithFinish(view, result.getMessage(), Toast.LENGTH_LONG,UserModifyActivity.this);
