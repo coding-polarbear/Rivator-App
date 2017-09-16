@@ -6,10 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.CurrentCourse;
+import com.rinc.bong.rivatorproject.beans.SimpleCourse;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by baehyeonbin on 2017. 7. 23..
@@ -17,8 +20,9 @@ import java.util.ArrayList;
 
 public class LectureAdapter extends RecyclerView.Adapter<LectureViewHolder> {
     private Context context;
-    private ArrayList<CurrentCourse> items;
-    public LectureAdapter(Context context, ArrayList<CurrentCourse> items) {
+    private List<SimpleCourse> items;
+    private final static String IMAGE_URL = "http://n0rr.iptime.org:7001/courses/";
+    public LectureAdapter(Context context, List<SimpleCourse> items) {
         this.context = context;
         this.items = items;
     }
@@ -30,10 +34,11 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureViewHolder> {
 
     @Override
     public void onBindViewHolder(LectureViewHolder holder, int position) {
-        CurrentCourse item = items.get(position);
+        SimpleCourse item = items.get(position);
         holder.getTitle().setText(item.getTitle());
-        holder.getTeacherName().setText(item.getTeacherName());
+        holder.getTeacherName().setText(item.getUser().getUserName());
         holder.getUnit().setText(Integer.toString(item.getUnitTime())+"시간");
+        Glide.with(context).load(IMAGE_URL + item.getCourseKey() + "/course-image.jpg").into(holder.getImageView());
     }
 
     @Override

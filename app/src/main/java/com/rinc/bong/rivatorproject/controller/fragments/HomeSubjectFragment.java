@@ -57,8 +57,7 @@ public class HomeSubjectFragment extends Fragment {
         this.title = title;
         user = User.last(User.class);
         courseService = RetrofitUtil.retrofit.create(CourseService.class);
-        call = courseService.getCourseList(user.getSubject(),true, "score", 0, 5);
-
+        call = courseService.getCourseList(title,true, "score", 0, 5);
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

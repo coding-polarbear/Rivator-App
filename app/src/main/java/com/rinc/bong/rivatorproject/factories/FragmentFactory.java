@@ -23,7 +23,7 @@ public class FragmentFactory {
         if(position == 1) {
             return new TeacherFragment(subject);
         } else {
-            return new CurrentLectureFragment();
+            return new CurrentLectureFragment(subject);
         }
     }
 }
