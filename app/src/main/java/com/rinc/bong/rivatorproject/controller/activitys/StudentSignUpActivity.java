@@ -155,11 +155,10 @@ public class StudentSignUpActivity extends AppCompatActivity implements Permissi
 
         subjectList = new ArrayList<>();
         subjectList.add("선택해주십시오");
-        subjectList.add("C언어");
-        subjectList.add("JAVA");
-        subjectList.add("유니티");
-        subjectList.add("안드로이드 앱개발");
-        subjectList.add("웹 프로그래밍");
+        subjectList.add("Basic");
+        subjectList.add("웹");
+        subjectList.add("어플리케이션");
+        subjectList.add("게임");
     }
 
     private void setSpinner() {

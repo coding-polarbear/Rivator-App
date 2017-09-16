@@ -19,6 +19,7 @@ import com.bumptech.glide.signature.StringSignature;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.User;
 import com.rinc.bong.rivatorproject.controller.activitys.ContestManagementActivity;
+import com.rinc.bong.rivatorproject.controller.activitys.EasterEggActivity;
 import com.rinc.bong.rivatorproject.controller.activitys.HomeActivity;
 import com.rinc.bong.rivatorproject.controller.activitys.HomeWorkActivity;
 import com.rinc.bong.rivatorproject.controller.activitys.CourseManagementActivity;
@@ -41,6 +42,7 @@ public class ProfileFragment extends Fragment {
     private LinearLayout contest_btn = null;
     private LinearLayout project_btn = null;
     private LinearLayout profile_modify_btn = null;
+    private LinearLayout profile_appinfo_btn = null;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -66,6 +68,7 @@ public class ProfileFragment extends Fragment {
         contest_btn = (LinearLayout)view.findViewById(R.id.profile_contest_btn);
         project_btn = (LinearLayout)view.findViewById(R.id.profile_project_btn);
         profile_modify_btn = (LinearLayout) view.findViewById(R.id.profile_modify_btn);
+        profile_appinfo_btn = (LinearLayout) view.findViewById(R.id.profile_appinfo_btn);
     }
 
     private void loadInfo() {
@@ -94,6 +97,9 @@ public class ProfileFragment extends Fragment {
         });
         profile_modify_btn.setOnClickListener(v -> {
             startActivity(new Intent(view.getContext(), ProfileModifyActivity.class));
+        });
+        profile_appinfo_btn.setOnClickListener(v -> {
+            startActivity(new Intent(view.getContext(), EasterEggActivity.class));
         });
     }
 
