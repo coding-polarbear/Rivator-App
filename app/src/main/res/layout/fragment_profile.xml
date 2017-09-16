@@ -57,14 +57,19 @@
             android:layout_height="match_parent"
             android:id="@+id/buttonGroup1"
             android:layout_weight="1">
+
             <Button
+                android:id="@+id/profile_modify_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="계정설정"
-                android:id="@+id/profile_modify_btn"
-                android:background="@drawable/profile_button_style"
                 android:layout_gravity="bottom"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:background="@drawable/profile_button_style"
+                android:drawableTop="@drawable/profileedit"
+                android:src="@drawable/profileedit"
+                android:text="계정설정" />
+
             <Button
                 android:id="@+id/profile_notice_btn"
                 android:layout_width="match_parent"
@@ -78,10 +83,10 @@
                 android:id="@+id/profile_course_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="강좌관리"
                 android:layout_gravity="bottom"
+                android:layout_weight="1"
                 android:background="@drawable/profile_button_style"
-                android:layout_weight="1" />
+                android:text="강좌관리" />
 
             <Button
                 android:id="@+id/profile_homework_btn"
