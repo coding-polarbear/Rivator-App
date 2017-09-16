@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:name="com.orm.SugarApp">
+
         <meta-data android:name="DATABASE" android:value="rivator.db" />
         <meta-data android:name="VERSION" android:value="1" />
         <meta-data android:name="QUERY_LOG" android:value="true" />
@@ -37,7 +38,9 @@
         <activity android:name=".controller.activitys.StudentSignUpActivity" />
         <activity
             android:name=".controller.activitys.HomeActivity"
-            android:theme="@style/AppTheme.ActionBar.Transparent" />
+            android:theme="@style/AppTheme.NoActionBar"
+
+            />
         <activity
             android:name=".controller.activitys.NoticeActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent" />

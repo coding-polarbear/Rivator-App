@@ -15,6 +15,12 @@
         <item name="android:spinnerStyle">@style/SpinnerTheme</item>
     </style>
 
+    <!--SearchView Toolbar-->
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <!-- Calendar Style -->
     <style name="CalenderViewCustom" parent="AppTheme">
         <item name="colorAccent">@color/greenBar</item>
@@ -31,4 +37,7 @@
     <style name="SpinnerTheme" parent="android:Widget.Spinner">
         <item name="android:background">@drawable/selector_spinner</item>
     </style>
+
+
+
 </resources>
