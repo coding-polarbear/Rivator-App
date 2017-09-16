@@ -44,97 +44,228 @@
             android:textSize="14sp"
             android:text="웹프로그래밍" />
     </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#f0f0f0"
-        android:paddingTop="20dp"
-        android:paddingBottom="28dp"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:background="#f0f0f0"
+        android:orientation="vertical"
+        android:paddingBottom="28dp"
+        android:paddingTop="20dp">
+
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
             android:id="@+id/buttonGroup1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="1">
-
-            <Button
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id="@+id/profile_modify_btn"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/profile_button_style">
+
+                <ImageView
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/profileedit"
+                    android:layout_weight="3"/>
+
+                <TextView
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="7"
+                    android:adjustViewBounds="true"
+                    android:text="계정설정" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="bottom"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"
-                android:background="@drawable/profile_button_style"
-                android:drawableTop="@drawable/profileedit"
-                android:src="@drawable/profileedit"
-                android:text="계정설정" />
-
-            <Button
                 android:id="@+id/profile_notice_btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="알림"
-                android:layout_gravity="bottom"
-                android:background="@drawable/profile_button_style"
-                android:layout_weight="1"/>
-
-            <Button
-                android:id="@+id/profile_course_btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="bottom"
                 android:layout_weight="1"
-                android:background="@drawable/profile_button_style"
-                android:text="강좌관리" />
+                android:orientation="vertical"
+                android:background="@drawable/profile_button_style">
 
-            <Button
-                android:id="@+id/profile_homework_btn"
+                <ImageView
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/noticeview"
+                    android:layout_weight="3"/>
+
+                <TextView
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="7"
+                    android:adjustViewBounds="true"
+                    android:text="알림" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="숙제관리"
-                android:layout_gravity="bottom"
-                android:background="@drawable/profile_button_style"
-                android:layout_weight="1"/>
+                android:id="@+id/profile_course_btn"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/profile_button_style">
+
+                <ImageView
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/rectureadmin"
+                    android:layout_weight="3"/>
+
+                <TextView
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="7"
+                    android:adjustViewBounds="true"
+                    android:text="강좌관리" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/profile_homework_btn"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/profile_button_style">
+
+                <ImageView
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/homeworkadmin"
+                    android:layout_weight="3"/>
+
+                <TextView
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="7"
+                    android:adjustViewBounds="true"
+                    android:text="숙제관리" />
+            </LinearLayout>
+
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
-            <Button
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id="@+id/profile_contest_btn"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/profile_button_style">
+
+                <ImageView
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/contest"
+                    android:layout_weight="3"/>
+
+                <TextView
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="7"
+                    android:adjustViewBounds="true"
+                    android:text="콘테스트" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="콘테스트"
-                android:layout_gravity="bottom"
-                android:background="@drawable/profile_button_style"
-                android:layout_weight="1"/>
-
-            <Button
                 android:id="@+id/profile_project_btn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="bottom"
-                android:text="프로젝트"
-                android:background="@drawable/profile_button_style"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/profile_button_style">
 
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="고객센터"
-                android:layout_gravity="bottom"
-                android:background="@drawable/profile_button_style"
-                android:layout_weight="1" />
+                <ImageView
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/project"
+                    android:layout_weight="3"/>
 
-            <Button
+                <TextView
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="7"
+                    android:adjustViewBounds="true"
+                    android:text="프로젝트" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="앱 정보"
-                android:layout_gravity="bottom"
-                android:background="@drawable/profile_button_style"
-                android:layout_weight="1"/>
+                android:id="@+id/profile_customer_btn"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/profile_button_style">
+
+                <ImageView
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/customer"
+                    android:layout_weight="3"/>
+
+                <TextView
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="7"
+                    android:adjustViewBounds="true"
+                    android:text="고객센터" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/profile_appinfo_btn"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:background="@drawable/profile_button_style">
+
+                <ImageView
+                    android:layout_margin="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/appinfo"
+                    android:layout_weight="3"/>
+
+                <TextView
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="7"
+                    android:adjustViewBounds="true"
+                    android:text="앱 정보"  />
+            </LinearLayout>
+
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

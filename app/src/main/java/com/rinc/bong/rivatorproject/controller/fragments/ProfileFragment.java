@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -31,12 +32,12 @@ public class ProfileFragment extends Fragment {
     private de.hdodenhof.circleimageview.CircleImageView profile;
     private TextView name;
     private TextView subject;
-    private Button notice_btn = null;
-    private Button homework_btn = null;
-    private Button course_btn = null;
-    private Button contest_btn = null;
-    private Button project_btn = null;
-    private Button profile_modify_btn = null;
+    private LinearLayout notice_btn = null;
+    private LinearLayout homework_btn = null;
+    private LinearLayout course_btn = null;
+    private LinearLayout contest_btn = null;
+    private LinearLayout project_btn = null;
+    private LinearLayout profile_modify_btn = null;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -56,12 +57,12 @@ public class ProfileFragment extends Fragment {
         profile = (de.hdodenhof.circleimageview.CircleImageView) view.findViewById(R.id.profile);
         name = (TextView) view.findViewById(R.id.name);
         subject = (TextView) view.findViewById(R.id.subject);
-        notice_btn = (Button)view.findViewById(R.id.profile_notice_btn);
-        homework_btn = (Button)view.findViewById(R.id.profile_homework_btn);
-        course_btn = (Button)view.findViewById(R.id.profile_course_btn);
-        contest_btn = (Button)view.findViewById(R.id.profile_contest_btn);
-        project_btn = (Button)view.findViewById(R.id.profile_project_btn);
-        profile_modify_btn = (Button) view.findViewById(R.id.profile_modify_btn);
+        notice_btn = (LinearLayout)view.findViewById(R.id.profile_notice_btn);
+        homework_btn = (LinearLayout)view.findViewById(R.id.profile_homework_btn);
+        course_btn = (LinearLayout)view.findViewById(R.id.profile_course_btn);
+        contest_btn = (LinearLayout)view.findViewById(R.id.profile_contest_btn);
+        project_btn = (LinearLayout)view.findViewById(R.id.profile_project_btn);
+        profile_modify_btn = (LinearLayout) view.findViewById(R.id.profile_modify_btn);
     }
 
     private void loadInfo() {
