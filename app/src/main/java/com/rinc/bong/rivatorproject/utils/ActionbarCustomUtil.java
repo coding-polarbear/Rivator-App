@@ -1,6 +1,7 @@
 package com.rinc.bong.rivatorproject.utils;
 
 import android.content.Context;
+import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.ActionBar;
@@ -27,7 +28,7 @@ public class ActionbarCustomUtil {
     private OnActionItemClick mCustom = null;
 
     //Actionbar childView setting
-    public interface OnActionItemClick{
+    public interface OnActionItemClick {
         void setActionbar(View view);
     }
 
@@ -40,37 +41,41 @@ public class ActionbarCustomUtil {
         setCustomActionbar();
     }
 
-    public void  setCustomActionbar() {
+    public void setCustomActionbar() {
         actionBar.setDisplayShowCustomEnabled(true);
         actionBar.setDisplayHomeAsUpEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
         actionBar.setDisplayShowHomeEnabled(false);
 
         //롤리팝이상 버전부터 가능한 코드
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             //ActionBar의 그림자를 제거합니다
             actionBar.setElevation(0);
         }
 
         //layout을 가지고 와서 actionbar에 포팅을 시킵니다.
-        LayoutInflater inflater = (LayoutInflater)context.getSystemService(LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(layout, null);
 
-        if (mCustom != null){
+        if (mCustom != null) {
             mCustom.setActionbar(view);
         }
 
         actionBar.setCustomView(view);
         Toolbar parent = (Toolbar) view.getParent();
-        parent.setContentInsetsAbsolute(0,0);
-
+        parent.setContentInsetsAbsolute(0, 0);
 
 
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public void setActionBarElevation(int size){
+    public void setActionBarElevation(int size) {
         actionBar.setElevation(size);
     }
+
+    public int getActionBarHeight() {
+        return actionBar.getHeight();
+    }
+
 
 }

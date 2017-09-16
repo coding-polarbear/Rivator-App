@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.bumptech.glide.annotation.GlideModule;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.controller.adapters.HomeWorkPagerAdapter;
 import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
