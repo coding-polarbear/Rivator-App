@@ -13,9 +13,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.signature.StringSignature;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.User;
 import com.rinc.bong.rivatorproject.controller.activitys.ContestManagementActivity;
+import com.rinc.bong.rivatorproject.controller.activitys.HomeActivity;
 import com.rinc.bong.rivatorproject.controller.activitys.HomeWorkActivity;
 import com.rinc.bong.rivatorproject.controller.activitys.CourseManagementActivity;
 import com.rinc.bong.rivatorproject.controller.activitys.NoticeActivity;
@@ -66,7 +69,8 @@ public class ProfileFragment extends Fragment {
 
     private void loadInfo() {
         user = User.last(User.class);
-        Glide.with(getActivity()).load(IMAGE_URL+user.getUserId()+"/profile-image.jpg").override(100,100).into(profile);
+        Glide.with(getContext()).load("http://n0rr.iptime.org:7001/users/" + user.getUserId() + "/profile-image.jpg").diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true).crossFade().into(profile);
         name.setText(user.getUserName());
         subject.setText(user.getSubject());
     }
