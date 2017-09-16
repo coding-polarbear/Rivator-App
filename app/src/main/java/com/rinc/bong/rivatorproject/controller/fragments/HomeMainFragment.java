@@ -22,12 +22,10 @@ import com.rinc.bong.rivatorproject.controller.adapters.ImageSlideAdapter;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.controller.adapters.SimpleTeacherAdapter;
 import com.rinc.bong.rivatorproject.controller.adapters.RecyclerItemAdapter;
-import com.rinc.bong.rivatorproject.beans.CourseItem;
 import com.rinc.bong.rivatorproject.beans.SimpleTeacher;
 import com.rinc.bong.rivatorproject.retrofitBean.CourseListGet;
-import com.rinc.bong.rivatorproject.services.UserService;
 import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
-import com.rinc.bong.rivatorproject.services.TeacherService;
+import com.rinc.bong.rivatorproject.services.CourseService;
 import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
 
 import java.util.ArrayList;
@@ -37,7 +35,6 @@ import me.relex.circleindicator.CircleIndicator;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -115,8 +112,8 @@ public class HomeMainFragment extends Fragment {
     }
 
     private void loadData() {
-        TeacherService teacherService = RetrofitUtil.retrofit.create(TeacherService.class);
-        Call<CourseListGet> call = teacherService.getCourseList(user.getSubject(), true, "score", 0, 5);
+        CourseService courseService = RetrofitUtil.retrofit.create(CourseService.class);
+        Call<CourseListGet> call = courseService.getCourseList(user.getSubject(), true, "score", 0, 5);
         call.enqueue(new Callback<CourseListGet>() {
             @Override
             public void onResponse(Call<CourseListGet> call, Response<CourseListGet> response) {

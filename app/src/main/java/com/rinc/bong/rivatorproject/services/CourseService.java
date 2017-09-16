@@ -10,7 +10,7 @@ import retrofit2.http.Query;
  * Created by baehyeonbin on 2017. 9. 17..
  */
 
-public interface TeacherService {
+public interface CourseService {
     @GET("/courses")
     Call<CourseListGet> getCourseList(@Query("category") String categoryName, @Query("isOpen") boolean isOpen,
                                       @Query("sortBy") String sortBy, @Query("offset") int offset, @Query("limit") int limit);
