@@ -16,8 +16,10 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.beans.SimpleTeacher;
 import com.rinc.bong.rivatorproject.controller.adapters.SimpleCourseAdapter;
 import com.rinc.bong.rivatorproject.beans.SimpleCourse;
+import com.rinc.bong.rivatorproject.controller.adapters.SimpleTeacherAdapter;
 import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 
 import java.util.ArrayList;
@@ -25,7 +27,7 @@ import java.util.ArrayList;
 public class CalendarActivity extends AppCompatActivity {
 
     private ListView listView;
-    private ArrayList<SimpleCourse> itemList;
+    private ArrayList<SimpleTeacher> itemList;
     private TabLayout tabLayout;
     private ScrollView scrollView;
     @Override
@@ -53,13 +55,13 @@ public class CalendarActivity extends AppCompatActivity {
 
     public void setListView() {
         listView = (ListView) findViewById(R.id.listView);
-        itemList.add(new SimpleCourse("웹프로그래밍","김철수","IT",123));
-        itemList.add(new SimpleCourse("웹프로그래밍","김철수","IT",123));
-        itemList.add(new SimpleCourse("웹프로그래밍","김철수","IT",123));
-        itemList.add(new SimpleCourse("웹프로그래밍","김철수","IT",123));
-        itemList.add(new SimpleCourse("웹프로그래밍","김철수","IT",123));
-        SimpleCourseAdapter simpleCourseAdapter = new SimpleCourseAdapter(getApplicationContext(), R.layout.item_default_type_course, itemList);
-        listView.setAdapter(simpleCourseAdapter);
+        itemList.add(new SimpleTeacher("웹프로그래밍","김철수","IT",123));
+        itemList.add(new SimpleTeacher("웹프로그래밍","김철수","IT",123));
+        itemList.add(new SimpleTeacher("웹프로그래밍","김철수","IT",123));
+        itemList.add(new SimpleTeacher("웹프로그래밍","김철수","IT",123));
+        itemList.add(new SimpleTeacher("웹프로그래밍","김철수","IT",123));
+        SimpleTeacherAdapter simpleTeacherAdapter = new SimpleTeacherAdapter(getApplicationContext(), R.layout.item_default_type_course, itemList);
+        listView.setAdapter(simpleTeacherAdapter);
         setListViewHeightBasedOnItems(listView);
     }
 
