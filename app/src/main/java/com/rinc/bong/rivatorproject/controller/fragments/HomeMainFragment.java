@@ -36,8 +36,7 @@ public class HomeMainFragment extends Fragment {
     private TextView moreText3;
     private ListView listView;
     private SimpleTeacherAdapter adapter;
-    private RecyclerView recyclerView1;
-    private RecyclerView recyclerView2;
+    private RecyclerView recyclerView;
 
     private ViewPager homeImagePager = null;
     private ImageSlideAdapter homeImageAdapter = null;
@@ -58,21 +57,16 @@ public class HomeMainFragment extends Fragment {
 
         moreText1 = (TextView) view.findViewById(R.id.moreText1);
         moreText2 = (TextView) view.findViewById(R.id.moreText2);
-        moreText3 = (TextView) view.findViewById(R.id.moreText3);
         moreText1.setText(Html.fromHtml("<u>더보기<u>"));
         moreText2.setText(Html.fromHtml("<u>더보기<u>"));
-        moreText3.setText(Html.fromHtml("<u>더보기<u>"));
         listView = (ListView) view.findViewById(R.id.teacherList);
 
         homeImagePager = (ViewPager) view.findViewById(R.id.home_image_slider);
         homePagerIndicator = (CircleIndicator) view.findViewById(R.id.home_is_indicator);
 
         //RecyclerView 초기화
-        recyclerView1 = (RecyclerView) view.findViewById(R.id.recycler1);
-        recyclerView2 = (RecyclerView) view.findViewById(R.id.recycler2);
-        setRecyclerView(recyclerView1);
-        setRecyclerView(recyclerView2);
-
+        recyclerView = (RecyclerView) view.findViewById(R.id.recycler);
+        setRecyclerView(recyclerView);
         setListView();
         initImageSlider();
         return view;

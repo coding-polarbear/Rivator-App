@@ -22,10 +22,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.Status;
 import com.rinc.bong.rivatorproject.beans.User;
+import com.rinc.bong.rivatorproject.controller.adapters.HomeWorkPagerAdapter;
 import com.rinc.bong.rivatorproject.controller.adapters.SpinnerAdapter;
 import com.rinc.bong.rivatorproject.retrofitBean.UserLogin;
 import com.rinc.bong.rivatorproject.retrofitBean.UserModify;
@@ -69,7 +71,8 @@ public class UserModifyActivity extends AppCompatActivity implements EasyPermiss
     private File file;
     private View view;
     private Retrofit retrofit;
-    private Call<UserLogin> call;
+    private Call<UserLogin> call = null;
+    private String url;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,6 +95,10 @@ public class UserModifyActivity extends AppCompatActivity implements EasyPermiss
 
         user = User.last(User.class);
         view = getWindow().getDecorView().getRootView();
+        Log.d("init","init");
+        url = "http://n0rr.iptime.org:7001/users/" + user.getUserId() + "/profile-image.jpg";
+        Glide.with(UserModifyActivity.this).load("http://n0rr.iptime.org:7001/users/" + user.getUserId() + "/profile-image.jpg").diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true).into(imageView);
     }
 
     private void setDummyData() {
@@ -124,7 +131,6 @@ public class UserModifyActivity extends AppCompatActivity implements EasyPermiss
         subjectList.add("안드로이드 앱개발");
         subjectList.add("웹 프로그래밍");
 
-        Glide.with(UserModifyActivity.this).load("http://n0rr.iptime.org:7001/users/" + user.getUserId() + "/profile-image.jpg").into(imageView);
     }
 
     private void setSpinner() {
@@ -175,6 +181,7 @@ public class UserModifyActivity extends AppCompatActivity implements EasyPermiss
                     User.deleteAll(User.class);
                     User tempUser = response.body().getUser();
                     tempUser.save();
+                    Log.d("userTest", tempUser.toString());
                     SnackBarUtill.makeSnackbarWithFinish(view, result.getMessage(), Toast.LENGTH_LONG,UserModifyActivity.this);
                 }
             }
