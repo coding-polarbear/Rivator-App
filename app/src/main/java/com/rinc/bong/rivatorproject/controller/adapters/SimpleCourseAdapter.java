@@ -63,7 +63,7 @@ public class SimpleCourseAdapter extends ArrayAdapter<SimpleCourse>{
         SimpleCourse item = simpleCourseList.get(position);
 
         title.setText(item.getTitle());
-        teacherName.setText(item.getTeacherName());
+        teacherName.setText(item.getUser().getUserName());
         category.setText(item.getCategory());
         unitTime.setText(Integer.toString(item.getUnitTime())+"시간");
 

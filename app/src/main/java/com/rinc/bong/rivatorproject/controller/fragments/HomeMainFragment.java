@@ -1,6 +1,7 @@
 package com.rinc.bong.rivatorproject.controller.fragments;
 
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,16 +14,30 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.rinc.bong.rivatorproject.beans.Result;
+import com.rinc.bong.rivatorproject.beans.SimpleCourse;
+import com.rinc.bong.rivatorproject.beans.User;
 import com.rinc.bong.rivatorproject.controller.adapters.ImageSlideAdapter;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.controller.adapters.SimpleTeacherAdapter;
 import com.rinc.bong.rivatorproject.controller.adapters.RecyclerItemAdapter;
 import com.rinc.bong.rivatorproject.beans.CourseItem;
 import com.rinc.bong.rivatorproject.beans.SimpleTeacher;
+import com.rinc.bong.rivatorproject.retrofitBean.CourseListGet;
+import com.rinc.bong.rivatorproject.services.UserService;
+import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
+import com.rinc.bong.rivatorproject.services.TeacherService;
+import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import me.relex.circleindicator.CircleIndicator;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,6 +52,9 @@ public class HomeMainFragment extends Fragment {
     private ListView listView;
     private SimpleTeacherAdapter adapter;
     private RecyclerView recyclerView;
+    private User user;
+    private View view;
+    List<SimpleCourse> myDataset = new ArrayList<>();
 
     private ViewPager homeImagePager = null;
     private ImageSlideAdapter homeImageAdapter = null;
@@ -47,13 +65,12 @@ public class HomeMainFragment extends Fragment {
             , "http://ubuntu.doubtech.com/wp-content/uploads/2014/06/GDG-program-logo.png"};
 
     public HomeMainFragment() {
-
     }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_home_main, container, false);
+        view = inflater.inflate(R.layout.fragment_home_main, container, false);
 
         moreText1 = (TextView) view.findViewById(R.id.moreText1);
         moreText2 = (TextView) view.findViewById(R.id.moreText2);
@@ -66,7 +83,8 @@ public class HomeMainFragment extends Fragment {
 
         //RecyclerView 초기화
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler);
-        setRecyclerView(recyclerView);
+        user = User.last(User.class);
+        loadData();
         setListView();
         initImageSlider();
         return view;
@@ -96,17 +114,40 @@ public class HomeMainFragment extends Fragment {
         ((BaseAdapter) listView.getAdapter()).notifyDataSetChanged();
     }
 
+    private void loadData() {
+        TeacherService teacherService = RetrofitUtil.retrofit.create(TeacherService.class);
+        Call<CourseListGet> call = teacherService.getCourseList(user.getSubject(), true, "score", 0, 5);
+        call.enqueue(new Callback<CourseListGet>() {
+            @Override
+            public void onResponse(Call<CourseListGet> call, Response<CourseListGet> response) {
+                Result result = response.body().getResult();
+                if(result.getSuccess().equals("200")) {
+                    myDataset = response.body().getSimpleCourseList();
+                    setRecyclerView(recyclerView);
+                } else {
+                    SnackBarUtill.makeSnackBar(view,result.getMessage(), Snackbar.LENGTH_LONG);
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<CourseListGet> call, Throwable t) {
+                SnackBarUtill.makeSnackBar(view, "알 수 없는 오류가 발생하여 데이터를 로딩할 수 없습니다.",Snackbar.LENGTH_LONG);
+            }
+        });
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        loadData();
+    }
+
     public void setRecyclerView(RecyclerView recyclerView) {
-        ArrayList<CourseItem> myDataset = new ArrayList<>();
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
-        myDataset.add(new CourseItem("디자이너들은\n" + "이 곳에 모이…"));
-        myDataset.add(new CourseItem("디자이너들은\n" + "이 곳에 모이…"));
-        myDataset.add(new CourseItem("디자이너들은\n" + "이 곳에 모이…"));
-        myDataset.add(new CourseItem("디자이너들은\n" + "이 곳에 모이…"));
-
         RecyclerItemAdapter adapter = new RecyclerItemAdapter(getActivity(), myDataset);
         recyclerView.setAdapter(adapter);
     }

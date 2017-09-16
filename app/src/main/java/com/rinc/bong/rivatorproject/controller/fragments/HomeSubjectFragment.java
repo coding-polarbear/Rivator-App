@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.beans.SimpleCourse;
 import com.rinc.bong.rivatorproject.controller.adapters.RecyclerItemAdapter;
 import com.rinc.bong.rivatorproject.beans.CourseItem;
 
@@ -29,6 +30,8 @@ public class HomeSubjectFragment extends Fragment {
     private RecyclerView recycler2;
     private TextView subjectText;
     private String title;
+    ArrayList<SimpleCourse> myDataset = new ArrayList<>();
+
 
     public HomeSubjectFragment() {
 
@@ -61,15 +64,14 @@ public class HomeSubjectFragment extends Fragment {
         return view;
     }
     public void setRecyclerView(RecyclerView recyclerView) {
-        ArrayList<CourseItem> myDataset = new ArrayList<>();
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
-        myDataset.add(new CourseItem("디자이너들은\n" + "이 곳에 모이…"));
-        myDataset.add(new CourseItem("디자이너들은\n" + "이 곳에 모이…"));
-        myDataset.add(new CourseItem("디자이너들은\n" + "이 곳에 모이…"));
-        myDataset.add(new CourseItem("디자이너들은\n" + "이 곳에 모이…"));
+        myDataset.add(new SimpleCourse("디자이너들은\n" + "이 곳에 모이…"));
+        myDataset.add(new SimpleCourse("디자이너들은\n" + "이 곳에 모이…"));
+        myDataset.add(new SimpleCourse("디자이너들은\n" + "이 곳에 모이…"));
+        myDataset.add(new SimpleCourse("디자이너들은\n" + "이 곳에 모이…"));
 
         RecyclerItemAdapter<RecyclerView.ViewHolder> adapter = new RecyclerItemAdapter<RecyclerView.ViewHolder>(getActivity(), myDataset);
         recyclerView.setAdapter(adapter);

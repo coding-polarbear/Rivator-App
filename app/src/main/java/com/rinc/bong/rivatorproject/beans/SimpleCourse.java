@@ -1,5 +1,7 @@
 package com.rinc.bong.rivatorproject.beans;
 
+import com.google.gson.annotations.SerializedName;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -11,8 +13,18 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class SimpleCourse {
+    @SerializedName("title")
     private String title;
-    private String teacherName;
+    @SerializedName("User")
+    private User user;
+    @SerializedName("category")
     private String category;
+    @SerializedName("unit")
     private int unitTime;
+    @SerializedName("courseKey")
+    private int courseKey;
+
+    public SimpleCourse(String title) {
+        this.title = title;
+    }
 }
