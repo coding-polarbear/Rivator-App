@@ -15,12 +15,6 @@
         android:layout_above="@+id/bottomNavigation"
         android:layout_alignParentTop="true" />
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorMainGreen"
-        android:minHeight="?attr/actionBarSize" />
 
     <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
         android:id="@+id/bottomNavigation"

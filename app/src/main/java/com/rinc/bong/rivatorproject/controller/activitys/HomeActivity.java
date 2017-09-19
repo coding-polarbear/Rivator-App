@@ -31,8 +31,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private BottomNavigationViewEx bottomNavigationView;
     private Fragment fragment;
-    private Toolbar toolbar;
-    private SearchView searchView;
+    private ActionBar actionBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,39 +42,21 @@ public class HomeActivity extends AppCompatActivity {
         if (savedInstanceState == null) loadFragment(new HomeFragment(0));
 
         //액션바 설정
+        setActionbar();
         //FCM에서 토픽 구독
-        setSearchView();
         FirebaseMessaging.getInstance().subscribeToTopic("news");
         FirebaseInstanceId.getInstance().getToken();
     }
 
-
-    private void setSearchView() {
-        setSupportActionBar(toolbar);
-        toolbar.inflateMenu(R.menu.main_menu_actionbar);
-        toolbar.setTitleTextColor(Color.WHITE);
-
-
-        searchView = (SearchView) toolbar.getMenu().findItem(R.id.action_search).getActionView();
-        toolbar.getMenu().findItem(R.id.action_search).setIcon(R.drawable.search);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                return false;
-            }
-        });
-
-
+    private void setActionbar() {
+        actionBar = getSupportActionBar();
+        actionBar.setElevation(0);
+        actionBar.setTitle("홈");
     }
+
 
     private void init() {
         bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNavigation);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
     }
 
 
@@ -102,13 +83,13 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.btnHome:
                     position = 0;
                     fragment = new HomeFragment(position);
-                    toolbar.setTitle("홈");
+                    actionBar.setTitle("홈");
                     loadFragment(fragment);
                     break;
                 case R.id.btnTeacher:
                     position = 1;
                     fragment = new HomeFragment(position);
-                    toolbar.setTitle("강사");
+                    actionBar.setTitle("강사");
                     loadFragment(fragment);
                     break;
                 case R.id.btnCalendar:
@@ -119,13 +100,13 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.btnCurrentLecture:
                     position = 3;
                     fragment = new HomeFragment(position);
-                    toolbar.setTitle("진행중 강좌");
+                    actionBar.setTitle("진행중 강좌");
                     loadFragment(fragment);
                     break;
                 case R.id.btnProfile:
                     position = 4;
                     fragment = new ProfileFragment();
-                    toolbar.setTitle("프로필");
+                    actionBar.setTitle("프로필");
                     loadFragment(fragment);
                     break;
             }
@@ -139,12 +120,5 @@ public class HomeActivity extends AppCompatActivity {
         return true;
     }
 
-    public void onBackPressed() {
-        if (searchView.isFocused()) {
-            searchView.setIconified(false);
-            searchView.clearFocus();
-        } else {
-            super.onBackPressed();
-        }
-    }
+
 }

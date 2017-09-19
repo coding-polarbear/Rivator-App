@@ -1,5 +1,6 @@
 package com.rinc.bong.rivatorproject.controller.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -18,12 +19,14 @@ import android.widget.TextView;
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.SimpleCourse;
 import com.rinc.bong.rivatorproject.beans.User;
+import com.rinc.bong.rivatorproject.controller.activitys.ProjectInformationActivity;
 import com.rinc.bong.rivatorproject.controller.adapters.ImageSlideAdapter;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.controller.adapters.SimpleTeacherAdapter;
 import com.rinc.bong.rivatorproject.controller.adapters.RecyclerItemAdapter;
 import com.rinc.bong.rivatorproject.beans.SimpleTeacher;
 import com.rinc.bong.rivatorproject.retrofitBean.CourseListGet;
+import com.rinc.bong.rivatorproject.utils.RecyclerClickListenerUtil;
 import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
 import com.rinc.bong.rivatorproject.services.CourseService;
 import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
@@ -68,7 +71,14 @@ public class HomeMainFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_home_main, container, false);
+        init();
+        loadData();
+        setListView();
+        initImageSlider();
+        return view;
+    }
 
+    private void init(){
         moreText1 = (TextView) view.findViewById(R.id.moreText1);
         moreText2 = (TextView) view.findViewById(R.id.moreText2);
         moreText1.setText(Html.fromHtml("<u>더보기<u>"));
@@ -81,10 +91,6 @@ public class HomeMainFragment extends Fragment {
         //RecyclerView 초기화
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler);
         user = User.last(User.class);
-        loadData();
-        setListView();
-        initImageSlider();
-        return view;
     }
 
     private void initImageSlider() {
@@ -147,5 +153,19 @@ public class HomeMainFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         RecyclerItemAdapter adapter = new RecyclerItemAdapter(getActivity(), myDataset);
         recyclerView.setAdapter(adapter);
+
+        recyclerView.addOnItemTouchListener(new RecyclerClickListenerUtil(getActivity(),recyclerView, new RecyclerClickListenerUtil.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(View view, int position) {
+                //클릭 시 실행할 코드
+                SnackBarUtill.makeSnackBar(view, "Test Success", 1000);
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+
+            }
+        }));
     }
 }
