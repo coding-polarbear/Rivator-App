@@ -1,5 +1,6 @@
 package com.rinc.bong.rivatorproject.controller.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -10,15 +11,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.SimpleCourse;
 import com.rinc.bong.rivatorproject.beans.User;
+import com.rinc.bong.rivatorproject.controller.activitys.ProjectInformationActivity;
 import com.rinc.bong.rivatorproject.controller.adapters.RecyclerItemAdapter;
 import com.rinc.bong.rivatorproject.beans.CourseItem;
 import com.rinc.bong.rivatorproject.retrofitBean.CourseListGet;
 import com.rinc.bong.rivatorproject.services.CourseService;
+import com.rinc.bong.rivatorproject.utils.RecyclerClickListenerUtil;
 import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
 import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
 
@@ -109,5 +113,19 @@ public class HomeSubjectFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         RecyclerItemAdapter<RecyclerView.ViewHolder> adapter = new RecyclerItemAdapter<RecyclerView.ViewHolder>(getActivity(), myDataset);
         recyclerView.setAdapter(adapter);
+
+        recyclerView.addOnItemTouchListener(new RecyclerClickListenerUtil(getContext(),recyclerView, new RecyclerClickListenerUtil.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(View view, int position) {
+                Intent i = new Intent(getActivity(), ProjectInformationActivity.class);
+                startActivity(i);
+            }
+
+            @Override
+            public void onLongItemClick(View view, int position) {
+
+            }
+        }));
     }
 }

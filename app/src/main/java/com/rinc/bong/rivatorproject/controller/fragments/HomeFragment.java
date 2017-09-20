@@ -39,14 +39,14 @@ public class HomeFragment extends Fragment {
     private FragmentStatePagerAdapter getAdapter() {
        if(position == 0) return new HomeAdapter(getChildFragmentManager(), tabLayout.getTabCount(), tabNames);
         else {
-           return new PageAdapter(getChildFragmentManager(),tabLayout.getTabCount(), tabNames,position);
+           return new PageAdapter(getChildFragmentManager(),tabLayout.getTabCount(), tabNames, position);
        }
     }
     //TabLayout 설정
     private void setTabLayout() {
         tabLayout = (TabLayout) view.findViewById(R.id.tab);
         //ArrayList에 있는 값들을 이터레이션 시켜서 탭 레이아웃에 새로운 탭 추가
-        tabNames.stream().forEach(name -> tabLayout.addTab(tabLayout.newTab().setText(name)));
+        tabNames.forEach(name -> tabLayout.addTab(tabLayout.newTab().setText(name)));
         tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER); //탭 가로 길이 가변 설정
     }
     //탭 이름 로딩
@@ -62,7 +62,7 @@ public class HomeFragment extends Fragment {
     //ViewPager설정
     private void setViewPager(FragmentStatePagerAdapter adapter) {
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewPager);
-        //final PageAdapter pageAdapter = new PageAdapter(getChildFragmentManager(),tabLayout.getTabCount(),tabNames);
+       //final PageAdapter pageAdapter = new PageAdapter(getChildFragmentManager(),tabLayout.getTabCount(),tabNames, tabNames.size());
 
         viewPager.setAdapter(adapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));

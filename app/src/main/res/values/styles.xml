@@ -15,8 +15,6 @@
         <item name="android:spinnerStyle">@style/SpinnerTheme</item>
     </style>
 
-
-
     <!-- Calendar Style -->
     <style name="CalenderViewCustom" parent="AppTheme">
         <item name="colorAccent">@color/greenBar</item>

@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.SimpleCourse;
@@ -154,12 +155,12 @@ public class HomeMainFragment extends Fragment {
         RecyclerItemAdapter adapter = new RecyclerItemAdapter(getActivity(), myDataset);
         recyclerView.setAdapter(adapter);
 
-        recyclerView.addOnItemTouchListener(new RecyclerClickListenerUtil(getActivity(),recyclerView, new RecyclerClickListenerUtil.OnItemClickListener(){
+        recyclerView.addOnItemTouchListener(new RecyclerClickListenerUtil(getContext(),recyclerView, new RecyclerClickListenerUtil.OnItemClickListener(){
 
             @Override
             public void onItemClick(View view, int position) {
-                //클릭 시 실행할 코드
-                SnackBarUtill.makeSnackBar(view, "Test Success", 1000);
+                Intent i = new Intent(getActivity(), ProjectInformationActivity.class);
+                startActivity(i);
             }
 
             @Override
