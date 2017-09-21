@@ -15,7 +15,7 @@ import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.controller.adapters.ProjectAdapter;
 import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 
-public class ProjectInformationActivity extends AppCompatActivity {
+public class ProjectDetailActivity extends AppCompatActivity {
 
     private TabLayout mTabLayout;
     private ViewPager mViewPager;

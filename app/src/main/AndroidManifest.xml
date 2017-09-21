@@ -3,8 +3,8 @@
     package="com.rinc.bong.rivatorproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name="com.orm.SugarApp"
@@ -45,8 +45,7 @@
         <activity android:name=".controller.activitys.StudentSignUpActivity" />
         <activity
             android:name=".controller.activitys.HomeActivity"
-            android:theme="@style/AppTheme.ActionBar.Transparent"
-            />
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity
             android:name=".controller.activitys.NoticeActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent" />
@@ -67,14 +66,17 @@
             android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity android:name=".controller.activitys.LoginActivity" />
         <activity
-            android:name=".controller.activitys.ProjectInformationActivity"
+            android:name=".controller.activitys.ProjectDetailActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity android:name=".controller.activitys.PasswordModifyActivity" />
         <activity android:name=".controller.activitys.ProfileModifyActivity" />
         <activity android:name=".controller.activitys.AccountAdvancementActivity" />
         <activity android:name=".controller.activitys.UserModifyActivity" />
-        <activity android:name=".controller.activitys.EasterEggActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"></activity>
+        <activity
+            android:name=".controller.activitys.EasterEggActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
+        <activity android:name=".controller.activitys.CourseDetailActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent"></activity>
     </application>
 
 </manifest>

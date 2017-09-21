@@ -6,12 +6,11 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.rinc.bong.rivatorproject.R;
-import com.rinc.bong.rivatorproject.controller.activitys.ProjectInformationActivity;
+import com.rinc.bong.rivatorproject.controller.activitys.ProjectDetailActivity;
 import com.rinc.bong.rivatorproject.controller.adapters.ProjectRecyclerAdapter;
 import com.rinc.bong.rivatorproject.utils.RecyclerClickListenerUtil;
 
@@ -46,7 +45,7 @@ public class ProjectJoinFragment extends Fragment {
 
             @Override
             public void onItemClick(View view, int position) {
-                Intent i = new Intent(getActivity(), ProjectInformationActivity.class);
+                Intent i = new Intent(getActivity(), ProjectDetailActivity.class);
                 startActivity(i);
             }
 

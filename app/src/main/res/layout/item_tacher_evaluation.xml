@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="@color/colorWhiteText"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:id="@+id/imageView"
+        android:src="@drawable/teacher"
+        android:layout_marginLeft="23dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="23dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name"
+        android:text="강사명"
+        android:layout_marginTop="16dp"
+        android:textAppearance="?textAppearanceLargePopupMenu"
+        android:layout_marginLeft="81dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="웹프로그래밍"
+        android:id="@+id/category"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/name"
+        android:layout_marginLeft="81dp" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/star"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/score"
+        android:layout_marginLeft="100dp"
+        android:id="@+id/starImage"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/score"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+        android:text="5.0"
+        android:layout_marginRight="36dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true" />
+</RelativeLayout>

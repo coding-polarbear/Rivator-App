@@ -1,6 +1,7 @@
 package com.rinc.bong.rivatorproject.controller.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.CourseItem;
 import com.rinc.bong.rivatorproject.beans.SimpleCourse;
 import com.rinc.bong.rivatorproject.beans.User;
+import com.rinc.bong.rivatorproject.controller.activitys.CourseDetailActivity;
 
 import java.util.List;
 
@@ -42,6 +44,10 @@ public class RecyclerItemAdapter<V extends RecyclerView.ViewHolder> extends Recy
         holder.getTitle().setText(simpleCourse.getTitle());
         if(simpleCourse.getCourseKey() > 0)
             Glide.with(context).load(IMAGE_URL + simpleCourse.getCourseKey() + "/course-image.jpg").into(holder.getImageView());
+        holder.getCard().setOnClickListener(v -> {
+            Intent intent = new Intent(context, CourseDetailActivity.class);
+            context.startActivity(intent);
+        });
     }
 
     @Override

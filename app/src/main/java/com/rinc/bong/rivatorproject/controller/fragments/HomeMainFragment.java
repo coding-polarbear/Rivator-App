@@ -15,12 +15,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.SimpleCourse;
 import com.rinc.bong.rivatorproject.beans.User;
-import com.rinc.bong.rivatorproject.controller.activitys.ProjectInformationActivity;
+import com.rinc.bong.rivatorproject.controller.activitys.ProjectDetailActivity;
 import com.rinc.bong.rivatorproject.controller.adapters.ImageSlideAdapter;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.controller.adapters.SimpleTeacherAdapter;
@@ -159,7 +158,7 @@ public class HomeMainFragment extends Fragment {
 
             @Override
             public void onItemClick(View view, int position) {
-                Intent i = new Intent(getActivity(), ProjectInformationActivity.class);
+                Intent i = new Intent(getActivity(), ProjectDetailActivity.class);
                 startActivity(i);
             }
 
