@@ -153,19 +153,5 @@ public class HomeMainFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         RecyclerItemAdapter adapter = new RecyclerItemAdapter(getActivity(), myDataset);
         recyclerView.setAdapter(adapter);
-
-        recyclerView.addOnItemTouchListener(new RecyclerClickListenerUtil(getContext(),recyclerView, new RecyclerClickListenerUtil.OnItemClickListener(){
-
-            @Override
-            public void onItemClick(View view, int position) {
-                Intent i = new Intent(getActivity(), ProjectDetailActivity.class);
-                startActivity(i);
-            }
-
-            @Override
-            public void onLongItemClick(View view, int position) {
-
-            }
-        }));
     }
 }
