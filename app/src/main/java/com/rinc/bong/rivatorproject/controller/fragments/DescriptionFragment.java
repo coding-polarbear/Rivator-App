@@ -28,14 +28,13 @@ public class DescriptionFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_description, container, false);
+        init();
         return view;
     }
 
     private void init() {
         descriptionText = (TextView) view.findViewById(R.id.descriptionText);
-        if(description != null) {
             descriptionText.setText(description);
-        }
     }
 
 }

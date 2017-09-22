@@ -43,9 +43,10 @@ public class RecyclerItemAdapter<V extends RecyclerView.ViewHolder> extends Recy
         SimpleCourse simpleCourse = courseList.get(position);
         holder.getTitle().setText(simpleCourse.getTitle());
         if(simpleCourse.getCourseKey() > 0)
-            Glide.with(context).load(IMAGE_URL + simpleCourse.getCourseKey() + "/course-image.jpg").into(holder.getImageView());
+            Glide.with(context).load(IMAGE_URL + simpleCourse.getCourseKey() + "/course-image.jpg").centerCrop().into(holder.getImageView());
         holder.getCard().setOnClickListener(v -> {
             Intent intent = new Intent(context, CourseDetailActivity.class);
+            intent.putExtra("courseKey",simpleCourse.getCourseKey());
             context.startActivity(intent);
         });
     }
