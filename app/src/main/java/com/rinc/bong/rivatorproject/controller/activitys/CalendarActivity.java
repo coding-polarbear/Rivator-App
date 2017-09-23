@@ -1,6 +1,7 @@
 package com.rinc.bong.rivatorproject.controller.activitys;
 
 import android.os.Build;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,20 +17,34 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.beans.DetailCourse;
+import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.SimpleTeacher;
+import com.rinc.bong.rivatorproject.beans.User;
+import com.rinc.bong.rivatorproject.controller.adapters.CalendarAdapter;
 import com.rinc.bong.rivatorproject.controller.adapters.SimpleCourseAdapter;
 import com.rinc.bong.rivatorproject.beans.SimpleCourse;
 import com.rinc.bong.rivatorproject.controller.adapters.SimpleTeacherAdapter;
+import com.rinc.bong.rivatorproject.retrofitBean.CourseListGet;
+import com.rinc.bong.rivatorproject.services.CourseService;
 import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
+import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
+import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class CalendarActivity extends AppCompatActivity {
 
     private ListView listView;
-    private ArrayList<SimpleTeacher> itemList;
+    private ArrayList<DetailCourse> itemList;
     private TabLayout tabLayout;
     private ScrollView scrollView;
+    private CourseService courseService;
+    User user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,10 +56,15 @@ public class CalendarActivity extends AppCompatActivity {
             scrollView.fullScroll(ScrollView.FOCUS_UP);
         });
 
-        itemList = new ArrayList<>();
+        itemList = new ArrayList<DetailCourse>();
         setCustomActionbar();
         setTabLayout();
         setListView();
+    }
+
+    private void init() {
+        courseService = RetrofitUtil.retrofit.create(CourseService.class);
+        user = User.last(User.class);
     }
 
     private void setTabLayout() {
@@ -55,13 +75,8 @@ public class CalendarActivity extends AppCompatActivity {
 
     public void setListView() {
         listView = (ListView) findViewById(R.id.listView);
-        itemList.add(new SimpleTeacher("웹프로그래밍","김철수","IT",123));
-        itemList.add(new SimpleTeacher("웹프로그래밍","김철수","IT",123));
-        itemList.add(new SimpleTeacher("웹프로그래밍","김철수","IT",123));
-        itemList.add(new SimpleTeacher("웹프로그래밍","김철수","IT",123));
-        itemList.add(new SimpleTeacher("웹프로그래밍","김철수","IT",123));
-        SimpleTeacherAdapter simpleTeacherAdapter = new SimpleTeacherAdapter(getApplicationContext(), R.layout.item_default_type_course, itemList);
-        listView.setAdapter(simpleTeacherAdapter);
+        CalendarAdapter calendarAdapter = new CalendarAdapter(getApplicationContext(), R.layout.item_default_type_course, itemList);
+        listView.setAdapter(calendarAdapter);
         setListViewHeightBasedOnItems(listView);
     }
 
@@ -85,7 +100,7 @@ public class CalendarActivity extends AppCompatActivity {
         // item divider에 따른 높이 설정
         int totalDividersHeight = listView.getDividerHeight() *  (numberOfItems - 1);
 
-        //레이아웃 높이 서렂ㅇ
+        //레이아웃 높이 설정
         ViewGroup.LayoutParams params = listView.getLayoutParams();
         params.height = totalItemsHeight + totalDividersHeight;
         listView.setLayoutParams(params);
