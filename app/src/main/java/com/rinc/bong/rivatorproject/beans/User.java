@@ -59,4 +59,9 @@ public class User extends SugarRecord{
         this.localDistrict = localDistrict;
         this.subject = subject;
     }
+
+    public User(String userName, String subject) {
+        this.userName = userName;
+        this.subject = subject;
+    }
 }

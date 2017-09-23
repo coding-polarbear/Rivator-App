@@ -26,6 +26,8 @@ import com.rinc.bong.rivatorproject.controller.adapters.SimpleTeacherAdapter;
 import com.rinc.bong.rivatorproject.controller.adapters.RecyclerItemAdapter;
 import com.rinc.bong.rivatorproject.beans.SimpleTeacher;
 import com.rinc.bong.rivatorproject.retrofitBean.CourseListGet;
+import com.rinc.bong.rivatorproject.retrofitBean.TeacherListGet;
+import com.rinc.bong.rivatorproject.services.TeacherService;
 import com.rinc.bong.rivatorproject.utils.RecyclerClickListenerUtil;
 import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
 import com.rinc.bong.rivatorproject.services.CourseService;
@@ -38,6 +40,8 @@ import me.relex.circleindicator.CircleIndicator;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.http.Path;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -54,7 +58,8 @@ public class HomeMainFragment extends Fragment {
     private RecyclerView recyclerView;
     private User user;
     private View view;
-    List<SimpleCourse> myDataset = new ArrayList<>();
+    private List<User> teacherList = new ArrayList<>();
+    private List<SimpleCourse> myDataset = new ArrayList<>();
 
     private ViewPager homeImagePager = null;
     private ImageSlideAdapter homeImageAdapter = null;
@@ -72,8 +77,8 @@ public class HomeMainFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_home_main, container, false);
         init();
-        loadData();
-        setListView();
+        loadCourseData();
+        loadTeacherData();
         initImageSlider();
         return view;
     }
@@ -101,23 +106,12 @@ public class HomeMainFragment extends Fragment {
 
 
     public void setListView() {
-        ArrayList<SimpleTeacher> simpleTeachers = new ArrayList<SimpleTeacher>();
-        SimpleTeacher test = new SimpleTeacher("강사명", "IT 분야");
-        test.setSubject("Java Programming");
-        test.setTeacherName("배현빈");
-        simpleTeachers.add(test);
-        //simpleTeachers.add(new SimpleTeacher("강사명", "IT 분야"));
-        simpleTeachers.add(new SimpleTeacher("강사명", "IT 분야"));
-        simpleTeachers.add(new SimpleTeacher("강사명", "IT 분야"));
-        simpleTeachers.add(new SimpleTeacher("강사명", "IT 분야"));
-        simpleTeachers.add(new SimpleTeacher("강사명", "IT 분야"));
-        Log.d("Test", simpleTeachers.get(0).getTeacherName());
-        adapter = new SimpleTeacherAdapter(getActivity(), R.layout.item_default_person_list, simpleTeachers);
+        adapter = new SimpleTeacherAdapter(getActivity(), R.layout.item_default_person_list, teacherList);
         listView.setAdapter(adapter);
         ((BaseAdapter) listView.getAdapter()).notifyDataSetChanged();
     }
 
-    private void loadData() {
+    private void loadCourseData() {
         CourseService courseService = RetrofitUtil.retrofit.create(CourseService.class);
         Call<CourseListGet> call = courseService.getCourseList(user.getSubject(), true, "score", 0, 5);
         call.enqueue(new Callback<CourseListGet>() {
@@ -140,10 +134,31 @@ public class HomeMainFragment extends Fragment {
         });
     }
 
+    private void loadTeacherData() {
+        TeacherService teacherService = RetrofitUtil.retrofit.create(TeacherService.class);
+        Call<TeacherListGet> call = teacherService.loadTeacherWithSubject(0,5,user.getSubject(),true);
+        call.enqueue(new Callback<TeacherListGet>() {
+            @Override
+            public void onResponse(Call<TeacherListGet> call, Response<TeacherListGet> response) {
+                if(response.body().getResult().equals("200")) {
+                    teacherList = response.body().getUsers();
+                    setListView();
+                } else {
+                    SnackBarUtill.makeSnackBar(view,response.body().getResult().getMessage(), Snackbar.LENGTH_LONG);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<TeacherListGet> call, Throwable t) {
+                SnackBarUtill.makeSnackBar(view, "알 수 없는 오류가 발생하였습니다!", Snackbar.LENGTH_LONG);
+            }
+        });
+    }
     @Override
     public void onResume() {
         super.onResume();
-        loadData();
+        loadCourseData();
+        loadTeacherData();
     }
 
     public void setRecyclerView(RecyclerView recyclerView) {

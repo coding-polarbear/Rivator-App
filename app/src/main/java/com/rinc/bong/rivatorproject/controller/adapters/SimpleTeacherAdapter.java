@@ -8,20 +8,24 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.rinc.bong.rivatorproject.beans.SimpleTeacher;
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.beans.User;
 
 import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by baehyeonbin on 2017. 7. 16..
  */
 
-public class SimpleTeacherAdapter extends ArrayAdapter<SimpleTeacher> {
-    private ArrayList<SimpleTeacher> listViewItem = new ArrayList<SimpleTeacher>();
+public class SimpleTeacherAdapter extends ArrayAdapter<User> {
+    private List<User> listViewItem = new ArrayList<User>();
     private Context context;
     private int srsc;
 
-    public SimpleTeacherAdapter(Context context, int srsc, ArrayList<SimpleTeacher> items) {
+    public SimpleTeacherAdapter(Context context, int srsc, List<User> items) {
         super(context,srsc,items);
         this.context = context;
         this.srsc = srsc;
@@ -33,7 +37,7 @@ public class SimpleTeacherAdapter extends ArrayAdapter<SimpleTeacher> {
     }
 
     @Override
-    public SimpleTeacher getItem(int position) {
+    public User getItem(int position) {
         return listViewItem.get(position);
     }
 
@@ -55,8 +59,9 @@ public class SimpleTeacherAdapter extends ArrayAdapter<SimpleTeacher> {
         TextView teacherName = (TextView) view.findViewById(R.id.name);
         TextView subject = (TextView) view.findViewById(R.id.category);
 
-        SimpleTeacher item = listViewItem.get(position);
-        teacherName.setText(item.getTeacherName());
+        User item = listViewItem.get(position);
+        teacherName.setText(item.getUserName());
+        Glide.with(context).load("http://n0rr.iptime.org:7001/users/"+ item.getUserId() +"/profile-image.jpg").centerCrop().into(imageView);
         subject.setText(item.getSubject());
 
         return view;

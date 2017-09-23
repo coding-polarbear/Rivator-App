@@ -129,6 +129,7 @@ public class UserModifyActivity extends AppCompatActivity implements EasyPermiss
         subjectList.add("웹");
         subjectList.add("어플리케이션");
         subjectList.add("게임");
+        subjectList.add("node.js");
     }
 
     private void setSpinner() {
