@@ -12,15 +12,17 @@ import com.rinc.bong.rivatorproject.controller.fragments.TeamMemberFragment;
  */
 
 public class ProjectAdapter extends FragmentStatePagerAdapter {
-    public ProjectAdapter(FragmentManager fm) {
+    private String description;
+    public ProjectAdapter(FragmentManager fm, String description) {
         super(fm);
+        this.description = description;
     }
 
     @Override
     public Fragment getItem(int position) {
         switch(position) {
             case 0:
-                return new DescriptionFragment();
+                return new DescriptionFragment(description);
             case 1:
                 return new TeamMemberFragment();
             default:

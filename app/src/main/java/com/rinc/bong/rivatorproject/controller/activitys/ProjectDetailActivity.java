@@ -9,17 +9,33 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.beans.Project;
+import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.controller.adapters.ProjectAdapter;
+import com.rinc.bong.rivatorproject.retrofitBean.ProjectGet;
+import com.rinc.bong.rivatorproject.services.ProjectService;
 import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
+import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class ProjectDetailActivity extends AppCompatActivity {
-
+    private int projectKey;
+    private Project project;
     private TabLayout mTabLayout;
     private ViewPager mViewPager;
     private ProjectAdapter projectAdapter;
+    private ImageView imageView;
+    private TextView projectTitle;
+    private TextView teamName;
+    private TextView categoryName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,21 +43,51 @@ public class ProjectDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_project_information);
         init();
         setTabLayout();
-        setViewPager();
+        loadProjectData();
         setCustomActionbar();
     }
 
     public void init() {
         mTabLayout = (TabLayout) findViewById(R.id.tab);
         mViewPager = (ViewPager) findViewById(R.id.viewPager);
+        projectKey = getIntent().getExtras().getInt("projectKey");
+
+        imageView = (ImageView) findViewById(R.id.imageView);
+        projectTitle = (TextView) findViewById(R.id.projectTitle);
+        teamName = (TextView) findViewById(R.id.teamName);
+        categoryName = (TextView) findViewById(R.id.categoryName);
     }
     public void setTabLayout() {
         mTabLayout.addTab(mTabLayout.newTab().setText("설명"));
         mTabLayout.addTab(mTabLayout.newTab().setText("팀원 목록"));
     }
 
+    private void loadProjectData() {
+        ProjectService projectService = RetrofitUtil.retrofit.create(ProjectService.class);
+        Call<ProjectGet> call = projectService.getProject(projectKey);
+        call.enqueue(new Callback<ProjectGet>() {
+            @Override
+            public void onResponse(Call<ProjectGet> call, Response<ProjectGet> response) {
+                Result result = response.body().getResult();
+                if(result.getSuccess().equals("200")) {
+                    project = response.body().getProject();
+                    setViewPager();
+                    Glide.with(getApplicationContext()).load("http://n0rr.iptime.org:7001/projects/"+project.getProjectKey()+"/project-image.jpg").centerCrop().into(imageView);
+                    projectTitle.setText(project.getTitle());
+                    categoryName.setText(project.getCategory());
+                    teamName.setText(project.getTeamName());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ProjectGet> call, Throwable t) {
+
+            }
+        });
+    }
+
     public void setViewPager() {
-        projectAdapter = new ProjectAdapter(getSupportFragmentManager());
+        projectAdapter = new ProjectAdapter(getSupportFragmentManager(),project.getDescription());
         mViewPager.setAdapter(projectAdapter);
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
         mTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

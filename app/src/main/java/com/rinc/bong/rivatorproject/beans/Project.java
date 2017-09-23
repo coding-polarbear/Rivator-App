@@ -18,6 +18,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Project {
+    @SerializedName("projectKey")
+    private int projectKey;
+    @SerializedName("userId")
+    private String userId;
     @SerializedName("title")
     private String title;
     @SerializedName("category")
@@ -30,5 +34,11 @@ public class Project {
     private int memberNum;
     @SerializedName("description")
     private String description;
+    @SerializedName("created_at")
+    private String createdAt;
+    @SerializedName("updated_at")
+    private String updatedAt;
+    @SerializedName("User")
+    private User user;
 
 }

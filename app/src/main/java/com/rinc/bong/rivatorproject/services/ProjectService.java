@@ -2,6 +2,7 @@ package com.rinc.bong.rivatorproject.services;
 
 import com.rinc.bong.rivatorproject.beans.Project;
 import com.rinc.bong.rivatorproject.beans.Status;
+import com.rinc.bong.rivatorproject.retrofitBean.ProjectGet;
 import com.rinc.bong.rivatorproject.retrofitBean.ProjectListGet;
 import com.rinc.bong.rivatorproject.retrofitBean.ProjectManagerListGet;
 
@@ -11,6 +12,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
 import retrofit2.http.Part;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -30,5 +32,8 @@ public interface ProjectService {
 
     @GET("/project-manager")
     Call<ProjectManagerListGet> getProjectMangerList(@Query("offset") int offset, @Query("limit") int limit, @Query("userId") String userId);
+
+    @GET("/projects/{projectKey}")
+    Call<ProjectGet> getProject(@Path("projectKey") int projectKey);
 
 }

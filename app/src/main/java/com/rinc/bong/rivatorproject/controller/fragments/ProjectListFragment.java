@@ -94,19 +94,7 @@ public class ProjectListFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         ProjectRecyclerAdapter mProjectRecyclerAdapter  = new ProjectRecyclerAdapter(view.getContext(),projectList);
         mRecyclerView.setAdapter(mProjectRecyclerAdapter);
-        mRecyclerView.addOnItemTouchListener(new RecyclerClickListenerUtil(getActivity(),mRecyclerView, new RecyclerClickListenerUtil.OnItemClickListener(){
 
-            @Override
-            public void onItemClick(View view, int position) {
-                Intent i = new Intent(getActivity(), ProjectDetailActivity.class);
-                startActivity(i);
-            }
-
-            @Override
-            public void onLongItemClick(View view, int position) {
-
-            }
-        }));
     }
 
 }
