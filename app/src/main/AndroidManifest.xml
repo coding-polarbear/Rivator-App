@@ -75,8 +75,10 @@
         <activity
             android:name=".controller.activitys.EasterEggActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen" />
-        <activity android:name=".controller.activitys.CourseDetailActivity"
-            android:theme="@style/AppTheme.ActionBar.Transparent"></activity>
+        <activity
+            android:name=".controller.activitys.CourseDetailActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent" />
+        <activity android:name=".controller.activitys.ProjectAddActivity"></activity>
     </application>
 
 </manifest>

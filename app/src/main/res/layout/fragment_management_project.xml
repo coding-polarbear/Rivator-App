@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerview_default"
+        android:background="@color/colorBackground"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="56dp"
+        android:layout_gravity="right|bottom"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/greenBar"
+        android:src="@drawable/plus"
+        android:background="@color/greenBar"
+        android:layout_height="56dp" />
+</FrameLayout>
