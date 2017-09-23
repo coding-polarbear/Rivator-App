@@ -23,6 +23,6 @@
         android:layout_height="match_parent"
         android:gravity="center">
     </android.support.v4.view.ViewPager>
-    <!-- TODO: Update blank fragment layout -->
+    <!-- TODO: Update blank courseReviewFragment layout -->
 
 </RelativeLayout>

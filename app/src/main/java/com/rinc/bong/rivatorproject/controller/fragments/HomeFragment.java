@@ -52,9 +52,9 @@ public class HomeFragment extends Fragment {
     //탭 이름 로딩
     private void loadTabName() {
         tabNames.add("추천");
-//        tabNames.add("인기");
         tabNames.add("Basic");
         tabNames.add("웹");
+        tabNames.add("node.js");
         tabNames.add("어플리케이션");
         tabNames.add("게임");
     }

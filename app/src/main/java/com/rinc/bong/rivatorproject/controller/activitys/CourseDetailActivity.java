@@ -112,7 +112,7 @@ public class CourseDetailActivity extends AppCompatActivity {
     }
 
     public void setViewPager() {
-        courseAdapter = new CourseAdapter(getSupportFragmentManager(), description);
+        courseAdapter = new CourseAdapter(getSupportFragmentManager(), description, courseKey);
         viewPager.setAdapter(courseAdapter);
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

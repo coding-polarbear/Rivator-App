@@ -15297,7 +15297,7 @@
 													"_parent": {
 														"$ref": "AAAAAAFeH4ptRE8i/H8="
 													},
-													"name": "Fragment fragment",
+													"name": "Fragment courseReviewFragment",
 													"visibility": "public",
 													"isStatic": false,
 													"isLeaf": false,
@@ -22010,7 +22010,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-loadFragment(Fragment fragment)",
+											"text": "-loadFragment(Fragment courseReviewFragment)",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -29382,7 +29382,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFeKKAf8mXHyMw="
 											},
-											"name": "fragment",
+											"name": "courseReviewFragment",
 											"visibility": "private",
 											"isStatic": false,
 											"isLeaf": false,
@@ -36856,7 +36856,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-fragment: Fragment",
+											"text": "-courseReviewFragment: Fragment",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -41850,7 +41850,7 @@
 											"_parent": {
 												"$ref": "AAAAAAFeLYPL0kcBm3g="
 											},
-											"name": "fragment",
+											"name": "courseReviewFragment",
 											"visibility": "private",
 											"isStatic": false,
 											"isLeaf": false,
@@ -47119,7 +47119,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-fragment: Fragment",
+											"text": "-courseReviewFragment: Fragment",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5,
 											"wordWrap": false

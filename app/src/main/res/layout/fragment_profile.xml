@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context="com.rinc.bong.rivatorproject.controller.fragments.ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- TODO: Update blank courseReviewFragment layout -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"

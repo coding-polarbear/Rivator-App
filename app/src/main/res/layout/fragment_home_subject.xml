@@ -5,7 +5,7 @@
     android:background="#f0f0f0"
     tools:context="com.rinc.bong.rivatorproject.controller.fragments.HomeSubjectFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- TODO: Update blank courseReviewFragment layout -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

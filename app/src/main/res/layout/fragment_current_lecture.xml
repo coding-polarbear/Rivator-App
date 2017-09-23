@@ -5,7 +5,7 @@
     android:background="#f0f0f0"
     tools:context="com.rinc.bong.rivatorproject.controller.fragments.CurrentLectureFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- TODO: Update blank courseReviewFragment layout -->
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

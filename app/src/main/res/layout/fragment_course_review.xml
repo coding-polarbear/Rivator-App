@@ -2,9 +2,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.rinc.bong.rivatorproject.controller.fragments.TeacherEvalFragment">
+    tools:context="com.rinc.bong.rivatorproject.controller.fragments.CourseReviewFragment">
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/teaacherEvalList"></ListView>
+        android:id="@+id/listView"></ListView>
 </FrameLayout>
