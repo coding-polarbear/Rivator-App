@@ -6,7 +6,7 @@
     android:minHeight="64dp">
 
     <TextView
-        android:id="@+id/item_title"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/notice_item_left_margin"
@@ -18,12 +18,11 @@
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/item_category"
+        android:id="@+id/category"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/item_title"
+        android:layout_below="@+id/title"
         android:layout_marginLeft="@dimen/notice_item_left_margin"
-
         android:letterSpacing="-0.1"
         android:text="description text"
         android:textColor="@color/colorTextDefault"
@@ -34,7 +33,7 @@
         android:layout_height="0.5dp"
         android:background="@color/colorItemLine" />
     <TextView
-        android:id="@+id/item_contdition"
+        android:id="@+id/condition"
         android:layout_marginRight="@dimen/notice_item_right_margin"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

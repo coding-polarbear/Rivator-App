@@ -5,21 +5,32 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.beans.Project;
+
+import java.util.List;
+
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Created by Bong on 2017-07-30.
  */
 
 public class ProjectRecyclerAdapter extends RecyclerView.Adapter<ProjectRecyclerAdapter.ViewHolder> {
-
+    List<Project> projectList;
     private View view = null;
     private Context context = null;
+    public ProjectRecyclerAdapter(Context context, List<Project> projectList) {
+        this.context = context;
+        this.projectList = projectList;
+    }
     public ProjectRecyclerAdapter(Context context) {
         this.context = context;
     }
-
 
     @Override
     public ProjectRecyclerAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -29,7 +40,9 @@ public class ProjectRecyclerAdapter extends RecyclerView.Adapter<ProjectRecycler
 
     @Override
     public void onBindViewHolder(ProjectRecyclerAdapter.ViewHolder holder, int position) {
-
+        Project project = projectList.get(position);
+        holder.getTitle().setText(project.getTitle());
+        holder.getCategory().setText(project.getCategory());
     }
 
 
@@ -37,12 +50,20 @@ public class ProjectRecyclerAdapter extends RecyclerView.Adapter<ProjectRecycler
     @Override
     public int getItemCount() {
         //return super.getItemCount();
-        return 15;
+        return projectList.size();
     }
 
+    @Getter
+    @Setter
     public class ViewHolder extends RecyclerView.ViewHolder{
+        private TextView title;
+        private TextView condition;
+        private TextView category;
         public ViewHolder(View itemView) {
             super(itemView);
+            title = (TextView)itemView.findViewById(R.id.title);
+            condition = (TextView) itemView.findViewById(R.id.condition);
+            category = (TextView) itemView.findViewById(R.id.category);
         }
     }
 }

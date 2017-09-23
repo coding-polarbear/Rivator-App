@@ -3,50 +3,59 @@ package com.rinc.bong.rivatorproject.controller.fragments;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Project;
-import com.rinc.bong.rivatorproject.beans.ProjectManager;
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.User;
 import com.rinc.bong.rivatorproject.controller.activitys.ProjectAddActivity;
 import com.rinc.bong.rivatorproject.controller.activitys.ProjectDetailActivity;
 import com.rinc.bong.rivatorproject.controller.adapters.ProjectRecyclerAdapter;
-import com.rinc.bong.rivatorproject.retrofitBean.ProjectManagerListGet;
+import com.rinc.bong.rivatorproject.retrofitBean.ProjectListGet;
 import com.rinc.bong.rivatorproject.services.ProjectService;
 import com.rinc.bong.rivatorproject.utils.RecyclerClickListenerUtil;
 import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
+import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * Created by Bong on 2017-07-30.
- */
 
-public class ProjectJoinFragment extends Fragment {
+public class ProjectListFragment extends Fragment {
     private List<Project> projectList;
     private FloatingActionButton fab = null;
     private View view = null;
     private RecyclerView mRecyclerView = null;
     private User user = null;
 
+    public ProjectListFragment() {
+        // Required empty public constructor
+    }
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_management_project,container ,false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        view = inflater.inflate(R.layout.fragment_management_project, container, false);
         init();
         loadProjectData();
         return view;
+    }
+
+    public static ProjectListFragment newInstance() {
+        ProjectListFragment fragment = new ProjectListFragment();
+        return fragment;
     }
 
     private void init() {
@@ -60,25 +69,27 @@ public class ProjectJoinFragment extends Fragment {
 
     private void loadProjectData() {
         ProjectService projectService = RetrofitUtil.retrofit.create(ProjectService.class);
-        Call<ProjectManagerListGet> call = projectService.getProjectMangerList(0,999, user.getUserId());
-        call.enqueue(new Callback<ProjectManagerListGet>() {
+        Call<ProjectListGet> call = projectService.getProjectList(0,999);
+        call.enqueue(new Callback<ProjectListGet>() {
             @Override
-            public void onResponse(Call<ProjectManagerListGet> call, Response<ProjectManagerListGet> response) {
+            public void onResponse(Call<ProjectListGet> call, Response<ProjectListGet> response) {
                 Result result = response.body().getResult();
                 if(result.getSuccess().equals("200")) {
-                    response.body().getProjectManagerList().stream().forEach(p -> projectList.add(p.getProject()));
+                    projectList = response.body().getProjects();
+                    Log.d("test2",projectList.get(0).toString());
                     recyclerInit();
+                } else {
+                    SnackBarUtill.makeSnackBar(view, result.getMessage(), Snackbar.LENGTH_LONG);
                 }
             }
 
             @Override
-            public void onFailure(Call<ProjectManagerListGet> call, Throwable t) {
-
+            public void onFailure(Call<ProjectListGet> call, Throwable t) {
+                Log.d("log",t.getMessage());
             }
         });
     }
     private void recyclerInit() {
-
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         ProjectRecyclerAdapter mProjectRecyclerAdapter  = new ProjectRecyclerAdapter(view.getContext(),projectList);
@@ -98,12 +109,4 @@ public class ProjectJoinFragment extends Fragment {
         }));
     }
 
-    public static ProjectJoinFragment newInstance() {
-
-        Bundle args = new Bundle();
-
-        ProjectJoinFragment fragment = new ProjectJoinFragment();
-        fragment.setArguments(args);
-        return fragment;
-    }
 }
