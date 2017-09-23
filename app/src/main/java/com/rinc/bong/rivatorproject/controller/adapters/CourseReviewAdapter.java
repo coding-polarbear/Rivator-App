@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.CourseReview;
 import com.rinc.bong.rivatorproject.beans.SimpleTeacher;
@@ -60,6 +61,7 @@ public class CourseReviewAdapter extends ArrayAdapter<CourseReview> {
         TextView score = (TextView) view.findViewById(R.id.score);
 
         CourseReview item = listViewItem.get(position);
+        Glide.with(context).load("http://n0rr.iptime.org:7001/users/" + item.getUser().getUserId() + "/profile-image.jpg").centerCrop().into(imageView);
         name.setText(item.getUser().getUserName());
         score.setText(Double.toString(item.getScore()));
         if(item.getContent().length() > 10)

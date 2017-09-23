@@ -187,6 +187,7 @@ public class UserModifyActivity extends AppCompatActivity implements EasyPermiss
             @Override
             public void onFailure(Call<UserLogin> call, Throwable t) {
                 SnackBarUtill.makeSnackBar(view, "알 수 없는 오류가 발생하였습니다!",Snackbar.LENGTH_SHORT);
+                Log.d("test", t.getMessage());
             }
         });
     }
