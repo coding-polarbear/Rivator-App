@@ -168,7 +168,7 @@ public class UserModifyActivity extends AppCompatActivity implements EasyPermiss
                 citySpinner.getSelectedItem().toString(), districtSpinner.getSelectedItem().toString(),
                 townSpinner.getSelectedItem().toString(),subjectSpinner.getSelectedItem().toString());
         if(file != null)
-            call = userService.userModifyWithProfile(userModify,RetrofitUtil.createRequestBody(file));
+            call = userService.userModifyWithProfile(userModify,RetrofitUtil.createRequestBody(file,"profileImage"));
         else
             call = userService.userModifyWithNoProfile(userModify);
 

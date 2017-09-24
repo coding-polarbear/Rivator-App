@@ -248,9 +248,9 @@ public class TeacherSignUpActivity extends AppCompatActivity implements EasyPerm
                 "teacher", localCity, localTown, localDistrict, subject);
         MultipartBody.Part image;
         if (file != null) {
-            image = RetrofitUtil.createRequestBody(file);
+            image = RetrofitUtil.createRequestBody(file,"profileImage");
         } else {
-            image = RetrofitUtil.createRequestBody(DrawableFileUtill.getDrawableResource(R.drawable.teacher, "student_profile", getApplicationContext()));
+            image = RetrofitUtil.createRequestBody(DrawableFileUtill.getDrawableResource(R.drawable.teacher, "student_profile", getApplicationContext()),"profileImage");
         }
         UserService userService = RetrofitUtil.retrofit.create(UserService.class);
         Call<UserRegister> register = userService.register(user, image);

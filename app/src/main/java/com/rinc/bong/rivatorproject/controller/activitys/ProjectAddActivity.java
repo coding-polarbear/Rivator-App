@@ -145,6 +145,7 @@ public class ProjectAddActivity extends AppCompatActivity implements EasyPermiss
         Project project = new Project();
         project.setTitle(title.getText().toString());
         project.setDescription(description.getText().toString());
+        Log.d("description",project.getDescription());
         project.setTeamName(teamName.getText().toString());
         project.setMemberNum(Integer.parseInt(numOfTeam.getText().toString()));
         project.setDate(formatter.format(new Date(System.currentTimeMillis())));
@@ -153,7 +154,7 @@ public class ProjectAddActivity extends AppCompatActivity implements EasyPermiss
         Log.d(TAG,"File name : " + file.getName());
         ProjectService projectService = RetrofitUtil.getLoginRetrofit().create(ProjectService.class);
         Call<Status> call;
-        call = projectService.addProjectWithImage(project, RetrofitUtil.createRequestBody(file));
+        call = projectService.addProjectWithImage(project, RetrofitUtil.createRequestBody(file,"projectImage"));
         call.enqueue(new Callback<Status>() {
             @Override
             public void onResponse(Call<Status> call, Response<Status> response) {

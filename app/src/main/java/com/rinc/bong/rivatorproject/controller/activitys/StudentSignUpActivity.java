@@ -242,9 +242,9 @@ public class StudentSignUpActivity extends AppCompatActivity implements Permissi
                 "student", localCity, localTown, localDistrict,subject);
         MultipartBody.Part image;
         if(file != null) {
-            image = RetrofitUtil.createRequestBody(file);
+            image = RetrofitUtil.createRequestBody(file,"profileImage");
         } else {
-            image = RetrofitUtil.createRequestBody(DrawableFileUtill.getDrawableResource(R.drawable.student,"student_profile",getApplicationContext()));
+            image = RetrofitUtil.createRequestBody(DrawableFileUtill.getDrawableResource(R.drawable.student,"student_profile",getApplicationContext()),"pofileImage");
         }
         UserService userService = RetrofitUtil.retrofit.create(UserService.class);
         Call<UserRegister> register = userService.register(user,image);

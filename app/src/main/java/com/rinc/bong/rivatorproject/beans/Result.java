@@ -1,5 +1,7 @@
 package com.rinc.bong.rivatorproject.beans;
 
+import com.google.gson.annotations.SerializedName;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,6 +18,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class Result {
+    @SerializedName("message")
     private String message;
+    @SerializedName("success")
     private String success;
 }

@@ -50,9 +50,9 @@ public class RetrofitUtil {
                 .build();
         return retrofit;
     }
-    public static MultipartBody.Part  createRequestBody(@NonNull File file) {
+    public static MultipartBody.Part  createRequestBody(@NonNull File file, String name) {
         RequestBody mFile = RequestBody.create(MediaType.parse("images/*"),file);
-        MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("profileImage",file.getName(),mFile);
+        MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData(name,file.getName(),mFile);
         return fileToUpload;
     }
     public static RequestBody createRequestBody(@NonNull String value) {
