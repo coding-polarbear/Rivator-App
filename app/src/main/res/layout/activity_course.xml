@@ -15,7 +15,7 @@
         android:layout_weight="1">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="180dp"
             android:id="@+id/imageView"
             android:background="@android:color/darker_gray"/>
         <RelativeLayout
@@ -36,7 +36,7 @@
                 android:letterSpacing="-0.05"
                 android:layout_marginLeft="24dp"
                 android:layout_marginRight="24dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginBottom="8dp"/>
             <TextView
                 android:id="@+id/category"
@@ -75,7 +75,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/category"
                 android:id="@+id/starImage"
-                android:layout_marginTop="31dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="24dp"
                 android:layout_marginBottom="9dp"
                 android:src="@drawable/star"/>
@@ -95,7 +95,7 @@
                 android:textColor="@color/colorDarkText"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
                 android:id="@+id/price"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="10dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="24dp"
                 android:text="230,000원"/>
