@@ -140,7 +140,7 @@ public class HomeMainFragment extends Fragment {
         call.enqueue(new Callback<TeacherListGet>() {
             @Override
             public void onResponse(Call<TeacherListGet> call, Response<TeacherListGet> response) {
-                if(response.body().getResult().equals("200")) {
+                if(response.body().getResult().getSuccess().equals("200")) {
                     teacherList = response.body().getUsers();
                     setListView();
                 } else {
