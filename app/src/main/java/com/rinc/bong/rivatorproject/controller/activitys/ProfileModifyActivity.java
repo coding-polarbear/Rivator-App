@@ -37,7 +37,10 @@ public class ProfileModifyActivity extends AppCompatActivity {
     private TextView modifyUser = null;
     private TextView requestUserPromotion = null;
     private TextView logout = null;
+    private TextView addCourse = null;
     private TextView rsecession = null;
+
+    private User user = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +56,8 @@ public class ProfileModifyActivity extends AppCompatActivity {
         requestUserPromotion = (TextView) findViewById(R.id.requestUserPromotion);
         logout = (TextView) findViewById(R.id.logout);
         rsecession = (TextView) findViewById(R.id.rsecession);
+        addCourse = (TextView) findViewById(R.id.addCourse);
+        user = User.last(User.class);
     }
 
 
@@ -73,6 +78,11 @@ public class ProfileModifyActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //기존의 액티비티 모든 스택 제거
             startActivity(intent);
+        });
+        addCourse.setOnClickListener(v -> {
+            if(user.getUserType().equals("teacher")) {
+                startActivity(new Intent(ProfileModifyActivity.this, CourseAddActivity.class));
+            }
         });
     }
 

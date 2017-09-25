@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.rinc.bong.rivatorproject.R;
-import com.rinc.bong.rivatorproject.beans.DetailCourse;
+import com.rinc.bong.rivatorproject.beans.Course;
 
 
 import java.util.ArrayList;
@@ -17,12 +17,12 @@ import java.util.List;
  * Created by baehy on 2017. 9. 23..
  */
 
-public class CalendarAdapter extends ArrayAdapter<DetailCourse>{
-    private List<DetailCourse> listViewItem = new ArrayList<DetailCourse>();
+public class CalendarAdapter extends ArrayAdapter<Course>{
+    private List<Course> listViewItem = new ArrayList<Course>();
     private Context context;
     private int srsc;
 
-    public CalendarAdapter(Context context, int srsc, List<DetailCourse> items) {
+    public CalendarAdapter(Context context, int srsc, List<Course> items) {
         super(context,srsc,items);
         this.context = context;
         this.srsc = srsc;
@@ -34,7 +34,7 @@ public class CalendarAdapter extends ArrayAdapter<DetailCourse>{
     }
 
     @Override
-    public DetailCourse getItem(int position) {
+    public Course getItem(int position) {
         return listViewItem.get(position);
     }
 
@@ -57,7 +57,7 @@ public class CalendarAdapter extends ArrayAdapter<DetailCourse>{
         TextView subject = (TextView) view.findViewById(R.id.item_course_category);
         TextView unitTime = (TextView) view.findViewById(R.id.item_course_unitTime);
 
-        DetailCourse item = listViewItem.get(position);
+        Course item = listViewItem.get(position);
         teacherName.setText(item.getUser().getUserName());
         subject.setText(item.getCategory());
 

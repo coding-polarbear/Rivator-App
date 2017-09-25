@@ -21,7 +21,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class DetailCourse {
+public class Course {
     @SerializedName("courseKey")
     private int courseKey;
     @SerializedName("title")

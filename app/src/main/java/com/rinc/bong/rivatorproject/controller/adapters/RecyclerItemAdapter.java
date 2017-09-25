@@ -41,7 +41,10 @@ public class RecyclerItemAdapter<V extends RecyclerView.ViewHolder> extends Recy
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position) {
         SimpleCourse simpleCourse = courseList.get(position);
-        holder.getTitle().setText(simpleCourse.getTitle());
+        String title = simpleCourse.getTitle();
+        if(title.length() > 10)
+            title = title.substring(0,7) + "...";
+        holder.getTitle().setText(title);
         if(simpleCourse.getCourseKey() > 0)
             Glide.with(context).load(IMAGE_URL + simpleCourse.getCourseKey() + "/course-image.jpg").centerCrop().into(holder.getImageView());
         holder.getCard().setOnClickListener(v -> {

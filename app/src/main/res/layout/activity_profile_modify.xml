@@ -81,4 +81,14 @@
         android:gravity="center|left"
         android:padding="16dp"
         android:layout_below="@+id/line4" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@+id/rsecession"
+        android:text="강좌 등록"
+        android:textColor="@color/textColor"
+        android:gravity="center|left"
+        android:background="@color/colorWhiteText"
+        android:padding="16dp"
+        android:id="@+id/addCourse"/>
 </RelativeLayout>

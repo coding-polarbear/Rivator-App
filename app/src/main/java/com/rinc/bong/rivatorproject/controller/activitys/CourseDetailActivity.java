@@ -16,7 +16,7 @@ import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.User;
 import com.rinc.bong.rivatorproject.controller.adapters.CourseAdapter;
-import com.rinc.bong.rivatorproject.beans.DetailCourse;
+import com.rinc.bong.rivatorproject.beans.Course;
 import com.rinc.bong.rivatorproject.retrofitBean.SingleCourseGet;
 import com.rinc.bong.rivatorproject.services.CourseService;
 import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
@@ -46,7 +46,7 @@ public class CourseDetailActivity extends AppCompatActivity {
     private TextView subject;
 
     private String description;
-    private DetailCourse detailCourse;
+    private Course course;
     private int courseKey;
 
     @Override
@@ -85,19 +85,19 @@ public class CourseDetailActivity extends AppCompatActivity {
         call.enqueue(new Callback<SingleCourseGet>() {
             @Override
             public void onResponse(Call<SingleCourseGet> call, Response<SingleCourseGet> response) {
-                detailCourse = response.body().getDetailCourse();
+                course = response.body().getCourse();
                 Result result = response.body().getResult();
                 if(result.getSuccess().equals("200")) {
-                    courseTitle.setText(detailCourse.getTitle());
-                    category.setText(detailCourse.getCategory());
-                    unitTime.setText(detailCourse.getUnit() + "시간");
-                    score.setText(Double.toString(detailCourse.getScore()));
-                    subject.setText(detailCourse.getCategory());
-                    description = detailCourse.getCurriculum();
-                    price.setText(new DecimalFormat("#,###,###").format(detailCourse.getPrice()));
-                    teacherName.setText(detailCourse.getUser().getUserName());
-                    Glide.with(CourseDetailActivity.this).load("http://n0rr.iptime.org:7001/users/" + detailCourse.getUser().getUserId() + "/profile-img.jpg").into(teacherProfileImageView);
-                    Glide.with(CourseDetailActivity.this).load("http://n0rr.iptime.org:7001/courses/" + detailCourse.getCourseKey() + "/course-image.jpg").centerCrop().into(imageView);
+                    courseTitle.setText(course.getTitle());
+                    category.setText(course.getCategory());
+                    unitTime.setText(course.getUnit() + "시간");
+                    score.setText(Double.toString(course.getScore()));
+                    subject.setText(course.getCategory());
+                    description = course.getCurriculum();
+                    price.setText(new DecimalFormat("#,###,###").format(course.getPrice()));
+                    teacherName.setText(course.getUser().getUserName());
+                    Glide.with(CourseDetailActivity.this).load("http://n0rr.iptime.org:7001/users/" + course.getUser().getUserId() + "/profile-img.jpg").into(teacherProfileImageView);
+                    Glide.with(CourseDetailActivity.this).load("http://n0rr.iptime.org:7001/courses/" + course.getCourseKey() + "/course-image.jpg").centerCrop().into(imageView);
                     setViewPager();
                 } else {
                     SnackBarUtill.makeSnackBar(view,result.getMessage(), Snackbar.LENGTH_LONG);

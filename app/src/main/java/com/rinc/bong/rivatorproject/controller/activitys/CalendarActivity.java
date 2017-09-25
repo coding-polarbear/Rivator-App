@@ -17,7 +17,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
-import com.rinc.bong.rivatorproject.beans.DetailCourse;
+import com.rinc.bong.rivatorproject.beans.Course;
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.SimpleTeacher;
 import com.rinc.bong.rivatorproject.beans.User;
@@ -40,7 +40,7 @@ import retrofit2.Response;
 public class CalendarActivity extends AppCompatActivity {
 
     private ListView listView;
-    private ArrayList<DetailCourse> itemList;
+    private ArrayList<Course> itemList;
     private TabLayout tabLayout;
     private ScrollView scrollView;
     private CourseService courseService;
@@ -56,7 +56,7 @@ public class CalendarActivity extends AppCompatActivity {
             scrollView.fullScroll(ScrollView.FOCUS_UP);
         });
 
-        itemList = new ArrayList<DetailCourse>();
+        itemList = new ArrayList<Course>();
         setCustomActionbar();
         setTabLayout();
         setListView();

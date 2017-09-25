@@ -34,5 +34,5 @@ public class CourseReview {
     @SerializedName("User")
     private User user;
     @SerializedName("Course")
-    private DetailCourse course;
+    private Course course;
 }

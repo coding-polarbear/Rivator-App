@@ -78,7 +78,8 @@
         <activity
             android:name=".controller.activitys.CourseDetailActivity"
             android:theme="@style/AppTheme.ActionBar.Transparent" />
-        <activity android:name=".controller.activitys.ProjectAddActivity"></activity>
+        <activity android:name=".controller.activitys.ProjectAddActivity" />
+        <activity android:name=".controller.activitys.CourseAddActivity"></activity>
     </application>
 
 </manifest>

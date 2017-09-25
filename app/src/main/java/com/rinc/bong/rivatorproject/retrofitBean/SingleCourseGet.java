@@ -1,7 +1,7 @@
 package com.rinc.bong.rivatorproject.retrofitBean;
 
 import com.google.gson.annotations.SerializedName;
-import com.rinc.bong.rivatorproject.beans.DetailCourse;
+import com.rinc.bong.rivatorproject.beans.Course;
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.User;
 
@@ -23,6 +23,6 @@ public class SingleCourseGet {
     @SerializedName("status")
     private Result result;
     @SerializedName("course")
-    private DetailCourse detailCourse;
+    private Course course;
 
 }
