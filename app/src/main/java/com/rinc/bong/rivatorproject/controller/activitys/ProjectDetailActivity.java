@@ -87,7 +87,7 @@ public class ProjectDetailActivity extends AppCompatActivity {
     }
 
     public void setViewPager() {
-        projectAdapter = new ProjectAdapter(getSupportFragmentManager(),project.getDescription());
+        projectAdapter = new ProjectAdapter(getSupportFragmentManager(),project.getDescription(), projectKey);
         mViewPager.setAdapter(projectAdapter);
         mViewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
         mTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

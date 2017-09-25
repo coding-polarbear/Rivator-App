@@ -33,6 +33,9 @@ public interface ProjectService {
     @GET("/project-manager")
     Call<ProjectManagerListGet> getProjectMangerList(@Query("offset") int offset, @Query("limit") int limit, @Query("userId") String userId);
 
+    @GET("/project-manager")
+    Call<ProjectManagerListGet> getProjectMangerListWithProjectKey(@Query("offset") int offset, @Query("limit") int limit, @Query("projectKey") int projectKey);
+
     @GET("/projects/{projectKey}")
     Call<ProjectGet> getProject(@Path("projectKey") int projectKey);
 

@@ -31,7 +31,7 @@ public class ProjectManager {
     @SerializedName("updated_at")
     private String updatedAt;
     @SerializedName("User")
-    private String user;
+    private User user;
     @SerializedName("Project")
     private Project project;
 }
