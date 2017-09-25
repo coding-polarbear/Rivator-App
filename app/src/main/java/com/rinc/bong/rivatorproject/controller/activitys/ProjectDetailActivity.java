@@ -139,8 +139,9 @@ public class ProjectDetailActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Status> call, Response<Status> response) {
                 Result result = response.body().getResult();
-                Log.d("success", result.getSuccess());
-                SnackBarUtill.makeSnackBar(view, result.getMessage(), Snackbar.LENGTH_SHORT);
+                if(!(result.getSuccess().equals("200")));
+                    SnackBarUtill.makeSnackBar(view, result.getMessage(), Snackbar.LENGTH_SHORT);
+                loadProjectData();
             }
 
             @Override

@@ -33,17 +33,17 @@ public interface ProjectService {
     @GET("/projects")
     Call<ProjectListGet> getProjectList(@Query("offset") int offset, @Query("limit") int limit);
 
-    @GET("/project-manager")
+    @GET("/project-managers")
     Call<ProjectManagerListGet> getProjectMangerList(@Query("offset") int offset, @Query("limit") int limit, @Query("userId") String userId);
 
-    @GET("/project-manager")
+    @GET("/project-managers")
     Call<ProjectManagerListGet> getProjectMangerListWithProjectKey(@Query("offset") int offset, @Query("limit") int limit, @Query("projectKey") int projectKey);
 
     @GET("/projects/{projectKey}")
     Call<ProjectGet> getProject(@Path("projectKey") int projectKey);
 
-    @FormUrlEncoded
-    @POST("/project-manager/{projectKey}")
-    Call<Status> joinProject(@Field("data") ProjectJoin projectJoin, @Path("projectKey") int projectKey);
+    @Multipart
+    @POST("/project-managers/{projectKey}")
+    Call<Status> joinProject(@Part("data") ProjectJoin projectJoin, @Path("projectKey") int projectKey);
 
 }

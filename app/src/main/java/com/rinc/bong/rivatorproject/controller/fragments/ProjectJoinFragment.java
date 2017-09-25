@@ -23,6 +23,7 @@ import com.rinc.bong.rivatorproject.services.ProjectService;
 import com.rinc.bong.rivatorproject.utils.RecyclerClickListenerUtil;
 import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -35,7 +36,7 @@ import retrofit2.Response;
  */
 
 public class ProjectJoinFragment extends Fragment {
-    private List<Project> projectList;
+    private List<Project> projectList = new ArrayList<>();
     private FloatingActionButton fab = null;
     private View view = null;
     private RecyclerView mRecyclerView = null;
