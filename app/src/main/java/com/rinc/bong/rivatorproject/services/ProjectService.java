@@ -3,11 +3,14 @@ package com.rinc.bong.rivatorproject.services;
 import com.rinc.bong.rivatorproject.beans.Project;
 import com.rinc.bong.rivatorproject.beans.Status;
 import com.rinc.bong.rivatorproject.retrofitBean.ProjectGet;
+import com.rinc.bong.rivatorproject.retrofitBean.ProjectJoin;
 import com.rinc.bong.rivatorproject.retrofitBean.ProjectListGet;
 import com.rinc.bong.rivatorproject.retrofitBean.ProjectManagerListGet;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -38,5 +41,9 @@ public interface ProjectService {
 
     @GET("/projects/{projectKey}")
     Call<ProjectGet> getProject(@Path("projectKey") int projectKey);
+
+    @FormUrlEncoded
+    @POST("/project-manager/{projectKey}")
+    Call<Status> joinProject(@Field("data") ProjectJoin projectJoin, @Path("projectKey") int projectKey);
 
 }

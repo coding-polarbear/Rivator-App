@@ -107,6 +107,7 @@
             android:layout_height="match_parent"
             android:background="@color/colorMainGreen"
             android:text="참여하기"
+            android:onClick="join"
             android:letterSpacing="-0.05"
             android:textSize="16sp"
             android:textColor="@color/colorWhiteText"
