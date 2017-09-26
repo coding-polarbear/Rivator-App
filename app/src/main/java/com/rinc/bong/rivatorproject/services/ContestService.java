@@ -25,6 +25,9 @@ public interface ContestService {
     @GET("/contests")
     Call<ContestListGet> getContestList(@Query("limit") int limit, @Query("offset") int offset);
 
+    @GET("/contests")
+    Call<ContestListGet> getContestListWithUserId(@Query("limit") int limit, @Query("offset") int offset, @Query("userId") String userId);
+
     @GET("/contest-managers")
     Call<ContestManagerListGet>  getContestManagerList(@Query("limit") int limit, @Query("offset") int offset, @Query("userId") String userId);
 }
