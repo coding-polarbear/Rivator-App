@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="10">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhiteText"
+                android:orientation="vertical"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.5"
+                    android:onClick="select"
+                    android:background="@color/colorImageBackground" />
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fillViewport="true">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <EditText
+                            android:id="@+id/title"
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:inputType="text"
+                            android:background="@color/colorWhiteText"
+                            android:hint="제목"
+                            android:textSize="20sp"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginRight="24dp" />
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_below="@+id/title"
+                            android:id="@+id/priseNum"
+                            android:background="@color/colorWhiteText"
+                            android:textSize="20sp"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginRight="24dp"
+                            android:layout_weight="5"
+                            android:hint="수상 인원"
+                            android:inputType="numberDecimal"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/priseNum"
+                            android:id="@+id/startTime"
+                            android:textSize="20sp"
+                            android:background="@color/colorWhiteText"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginRight="24dp"
+                            android:hint="시작 시간"
+                            android:inputType="numberDecimal"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_below="@+id/startTime"
+                            android:id="@+id/endTime"
+                            android:background="@color/colorWhiteText"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginRight="24dp"
+                            android:textSize="20sp"
+                            android:layout_weight="5"
+                            android:hint="마감시간"
+                            android:inputType="numberDecimal"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="56dp"
+                            android:layout_below="@+id/endTime"
+                            android:layout_marginTop="5dp"
+                            android:id="@+id/fieldEntry"
+                            android:background="@color/colorWhiteText"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginRight="24dp"
+                            android:textSize="20sp"
+                            android:layout_weight="5"
+                            android:hint="접수방법"
+                            android:inputType="text"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="112dp"
+                            android:layout_below="@+id/fieldEntry"
+                            android:hint="심사기준"
+                            android:id="@+id/criteria"
+                            android:textSize="20sp"
+                            android:background="@color/colorWhiteText"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginRight="24dp"
+                            android:inputType="text"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="112dp"
+                            android:layout_below="@+id/criteria"
+                            android:id="@+id/description"
+                            android:background="@color/colorWhiteText"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginRight="24dp"
+                            android:layout_weight="4"
+                            android:hint="설명"
+                            android:textSize="20sp"
+                            android:inputType="text"/>
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="112dp"
+                            android:layout_below="@+id/description"
+                            android:id="@+id/award"
+                            android:background="@color/colorWhiteText"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginRight="24dp"
+                            android:textSize="20sp"
+                            android:layout_weight="4"
+                            android:hint="수상내역"
+                            android:inputType="text"/>
+                    </RelativeLayout>
+
+                </ScrollView>
+
+            </LinearLayout>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/btn_degree_next"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="upload"
+            android:background="@color/colorMainGreen"
+            android:text="전송하기"
+            android:textColor="@color/colorWhiteText" />
+    </LinearLayout>
+</LinearLayout>
