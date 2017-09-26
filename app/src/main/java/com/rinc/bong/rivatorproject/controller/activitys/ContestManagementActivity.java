@@ -46,8 +46,23 @@ public class ContestManagementActivity extends AppCompatActivity {
     private void pagetInit() {
         ContestPagerAdapter mContestPageradapter = new ContestPagerAdapter(getSupportFragmentManager());
         mViewPager.setAdapter(mContestPageradapter);
+        mViewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(mTabLayout));
+        mTabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                mViewPager.setCurrentItem(tab.getPosition());
+            }
 
-        mTabLayout.setupWithViewPager(mViewPager);
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 
     private void  setCustomActionbar() {

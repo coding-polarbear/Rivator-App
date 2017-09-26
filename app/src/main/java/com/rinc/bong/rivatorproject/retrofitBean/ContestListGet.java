@@ -21,7 +21,7 @@ import lombok.ToString;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class ContesListGet {
+public class ContestListGet {
     @SerializedName("status")
     private Result result;
 

@@ -5,20 +5,31 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.beans.Contest;
+import com.rinc.bong.rivatorproject.retrofitBean.ContestListGet;
+
+import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 /**
  * Created by bong on 2017-08-05.
  */
 
 public class ContestRecyclerAdapter extends RecyclerView.Adapter<ContestRecyclerAdapter.ViewHolder> {
-
+    private List<Contest> contestList = null;
     private View view = null;
     private Context context = null;
 
-    public ContestRecyclerAdapter(Context context) {
+    public ContestRecyclerAdapter(Context context, List<Contest> contestList) {
         this.context = context;
+        this.contestList = contestList;
     }
 
 
@@ -30,19 +41,32 @@ public class ContestRecyclerAdapter extends RecyclerView.Adapter<ContestRecycler
 
     @Override
     public void onBindViewHolder(ContestRecyclerAdapter.ViewHolder holder, int position) {
-
+        Contest contest = contestList.get(position);
+        holder.getTitle().setText(contest.getTitle());
+        holder.getCategory().setText(contest.getCategory());
     }
 
 
     @Override
     public int getItemCount() {
         //return super.getItemCount();
-        return 15;
+        return contestList.size();
     }
 
+    @Getter
+    @Setter
     public class ViewHolder extends RecyclerView.ViewHolder {
+        private TextView title;
+        private TextView condition;
+        private TextView category;
+        private View itemView;
+
         public ViewHolder(View itemView) {
             super(itemView);
+            title = (TextView)itemView.findViewById(R.id.title);
+            condition = (TextView) itemView.findViewById(R.id.condition);
+            category = (TextView) itemView.findViewById(R.id.category);
+            this.itemView = itemView;
         }
     }
 }

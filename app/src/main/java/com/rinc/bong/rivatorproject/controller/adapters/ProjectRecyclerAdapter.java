@@ -45,8 +45,8 @@ public class ProjectRecyclerAdapter extends RecyclerView.Adapter<ProjectRecycler
     public void onBindViewHolder(ProjectRecyclerAdapter.ViewHolder holder, int position) {
         Project project = projectList.get(position);
         holder.getTitle().setText(project.getTitle());
-        holder.getCategory().setText(project.getCategory());
-        holder.getItemView().setOnClickListener(v -> {
+            holder.getCategory().setText(project.getCategory());
+            holder.getItemView().setOnClickListener(v -> {
             Intent i = new Intent(context, ProjectDetailActivity.class);
             i.putExtra("projectKey",project.getProjectKey());
             context.startActivity(i);

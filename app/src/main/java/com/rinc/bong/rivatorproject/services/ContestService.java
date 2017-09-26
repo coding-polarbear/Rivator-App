@@ -2,11 +2,10 @@ package com.rinc.bong.rivatorproject.services;
 
 import com.rinc.bong.rivatorproject.beans.Contest;
 import com.rinc.bong.rivatorproject.beans.Status;
-import com.rinc.bong.rivatorproject.retrofitBean.ContesListGet;
+import com.rinc.bong.rivatorproject.retrofitBean.ContestListGet;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;
-import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -23,5 +22,5 @@ public interface ContestService {
     Call<Status> putContest(@Part("data") Contest contest, @Part MultipartBody.Part contestImage);
 
     @GET("/contests")
-    Call<ContesListGet> getContestList(@Query("limit") int limit, @Query("offset") int offset);
+    Call<ContestListGet> getContestList(@Query("limit") int limit, @Query("offset") int offset);
 }

@@ -9,14 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.beans.Contest;
 import com.rinc.bong.rivatorproject.controller.adapters.ContestRecyclerAdapter;
+
+import java.util.List;
 
 /**
  * Created by bong on 2017-08-05.
  */
 
 public class ContestCreateFragment extends Fragment {
-
+    private List<Contest> contestList;
     private View view = null;
     private RecyclerView mRecyclerView = null;
 
@@ -36,7 +39,7 @@ public class ContestCreateFragment extends Fragment {
 
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
-        ContestRecyclerAdapter mContestRecyclerAdapter  = new ContestRecyclerAdapter(view.getContext());
+        ContestRecyclerAdapter mContestRecyclerAdapter  = new ContestRecyclerAdapter(view.getContext(), contestList);
         mRecyclerView.setAdapter(mContestRecyclerAdapter);
     }
 
