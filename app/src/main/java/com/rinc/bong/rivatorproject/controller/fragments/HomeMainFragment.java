@@ -28,6 +28,7 @@ import com.rinc.bong.rivatorproject.beans.SimpleTeacher;
 import com.rinc.bong.rivatorproject.retrofitBean.CourseListGet;
 import com.rinc.bong.rivatorproject.retrofitBean.TeacherListGet;
 import com.rinc.bong.rivatorproject.services.TeacherService;
+import com.rinc.bong.rivatorproject.utils.ListViewUtill;
 import com.rinc.bong.rivatorproject.utils.RecyclerClickListenerUtil;
 import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
 import com.rinc.bong.rivatorproject.services.CourseService;
@@ -109,6 +110,7 @@ public class HomeMainFragment extends Fragment {
         adapter = new SimpleTeacherAdapter(getActivity(), R.layout.item_default_person_list, teacherList);
         listView.setAdapter(adapter);
         ((BaseAdapter) listView.getAdapter()).notifyDataSetChanged();
+        ListViewUtill.setListViewHeightBasedOnChildren(listView);
     }
 
     private void loadCourseData() {
