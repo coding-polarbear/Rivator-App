@@ -20,6 +20,7 @@ public class ContestPagerAdapter extends FragmentPagerAdapter {
 
     public ContestPagerAdapter(FragmentManager fm) {
         super(fm);
+        tabName.add("콘테스트 리스트");
         tabName.add("참가한 콘테스트");
         tabName.add("개최한 콘테스트");
     }
@@ -28,8 +29,10 @@ public class ContestPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                return ContestJoinFragment.newInstance();
+                return null;
             case 1:
+                return ContestJoinFragment.newInstance();
+            case 2:
                 return ContestCreateFragment.newInstance();
             default:
                 return null;
