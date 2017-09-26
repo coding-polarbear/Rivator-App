@@ -16,13 +16,13 @@ import java.util.ArrayList;
 
 public class ContestPagerAdapter extends FragmentPagerAdapter {
 
-    final int numOfTab = 1;
+    final int numOfTab = 2;
     final ArrayList<String> tabName = new ArrayList<>();
 
     public ContestPagerAdapter(FragmentManager fm) {
         super(fm);
         tabName.add("콘테스트 리스트");
-//        tabName.add("참가한 콘테스트");
+        tabName.add("참가한 콘테스트");
 //        tabName.add("개최한 콘테스트");
     }
 
@@ -31,8 +31,8 @@ public class ContestPagerAdapter extends FragmentPagerAdapter {
         switch (position) {
             case 0:
                 return ContestListFragment.newInstance();
-////            case 1:
-////                return ContestJoinFragment.newInstance();
+            case 1:
+                return ContestJoinFragment.newInstance();
 ////            case 2:
 ////                return ContestCreateFragment.newInstance();
             default:
@@ -50,8 +50,8 @@ public class ContestPagerAdapter extends FragmentPagerAdapter {
         switch (position) {
             case 0:
                 return tabName.get(position);
-//            case 1:
-//                return tabName.get(position);
+            case 1:
+                return tabName.get(position);
             default:
                 return null;
         }

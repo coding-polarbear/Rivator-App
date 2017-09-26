@@ -3,6 +3,7 @@ package com.rinc.bong.rivatorproject.services;
 import com.rinc.bong.rivatorproject.beans.Contest;
 import com.rinc.bong.rivatorproject.beans.Status;
 import com.rinc.bong.rivatorproject.retrofitBean.ContestListGet;
+import com.rinc.bong.rivatorproject.retrofitBean.ContestManagerListGet;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;
@@ -23,4 +24,7 @@ public interface ContestService {
 
     @GET("/contests")
     Call<ContestListGet> getContestList(@Query("limit") int limit, @Query("offset") int offset);
+
+    @GET("/contest-managers")
+    Call<ContestManagerListGet>  getContestManagerList(@Query("limit") int limit, @Query("offset") int offset, @Query("userId") String userId);
 }

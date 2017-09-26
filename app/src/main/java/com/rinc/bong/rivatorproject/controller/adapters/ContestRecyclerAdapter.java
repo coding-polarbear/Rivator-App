@@ -11,6 +11,9 @@ import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Contest;
 import com.rinc.bong.rivatorproject.retrofitBean.ContestListGet;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -44,6 +47,17 @@ public class ContestRecyclerAdapter extends RecyclerView.Adapter<ContestRecycler
         Contest contest = contestList.get(position);
         holder.getTitle().setText(contest.getTitle());
         holder.getCategory().setText(contest.getCategory());
+        long current = System.currentTimeMillis();
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try {
+            if(formatter.parse(contest.getDateStart()).getTime() < current && current >= formatter.parse(contest.getDateEnd()).getTime()) {
+                holder.getCondition().setText("진행중");
+            } else {
+                holder.getCondition().setText("종료");
+            }
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
 
