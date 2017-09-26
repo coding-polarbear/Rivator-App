@@ -39,6 +39,7 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureViewHolder> {
         holder.getTeacherName().setText(item.getUser().getUserName());
         holder.getUnit().setText(Integer.toString(item.getUnitTime())+"시간");
         Glide.with(context).load(IMAGE_URL + item.getCourseKey() + "/course-image.jpg").centerCrop().into(holder.getImageView());
+        holder.setListener(items.get(position).getCourseKey(), context);
     }
 
     @Override
