@@ -92,6 +92,7 @@ public class CourseDetailActivity extends AppCompatActivity {
                     category.setText(course.getCategory());
                     unitTime.setText(course.getUnit() + "시간");
                     score.setText(Double.toString(course.getScore()));
+                    Log.d("scoreTest",score.getText().toString());
                     subject.setText(course.getCategory());
                     description = course.getCurriculum();
                     price.setText(new DecimalFormat("#,###,###").format(course.getPrice()));

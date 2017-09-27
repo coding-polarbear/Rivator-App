@@ -207,10 +207,11 @@ public class ContestAddActivity extends AppCompatActivity implements EasyPermiss
         contest.setTitle(title.getText().toString());
         contest.setPrizeNum(Integer.parseInt(priseNum.getText().toString()));
         contest.setFiledEntry(fieldEntry.getText().toString());
-        Log.d("FieldEntry", fieldEntry.getText().toString());
         contest.setDateStart(startTime.getText().toString());
         contest.setDateEnd(endTime.getText().toString());
         contest.setDescription(description.getText().toString());
+        contest.setCriteria(criteria.getText().toString());
+        Log.d("description",description.getText().toString());
         contest.setAward(award.getText().toString());
         contest.setCategory(user.getSubject());
 
