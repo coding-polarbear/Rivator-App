@@ -1,11 +1,14 @@
 package com.rinc.bong.rivatorproject.controller.fragments;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +16,7 @@ import android.view.ViewGroup;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Contest;
 import com.rinc.bong.rivatorproject.beans.Result;
+import com.rinc.bong.rivatorproject.controller.activitys.ContestAddActivity;
 import com.rinc.bong.rivatorproject.controller.adapters.ContestRecyclerAdapter;
 import com.rinc.bong.rivatorproject.controller.adapters.ProjectRecyclerAdapter;
 import com.rinc.bong.rivatorproject.retrofitBean.ContestListGet;
@@ -30,6 +34,7 @@ public class ContestListFragment extends Fragment {
     private View view = null;
     private RecyclerView recyclerView = null;
     private List<Contest> contestList = null;
+    private FloatingActionButton fab;
     public ContestListFragment() {
         // Required empty public constructor
     }
@@ -52,6 +57,12 @@ public class ContestListFragment extends Fragment {
 
     private void init() {
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview_default);
+        fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        fab.bringToFront();
+        fab.setOnClickListener(v -> {
+            Log.d("click", "clicked");
+            getContext().startActivity(new Intent(getActivity(), ContestAddActivity.class));
+        });
     }
 
     private void loadContestData() {

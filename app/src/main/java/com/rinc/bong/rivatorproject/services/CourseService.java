@@ -7,6 +7,7 @@ import com.rinc.bong.rivatorproject.retrofitBean.SingleCourseGet;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;
+import retrofit2.http.Field;
 import retrofit2.http.GET;
 import retrofit2.http.Multipart;
 import retrofit2.http.POST;
@@ -28,4 +29,7 @@ public interface CourseService {
     @Multipart
     @POST("/courses")
     Call<Status> addCourse(@Part("data") Course course,  @Part MultipartBody.Part file);
+
+    @POST("/course-managers/{courseKey}")
+    Call<Status> submitCourse(@Path("courseKey") int courseKey);
 }

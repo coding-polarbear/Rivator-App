@@ -11,10 +11,12 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Result;
+import com.rinc.bong.rivatorproject.beans.Status;
 import com.rinc.bong.rivatorproject.beans.User;
 import com.rinc.bong.rivatorproject.controller.adapters.CourseAdapter;
 import com.rinc.bong.rivatorproject.beans.Course;
@@ -23,6 +25,7 @@ import com.rinc.bong.rivatorproject.services.CourseService;
 import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
 import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
+import com.rinc.bong.rivatorproject.utils.ToastUtill;
 
 import java.text.DecimalFormat;
 
@@ -155,5 +158,22 @@ public class CourseDetailActivity extends AppCompatActivity {
             imageButton.setOnClickListener(v -> finish());
         });
 
+    }
+
+    public void submit(View view) {
+        CourseService courseService = RetrofitUtil.getLoginRetrofit().create(CourseService.class);
+        Call<Status> call = courseService.submitCourse(courseKey);
+        call.enqueue(new Callback<Status>() {
+            @Override
+            public void onResponse(Call<Status> call, Response<Status> response) {
+                Result result = response.body().getResult();
+                SnackBarUtill.makeSnackBar(view, result.getMessage(), Snackbar.LENGTH_SHORT);
+            }
+
+            @Override
+            public void onFailure(Call<Status> call, Throwable t) {
+                SnackBarUtill.makeSnackBar(view, "알 수 없는 오류가 발생하였습니다!", Snackbar.LENGTH_SHORT);
+            }
+        });
     }
 }

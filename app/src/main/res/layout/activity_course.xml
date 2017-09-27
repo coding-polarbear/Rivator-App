@@ -179,6 +179,7 @@
             android:background="@color/colorMainGreen"
             android:text="강좌 신청하기"
             android:id="@+id/submit"
+            android:onClick="submit"
             android:letterSpacing="-0.05"
             android:textSize="16sp"
             android:textColor="@color/colorWhiteText"
