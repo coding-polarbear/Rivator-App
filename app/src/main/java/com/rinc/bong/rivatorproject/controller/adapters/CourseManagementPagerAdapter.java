@@ -14,12 +14,12 @@ import java.util.ArrayList;
  * Created by bong on 2017-08-05.
  */
 
-public class LectureManagementPagerAdapter extends FragmentPagerAdapter {
+public class CourseManagementPagerAdapter extends FragmentPagerAdapter {
 
     final int numOfTab = 3;
     final ArrayList<String> tabName = new ArrayList<>();
 
-    public LectureManagementPagerAdapter(FragmentManager fm) {
+    public CourseManagementPagerAdapter(FragmentManager fm) {
         super(fm);
         tabName.add("수강중인 강좌");
         tabName.add("신청한 강좌");

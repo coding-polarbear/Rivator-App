@@ -107,7 +107,7 @@ public class HomeMainFragment extends Fragment {
 
 
     public void setListView() {
-        adapter = new SimpleTeacherAdapter(getActivity(), R.layout.item_default_person_list, teacherList);
+        adapter = new SimpleTeacherAdapter(getContext(), R.layout.item_default_person_list, teacherList);
         listView.setAdapter(adapter);
         ((BaseAdapter) listView.getAdapter()).notifyDataSetChanged();
         ListViewUtill.setListViewHeightBasedOnChildren(listView);

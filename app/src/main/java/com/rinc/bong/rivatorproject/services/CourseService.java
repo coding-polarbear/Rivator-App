@@ -2,7 +2,9 @@ package com.rinc.bong.rivatorproject.services;
 
 import com.rinc.bong.rivatorproject.beans.Course;
 import com.rinc.bong.rivatorproject.beans.Status;
+import com.rinc.bong.rivatorproject.retrofitBean.ContestManagerListGet;
 import com.rinc.bong.rivatorproject.retrofitBean.CourseListGet;
+import com.rinc.bong.rivatorproject.retrofitBean.CourseManagerListGet;
 import com.rinc.bong.rivatorproject.retrofitBean.SingleCourseGet;
 
 import okhttp3.MultipartBody;
@@ -32,4 +34,8 @@ public interface CourseService {
 
     @POST("/course-managers/{courseKey}")
     Call<Status> submitCourse(@Path("courseKey") int courseKey);
+
+    @GET("/course-managers")
+    Call<CourseManagerListGet> getCourseManagerListWithStatus(@Query("offset") int offset, @Query("limit") int limit, @Query("userId") String userId, @Query("status") int status);
+
 }
