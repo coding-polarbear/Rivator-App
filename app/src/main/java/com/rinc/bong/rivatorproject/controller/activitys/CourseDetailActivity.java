@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -44,10 +45,12 @@ public class CourseDetailActivity extends AppCompatActivity {
     private de.hdodenhof.circleimageview.CircleImageView teacherProfileImageView;
     private TextView teacherName;
     private TextView subject;
+    private Button submit;
 
     private String description;
     private Course course;
     private int courseKey;
+    private User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +77,10 @@ public class CourseDetailActivity extends AppCompatActivity {
         teacherName = (TextView) findViewById(R.id.teacherName);
         subject = (TextView) findViewById(R.id.subject);
         price = (TextView) findViewById(R.id.price);
+        submit = (Button) findViewById(R.id.submit);
+        User user = User.last(User.class);
+        if(user.getUserType().equals("teacher"))
+            submit.setEnabled(false);
     }
 
     public void setTabLayout() {

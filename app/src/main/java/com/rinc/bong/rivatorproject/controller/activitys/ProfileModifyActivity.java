@@ -58,6 +58,7 @@ public class ProfileModifyActivity extends AppCompatActivity {
         rsecession = (TextView) findViewById(R.id.rsecession);
         addCourse = (TextView) findViewById(R.id.addCourse);
         user = User.last(User.class);
+        if(user.getUserType().equals("student")) addCourse.setVisibility(TextView.INVISIBLE);
     }
 
 
