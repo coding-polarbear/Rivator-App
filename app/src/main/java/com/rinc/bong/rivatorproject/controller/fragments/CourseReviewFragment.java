@@ -2,7 +2,6 @@ package com.rinc.bong.rivatorproject.controller.fragments;
 
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
-import android.support.v4.widget.ListViewAutoScrollHelper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +12,7 @@ import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.CourseReview;
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.controller.adapters.CourseReviewAdapter;
-import com.rinc.bong.rivatorproject.retrofitBean.CourseReviewGet;
+import com.rinc.bong.rivatorproject.retrofitBean.CourseReviewListGet;
 import com.rinc.bong.rivatorproject.services.CourseReviewService;
 import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
 import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
@@ -52,11 +51,11 @@ public class CourseReviewFragment extends android.support.v4.app.Fragment {
     }
 
     private void loadData() {
-        Call<CourseReviewGet> call = courseReviewService.getCourseReview(999, 0, courseKey);
+        Call<CourseReviewListGet> call = courseReviewService.getCourseReview(999, 0, courseKey);
         Log.d("courseKey",Integer.toString(courseKey));
-        call.enqueue(new Callback<CourseReviewGet>() {
+        call.enqueue(new Callback<CourseReviewListGet>() {
             @Override
-            public void onResponse(Call<CourseReviewGet> call, Response<CourseReviewGet> response) {
+            public void onResponse(Call<CourseReviewListGet> call, Response<CourseReviewListGet> response) {
                 Result result = response.body().getResult();
                 if(result.getSuccess().equals("200")) {
                     courseReviews = response.body().getCourseReviewList();
@@ -68,7 +67,7 @@ public class CourseReviewFragment extends android.support.v4.app.Fragment {
             }
 
             @Override
-            public void onFailure(Call<CourseReviewGet> call, Throwable t) {
+            public void onFailure(Call<CourseReviewListGet> call, Throwable t) {
                 SnackBarUtill.makeSnackBar(view, "알 수 없는 오류가 발생하였습니다.", Snackbar.LENGTH_LONG);
             }
         });
