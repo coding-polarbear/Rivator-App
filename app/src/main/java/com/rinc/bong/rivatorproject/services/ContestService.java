@@ -35,4 +35,7 @@ public interface ContestService {
 
     @GET("/contests/{contestKey}")
     Call<ContestGet> getContest(@Path("contestKey") int contestKey);
+
+    @POST("/contest-managers/{contestKey}")
+    Call<Status> submitContest(@Path("contestKey") int contestKey);
 }

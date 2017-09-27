@@ -5,6 +5,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Contest;
 import com.rinc.bong.rivatorproject.beans.Result;
+import com.rinc.bong.rivatorproject.beans.Status;
 import com.rinc.bong.rivatorproject.controller.adapters.ContestDetailPagerAdapter;
 import com.rinc.bong.rivatorproject.retrofitBean.ContestGet;
 import com.rinc.bong.rivatorproject.services.ContestService;
@@ -123,5 +125,22 @@ public class ContestDetailActivity extends AppCompatActivity {
             imageButton.setOnClickListener(v -> finish());
         });
 
+    }
+
+    public void join(View view) {
+        ContestService contestService = RetrofitUtil.getLoginRetrofit().create(ContestService.class);
+        Call<Status> call = contestService.submitContest(contestKey);
+        call.enqueue(new Callback<Status>() {
+            @Override
+            public void onResponse(Call<Status> call, Response<Status> response) {
+                Result result = response.body().getResult();
+                SnackBarUtill.makeSnackBar(view, result.getMessage(), Snackbar.LENGTH_SHORT);
+            }
+
+            @Override
+            public void onFailure(Call<Status> call, Throwable t) {
+                SnackBarUtill.makeSnackBar(view, "알 수 없는 오류가 발생하였습니다", Snackbar.LENGTH_SHORT);
+            }
+        });
     }
 }
