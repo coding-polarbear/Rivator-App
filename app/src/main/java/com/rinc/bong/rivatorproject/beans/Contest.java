@@ -18,6 +18,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public class Contest {
+    @SerializedName("contestKey")
+    private int contestKey;
+    @SerializedName("userId")
+    private String userId;
     @SerializedName("title")
     private String title;
     @SerializedName("category")
@@ -36,4 +40,7 @@ public class Contest {
     private String dateStart;
     @SerializedName("dateEnd")
     private String dateEnd;
+    @SerializedName("User")
+    private User user;
+
 }

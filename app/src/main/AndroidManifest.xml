@@ -80,7 +80,9 @@
             android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity android:name=".controller.activitys.ProjectAddActivity" />
         <activity android:name=".controller.activitys.CourseAddActivity" />
-        <activity android:name=".controller.activitys.ContestAddActivity"></activity>
+        <activity android:name=".controller.activitys.ContestAddActivity" />
+        <activity android:name=".controller.activitys.ContestDetailActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent"></activity>
     </application>
 
 </manifest>

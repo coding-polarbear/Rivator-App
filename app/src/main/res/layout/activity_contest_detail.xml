@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/greenBar"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    tools:context="com.rinc.bong.rivatorproject.controller.activitys.ProjectDetailActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhiteText"
+        android:layout_weight="1">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/imageView"
+            android:background="@android:color/darker_gray"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/titleLayout"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@+id/imageView">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="컨테스트 이름"
+                android:id="@+id/title"
+                android:textSize="24sp"
+                android:textColor="#343434"
+                android:letterSpacing="-0.05"
+                android:layout_marginLeft="24dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"/>
+            <TextView
+                android:id="@+id/organizer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_marginLeft="@dimen/notice_item_left_margin"
+                android:letterSpacing="-0.1"
+                android:text="주최자"
+                android:textColor="@color/colorTextDefault"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dot1"
+                android:layout_below="@+id/title"
+                android:layout_toRightOf="@+id/organizer"
+                android:letterSpacing="-0.1"
+                android:text=" ∙ "
+                android:textColor="@color/colorTextDefault"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/categoryName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_toRightOf="@+id/dot1"
+                android:letterSpacing="-0.1"
+                android:text="IT"
+                android:textColor="@color/colorTextDefault"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dot2"
+                android:layout_below="@+id/title"
+                android:layout_toRightOf="@+id/categoryName"
+                android:letterSpacing="-0.1"
+                android:text=" ∙ "
+                android:textColor="@color/colorTextDefault"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/prizeNum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title"
+                android:layout_toRightOf="@+id/dot2"
+                android:letterSpacing="-0.1"
+                android:text="3팀"
+                android:textColor="@color/colorTextDefault"
+                android:textSize="12sp" />
+
+
+        </RelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:background="#f0f0f0"
+            android:layout_below="@+id/titleLayout"
+            android:id="@+id/line"/>
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorWhiteText"
+            android:layout_below="@+id/line"
+            app:tabGravity="center"
+            app:tabMode="scrollable"
+            app:tabIndicatorColor="@color/colorDarkText"
+            app:tabSelectedTextColor="@color/colorDarkText"
+            app:tabTextColor="#787878" >
+        </android.support.design.widget.TabLayout>
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_below="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+        </android.support.v4.view.ViewPager>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="10">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorMainGreen"
+            android:text="참여하기"
+            android:onClick="join"
+            android:letterSpacing="-0.05"
+            android:textSize="16sp"
+            android:textColor="@color/colorWhiteText"
+            />
+    </LinearLayout>
+</LinearLayout>

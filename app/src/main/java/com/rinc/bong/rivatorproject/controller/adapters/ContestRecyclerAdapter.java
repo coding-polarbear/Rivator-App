@@ -1,6 +1,7 @@
 package com.rinc.bong.rivatorproject.controller.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Contest;
+import com.rinc.bong.rivatorproject.controller.activitys.ContestDetailActivity;
 import com.rinc.bong.rivatorproject.retrofitBean.ContestListGet;
 
 import java.text.DateFormat;
@@ -58,6 +60,11 @@ public class ContestRecyclerAdapter extends RecyclerView.Adapter<ContestRecycler
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        holder.getItemView().setOnClickListener(v -> {
+            Intent intent = new Intent(context, ContestDetailActivity.class);
+            intent.putExtra("contestKey", contestList.get(position).getContestKey());
+            context.startActivity(intent);
+        });
     }
 
 

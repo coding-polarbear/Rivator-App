@@ -1,6 +1,7 @@
 package com.rinc.bong.rivatorproject.controller.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.Contest;
 import com.rinc.bong.rivatorproject.beans.ContestManager;
+import com.rinc.bong.rivatorproject.controller.activitys.ContestDetailActivity;
 
 import java.util.List;
 
@@ -40,7 +42,12 @@ public class ContestManagerAdapter extends RecyclerView.Adapter<ContestManagerAd
     public void onBindViewHolder(ViewHolder holder, int position) {
         ContestManager contestManager = contestManagerList.get(position);
         holder.getTitle().setText(contestManager.getContest().getTitle());
-//        holder.getCategory().setText(contest.getCategory());
+//        holder.getCategory().setText(contestManager.getCategory());
+        holder.getItemView().setOnClickListener(v -> {
+            Intent intent = new Intent(context, ContestDetailActivity.class);
+            intent.putExtra("contestKey", contestManagerList.get(position).getContestKey());
+            context.startActivity(intent);
+        });
     }
 
 

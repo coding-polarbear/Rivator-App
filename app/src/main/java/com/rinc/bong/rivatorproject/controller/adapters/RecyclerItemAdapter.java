@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.CourseItem;
 import com.rinc.bong.rivatorproject.beans.SimpleCourse;
@@ -46,7 +47,8 @@ public class RecyclerItemAdapter<V extends RecyclerView.ViewHolder> extends Recy
             title = title.substring(0,7) + "...";
         holder.getTitle().setText(title);
         if(simpleCourse.getCourseKey() > 0)
-            Glide.with(context).load(IMAGE_URL + simpleCourse.getCourseKey() + "/course-image.jpg").centerCrop().into(holder.getImageView());
+            Glide.with(context).load(IMAGE_URL + simpleCourse.getCourseKey() + "/course-image.jpg")
+                    .centerCrop().into(holder.getImageView());
         holder.getCard().setOnClickListener(v -> {
             Intent intent = new Intent(context, CourseDetailActivity.class);
             intent.putExtra("courseKey",simpleCourse.getCourseKey());
