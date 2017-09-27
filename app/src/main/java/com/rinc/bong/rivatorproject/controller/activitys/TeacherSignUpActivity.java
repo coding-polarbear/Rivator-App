@@ -102,17 +102,17 @@ public class TeacherSignUpActivity extends AppCompatActivity implements EasyPerm
     }
 
     private void init() {
-        imageView = (de.hdodenhof.circleimageview.CircleImageView) findViewById(R.id.imageView);
-        checkBox = (CheckBox) findViewById(R.id.checkBox);
-        editId = (EditText) findViewById(R.id.editId);
-        editName = (EditText) findViewById(R.id.editName);
-        editPassword = (EditText) findViewById(R.id.editPassword);
-        editPassword2 = (EditText) findViewById(R.id.editPassword2);
-        editPhoneNumber = (EditText) findViewById(R.id.editPhoneNumber);
-        citySpinner = (Spinner) findViewById(R.id.citySpinner);
-        townSpinner = (Spinner) findViewById(R.id.townSpinner);
-        districtSpinner = (Spinner) findViewById(R.id.districSpinner);
-        subjectSpinner = (Spinner) findViewById(R.id.subjectSpinner);
+        imageView = findViewById(R.id.imageView);
+        checkBox = findViewById(R.id.checkBox);
+        editId = findViewById(R.id.editId);
+        editName = findViewById(R.id.editName);
+        editPassword = findViewById(R.id.editPassword);
+        editPassword2 = findViewById(R.id.editPassword2);
+        editPhoneNumber = findViewById(R.id.editPhoneNumber);
+        citySpinner = findViewById(R.id.citySpinner);
+        townSpinner = findViewById(R.id.townSpinner);
+        districtSpinner = findViewById(R.id.districSpinner);
+        subjectSpinner = findViewById(R.id.subjectSpinner);
     }
 
     public void select(View view) {
@@ -280,9 +280,9 @@ public class TeacherSignUpActivity extends AppCompatActivity implements EasyPerm
 
     private void setCustomActionbar() {
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_cancle, view -> {
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("프로필 작성");
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnClose);
+            ImageButton imageButton = view.findViewById(R.id.btnClose);
             imageButton.setOnClickListener(v -> finish());
         });
 

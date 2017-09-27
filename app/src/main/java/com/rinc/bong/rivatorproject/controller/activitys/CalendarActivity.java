@@ -51,7 +51,7 @@ public class CalendarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calendar);
 
         //스크롤뷰 자동 스크롤 설정
-        scrollView = (ScrollView) findViewById(R.id.scrollView);
+        scrollView = findViewById(R.id.scrollView);
         scrollView.post(() -> {
             scrollView.fullScroll(ScrollView.FOCUS_UP);
         });
@@ -68,13 +68,13 @@ public class CalendarActivity extends AppCompatActivity {
     }
 
     private void setTabLayout() {
-        tabLayout = (TabLayout) findViewById(R.id.tab);
+        tabLayout = findViewById(R.id.tab);
         tabLayout.addTab(tabLayout.newTab().setText("과외목록"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER); //탭 가로 길이 가변 설정
     }
 
     public void setListView() {
-        listView = (ListView) findViewById(R.id.listView);
+        listView = findViewById(R.id.listView);
         CalendarAdapter calendarAdapter = new CalendarAdapter(getApplicationContext(), R.layout.item_default_type_course, itemList);
         listView.setAdapter(calendarAdapter);
         setListViewHeightBasedOnItems(listView);
@@ -112,11 +112,11 @@ public class CalendarActivity extends AppCompatActivity {
 
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.custom_action_bar, view -> {
 
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("캘린더");
 
             //ImageButton 리스너 설정
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
+            ImageButton imageButton = view.findViewById(R.id.btnBack);
             imageButton.setOnClickListener(v -> finish());
 
         });

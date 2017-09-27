@@ -37,8 +37,8 @@ public class ProjectActivity extends AppCompatActivity {
     }
 
     private void init() {
-        mViewPager = (ViewPager) findViewById(R.id.project_viewpager);
-        mTabLayout = (TabLayout) findViewById(R.id.project_tablayout);
+        mViewPager = findViewById(R.id.project_viewpager);
+        mTabLayout = findViewById(R.id.project_tablayout);
     }
 
     private void pagetInit() {
@@ -52,10 +52,10 @@ public class ProjectActivity extends AppCompatActivity {
 
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.custom_action_bar, view -> {
 
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("알림");
 
-            ImageButton backButton = (ImageButton) view.findViewById(R.id.btnBack);
+            ImageButton backButton = view.findViewById(R.id.btnBack);
             backButton.setOnClickListener(v -> finish());
 
         });

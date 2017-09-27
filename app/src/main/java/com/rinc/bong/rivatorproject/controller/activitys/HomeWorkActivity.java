@@ -39,8 +39,8 @@ public class HomeWorkActivity extends AppCompatActivity {
     }
 
     private void init() {
-        mViewPager = (ViewPager)findViewById(R.id.homework_viewpager);
-        mTabLayout = (TabLayout)findViewById(R.id.homework_tablayout);
+        mViewPager = findViewById(R.id.homework_viewpager);
+        mTabLayout = findViewById(R.id.homework_tablayout);
     }
 
     private void pagetInit() {
@@ -54,10 +54,10 @@ public class HomeWorkActivity extends AppCompatActivity {
 
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.custom_action_bar, view -> {
 
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("숙제관리");
 
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
+            ImageButton imageButton = view.findViewById(R.id.btnBack);
             imageButton.setOnClickListener(v -> finish());
 
         });

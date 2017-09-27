@@ -59,16 +59,16 @@ public class ProfileFragment extends Fragment {
     }
 
     private void init() {
-        profile = (de.hdodenhof.circleimageview.CircleImageView) view.findViewById(R.id.profile);
-        name = (TextView) view.findViewById(R.id.name);
-        subject = (TextView) view.findViewById(R.id.subject);
-        notice_btn = (LinearLayout)view.findViewById(R.id.profile_notice_btn);
-        homework_btn = (LinearLayout)view.findViewById(R.id.profile_homework_btn);
-        course_btn = (LinearLayout)view.findViewById(R.id.profile_course_btn);
-        contest_btn = (LinearLayout)view.findViewById(R.id.profile_contest_btn);
-        project_btn = (LinearLayout)view.findViewById(R.id.profile_project_btn);
-        profile_modify_btn = (LinearLayout) view.findViewById(R.id.profile_modify_btn);
-        profile_appinfo_btn = (LinearLayout) view.findViewById(R.id.profile_appinfo_btn);
+        profile = view.findViewById(R.id.profile);
+        name = view.findViewById(R.id.name);
+        subject = view.findViewById(R.id.subject);
+        notice_btn = view.findViewById(R.id.profile_notice_btn);
+        homework_btn = view.findViewById(R.id.profile_homework_btn);
+        course_btn = view.findViewById(R.id.profile_course_btn);
+        contest_btn = view.findViewById(R.id.profile_contest_btn);
+        project_btn = view.findViewById(R.id.profile_project_btn);
+        profile_modify_btn = view.findViewById(R.id.profile_modify_btn);
+        profile_appinfo_btn = view.findViewById(R.id.profile_appinfo_btn);
     }
 
     private void loadInfo() {

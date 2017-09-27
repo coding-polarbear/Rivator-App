@@ -39,8 +39,8 @@ public class ContestManagementActivity extends AppCompatActivity {
     }
 
     private void init() {
-        mViewPager = (ViewPager)findViewById(R.id.contest_viewpager);
-        mTabLayout = (TabLayout)findViewById(R.id.contest_tablayout);
+        mViewPager = findViewById(R.id.contest_viewpager);
+        mTabLayout = findViewById(R.id.contest_tablayout);
     }
 
     private void pagetInit() {
@@ -53,10 +53,10 @@ public class ContestManagementActivity extends AppCompatActivity {
 
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.custom_action_bar, view -> {
 
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("콘테스트");
 
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
+            ImageButton imageButton = view.findViewById(R.id.btnBack);
             imageButton.setOnClickListener(v -> finish());
 
         });

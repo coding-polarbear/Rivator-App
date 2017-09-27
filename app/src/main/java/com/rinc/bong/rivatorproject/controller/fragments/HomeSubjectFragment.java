@@ -65,17 +65,17 @@ public class HomeSubjectFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_home_subject, container, false);
 
         //제목 텍스트 설정
-        subjectText = (TextView) view.findViewById(R.id.subjectText);
+        subjectText = view.findViewById(R.id.subjectText);
         subjectText.setText(title);
         //더보기 활성화
-        moreText1 = (TextView)view.findViewById(R.id.moreText1);
-        moreText2 = (TextView)view.findViewById(R.id.moreText2);
+        moreText1 = view.findViewById(R.id.moreText1);
+        moreText2 = view.findViewById(R.id.moreText2);
         moreText1.setText(Html.fromHtml("<u>더보기<u>"));
         moreText2.setText(Html.fromHtml("<u>더보기<u>"));
 
         //RecyclerView 설정
-        recycler1 = (RecyclerView) view.findViewById(R.id.recycler1);
-        recycler2 = (RecyclerView) view.findViewById(R.id.recycler2);
+        recycler1 = view.findViewById(R.id.recycler1);
+        recycler2 = view.findViewById(R.id.recycler2);
         loadData();
 
         return view;

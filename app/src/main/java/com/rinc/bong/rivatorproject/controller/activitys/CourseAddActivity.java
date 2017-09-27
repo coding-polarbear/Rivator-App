@@ -55,11 +55,11 @@ public class CourseAddActivity extends AppCompatActivity implements EasyPermissi
     }
 
     private void init() {
-        imageView = (ImageView) findViewById(R.id.imageView);
-        title = (EditText) findViewById(R.id.title);
-        unitTime = (EditText) findViewById(R.id.unitTime);
-        price = (EditText) findViewById(R.id.price);
-        curriculum = (EditText) findViewById(R.id.curriculum);
+        imageView = findViewById(R.id.imageView);
+        title = findViewById(R.id.title);
+        unitTime = findViewById(R.id.unitTime);
+        price = findViewById(R.id.price);
+        curriculum = findViewById(R.id.curriculum);
         user = User.last(User.class);
     }
 

@@ -51,12 +51,12 @@ public class ProfileModifyActivity extends AppCompatActivity {
     }
 
     private void init() {
-        modifyPassword = (TextView) findViewById(R.id.modifyPassword);
-        modifyUser = (TextView) findViewById(R.id.modifyUser);
-        requestUserPromotion = (TextView) findViewById(R.id.requestUserPromotion);
-        logout = (TextView) findViewById(R.id.logout);
-        rsecession = (TextView) findViewById(R.id.rsecession);
-        addCourse = (TextView) findViewById(R.id.addCourse);
+        modifyPassword = findViewById(R.id.modifyPassword);
+        modifyUser = findViewById(R.id.modifyUser);
+        requestUserPromotion = findViewById(R.id.requestUserPromotion);
+        logout = findViewById(R.id.logout);
+        rsecession = findViewById(R.id.rsecession);
+        addCourse = findViewById(R.id.addCourse);
         user = User.last(User.class);
         if(user.getUserType().equals("student")) addCourse.setVisibility(TextView.INVISIBLE);
     }
@@ -90,11 +90,11 @@ public class ProfileModifyActivity extends AppCompatActivity {
     public void  setCustomActionbar() {
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_back, view -> {
             view.setClickable(false);
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("프로필 수정");
             textView.setClickable(false);
             //ImageButton 리스너 설정
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
+            ImageButton imageButton = view.findViewById(R.id.btnBack);
             imageButton.setOnClickListener(v -> finish());
         });
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

@@ -55,10 +55,10 @@ public class CourseReviewAdapter extends ArrayAdapter<CourseReview> {
             view = inflater.inflate(srsc,null);
         }
 
-        ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
-        TextView name = (TextView) view.findViewById(R.id.name);
-        TextView subject = (TextView) view.findViewById(R.id.category);
-        TextView score = (TextView) view.findViewById(R.id.score);
+        ImageView imageView = view.findViewById(R.id.imageView);
+        TextView name = view.findViewById(R.id.name);
+        TextView subject = view.findViewById(R.id.category);
+        TextView score = view.findViewById(R.id.score);
 
         CourseReview item = listViewItem.get(position);
         Glide.with(context).load("http://n0rr.iptime.org:7001/users/" + item.getUser().getUserId() + "/profile-image.jpg").centerCrop().into(imageView);

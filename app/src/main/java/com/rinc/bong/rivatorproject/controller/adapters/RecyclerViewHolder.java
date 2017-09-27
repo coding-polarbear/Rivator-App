@@ -42,8 +42,8 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 
     public RecyclerViewHolder(View itemView) {
         super(itemView);
-        imageView = (ImageView) itemView.findViewById(R.id.imageView);
-        title = (TextView) itemView.findViewById(R.id.textView);
-        card = (RelativeLayout) itemView.findViewById(R.id.card);
+        imageView = itemView.findViewById(R.id.imageView);
+        title = itemView.findViewById(R.id.textView);
+        card = itemView.findViewById(R.id.card);
     }
 }

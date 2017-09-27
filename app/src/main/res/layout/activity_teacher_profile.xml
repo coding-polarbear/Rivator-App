@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f0f0"
+    android:orientation="vertical">
+
+    <!-- TODO: Update blank courseReviewFragment layout -->
+    <RelativeLayout
+        android:background="@color/greenBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:id="@+id/teacher_profile"
+            android:src="@drawable/teacher"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:id="@+id/name"
+            android:letterSpacing="-0.09"
+            android:layout_marginTop="21dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorWhiteText"
+            android:text="김철수"
+            android:layout_below="@+id/teacher_profile"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="83dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/name"
+            android:id="@+id/teacher_subject"
+            android:textColor="@color/colorWhiteText"
+            android:letterSpacing="-0.09"
+            android:textSize="14sp"
+            android:text="웹프로그래밍" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:weightSum="284"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#f0f0f0"
+        android:orientation="vertical"
+        android:paddingTop="8dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="36"
+            android:weightSum="360"
+            android:orientation="horizontal">
+            <android.support.design.widget.TabLayout
+                android:background="#ffffff"
+                app:tabSelectedTextColor="#232323"
+                app:tabIndicatorColor="#232323"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="256"
+                app:tabMode="scrollable"
+                style="@style/MyCustomTabLayout"
+                android:id="@+id/teacher_tab"/>
+            <View
+                android:layout_weight="104"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="#ffffff"/>
+        </LinearLayout>
+
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/teacher_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="192" />
+        <TextView
+            android:textSize="16sp"
+            android:textColor="#ffffff"
+            android:letterSpacing="-0.05"
+            android:gravity="center"
+            android:text="강사 신청하기"
+            android:background="@color/colorMainGreen"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:id="@+id/teacher_btn"
+            android:layout_weight="56"/>
+
+
+    </LinearLayout>
+</LinearLayout>

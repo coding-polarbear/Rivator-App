@@ -55,10 +55,10 @@ public class SimpleCourseAdapter extends ArrayAdapter<SimpleCourse>{
             view = inflater.inflate(resource,null);
         }
 
-        TextView title = (TextView) view.findViewById(R.id.item_course_title);
-        TextView teacherName = (TextView) view.findViewById(R.id.item_course_teacherName);
-        TextView category = (TextView) view.findViewById(R.id.item_course_category);
-        TextView unitTime = (TextView) view.findViewById(R.id.item_course_unitTime);
+        TextView title = view.findViewById(R.id.item_course_title);
+        TextView teacherName = view.findViewById(R.id.item_course_teacherName);
+        TextView category = view.findViewById(R.id.item_course_category);
+        TextView unitTime = view.findViewById(R.id.item_course_unitTime);
 
         SimpleCourse item = simpleCourseList.get(position);
 

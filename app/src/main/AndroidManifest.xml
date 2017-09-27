@@ -18,7 +18,7 @@
             android:value="rivator.db" />
         <meta-data
             android:name="VERSION"
-            android:value="1" />
+            android:value="2" />
         <meta-data
             android:name="QUERY_LOG"
             android:value="true" />
@@ -86,6 +86,8 @@
             android:theme="@style/AppTheme.ActionBar.Transparent" />
         <activity android:name=".controller.activitys.CourseReviewDetailActivity" />
         <activity android:name=".controller.activitys.CourseReviewWriteActivity"></activity>
+        <activity android:name=".controller.activitys.SearchViewActivity"/>
+        <activity android:name=".controller.activitys.TeacherProfileActivity"/>
     </application>
 
 </manifest>

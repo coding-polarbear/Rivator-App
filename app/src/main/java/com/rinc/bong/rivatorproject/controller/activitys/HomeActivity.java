@@ -6,6 +6,7 @@ import android.speech.RecognizerIntent;
 import android.support.design.internal.BottomNavigationItemView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +17,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
@@ -23,6 +27,7 @@ import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.controller.fragments.HomeFragment;
 import com.rinc.bong.rivatorproject.controller.fragments.ProfileFragment;
+import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 
 import java.util.ArrayList;
 
@@ -32,31 +37,41 @@ public class HomeActivity extends AppCompatActivity {
     private BottomNavigationViewEx bottomNavigationView;
     private Fragment fragment;
     private ActionBar actionBar;
+    private ImageButton searchButton;
+    private TextView actionText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         init();
+        setCustomActionbar();
         setBottomNavigationView();
         if (savedInstanceState == null) loadFragment(new HomeFragment(0));
 
         //액션바 설정
-        setActionbar();
+
         //FCM에서 토픽 구독
+        setListener();
         FirebaseMessaging.getInstance().subscribeToTopic("news");
         FirebaseInstanceId.getInstance().getToken();
     }
 
-    private void setActionbar() {
-        actionBar = getSupportActionBar();
-        actionBar.setElevation(0);
-        actionBar.setTitle("홈");
+    private void setListener() {
+        searchButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), SearchViewActivity.class
+                ));
+            }
+        });
     }
 
 
+
+
     private void init() {
-        bottomNavigationView = (BottomNavigationViewEx) findViewById(R.id.bottomNavigation);
+        bottomNavigationView = findViewById(R.id.bottomNavigation);
     }
 
 
@@ -71,7 +86,7 @@ public class HomeActivity extends AppCompatActivity {
         bottomNavigationView.enableItemShiftingMode(false);
 
         //Calendar Button Background setting
-        BottomNavigationItemView calendar = (BottomNavigationItemView) bottomNavigationView.findViewById(R.id.btnCalendar);
+        BottomNavigationItemView calendar = bottomNavigationView.findViewById(R.id.btnCalendar);
         calendar.setBackgroundColor(Color.parseColor("#14e4a2"));
         calendar.setIconTintList(getResources().getColorStateList(R.color.calendar_item_state));
         calendar.setTextColor(getResources().getColorStateList(R.color.calendar_item_state));
@@ -83,13 +98,13 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.btnHome:
                     position = 0;
                     fragment = new HomeFragment(position);
-                    actionBar.setTitle("홈");
+                    actionText.setText("홈");
                     loadFragment(fragment);
                     break;
                 case R.id.btnTeacher:
                     position = 1;
                     fragment = new HomeFragment(position);
-                    actionBar.setTitle("강사");
+                    actionText.setText("강사");
                     loadFragment(fragment);
                     break;
                 case R.id.btnCalendar:
@@ -100,13 +115,13 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.btnCurrentLecture:
                     position = 3;
                     fragment = new HomeFragment(position);
-                    actionBar.setTitle("진행중 강좌");
+                    actionText.setText("진행중 강좌");
                     loadFragment(fragment);
                     break;
                 case R.id.btnProfile:
                     position = 4;
                     fragment = new ProfileFragment();
-                    actionBar.setTitle("프로필");
+                    actionText.setText("프로필");
                     loadFragment(fragment);
                     break;
             }
@@ -114,10 +129,14 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu_actionbar, menu);
-        return true;
+    private void  setCustomActionbar() {
+
+        ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_search, view -> {
+            searchButton = view.findViewById(R.id.BtnSearch);
+            actionText = view.findViewById(R.id.home_title);
+            actionText.setText("홈");
+        });
+
     }
 
 

@@ -53,7 +53,7 @@ public class CurrentLectureFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_current_lecture, container,false);
-        lectureRecyclerView = (RecyclerView) view.findViewById(R.id.lectureRecyclerView);
+        lectureRecyclerView = view.findViewById(R.id.lectureRecyclerView);
         loadData();
         return view;
     }

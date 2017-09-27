@@ -62,11 +62,11 @@ public class ProjectAddActivity extends AppCompatActivity implements EasyPermiss
     }
 
     private void init() {
-        projectImage = (ImageView) findViewById(R.id.projectImage);
-        title = (EditText) findViewById(R.id.title);
-        teamName = (EditText) findViewById(R.id.teamName);
-        numOfTeam = (EditText) findViewById(R.id.numOfTeam);
-        description = (EditText) findViewById(R.id.description);
+        projectImage = findViewById(R.id.projectImage);
+        title = findViewById(R.id.title);
+        teamName = findViewById(R.id.teamName);
+        numOfTeam = findViewById(R.id.numOfTeam);
+        description = findViewById(R.id.description);
     }
     public void select(View view) {
         selectImage();
@@ -126,11 +126,11 @@ public class ProjectAddActivity extends AppCompatActivity implements EasyPermiss
 
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_cancle, view -> {
 
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("프록젝트 작성");
 
             //ImageButton 리스너 설정
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnClose);
+            ImageButton imageButton = view.findViewById(R.id.btnClose);
             imageButton.setOnClickListener(v -> finish());
 
         });

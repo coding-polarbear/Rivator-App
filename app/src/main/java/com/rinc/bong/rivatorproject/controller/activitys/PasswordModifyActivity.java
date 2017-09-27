@@ -42,8 +42,8 @@ public class PasswordModifyActivity extends AppCompatActivity {
     }
 
     private void init() {
-        password1 = (EditText) findViewById(R.id.password1);
-        password2 = (EditText) findViewById(R.id.password2);
+        password1 = findViewById(R.id.password1);
+        password2 = findViewById(R.id.password2);
     }
 
     public void  setCustomActionbar() {
@@ -52,12 +52,12 @@ public class PasswordModifyActivity extends AppCompatActivity {
 
             view.setClickable(false);
 
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("패스워드 변경");
             textView.setClickable(false);
 
             //ImageButton 리스너 설정
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
+            ImageButton imageButton = view.findViewById(R.id.btnBack);
             imageButton.setOnClickListener(v -> finish());
         });
 

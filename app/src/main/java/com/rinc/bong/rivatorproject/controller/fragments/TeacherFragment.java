@@ -32,7 +32,7 @@ import retrofit2.Response;
 public class TeacherFragment extends Fragment {
     private TextView moreText;
     private ListView listView;
-    private View view;;
+    private View view;
     private TextView subjectText;
     private SimpleTeacherAdapter adapter;
     private String subject;
@@ -49,10 +49,10 @@ public class TeacherFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_teacher, container,false);
-        moreText = (TextView) view.findViewById(R.id.moreText);
+        moreText = view.findViewById(R.id.moreText);
         moreText.setText(Html.fromHtml("<u>더보기<u>"));
-        listView = (ListView) view.findViewById(R.id.teacherList);
-        subjectText = (TextView) view.findViewById(R.id.subjectText);
+        listView = view.findViewById(R.id.teacherList);
+        subjectText = view.findViewById(R.id.subjectText);
         subjectText.setText(subject);
         loadTeacherData();
         return view;

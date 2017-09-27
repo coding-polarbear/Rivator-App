@@ -40,11 +40,11 @@ public class CourseReviewWriteActivity extends AppCompatActivity {
     }
 
     private void init() {
-        imageView = (ImageView) findViewById(R.id.imageView);
-        title = (TextView) findViewById(R.id.title);
-        category = (TextView) findViewById(R.id.category);
-        ratingBar = (RatingBar) findViewById(R.id.ratingBar);
-        content = (EditText) findViewById(R.id.content);
+        imageView = findViewById(R.id.imageView);
+        title = findViewById(R.id.title);
+        category = findViewById(R.id.category);
+        ratingBar = findViewById(R.id.ratingBar);
+        content = findViewById(R.id.content);
         courseKey = getIntent().getExtras().getInt("courseKey");
         ratingBar.setOnRatingBarChangeListener((ratingBar1, v, b) -> score = v);
     }

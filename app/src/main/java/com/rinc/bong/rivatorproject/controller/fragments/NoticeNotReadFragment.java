@@ -40,7 +40,7 @@ public class NoticeNotReadFragment extends Fragment {
     }
 
     private void init() {
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerview_default);
+        mRecyclerView = view.findViewById(R.id.recyclerview_default);
     }
 
     public static NoticeNotReadFragment newInstance() {

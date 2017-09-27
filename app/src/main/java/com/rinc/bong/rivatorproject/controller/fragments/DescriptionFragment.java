@@ -33,7 +33,7 @@ public class DescriptionFragment extends Fragment {
     }
 
     private void init() {
-        descriptionText = (TextView) view.findViewById(R.id.descriptionText);
+        descriptionText = view.findViewById(R.id.descriptionText);
             descriptionText.setText(description);
     }
 

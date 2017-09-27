@@ -20,9 +20,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
-        User user = User.last(User.class);
-        if (user != null)
-            goToMain();
+
+        try {
+            User user = User.last(User.class);
+            if (user != null)
+                goToMain();
+        } catch(SQLiteException e) {
+
+        }
     }
 
     public void goToSignIn(View view) {

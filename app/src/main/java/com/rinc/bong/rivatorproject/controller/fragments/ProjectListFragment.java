@@ -59,8 +59,8 @@ public class ProjectListFragment extends Fragment {
     }
 
     private void init() {
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerview_default);
-        fab = (FloatingActionButton) view.findViewById(R.id.floatingActionButton);
+        mRecyclerView = view.findViewById(R.id.recyclerview_default);
+        fab = view.findViewById(R.id.floatingActionButton);
         fab.setOnClickListener(v -> {
             startActivity(new Intent(getActivity(), ProjectAddActivity.class));
         });

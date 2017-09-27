@@ -53,7 +53,7 @@ public class TeamMemberFragment extends Fragment {
     }
 
     private void init() {
-        listView = (ListView) view.findViewById(R.id.listView);
+        listView = view.findViewById(R.id.listView);
     }
 
     private void loadProjectManagerData() {

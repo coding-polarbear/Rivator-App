@@ -50,9 +50,9 @@ public class ContestJoinFragment extends Fragment {
     }
 
     private void init() {
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerview_default);
+        mRecyclerView = view.findViewById(R.id.recyclerview_default);
         user = User.last(User.class);
-        fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        fab = view.findViewById(R.id.fab);
         fab.bringToFront();
         fab.setOnClickListener(v -> {
             Log.d("click", "clicked");

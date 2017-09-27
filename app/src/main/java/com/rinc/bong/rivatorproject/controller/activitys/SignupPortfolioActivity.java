@@ -37,11 +37,11 @@ public class SignupPortfolioActivity extends AppCompatActivity {
 
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_cancle, view -> {
 
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("포트폴리오");
 
             //ImageButton 리스너 설정
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnClose);
+            ImageButton imageButton = view.findViewById(R.id.btnClose);
             imageButton.setOnClickListener(v -> finish());
 
         });

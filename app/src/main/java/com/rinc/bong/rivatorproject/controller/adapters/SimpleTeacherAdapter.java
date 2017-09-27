@@ -55,9 +55,9 @@ public class SimpleTeacherAdapter extends ArrayAdapter<User> {
             view = inflater.inflate(srsc,null);
         }
 
-        ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
-        TextView teacherName = (TextView) view.findViewById(R.id.name);
-        TextView subject = (TextView) view.findViewById(R.id.category);
+        ImageView imageView = view.findViewById(R.id.imageView);
+        TextView teacherName = view.findViewById(R.id.name);
+        TextView subject = view.findViewById(R.id.category);
 
         User item = listViewItem.get(position);
         teacherName.setText(item.getUserName());

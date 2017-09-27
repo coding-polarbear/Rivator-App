@@ -41,9 +41,9 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void init() {
-        editId = (EditText) findViewById(R.id.id);
-        password = (EditText) findViewById(R.id.password);
-        forgot = (TextView) findViewById(R.id.forgot);
+        editId = findViewById(R.id.id);
+        password = findViewById(R.id.password);
+        forgot = findViewById(R.id.forgot);
         forgot.setText(Html.fromHtml("<u>계정을 잃어버리셨나요?</u>"));
     }
 
@@ -51,11 +51,11 @@ public class LoginActivity extends AppCompatActivity {
 
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_back, view -> {
 
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("로그인");
 
             //ImageButton 리스너 설정
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
+            ImageButton imageButton = view.findViewById(R.id.btnBack);
             imageButton.setOnClickListener(v -> finish());
 
         });

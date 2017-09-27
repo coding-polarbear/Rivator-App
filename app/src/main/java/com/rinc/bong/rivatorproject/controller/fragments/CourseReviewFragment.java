@@ -51,7 +51,7 @@ public class CourseReviewFragment extends android.support.v4.app.Fragment {
 
     private void init() {
         courseReviewService = RetrofitUtil.retrofit.create(CourseReviewService.class);
-        listView = (ListView) view.findViewById(R.id.listView);
+        listView = view.findViewById(R.id.listView);
     }
 
     private void loadData() {

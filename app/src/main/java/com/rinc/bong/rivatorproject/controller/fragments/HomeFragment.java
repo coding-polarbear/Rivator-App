@@ -44,7 +44,7 @@ public class HomeFragment extends Fragment {
     }
     //TabLayout 설정
     private void setTabLayout() {
-        tabLayout = (TabLayout) view.findViewById(R.id.tab);
+        tabLayout = view.findViewById(R.id.tab);
         //ArrayList에 있는 값들을 이터레이션 시켜서 탭 레이아웃에 새로운 탭 추가
         tabNames.forEach(name -> tabLayout.addTab(tabLayout.newTab().setText(name)));
         tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER); //탭 가로 길이 가변 설정
@@ -61,7 +61,7 @@ public class HomeFragment extends Fragment {
 
     //ViewPager설정
     private void setViewPager(FragmentStatePagerAdapter adapter) {
-        ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewPager);
+        ViewPager viewPager = view.findViewById(R.id.viewPager);
        //final PageAdapter pageAdapter = new PageAdapter(getChildFragmentManager(),tabLayout.getTabCount(),tabNames, tabNames.size());
 
         viewPager.setAdapter(adapter);

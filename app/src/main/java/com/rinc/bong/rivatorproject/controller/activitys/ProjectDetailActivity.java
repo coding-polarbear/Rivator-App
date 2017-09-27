@@ -55,14 +55,14 @@ public class ProjectDetailActivity extends AppCompatActivity {
     }
 
     public void init() {
-        mTabLayout = (TabLayout) findViewById(R.id.tab);
-        mViewPager = (ViewPager) findViewById(R.id.viewPager);
+        mTabLayout = findViewById(R.id.tab);
+        mViewPager = findViewById(R.id.viewPager);
         projectKey = getIntent().getExtras().getInt("projectKey");
 
-        imageView = (ImageView) findViewById(R.id.imageView);
-        projectTitle = (TextView) findViewById(R.id.projectTitle);
-        teamName = (TextView) findViewById(R.id.teamName);
-        categoryName = (TextView) findViewById(R.id.categoryName);
+        imageView = findViewById(R.id.imageView);
+        projectTitle = findViewById(R.id.projectTitle);
+        teamName = findViewById(R.id.teamName);
+        categoryName = findViewById(R.id.categoryName);
         user = User.last(User.class);
     }
     public void setTabLayout() {
@@ -123,9 +123,9 @@ public class ProjectDetailActivity extends AppCompatActivity {
 
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.custom_action_bar, view -> {
 
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("프로젝트 정보");
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
+            ImageButton imageButton = view.findViewById(R.id.btnBack);
             imageButton.setOnClickListener(v -> finish());
         });
 

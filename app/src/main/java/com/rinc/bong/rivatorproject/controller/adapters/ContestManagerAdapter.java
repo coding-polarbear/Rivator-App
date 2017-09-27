@@ -66,9 +66,9 @@ public class ContestManagerAdapter extends RecyclerView.Adapter<ContestManagerAd
 
         public ViewHolder(View itemView) {
             super(itemView);
-            title = (TextView)itemView.findViewById(R.id.title);
-            condition = (TextView) itemView.findViewById(R.id.condition);
-            category = (TextView) itemView.findViewById(R.id.category);
+            title = itemView.findViewById(R.id.title);
+            condition = itemView.findViewById(R.id.condition);
+            category = itemView.findViewById(R.id.category);
             this.itemView = itemView;
         }
     }

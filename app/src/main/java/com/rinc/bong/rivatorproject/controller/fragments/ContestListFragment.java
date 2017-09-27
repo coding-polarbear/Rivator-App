@@ -56,8 +56,8 @@ public class ContestListFragment extends Fragment {
     }
 
     private void init() {
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview_default);
-        fab = (FloatingActionButton) view.findViewById(R.id.fab);
+        recyclerView = view.findViewById(R.id.recyclerview_default);
+        fab = view.findViewById(R.id.fab);
         fab.bringToFront();
         fab.setOnClickListener(v -> {
             Log.d("click", "clicked");

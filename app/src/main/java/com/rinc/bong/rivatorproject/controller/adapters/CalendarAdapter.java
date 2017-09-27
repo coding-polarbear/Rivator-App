@@ -52,10 +52,10 @@ public class CalendarAdapter extends ArrayAdapter<Course>{
             view = inflater.inflate(srsc,null);
         }
 
-        TextView title = (TextView) view.findViewById(R.id.item_course_title);
-        TextView teacherName = (TextView) view.findViewById(R.id.item_course_teacherName);
-        TextView subject = (TextView) view.findViewById(R.id.item_course_category);
-        TextView unitTime = (TextView) view.findViewById(R.id.item_course_unitTime);
+        TextView title = view.findViewById(R.id.item_course_title);
+        TextView teacherName = view.findViewById(R.id.item_course_teacherName);
+        TextView subject = view.findViewById(R.id.item_course_category);
+        TextView unitTime = view.findViewById(R.id.item_course_unitTime);
 
         Course item = listViewItem.get(position);
         teacherName.setText(item.getUser().getUserName());

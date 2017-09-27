@@ -38,10 +38,10 @@ public class SignupTermsAgreeActivity extends AppCompatActivity {
 
     private void init() {
         intent = getIntent();
-        check1 = (CheckBox) findViewById(R.id.check1);
-        check2 = (CheckBox) findViewById(R.id.check2);
-        check3 = (CheckBox) findViewById(R.id.check3);
-        check4 = (CheckBox) findViewById(R.id.check4);
+        check1 = findViewById(R.id.check1);
+        check2 = findViewById(R.id.check2);
+        check3 = findViewById(R.id.check3);
+        check4 = findViewById(R.id.check4);
     }
     /*
     *커스텀 액션바
@@ -49,9 +49,9 @@ public class SignupTermsAgreeActivity extends AppCompatActivity {
     */
     private void setCustomActionbar() {
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_cancle, view -> {
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("약관 동의");
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnClose);
+            ImageButton imageButton = view.findViewById(R.id.btnClose);
             imageButton.setOnClickListener(v -> finish());
         });
 

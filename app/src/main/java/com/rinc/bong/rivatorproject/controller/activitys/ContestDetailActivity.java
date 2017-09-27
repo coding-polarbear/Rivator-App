@@ -49,13 +49,13 @@ public class ContestDetailActivity extends AppCompatActivity {
 
     private void init() {
         contestKey = getIntent().getExtras().getInt("contestKey");
-        imageView = (ImageView) findViewById(R.id.imageView);
-        title = (TextView) findViewById(R.id.title);
-        organizer = (TextView) findViewById(R.id.organizer);
-        categoryName = (TextView) findViewById(R.id.categoryName);
-        prizeNum = (TextView) findViewById(R.id.prizeNum);
-        tab = (TabLayout) findViewById(R.id.tab);
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        imageView = findViewById(R.id.imageView);
+        title = findViewById(R.id.title);
+        organizer = findViewById(R.id.organizer);
+        categoryName = findViewById(R.id.categoryName);
+        prizeNum = findViewById(R.id.prizeNum);
+        tab = findViewById(R.id.tab);
+        viewPager = findViewById(R.id.viewPager);
     }
 
     public void setTabLayout() {
@@ -119,9 +119,9 @@ public class ContestDetailActivity extends AppCompatActivity {
 
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.custom_action_bar, view -> {
 
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("콘테스트 정보");
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
+            ImageButton imageButton = view.findViewById(R.id.btnBack);
             imageButton.setOnClickListener(v -> finish());
         });
 

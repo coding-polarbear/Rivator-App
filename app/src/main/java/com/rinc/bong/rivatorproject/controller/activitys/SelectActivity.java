@@ -21,7 +21,7 @@ public class SelectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select);
         setCustomActionbar();
-        imageButton = (ImageButton) getSupportActionBar().getCustomView().findViewById(R.id.btnBack);
+        imageButton = getSupportActionBar().getCustomView().findViewById(R.id.btnBack);
         imageButton.setOnClickListener(v -> {
             finish();
         });
@@ -46,7 +46,7 @@ public class SelectActivity extends AppCompatActivity {
     public void  setCustomActionbar() {
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.custom_action_bar, view -> {
             //title 설정
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("유형 선택");
         });
 

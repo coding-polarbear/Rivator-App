@@ -75,9 +75,9 @@ public class LetureManagementRecyclerAdapter extends RecyclerView.Adapter<Leture
 
         public ViewHolder(View itemView) {
             super(itemView);
-            title = (TextView) itemView.findViewById(R.id.title);
-            category = (TextView) itemView.findViewById(R.id.category);
-            condition = (TextView) itemView.findViewById(R.id.condition);
+            title = itemView.findViewById(R.id.title);
+            category = itemView.findViewById(R.id.category);
+            condition = itemView.findViewById(R.id.condition);
         }
     }
 }

@@ -48,7 +48,7 @@ public class LectureApplyFragment extends Fragment {
     }
 
     private void init() {
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.recyclerview_default);
+        mRecyclerView = view.findViewById(R.id.recyclerview_default);
         user = User.last(User.class);
     }
 

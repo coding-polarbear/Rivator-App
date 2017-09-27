@@ -33,8 +33,8 @@ public class CourseManagementActivity extends AppCompatActivity {
     }
 
     private void init() {
-        mViewPager = (ViewPager)findViewById(R.id.lecture_manage_viewpager);
-        mTabLayout = (TabLayout)findViewById(R.id.lecture_manage_tablayout);
+        mViewPager = findViewById(R.id.lecture_manage_viewpager);
+        mTabLayout = findViewById(R.id.lecture_manage_tablayout);
     }
 
     private void pagetInit() {
@@ -48,10 +48,10 @@ public class CourseManagementActivity extends AppCompatActivity {
 
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.custom_action_bar, view -> {
 
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("강좌 관리");
 
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
+            ImageButton imageButton = view.findViewById(R.id.btnBack);
             imageButton.setOnClickListener(v -> finish());
 
         });

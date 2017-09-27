@@ -25,10 +25,10 @@ public class LectureViewHolder extends ViewHolder{
 
     public LectureViewHolder(View itemView) {
         super(itemView);
-        imageView = (ImageView) itemView.findViewById(R.id.image);
-        title = (TextView) itemView.findViewById(R.id.title);
-        teacherName = (TextView)itemView.findViewById(R.id.teacherName);
-        unit = (TextView) itemView.findViewById(R.id.unit);
+        imageView = itemView.findViewById(R.id.image);
+        title = itemView.findViewById(R.id.title);
+        teacherName = itemView.findViewById(R.id.teacherName);
+        unit = itemView.findViewById(R.id.unit);
 
     }
 

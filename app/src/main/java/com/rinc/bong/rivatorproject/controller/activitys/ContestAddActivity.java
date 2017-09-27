@@ -74,15 +74,15 @@ public class ContestAddActivity extends AppCompatActivity implements EasyPermiss
     }
 
     private void init() {
-        title = (EditText) findViewById(R.id.title);
-        priseNum = (EditText) findViewById(R.id.priseNum);
-        startTime = (TextView) findViewById(R.id.startTime);
-        endTime = (TextView) findViewById(R.id.endTime);
-        criteria = (EditText) findViewById(R.id.criteria);
-        fieldEntry = (EditText) findViewById(R.id.fieldEntry);
-        description = (EditText) findViewById(R.id.description);
-        award = (EditText) findViewById(R.id.award);
-        imageView = (ImageView) findViewById(R.id.imageView);
+        title = findViewById(R.id.title);
+        priseNum = findViewById(R.id.priseNum);
+        startTime = findViewById(R.id.startTime);
+        endTime = findViewById(R.id.endTime);
+        criteria = findViewById(R.id.criteria);
+        fieldEntry = findViewById(R.id.fieldEntry);
+        description = findViewById(R.id.description);
+        award = findViewById(R.id.award);
+        imageView = findViewById(R.id.imageView);
         startTime.setOnClickListener(v->{
             flag=START_TIME_FLAG;
             makeDateDialog();
@@ -170,11 +170,11 @@ public class ContestAddActivity extends AppCompatActivity implements EasyPermiss
 
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_cancle, view -> {
 
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("콘테스트 작성");
 
             //ImageButton 리스너 설정
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnClose);
+            ImageButton imageButton = view.findViewById(R.id.btnClose);
             imageButton.setOnClickListener(v -> finish());
 
         });

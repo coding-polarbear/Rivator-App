@@ -35,10 +35,10 @@ public class AccountAdvancementActivity extends AppCompatActivity {
     }
 
     private void init() {
-        subjectName = (EditText) findViewById(R.id.subjectName);
-        category = (Spinner) findViewById(R.id.category);
-        unitTime = (Spinner) findViewById(R.id.unitTime);
-        request = (EditText) findViewById(R.id.request);
+        subjectName = findViewById(R.id.subjectName);
+        category = findViewById(R.id.category);
+        unitTime = findViewById(R.id.unitTime);
+        request = findViewById(R.id.request);
     }
 
     private void setSpinner() {
@@ -87,12 +87,12 @@ public class AccountAdvancementActivity extends AppCompatActivity {
         LayoutInflater inflater = (LayoutInflater)getSystemService(LAYOUT_INFLATER_SERVICE);
         View customView = inflater.inflate(R.layout.layout_actionbar_type_back, null);
         customView.setClickable(false);
-        TextView textView = (TextView) customView.findViewById(R.id.title);
+        TextView textView = customView.findViewById(R.id.title);
         textView.setText("강사신청");
         textView.setClickable(false);
 
         //ImageButton 리스너 설정
-        ImageButton imageButton = (ImageButton) customView.findViewById(R.id.btnBack);
+        ImageButton imageButton = customView.findViewById(R.id.btnBack);
         imageButton.setOnClickListener(v -> {
             finish();
         });

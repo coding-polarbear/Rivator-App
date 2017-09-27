@@ -85,13 +85,13 @@ public class UserModifyActivity extends AppCompatActivity implements EasyPermiss
     }
 
     private void init() {
-        imageView = (ImageView) findViewById(R.id.imageView);
-        editName = (EditText) findViewById(R.id.editName);
-        editPhoneNumber = (EditText) findViewById(R.id.editPhoneNumber);
-        citySpinner = (Spinner) findViewById(R.id.citySpinner);
-        districtSpinner = (Spinner) findViewById(R.id.districSpinner);
-        townSpinner = (Spinner) findViewById(R.id.townSpinner);
-        subjectSpinner = (Spinner) findViewById(R.id.subjectSpinner);
+        imageView = findViewById(R.id.imageView);
+        editName = findViewById(R.id.editName);
+        editPhoneNumber = findViewById(R.id.editPhoneNumber);
+        citySpinner = findViewById(R.id.citySpinner);
+        districtSpinner = findViewById(R.id.districSpinner);
+        townSpinner = findViewById(R.id.townSpinner);
+        subjectSpinner = findViewById(R.id.subjectSpinner);
 
         user = User.last(User.class);
         view = getWindow().getDecorView().getRootView();
@@ -196,12 +196,12 @@ public class UserModifyActivity extends AppCompatActivity implements EasyPermiss
 
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_back, view -> {
 
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("계정정보 수정");
             textView.setClickable(false);
 
             //ImageButton 리스너 설정
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
+            ImageButton imageButton = view.findViewById(R.id.btnBack);
             imageButton.setOnClickListener(v -> finish());
 
         });

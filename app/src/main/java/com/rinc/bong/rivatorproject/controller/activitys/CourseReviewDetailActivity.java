@@ -39,12 +39,12 @@ public class CourseReviewDetailActivity extends AppCompatActivity {
     }
 
     private void init() {
-        title = (TextView) findViewById(R.id.title);
-        aurthor = (TextView) findViewById(R.id.aurthor);
-        courseTitle = (TextView) findViewById(R.id.courseTitle);
-        date = (TextView) findViewById(R.id.date);
-        score = (TextView) findViewById(R.id.score);
-        content = (TextView) findViewById(R.id.content);
+        title = findViewById(R.id.title);
+        aurthor = findViewById(R.id.aurthor);
+        courseTitle = findViewById(R.id.courseTitle);
+        date = findViewById(R.id.date);
+        score = findViewById(R.id.score);
+        content = findViewById(R.id.content);
         reviewKey = getIntent().getExtras().getInt("reviewKey");
     }
 
@@ -79,9 +79,9 @@ public class CourseReviewDetailActivity extends AppCompatActivity {
 
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_back, view -> {
 
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("강좌 리뷰");
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
+            ImageButton imageButton = view.findViewById(R.id.btnBack);
             imageButton.setOnClickListener(v -> finish());
         });
 

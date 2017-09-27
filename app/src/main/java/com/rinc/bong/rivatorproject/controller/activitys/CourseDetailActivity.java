@@ -66,21 +66,21 @@ public class CourseDetailActivity extends AppCompatActivity {
     }
 
     private void init() {
-        tabLayout = (TabLayout) findViewById(R.id.tab);
-        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        tabLayout = findViewById(R.id.tab);
+        viewPager = findViewById(R.id.viewPager);
         courseService = RetrofitUtil.retrofit.create(CourseService.class);
         courseKey = getIntent().getExtras().getInt("courseKey");
         view = getWindow().getDecorView().getRootView();
-        courseTitle = (TextView) findViewById(R.id.courseTitle);
-        category = (TextView) findViewById(R.id.category);
-        unitTime = (TextView) findViewById(R.id.item_course_unitTime);
-        score = (TextView) findViewById(R.id.score);
-        imageView = (ImageView) findViewById(R.id.imageView);
-        teacherProfileImageView = (de.hdodenhof.circleimageview.CircleImageView) findViewById(R.id.teacherProfileImage);
-        teacherName = (TextView) findViewById(R.id.teacherName);
-        subject = (TextView) findViewById(R.id.subject);
-        price = (TextView) findViewById(R.id.price);
-        submit = (Button) findViewById(R.id.submit);
+        courseTitle = findViewById(R.id.courseTitle);
+        category = findViewById(R.id.category);
+        unitTime = findViewById(R.id.item_course_unitTime);
+        score = findViewById(R.id.score);
+        imageView = findViewById(R.id.imageView);
+        teacherProfileImageView = findViewById(R.id.teacherProfileImage);
+        teacherName = findViewById(R.id.teacherName);
+        subject = findViewById(R.id.subject);
+        price = findViewById(R.id.price);
+        submit = findViewById(R.id.submit);
         User user = User.last(User.class);
         if(user.getUserType().equals("teacher"))
             submit.setEnabled(false);
@@ -152,9 +152,9 @@ public class CourseDetailActivity extends AppCompatActivity {
 
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.custom_action_bar, view -> {
 
-            TextView textView = (TextView) view.findViewById(R.id.title);
+            TextView textView = view.findViewById(R.id.title);
             textView.setText("강좌 정보");
-            ImageButton imageButton = (ImageButton) view.findViewById(R.id.btnBack);
+            ImageButton imageButton = view.findViewById(R.id.btnBack);
             imageButton.setOnClickListener(v -> finish());
         });
 

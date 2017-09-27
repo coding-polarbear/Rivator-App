@@ -85,17 +85,17 @@ public class HomeMainFragment extends Fragment {
     }
 
     private void init(){
-        moreText1 = (TextView) view.findViewById(R.id.moreText1);
-        moreText2 = (TextView) view.findViewById(R.id.moreText2);
+        moreText1 = view.findViewById(R.id.moreText1);
+        moreText2 = view.findViewById(R.id.moreText2);
         moreText1.setText(Html.fromHtml("<u>더보기<u>"));
         moreText2.setText(Html.fromHtml("<u>더보기<u>"));
-        listView = (ListView) view.findViewById(R.id.teacherList);
+        listView = view.findViewById(R.id.teacherList);
 
-        homeImagePager = (ViewPager) view.findViewById(R.id.home_image_slider);
-        homePagerIndicator = (CircleIndicator) view.findViewById(R.id.home_is_indicator);
+        homeImagePager = view.findViewById(R.id.home_image_slider);
+        homePagerIndicator = view.findViewById(R.id.home_is_indicator);
 
         //RecyclerView 초기화
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycler);
+        recyclerView = view.findViewById(R.id.recycler);
         user = User.last(User.class);
     }
 
