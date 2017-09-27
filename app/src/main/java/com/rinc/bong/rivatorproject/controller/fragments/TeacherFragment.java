@@ -61,7 +61,7 @@ public class TeacherFragment extends Fragment {
     private void loadTeacherData() {
         TeacherService teacherService = RetrofitUtil.retrofit.create(TeacherService.class);
         if(subject.equals("추천")) subject = User.last(User.class).getSubject();
-        Call<TeacherListGet> call = teacherService.loadTeacherWithSubject(0,999,subject,true);
+        Call<TeacherListGet> call = teacherService.loadTeacherWithSubject(0,999,subject,true, "teacher");
         call.enqueue(new Callback<TeacherListGet>() {
 
             @Override

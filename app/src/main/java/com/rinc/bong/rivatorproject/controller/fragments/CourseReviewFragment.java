@@ -1,16 +1,19 @@
 package com.rinc.bong.rivatorproject.controller.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.CourseReview;
 import com.rinc.bong.rivatorproject.beans.Result;
+import com.rinc.bong.rivatorproject.controller.activitys.CourseReviewDetailActivity;
 import com.rinc.bong.rivatorproject.controller.adapters.CourseReviewAdapter;
 import com.rinc.bong.rivatorproject.retrofitBean.CourseReviewListGet;
 import com.rinc.bong.rivatorproject.services.CourseReviewService;
@@ -19,6 +22,7 @@ import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
 
 import java.util.List;
 
+import lombok.Getter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -76,5 +80,13 @@ public class CourseReviewFragment extends android.support.v4.app.Fragment {
     private void setListView() {
         CourseReviewAdapter courseReviewAdapter = new CourseReviewAdapter(getContext(),R.layout.item_default_cousre_review, courseReviews);
         listView.setAdapter(courseReviewAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getActivity(), CourseReviewDetailActivity.class);
+                intent.putExtra("reviewKey",courseReviews.get(i).getReviewKey());
+                startActivity(intent);
+            }
+        });
     }
 }

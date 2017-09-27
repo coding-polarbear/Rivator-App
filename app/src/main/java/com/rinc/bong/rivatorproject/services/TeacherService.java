@@ -12,5 +12,5 @@ import retrofit2.http.Query;
 
 public interface TeacherService {
     @GET("/users")
-    Call<TeacherListGet> loadTeacherWithSubject(@Query("offset") int offset, @Query("limit") int limit, @Query("subject") String subject, @Query("score") boolean isSort);
+    Call<TeacherListGet> loadTeacherWithSubject(@Query("offset") int offset, @Query("limit") int limit, @Query("subject") String subject, @Query("score") boolean isSort, @Query("userType") String userType);
 }

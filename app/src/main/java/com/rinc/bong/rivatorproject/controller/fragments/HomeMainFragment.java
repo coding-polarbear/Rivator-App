@@ -138,7 +138,7 @@ public class HomeMainFragment extends Fragment {
 
     private void loadTeacherData() {
         TeacherService teacherService = RetrofitUtil.retrofit.create(TeacherService.class);
-        Call<TeacherListGet> call = teacherService.loadTeacherWithSubject(0,5,user.getSubject(),true);
+        Call<TeacherListGet> call = teacherService.loadTeacherWithSubject(0,5,user.getSubject(),true, "teacher");
         call.enqueue(new Callback<TeacherListGet>() {
             @Override
             public void onResponse(Call<TeacherListGet> call, Response<TeacherListGet> response) {
