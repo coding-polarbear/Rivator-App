@@ -1,5 +1,6 @@
 package com.rinc.bong.rivatorproject.controller.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
@@ -29,7 +30,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
+@SuppressLint("ValidFragment")
 public class ContestListFragment extends Fragment {
     private View view = null;
     private RecyclerView recyclerView = null;

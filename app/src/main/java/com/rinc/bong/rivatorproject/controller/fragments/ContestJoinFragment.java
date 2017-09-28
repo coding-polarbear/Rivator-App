@@ -1,5 +1,6 @@
 package com.rinc.bong.rivatorproject.controller.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -33,6 +34,7 @@ import retrofit2.Response;
 /**
  * Created by bong on 2017-08-05.
  */
+@SuppressLint("ValidFragment")
 
 public class ContestJoinFragment extends Fragment {
     private List<ContestManager> contestManagerList = null;

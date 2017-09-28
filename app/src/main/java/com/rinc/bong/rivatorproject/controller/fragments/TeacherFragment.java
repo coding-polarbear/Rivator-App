@@ -1,5 +1,6 @@
 package com.rinc.bong.rivatorproject.controller.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -28,7 +29,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-
+@SuppressLint("ValidFragment")
 public class TeacherFragment extends Fragment {
     private TextView moreText;
     private ListView listView;

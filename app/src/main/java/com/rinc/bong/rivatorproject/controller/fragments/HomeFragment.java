@@ -1,5 +1,6 @@
 package com.rinc.bong.rivatorproject.controller.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -15,7 +16,7 @@ import com.rinc.bong.rivatorproject.controller.adapters.PageAdapter;
 
 import java.util.ArrayList;
 
-
+@SuppressLint("ValidFragment")
 public class HomeFragment extends Fragment {
     private View view;
     private TabLayout tabLayout;

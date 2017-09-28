@@ -1,5 +1,6 @@
 package com.rinc.bong.rivatorproject.controller.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -35,6 +36,7 @@ import retrofit2.Response;
  * to handle interaction events.
  * create an instance of this fragment.
  */
+@SuppressLint("ValidFragment")
 public class HomeSubjectFragment extends Fragment {
     private TextView moreText1;
     private TextView moreText2;

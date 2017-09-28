@@ -1,5 +1,6 @@
 package com.rinc.bong.rivatorproject.controller.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -28,6 +29,7 @@ import retrofit2.Response;
  * Created by Bong on 2017-07-30.
  */
 
+@SuppressLint("ValidFragment")
 public class TeacherProfileFragment extends Fragment {
 
     private View view = null;

@@ -1,5 +1,6 @@
 package com.rinc.bong.rivatorproject.controller.fragments;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
@@ -26,7 +27,7 @@ import lombok.Getter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-
+@SuppressLint("ValidFragment")
 public class CourseReviewFragment extends android.support.v4.app.Fragment {
     private CourseReviewService courseReviewService;
     private List<CourseReview> courseReviews;
@@ -38,6 +39,8 @@ public class CourseReviewFragment extends android.support.v4.app.Fragment {
         this.courseKey = courseKey;
         Log.d("test", Integer.toString(courseKey));
     }
+
+    public CourseReviewFragment(){}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

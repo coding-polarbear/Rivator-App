@@ -1,5 +1,6 @@
 package com.rinc.bong.rivatorproject.controller.fragments;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,7 +10,7 @@ import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
 
-
+@SuppressLint("ValidFragment")
 public class DescriptionFragment extends Fragment {
 
     private String description = null;
