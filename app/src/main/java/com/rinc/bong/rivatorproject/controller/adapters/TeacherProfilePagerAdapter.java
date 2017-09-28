@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.rinc.bong.rivatorproject.controller.fragments.LectureSearchFragment;
+import com.rinc.bong.rivatorproject.controller.fragments.TeacherContestFragment;
 import com.rinc.bong.rivatorproject.controller.fragments.TeacherProfileFragment;
 import com.rinc.bong.rivatorproject.controller.fragments.TeacherSearchFragment;
 
@@ -34,7 +35,7 @@ public class TeacherProfilePagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return TeacherProfileFragment.newInstance(userId);
             case 1:
-                return TeacherProfileFragment.newInstance(userId);
+                return TeacherContestFragment.newInstance(userId);
             case 2:
                 return TeacherProfileFragment.newInstance(userId);
             default:
