@@ -11,7 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -21,6 +23,7 @@ import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.Status;
 import com.rinc.bong.rivatorproject.beans.User;
 import com.rinc.bong.rivatorproject.services.CourseService;
+import com.rinc.bong.rivatorproject.utils.ActionbarCustomUtil;
 import com.rinc.bong.rivatorproject.utils.RetrofitUtil;
 import com.rinc.bong.rivatorproject.utils.SnackBarUtill;
 import com.rinc.bong.rivatorproject.utils.ToastUtill;
@@ -51,7 +54,7 @@ public class CourseAddActivity extends AppCompatActivity implements EasyPermissi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_course_add);
         init();
-
+        setCustomActionbar();
     }
 
     private void init() {
@@ -146,6 +149,20 @@ public class CourseAddActivity extends AppCompatActivity implements EasyPermissi
             public void onFailure(Call<Status> call, Throwable t) {
                 SnackBarUtill.makeSnackBar(view, "알 수 없는 오류가 발생하였습니다.", Snackbar.LENGTH_SHORT);
             }
+        });
+    }
+
+    private void setCustomActionbar() {
+
+        ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.layout_actionbar_type_cancle, view -> {
+
+            TextView textView = view.findViewById(R.id.title);
+            textView.setText("강좌 작성");
+
+            //ImageButton 리스너 설정
+            ImageButton imageButton = view.findViewById(R.id.btnClose);
+            imageButton.setOnClickListener(v -> finish());
+
         });
     }
 

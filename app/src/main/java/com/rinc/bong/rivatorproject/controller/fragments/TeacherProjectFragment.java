@@ -79,8 +79,8 @@ public class TeacherProjectFragment extends Fragment {
         mRecyclerView.setAdapter(mProjectRecyclerAdapter);
     }
 
-    public static TeacherContestFragment newInstance(String userId) {
-        TeacherContestFragment fragment = new TeacherContestFragment(userId);
+    public static TeacherProjectFragment newInstance(String userId) {
+        TeacherProjectFragment fragment = new TeacherProjectFragment(userId);
         return fragment;
     }
 }
