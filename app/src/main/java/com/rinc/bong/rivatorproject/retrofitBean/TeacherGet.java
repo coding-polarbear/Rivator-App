@@ -1,12 +1,8 @@
 package com.rinc.bong.rivatorproject.retrofitBean;
 
 import com.google.gson.annotations.SerializedName;
-import com.rinc.bong.rivatorproject.beans.Course;
 import com.rinc.bong.rivatorproject.beans.Result;
-import com.rinc.bong.rivatorproject.beans.SimpleCourse;
-import com.rinc.bong.rivatorproject.beans.Status;
-
-import java.util.List;
+import com.rinc.bong.rivatorproject.beans.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +11,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * Created by baehyeonbin on 2017. 9. 17..
+ * Created by baehy on 2017. 9. 28..
  */
 
 @Getter
@@ -23,9 +19,9 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class CourseListGet {
+public class TeacherGet {
     @SerializedName("status")
     private Result result;
-    @SerializedName("courses")
-    private List<Course> simpleCourseList;
+    @SerializedName("user")
+    private User user;
 }

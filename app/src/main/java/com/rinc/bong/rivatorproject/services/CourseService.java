@@ -25,6 +25,8 @@ public interface CourseService {
     @GET("/courses")
     Call<CourseListGet> getCourseList(@Query("category") String categoryName, @Query("isOpen") boolean isOpen,
                                       @Query("sortBy") String sortBy, @Query("offset") int offset, @Query("limit") int limit);
+    @GET("/courses")
+    Call<CourseListGet> getCourseListWithUserId(@Query("offset") int offset, @Query("limit") int limit, @Query("isOpen") boolean isOpen, @Query("userId") String userId);
     @GET("/courses/{courseKey}")
     Call<SingleCourseGet> getCourse(@Path("courseKey") int courseKey);
 

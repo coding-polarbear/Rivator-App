@@ -87,7 +87,8 @@
         <activity android:name=".controller.activitys.CourseReviewDetailActivity" />
         <activity android:name=".controller.activitys.CourseReviewWriteActivity"></activity>
         <activity android:name=".controller.activitys.SearchViewActivity"/>
-        <activity android:name=".controller.activitys.TeacherProfileActivity"/>
+        <activity android:name=".controller.activitys.TeacherProfileActivity"
+            android:theme="@style/AppTheme.ActionBar.Transparent"/>
     </application>
 
 </manifest>

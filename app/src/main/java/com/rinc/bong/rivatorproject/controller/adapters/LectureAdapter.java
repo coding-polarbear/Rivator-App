@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.beans.Course;
 import com.rinc.bong.rivatorproject.beans.CurrentCourse;
 import com.rinc.bong.rivatorproject.beans.SimpleCourse;
 
@@ -20,9 +21,9 @@ import java.util.List;
 
 public class LectureAdapter extends RecyclerView.Adapter<LectureViewHolder> {
     private Context context;
-    private List<SimpleCourse> items;
+    private List<Course> items;
     private final static String IMAGE_URL = "http://n0rr.iptime.org:7001/courses/";
-    public LectureAdapter(Context context, List<SimpleCourse> items) {
+    public LectureAdapter(Context context, List<Course> items) {
         this.context = context;
         this.items = items;
     }
@@ -34,10 +35,10 @@ public class LectureAdapter extends RecyclerView.Adapter<LectureViewHolder> {
 
     @Override
     public void onBindViewHolder(LectureViewHolder holder, int position) {
-        SimpleCourse item = items.get(position);
+        Course item = items.get(position);
         holder.getTitle().setText(item.getTitle());
         holder.getTeacherName().setText(item.getUser().getUserName());
-        holder.getUnit().setText(Integer.toString(item.getUnitTime())+"시간");
+        holder.getUnit().setText(Integer.toString(item.getUnit())+"시간");
         Glide.with(context).load(IMAGE_URL + item.getCourseKey() + "/course-image.jpg").centerCrop().into(holder.getImageView());
         holder.setListener(items.get(position).getCourseKey(), context);
     }

@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.beans.Course;
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.SimpleCourse;
 import com.rinc.bong.rivatorproject.beans.User;
@@ -45,7 +46,7 @@ public class HomeSubjectFragment extends Fragment {
     private User user;
     private View view;
     private CourseService courseService;
-    List<SimpleCourse> myDataset = new ArrayList<>();
+    List<Course> myDataset = new ArrayList<>();
 
 
     public HomeSubjectFragment() {

@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.beans.Course;
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.SimpleCourse;
 import com.rinc.bong.rivatorproject.beans.User;
@@ -30,7 +31,7 @@ public class CurrentLectureFragment extends Fragment {
     RecyclerView lectureRecyclerView;
     private String subject;
     private CourseService courseService;
-    private List<SimpleCourse> simpleCourseList;
+    private List<Course> simpleCourseList;
     private Call<CourseListGet> call;
     public CurrentLectureFragment() {
         // Required empty public constructor

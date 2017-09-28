@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.rinc.bong.rivatorproject.R;
+import com.rinc.bong.rivatorproject.beans.Course;
 import com.rinc.bong.rivatorproject.beans.CourseItem;
 import com.rinc.bong.rivatorproject.beans.SimpleCourse;
 import com.rinc.bong.rivatorproject.beans.User;
@@ -23,9 +24,9 @@ import java.util.List;
 
 public class RecyclerItemAdapter<V extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<RecyclerViewHolder> {
     Context context;
-    List<SimpleCourse> courseList;
+    List<Course> courseList;
     private static String IMAGE_URL = "http://n0rr.iptime.org:7001/courses/";
-    public RecyclerItemAdapter(Context context, List<SimpleCourse> courseList) {
+    public RecyclerItemAdapter(Context context, List<Course> courseList) {
         this.context = context;
         this.courseList = courseList;
     }
@@ -41,7 +42,7 @@ public class RecyclerItemAdapter<V extends RecyclerView.ViewHolder> extends Recy
 
     @Override
     public void onBindViewHolder(RecyclerViewHolder holder, int position) {
-        SimpleCourse simpleCourse = courseList.get(position);
+        Course simpleCourse = courseList.get(position);
         String title = simpleCourse.getTitle();
         if(title.length() > 10)
             title = title.substring(0,7) + "...";

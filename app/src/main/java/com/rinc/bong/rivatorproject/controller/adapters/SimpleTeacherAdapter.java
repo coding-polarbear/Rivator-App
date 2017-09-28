@@ -1,6 +1,7 @@
 package com.rinc.bong.rivatorproject.controller.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.rinc.bong.rivatorproject.beans.SimpleTeacher;
 import com.rinc.bong.rivatorproject.R;
 import com.rinc.bong.rivatorproject.beans.User;
+import com.rinc.bong.rivatorproject.controller.activitys.TeacherProfileActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,6 +66,11 @@ public class SimpleTeacherAdapter extends ArrayAdapter<User> {
         Glide.with(context).load("http://n0rr.iptime.org:7001/users/"+ item.getUserId() +"/profile-image.jpg").centerCrop().into(imageView);
         subject.setText(item.getSubject());
 
+        view.setOnClickListener(v -> {
+            Intent intent = new Intent(context, TeacherProfileActivity.class);
+            intent.putExtra("userId", item.getUserId());
+            context.startActivity(intent);
+        });
         return view;
     }
 

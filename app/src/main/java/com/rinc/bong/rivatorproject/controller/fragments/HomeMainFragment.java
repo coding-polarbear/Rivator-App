@@ -16,6 +16,7 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.rinc.bong.rivatorproject.beans.Course;
 import com.rinc.bong.rivatorproject.beans.Result;
 import com.rinc.bong.rivatorproject.beans.SimpleCourse;
 import com.rinc.bong.rivatorproject.beans.User;
@@ -60,7 +61,7 @@ public class HomeMainFragment extends Fragment {
     private User user;
     private View view;
     private List<User> teacherList = new ArrayList<>();
-    private List<SimpleCourse> myDataset = new ArrayList<>();
+    private List<Course> myDataset = new ArrayList<>();
 
     private ViewPager homeImagePager = null;
     private ImageSlideAdapter homeImageAdapter = null;

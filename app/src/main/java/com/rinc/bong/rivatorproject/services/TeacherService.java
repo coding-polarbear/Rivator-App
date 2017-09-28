@@ -1,9 +1,11 @@
 package com.rinc.bong.rivatorproject.services;
 
+import com.rinc.bong.rivatorproject.retrofitBean.TeacherGet;
 import com.rinc.bong.rivatorproject.retrofitBean.TeacherListGet;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -13,4 +15,6 @@ import retrofit2.http.Query;
 public interface TeacherService {
     @GET("/users")
     Call<TeacherListGet> loadTeacherWithSubject(@Query("offset") int offset, @Query("limit") int limit, @Query("subject") String subject, @Query("score") boolean isSort, @Query("userType") String userType);
+    @GET("/users/{userId}")
+    Call<TeacherGet> loadTeacherWithUserId(@Path("userId") String userId);
 }
