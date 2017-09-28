@@ -54,6 +54,12 @@ public class CourseReviewFragment extends android.support.v4.app.Fragment {
         listView = view.findViewById(R.id.listView);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        loadData();
+    }
+
     private void loadData() {
         Call<CourseReviewListGet> call = courseReviewService.getCourseReview(999, 0, courseKey);
         Log.d("courseKey",Integer.toString(courseKey));

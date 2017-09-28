@@ -160,7 +160,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/colorMainGreen"
-            android:text="강좌 신청하기"
+            android:text="등록하기"
             android:id="@+id/submit"
             android:onClick="submit"
             android:letterSpacing="-0.05"
