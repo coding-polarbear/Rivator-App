@@ -19,6 +19,7 @@ import retrofit2.http.Query;
  * Created by baehyeonbin on 2017. 9. 26..
  */
 
+
 public interface ContestService {
     @Multipart
     @POST("/contests")
