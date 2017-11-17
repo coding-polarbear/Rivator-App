@@ -107,8 +107,8 @@ public class CourseDetailActivity extends AppCompatActivity {
                     description = course.getCurriculum();
                     price.setText(new DecimalFormat("#,###,###").format(course.getPrice()));
                     teacherName.setText(course.getUser().getUserName());
-                    Glide.with(CourseDetailActivity.this).load("http://n0rr.iptime.org:7001/users/" + course.getUser().getUserId() + "/profile-image.jpg").into(teacherProfileImageView);
-                    Glide.with(CourseDetailActivity.this).load("http://n0rr.iptime.org:7001/courses/" + course.getCourseKey() + "/course-image.jpg").centerCrop().into(imageView);
+                    Glide.with(CourseDetailActivity.this).load("http://n0rr.kro.kr:7001/users/" + course.getUser().getUserId() + "/profile-image.jpg").into(teacherProfileImageView);
+                    Glide.with(CourseDetailActivity.this).load("http://n0rr.kro.kr:7001/courses/" + course.getCourseKey() + "/course-image.jpg").centerCrop().into(imageView);
                     setViewPager();
                 } else {
                     SnackBarUtill.makeSnackBar(view,result.getMessage(), Snackbar.LENGTH_LONG);

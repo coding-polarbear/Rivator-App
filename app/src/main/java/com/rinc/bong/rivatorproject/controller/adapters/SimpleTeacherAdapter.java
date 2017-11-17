@@ -63,7 +63,7 @@ public class SimpleTeacherAdapter extends ArrayAdapter<User> {
 
         User item = listViewItem.get(position);
         teacherName.setText(item.getUserName());
-        Glide.with(context).load("http://n0rr.iptime.org:7001/users/"+ item.getUserId() +"/profile-image.jpg").centerCrop().into(imageView);
+        Glide.with(context).load("http://n0rr.kro.kr:7001/users/"+ item.getUserId() +"/profile-image.jpg").centerCrop().into(imageView);
         subject.setText(item.getSubject());
 
         view.setOnClickListener(v -> {

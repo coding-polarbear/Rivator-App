@@ -96,8 +96,8 @@ public class UserModifyActivity extends AppCompatActivity implements EasyPermiss
         user = User.last(User.class);
         view = getWindow().getDecorView().getRootView();
         Log.d("init","init");
-        url = "http://n0rr.iptime.org:7001/users/" + user.getUserId() + "/profile-image.jpg";
-        Glide.with(UserModifyActivity.this).load("http://n0rr.iptime.org:7001/users/" + user.getUserId() + "/profile-image.jpg").diskCacheStrategy(DiskCacheStrategy.NONE)
+        url = "http://n0rr.kro.kr:7001/users/" + user.getUserId() + "/profile-image.jpg";
+        Glide.with(UserModifyActivity.this).load("http://n0rr.kro.kr:7001/users/" + user.getUserId() + "/profile-image.jpg").diskCacheStrategy(DiskCacheStrategy.NONE)
                 .skipMemoryCache(true).into(imageView);
     }
 

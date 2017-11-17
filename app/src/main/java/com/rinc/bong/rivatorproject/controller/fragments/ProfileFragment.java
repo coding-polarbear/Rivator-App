@@ -29,7 +29,7 @@ import com.rinc.bong.rivatorproject.controller.activitys.ProjectActivity;
 
 
 public class ProfileFragment extends Fragment {
-    private static String IMAGE_URL="http://n0rr.iptime.org:7001/users/";
+    private static String IMAGE_URL="http://n0rr.kro.kr:7001/users/";
     private View view = null;
 
     private User user;
@@ -73,7 +73,7 @@ public class ProfileFragment extends Fragment {
 
     private void loadInfo() {
         user = User.last(User.class);
-        Glide.with(getContext()).load("http://n0rr.iptime.org:7001/users/" + user.getUserId() + "/profile-image.jpg").diskCacheStrategy(DiskCacheStrategy.NONE)
+        Glide.with(getContext()).load(IMAGE_URL + user.getUserId() + "/profile-image.jpg").diskCacheStrategy(DiskCacheStrategy.NONE)
                 .skipMemoryCache(true).crossFade().into(profile);
         name.setText(user.getUserName());
         subject.setText(user.getSubject());

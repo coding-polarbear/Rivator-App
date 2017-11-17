@@ -79,7 +79,7 @@ public class ContestDetailActivity extends AppCompatActivity {
                     organizer.setText(contest.getUser().getUserName());
                     categoryName.setText(contest.getCategory());
                     prizeNum.setText(contest.getPrizeNum()+"팀");
-                    Glide.with(getApplicationContext()).load("http://n0rr.iptime.org:7001/contests/"+contestKey+"/contest-image.jpg").centerCrop().into(imageView);
+                    Glide.with(getApplicationContext()).load("http://n0rr.kro.kr:7001/contests/"+contestKey+"/contest-image.jpg").centerCrop().into(imageView);
                     setViewPager();
                 } else {
                     SnackBarUtill.makeSnackBar(getWindow().getDecorView().getRootView(), result.getMessage(), Snackbar.LENGTH_SHORT);

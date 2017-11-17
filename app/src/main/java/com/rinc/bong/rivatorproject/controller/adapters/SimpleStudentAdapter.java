@@ -67,7 +67,7 @@ public class SimpleStudentAdapter extends ArrayAdapter {
         ProjectManager item = listViewItem.get(position);
         teacherName.setText(item.getUser().getUserName());
         subject.setText(item.getTeamPart());
-        Glide.with(context).load("http://n0rr.iptime.org:7001/users/" + item.getUser().getUserId() + "/profile-image.jpg").into(imageView);
+        Glide.with(context).load("http://n0rr.kro.kr:7001/users/" + item.getUser().getUserId() + "/profile-image.jpg").into(imageView);
 
         return view;
     }

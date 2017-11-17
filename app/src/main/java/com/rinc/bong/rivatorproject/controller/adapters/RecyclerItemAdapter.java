@@ -25,7 +25,7 @@ import java.util.List;
 public class RecyclerItemAdapter<V extends RecyclerView.ViewHolder> extends RecyclerView.Adapter<RecyclerViewHolder> {
     Context context;
     List<Course> courseList;
-    private static String IMAGE_URL = "http://n0rr.iptime.org:7001/courses/";
+    private static String IMAGE_URL = "http://n0rr.kro.kr:7001/courses/";
     public RecyclerItemAdapter(Context context, List<Course> courseList) {
         this.context = context;
         this.courseList = courseList;

@@ -73,7 +73,7 @@ public class TeacherProfileActivity extends AppCompatActivity {
                     teacher = response.body().getUser();
                     name.setText(teacher.getUserName());
                     teacherSubject.setText(teacher.getSubject());
-                    Glide.with(getApplicationContext()).load("http://n0rr.iptime.org:7001/users/"+userId + "/profile-image.jpg").centerCrop().into(teacherProfile);
+                    Glide.with(getApplicationContext()).load("http://n0rr.kro.kr:7001/users/"+userId + "/profile-image.jpg").centerCrop().into(teacherProfile);
                     pageInit();
                 } else {
                     Log.d("problem", result.getMessage());

@@ -24,7 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitUtil {
 
     public static Retrofit retrofit = new Retrofit.Builder()
-            .baseUrl("http://n0rr.iptime.org:7001")
+            .baseUrl("http://n0rr.kro.kr:7001")
             .addConverterFactory(GsonConverterFactory.create())
             .build();
 
@@ -44,7 +44,7 @@ public class RetrofitUtil {
 
         OkHttpClient client = httpClient.build();
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://n0rr.iptime.org:7001")
+                .baseUrl("http://n0rr.kro.kr:7001")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build();

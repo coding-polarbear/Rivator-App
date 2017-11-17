@@ -61,7 +61,7 @@ public class CourseReviewAdapter extends ArrayAdapter<CourseReview> {
         TextView score = view.findViewById(R.id.score);
 
         CourseReview item = listViewItem.get(position);
-        Glide.with(context).load("http://n0rr.iptime.org:7001/users/" + item.getUser().getUserId() + "/profile-image.jpg").centerCrop().into(imageView);
+        Glide.with(context).load("http://n0rr.kro.kr:7001/users/" + item.getUser().getUserId() + "/profile-image.jpg").centerCrop().into(imageView);
         name.setText(item.getUser().getUserName());
         score.setText(Double.toString(item.getScore()));
         if(item.getContent().length() > 10)

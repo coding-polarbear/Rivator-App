@@ -53,7 +53,7 @@ public class ProjectActivity extends AppCompatActivity {
         ActionbarCustomUtil mActionbar = new ActionbarCustomUtil(getApplicationContext(), getSupportActionBar(), R.layout.custom_action_bar, view -> {
 
             TextView textView = view.findViewById(R.id.title);
-            textView.setText("알림");
+            textView.setText("프로젝트");
 
             ImageButton backButton = view.findViewById(R.id.btnBack);
             backButton.setOnClickListener(v -> finish());

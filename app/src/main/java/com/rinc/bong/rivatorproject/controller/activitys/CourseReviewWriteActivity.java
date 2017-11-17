@@ -76,8 +76,8 @@ public class CourseReviewWriteActivity extends AppCompatActivity {
                     Course course = response.body().getCourse();
                     title.setText(course.getTitle());
                     category.setText(course.getCategory());
-                    Glide.with(getApplicationContext()).load("http://n0rr.iptime.org:7001/courses/"+courseKey+"/course-image.jpg").centerCrop().into(imageView);
-                    Glide.with(getApplicationContext()).load("http://n0rr.iptime.org:7001/users/"+course.getUser().getUserId()+"/profile-image.jpg").centerCrop().into(teacherProfileImage);
+                    Glide.with(getApplicationContext()).load("http://n0rr.kro.kr:7001/courses/"+courseKey+"/course-image.jpg").centerCrop().into(imageView);
+                    Glide.with(getApplicationContext()).load("http://n0rr.kro.kr:7001/users/"+course.getUser().getUserId()+"/profile-image.jpg").centerCrop().into(teacherProfileImage);
                     subject.setText(course.getCategory());
                     teacherName.setText(course.getUser().getUserName());
                 } else {

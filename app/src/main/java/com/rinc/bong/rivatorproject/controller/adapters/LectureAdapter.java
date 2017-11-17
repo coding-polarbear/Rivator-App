@@ -22,7 +22,7 @@ import java.util.List;
 public class LectureAdapter extends RecyclerView.Adapter<LectureViewHolder> {
     private Context context;
     private List<Course> items;
-    private final static String IMAGE_URL = "http://n0rr.iptime.org:7001/courses/";
+    private final static String IMAGE_URL = "http://n0rr.kro.kr:7001/courses/";
     public LectureAdapter(Context context, List<Course> items) {
         this.context = context;
         this.items = items;

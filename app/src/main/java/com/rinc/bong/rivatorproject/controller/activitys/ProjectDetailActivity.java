@@ -80,7 +80,7 @@ public class ProjectDetailActivity extends AppCompatActivity {
                 if(result.getSuccess().equals("200")) {
                     project = response.body().getProject();
                     setViewPager();
-                    Glide.with(getApplicationContext()).load("http://n0rr.iptime.org:7001/projects/"+project.getProjectKey()+"/project-image.jpg").centerCrop().into(imageView);
+                    Glide.with(getApplicationContext()).load("http://n0rr.kro.kr:7001/projects/"+project.getProjectKey()+"/project-image.jpg").centerCrop().into(imageView);
                     projectTitle.setText(project.getTitle());
                     categoryName.setText(project.getCategory());
                     teamName.setText(project.getTeamName());
